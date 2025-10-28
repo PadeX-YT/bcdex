@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="donations_page_title">BCDeX: Cómo nació la idea y quién está detrás del proyecto</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+<body class="min-h-screen flex flex-col">
+ 
+   <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <div class="language-container ml-4">
+                            <div class="language-selector" id="language-selector-desktop" 
+                                style="background-image: url('img/españa.png');">
+                            </div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" 
+                                     style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" 
+                                     style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" 
+                                     style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                     <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" 
+                            style="background-image: url('img/españa.png');">
+                        </div>
+                                                <div class="language-dropdown" id="language-dropdown-mobile">
+                                                    <div class="language-option" data-lang="es" 
+                                                         style="background-image: url('img/españa.png')"></div>
+                                                    <div class="language-option" data-lang="en" 
+                                                         style="background-image: url('img/usa.png')"></div>
+                                                    <div class="language-option" data-lang="pt-br" 
+                                                         style="background-image: url('img/brasil.png')"></div>
+                                                    </div>                        </div>
+                    </div>
+
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
+                    Descarga
+                </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+   <main class="flex-grow py-8 sm:py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <header class="donations-hero text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4" data-i18n="donations_title">Conviértete en un Socio del Proyecto</h1>
+                <p class="text-xl text-gray-600" data-i18n="donations_intro">
+                    BCDeX es gratuito y siempre lo será gracias al apoyo de una comunidad increíble. Tu contribución no es solo una donación: es el choque de puños con el proyecto que ya te ahorró pagar a un técnico, perder horas o comprar herramientas extras. Es invertir en que esta herramienta —hecha por un entusiasta para entusiastas— siga existiendo y mejorando.
+                </p>
+            </header>
+
+            <div class="info-card space-y-6 max-w-3xl mx-auto">
+                <section class="donation-card">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center" data-i18n="donations_why_title">¿Por qué tu apoyo es tan importante?</h2>
+                    <ul class="list-none text-lg text-gray-700 space-y-5">
+                        <li>
+                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item1_title">🚀 Impulsa nuevas funciones</h3>
+                            <p class="mt-1" data-i18n="donations_why_item1_text">Cada vez que Microsoft cambia algo, hay que reescribir partes enteras del código desde cero. Tu apoyo permite dedicar tiempo a esas actualizaciones y a desarrollar lo que pide la comunidad: más compatibilidad, más automatización, más personalización.</p>
+                        </li>
+                        <li>
+                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item2_title">🛡️ Garantiza la continuidad del proyecto</h3>
+                            <p class="mt-1" data-i18n="donations_why_item2_text">Servidores, dominios, herramientas de desarrollo y pruebas no son gratis. Si nadie aporta, el proyecto termina como el 90% del software útil que muere por falta de soporte. <strong>Si la comunidad apoya, BCDeX sigue siendo gratuito, limpio y sin sponsors ni spyware.</strong></p>
+                        </li>
+                        <li>
+                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item3_title">☕ Alimenta la pasión (y al desarrollador)</h3>
+                            <p class="mt-1" data-i18n="donations_why_item3_text">Esto es un proyecto de un solo desarrollador. Cada donación literalmente se convierte en cafés, horas de código, solución de bugs y soporte para los usuarios. Es una forma de decir “<strong>me ayudaste — aquí va mi choque de puños en versión real</strong>”.</p>
+                        </li>
+                    </ul>
+                    <p class="mt-6 text-gray-800 italic" data-i18n="donations_why_footer"><strong>Si BCDeX te sirvió, devuelve el favor. Si no, al menos no dejes que desaparezca por falta de apoyo.</strong></p>
+                </section>
+
+                <section class="donation-card border-t border-gray-200 pt-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="donations_how_title">Elige tu forma de contribuir</h2>
+                    <p class="text-lg text-gray-700 mb-8 text-center" data-i18n="donations_how_text">
+                        Cada donación, sin importar el tamaño, nos ayuda a cubrir los costos de desarrollo, mantenimiento y servidores. ¡Gracias por ser parte de la comunidad BCDeX!
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://buymeacoffee.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/bmc.png" alt="Buy Me A Coffee" class="h-8"></a>
+                        <a href="https://ko-fi.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/ko-fi.png" alt="Ko-fi" class="h-8"></a>
+                        <a href="https://www.paypal.com/paypalme/PadeXch" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/paypal.png" alt="PayPal" class="h-8"></a>
+                    </div>
+                </section>
+
+        </div>
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
+                    Gracias a los super CRACKS de la Comunidad
+                </h2>
+                
+                <hr class="supporters-divider">
+                
+                <div id="donantes-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
+                <script>
+                  fetch('bloque-donantes.html')
+                    .then(r => r.text())
+                    .then(html => { document.getElementById('donantes-grid').innerHTML = html; })
+                    .catch(console.error);
+                </script>
+                
+                <div class="text-center">
+                    <span class="donaciones-destacado text-base font-semibold text-gray-700" data-i18n="donations_supporters_placeholder">¡Tu nombre podría estar aquí!</span>
+                </div>
+                
+                <div class="supporters-list text-center" style="margin-top:1.5rem;">
+                    <span class="text-base text-gray-700" data-i18n="donations_supporter_1">Imagina aquí Tu nombre Crack</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <p class="footer-text text-lg font-medium" data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+  <script src="translation.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>

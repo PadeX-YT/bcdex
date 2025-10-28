@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title_article_win11_25h2">Windows 11 25H2: Menos Bloatware, Más Control</title>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+    
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+   <link rel="stylesheet" href="estilos.css">
+
+    
+    <style>
+
+
+        /* Estilos de la Navegación y Footer */
+        .footer-text {
+            color: #D1D5DB; /* Gris claro en el footer */
+        }
+
+        /* Botón Principal (btn-primary) */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* font-semibold */
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-dark);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos de Artículos (Content) */
+        .article-container {
+            background-color: var(--color-primary-base);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Títulos de sección */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: var(--color-accent);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-title svg {
+            margin-right: 0.5rem;
+            color: var(--color-accent-dark);
+        }
+
+        /* Estilo para bloques de código (PowerShell) */
+        .code-block {
+            background-color: #1F2937; /* Gris oscuro */
+            color: #F9FAFB;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            user-select: all; /* Permite seleccionar fácilmente el texto */
+        }
+        
+        /* Botón de Copiar */
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.4rem;
+            background-color: #374151; /* Gris medio */
+            color: #D1D5DB;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .copy-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            transform: scale(1.05);
+        }
+        .copy-button svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Tabla de servicios */
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .service-table th, .service-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .service-table th {
+            background-color: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            position: sticky;
+            top: 0;
+        }
+        .service-table tr:hover {
+            background-color: #F3F4F6;
+        }
+        .service-table .service-name {
+            font-family: monospace;
+            font-weight: 500;
+            color: var(--color-accent-dark);
+        }
+        
+        /* Contenedor de la imagen (Bloque de usuario) */
+        .blog-image-center {
+            text-align:center; 
+            margin:1rem 0 1.5rem 0;
+        }
+        .blog-image-center img {
+            max-width:40%; 
+            height:auto; 
+            border-radius:10px; 
+            box-shadow:0 2px 12px rgba(0,0,0,0.1); 
+            display:inline-block;
+        }
+        
+        /* Responsividad de la imagen en móvil */
+        @media (max-width: 640px) {
+            .article-container {
+                padding: 1.5rem;
+            }
+            .blog-image-center img {
+                max-width: 80%; /* Más grande en móvil */
+            }
+            .service-table th:nth-child(2), .service-table td:nth-child(2) {
+                display: none; /* Ocultar columna 'Para qué sirve' en móvil para ahorrar espacio */
+            }
+        }
+        
+        /* Enlace de Tienda/Página oficial */
+        .external-link {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .external-link:hover {
+            color: var(--color-accent-dark);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. Barra de Navegación (Header/Nav) -->
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Logo/Título -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <!-- Enlaces de Navegación -->
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <!-- ENLACE DE DESCARGA: Mismas clases que el resto -->
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <!-- Usaremos una bandera por defecto, ya que no puedo cargar img/españa.png -->
+                            <div class="language-selector" id="language-selector-desktop" 
+                                style="background-image: url('img/españa.png');">
+                            </div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" 
+                                     style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" 
+                                     style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" 
+                                     style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil (Visible solo en móvil/tablet) -->
+                <div class="lg:hidden flex items-center">
+                    <!-- Selector de Idioma (Móvil) - Lo colocamos antes de la hamburguesa para fácil acceso -->
+                     <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" 
+                            style="background-image: url('img/españa.png');">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" 
+                                 style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" 
+                                 style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" 
+                                 style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Hamburguesa -->
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <!-- ENLACE DE DESCARGA MÓVIL: Usa la clase btn-primary (rojo) -->
+                <a href="descarga.html" data-i18n="nav_download" class="btn-primary block mt-2 mx-3 text-center text-base font-medium transition transform hover:scale-100">
+                    Descarga
+                </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Contenido Principal del Blog (Artículo) -->
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display: flex; flex-direction: row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+            
+            <!-- Título y Resumen del Artículo -->
+            <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2">
+                    <a href="blog.html" class="hover:underline" data-i18n="article_win11_25h2_back_to_all">← Volver a todos los artículos</a>
+                </p>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="article_win11_25h2_title">
+                    🧹 Windows 11 25H2: Menos Bloatware, Más Control
+                </h1>
+                <p class="text-lg text-[color:var(--color-text-secondary)]" data-i18n="article_win11_25h2_summary">
+                    Microsoft lo intenta de nuevo. Con la actualización de Windows 11 25H2 (esperada para finales de 2025), la compañía planea abordar una de las quejas más comunes de los usuarios: demasiadas aplicaciones preinstaladas que no se pueden eliminar fácilmente. Esta vez, habrá una forma oficial de decir adiós a aplicaciones como Media Player, Paint, Cortana o el Bloc de Notas, sin usar PowerShell ni herramientas de terceros.
+                </p>
+            </header>
+
+            <!-- Imagen del Artículo -->
+            <div class="blog-image-center">
+                <img src="img/post-6/Windows-25h2.png" alt="Windows 11 25H2"
+                    style="max-width:40%; height:auto; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.1); display:inline-block;"
+                    onerror="this.onerror=null; this.style.display='none';">
+            </div>
+
+            <!-- Contenido del Artículo (from web_fetch) -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_win11_25h2_1_title">
+                    <svg class="w-7 h-7" data-lucide="settings"></svg>
+                    Paso 1: Abre el Editor de Políticas de Grupo
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_1_p1">
+                    La principal novedad llega a través del Editor de Políticas de Grupo. Si usas Windows 11 Pro, simplemente presiona <kbd>Win + R</kbd>, escribe <kbd>gpedit.msc</kbd> y presiona <kbd>Enter</kbd>.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_1_p2">
+                    En el Editor de Políticas de Grupo:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-base">
+                    <li data-i18n="section_win11_25h2_1_li1">Ve a <span class="font-semibold">Configuración del equipo → Plantillas administrativas → Componentes de Windows</span>.</li>
+                    <li data-i18n="section_win11_25h2_1_li2">Busca la nueva opción llamada <span class="font-semibold">Quitar aplicaciones preinstaladas</span>.</li>
+                    <li data-i18n="section_win11_25h2_1_li3">Haz doble clic en ella.</li>
+                    <li data-i18n="section_win11_25h2_1_li4">Selecciona <span class="font-semibold">Habilitada</span>.</li>
+                    <li data-i18n="section_win11_25h2_1_li5">Guarda los cambios.</li>
+                    <li data-i18n="section_win11_25h2_1_li6">Reinicia tu equipo. ¡Listo! Ahora puedes desinstalar aplicaciones como Paint, Media Player, Cortana, Sticky Notes, etc., directamente desde Configuración.</li>
+                </ul>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_1_p3">
+                    Si usas Windows 11 Home, desafortunadamente, el Editor de Políticas de Grupo no está disponible oficialmente. Existen métodos no compatibles para habilitarlo o editar el registro, pero no se recomiendan para principiantes.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_win11_25h2_2_title">
+                    <svg class="w-7 h-7" data-lucide="gear"></svg>
+                    ⚙️ ¿Cómo funciona?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p1">
+                    El proceso es simple para los usuarios de Windows 11 Pro. Simplemente usa el Editor de Políticas de Grupo y habilita la opción para eliminar aplicaciones preinstaladas.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p2">
+                    <span class="font-semibold">Configuración del equipo > Componentes de Windows > Implementación de paquetes de aplicaciones</span>
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p3">
+                    Para los usuarios de Windows 11 Home, todavía no hay una solución oficial. Se recomienda esperar futuras actualizaciones o usar métodos alternativos con precaución.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p4">
+                    <span class="font-semibold">Nota:</span> La disponibilidad de esta opción puede variar según tu compilación de Windows 11. Asegúrate de estar actualizado.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p5">
+                    Después de habilitar la política, ve a <span class="font-semibold">Configuración → Aplicaciones → Aplicaciones instaladas</span> y elimina las aplicaciones que desees.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_2_p6">
+                    Recuerda: no todas las aplicaciones se pueden eliminar, pero la lista será más larga que nunca.
+                </p>
+            </section>
+
+            <section class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-md">
+                <h3 class="font-bold text-yellow-800 text-lg" data-i18n="important_note_win11_25h2_title">
+                    🔔 Notas importantes
+                </h3>
+                <ul class="list-disc pl-5 space-y-2 text-sm text-yellow-700 mt-2" >
+                    <li data-i18n="important_win11_25h2_li1">No todas las aplicaciones se pueden desinstalar. Algunos componentes esenciales del sistema permanecerán protegidos.</li>
+                    <li data-i18n="important_win11_25h2_li2">Aplicaciones como Paint, Media Player, Cortana, Sticky Notes y algunas otras se pueden eliminar. Las aplicaciones del sistema como el Explorador de archivos, Microsoft Store o Configuración permanecerán protegidas.</li>
+                    <li data-i18n="important_win11_25h2_li3">La disponibilidad puede variar según la compilación y la región.</li>
+                    <li data-i18n="important_win11_25h2_li4">Siempre haz una copia de seguridad antes de eliminar aplicaciones importantes.</li>
+                </ul>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_win11_25h2_3_title">
+                    <svg class="w-7 h-7" data-lucide="calendar"></svg>
+                    🗓️ ¿Cuándo estará disponible?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_3_p1">
+                    La nueva función se espera en la actualización de Windows 11 25H2, programada para finales de 2025. Los usuarios del programa Insider pueden obtenerla antes.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_win11_25h2_4_title">
+                    <svg class="w-7 h-7" data-lucide="help-circle"></svg>
+                    ❓ ¿Por qué es importante?
+                </h2>
+                <ul class="list-disc pl-5 space-y-2 text-base">
+                    <li data-i18n="section_win11_25h2_4_li1">Menos bloatware significa un sistema más limpio, rápido y con más espacio libre.</li>
+                    <li data-i18n="section_win11_25h2_4_li2">Ofrece a los usuarios más control sobre lo que permanece instalado en su PC.</li>
+                </ul>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_win11_25h2_5_title">
+                    <svg class="w-7 h-7" data-lucide="search"></svg>
+                    🔎 Más detalles
+                </h2>
+                <ul class="list-disc pl-5 space-y-2 text-base">
+                    <li data-i18n="section_win11_25h2_5_li1">Además de las aplicaciones mencionadas, otras pueden ser eliminables en el futuro a medida que Windows evolucione.</li>
+                    <li data-i18n="section_win11_25h2_5_li2">La lista de aplicaciones eliminables puede crecer en futuras actualizaciones.</li>
+                    <li data-i18n="section_win11_25h2_5_li3">Las herramientas de terceros aún pueden ser útiles para una eliminación avanzada.</li>
+                    <li data-i18n="section_win11_25h2_5_li4">Microsoft puede revertir o cambiar esta política en futuras compilaciones.</li>
+                </ul>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_win11_25h2_5_p1">
+                    Mantente atento a las noticias y siempre lee las notas de la versión antes de actualizar.
+                </p>
+            </section>
+
+            <section class="mt-8 p-4 bg-green-50 border-l-4 border-green-500 rounded-md">
+                <h3 class="font-bold text-green-800 text-lg" data-i18n="conclusion_win11_25h2_title">
+                    ✅ Conclusión
+                </h3>
+                <p class="text-sm text-green-700 mt-2" data-i18n="conclusion_win11_25h2_p1">
+                    La actualización de Windows 11 25H2 marca un paso importante en el control del usuario sobre el sistema.
+                </p>
+                <p class="text-sm text-green-700 mt-2" data-i18n="conclusion_win11_25h2_p2">
+                    Eliminar el bloatware nunca ha sido tan fácil, ¡y oficial! Disfruta haciendo Windows tuyo.
+                </p>
+            </section>
+        </div>
+        </div>
+        <aside class="lg:w-1/5 mt-8 lg:mt-0 min-w-0 flex-shrink-0">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="other_articles_heading">Otros Artículos del Blog</h3>
+                <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="win11-25h2.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_win11_25h2">Windows 11 25H2: Menos Bloatware, Más Control</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_archivo_desatendido">BCDeX - Guía Archivo Desatendido</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_uefi_bios">Diferencias entre arranque UEFI y BIOS Legacy</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_liberar_espacio">Liberar Espacio y Optimizar PC</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_instalacion_particion">Guía: Instalar Windows desde Partición con BCDeX</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="optimizacion-win11.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_optimizacion_win11">Guía para Optimizar Windows 11 en la Instalación</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+    <!-- 3. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <!-- PadeX - Creador de contenido y desarrollador -->
+            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <!-- Enlaces Legales -->
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
+            <div class="footer-links">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                
+                <!-- Gmail/Mail -->
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                
+                <!-- X (Twitter) -->
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+
+</body>
+
+</html>

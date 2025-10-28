@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title_article_sobre_el_creador">BCDeX: Cómo nació la idea y quién está detrás del proyecto</title>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+
+    
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. Barra de Navegación (Header/Nav) -->
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Logo/Título -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <!-- Enlaces de Navegación -->
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <!-- ENLACE DE DESCARGA: Mismas clases que el resto -->
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <!-- Usaremos una bandera por defecto, ya que no puedo cargar img/españa.png -->
+                            <div class="language-selector" id="language-selector-desktop" 
+                                style="background-image: url('img/españa.png');">
+                            </div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" 
+                                     style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" 
+                                     style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" 
+                                     style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil (Visible solo en móvil/tablet) -->
+                <div class="lg:hidden flex items-center">
+                    <!-- Selector de Idioma (Móvil) - Lo colocamos antes de la hamburguesa para fácil acesso -->
+                    <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" 
+                            style="background-image: url('img/españa.png');">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" 
+                                 style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" 
+                                 style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" 
+                                 style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+                    <!-- Botón Hamburguesa -->
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2 z-50" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <!-- ENLACE DE DESCARGA MÓVIL: Usa la clase btn-primary (rojo) -->
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
+                    Descarga
+                </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Contenido Principal del Blog (Artículo) -->
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row lg:space-x-16 py-8 sm:py-12 px-4">
+            <div class="w-full lg:w-4/5 min-w-0">
+                <div class="article-container">
+            
+            <!-- Título y Resumen del Artículo -->
+            <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2">
+                    <a href="blog.html" class="hover:underline" data-i18n="article_sobre_el_creador_back_link">← Volver a todos los artículos</a>
+                </p>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="article_sobre_el_creador_title">
+                    🚀 BCDeX: Cómo nació la idea y quién está detrás del proyecto
+                </h1>
+                <p class="text-lg text-[color:var(--color-text-secondary)]" data-i18n="article_sobre_el_creador_summary">
+                    Hola, soy José 'PadeX' 👋 y si estás leyendo esto, seguramente ya conoces mi aplicación BCDeX, o al menos te suena. En este post quiero contarte un poco de la historia detrás del proyecto. Porque sí, aunque parezca una app mágica que aparece en tu escritorio y te crea una partición booteable como por arte de magia... detrás hay muchas noches sin dormir, pruebas fallidas y litros de café ☕.
+                </p>
+            </header>
+
+            <!-- Contenido del Artículo -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_sobre_el_creador_1_title">
+                    <svg class="w-7 h-7" data-lucide="repeat"></svg>
+                    Todo empezó por culpa de los 'WeSeBes'... y un script
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_1_p1">
+                    Todo comenzó cuando un día, después de instalar Windows por enésima vez en diferentes PCs (algunos sin puertos USB funcionales, otros sin BIOS que acepten arranque por USB, otros con UEFI súper restrictivos...), me dije:
+                </p>
+                <blockquote class="p-4 my-4 border-l-4 border-blue-600 bg-blue-50 italic text-blue-800" data-i18n="section_sobre_el_creador_1_quote1">
+                    “¿Por qué tiene que ser tan complicado esto? ¿Y si creo una forma de instalar Windows <br>desde el mismo disco duro, sin pendrives, sin DVDs y sin tanto rollo?”
+                </blockquote>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_1_p2">
+                    Así fue como empecé creando un pequeño script en PowerShell que simplemente creaba una partición secundaria en el disco para hacer de “lanzadera” de la instalación de Windows. Parecía buena idea, hasta que me di cuenta de algo: había que montar la ISO manualmente, copiar los archivos uno por uno... y eso para muchos usuarios era un dolor de cabeza.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_1_p3">
+                    Ahí recordé una frase que me repetía un profesor en mis años de estudio:
+                </p>
+                <blockquote class="p-4 my-4 border-l-4 border-blue-600 bg-blue-50 italic text-blue-800" data-i18n="section_sobre_el_creador_1_quote2">
+                    “Deben aprender a programar para bobos.”
+                </blockquote>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_1_p4">
+                    Y no lo decía de forma ofensiva. Lo que quería decir era que al desarrollar algo, hay que pensar absolutamente todo desde el punto de vista del usuario final, incluso en el que no tiene ni idea de informática. La experiencia tiene que ser tan sencilla, que cualquiera pueda hacerlo sin leer un manual.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_1_p5">
+                    Esa frase me hizo clic. Y me propuse: “¿Cómo puedo hacer que el usuario ni siquiera tenga que montar la ISO?”
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_sobre_el_creador_2_title">
+                    <svg class="w-7 h-7" data-lucide="brain"></svg>
+                    Aprendiendo a los golpes (y a Googleazos)
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_2_p1">
+                    Fue así como empecé a trabajar en la automatización del copiado de la ISO directamente desde PowerShell. Sin necesidad de montarla, sin pasos extraños. Spoiler: no fue fácil. Me tocó leer bastante sobre estructuras de archivos ISO, WIMs, extraer contenido directamente sin unidades virtuales… pero al final logré que todo se hiciera automáticamente.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_2_p2">
+                    Hasta ahí todo iba bien. Pero me encontré con otro problema: la consola de PowerShell no es precisamente lo más amigable para muchos usuarios. Intimida, da errores en rojo, y no es tan claro qué hacer si algo falla.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_2_p3">
+                    Así que decidí dar el siguiente paso: crear una interfaz gráfica simple pero funcional, que guiara al usuario en todo el proceso —desde la creación de la partición hasta el copiado de la ISO y la configuración del arranque.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_2_p4">
+                    Ahí nació lo que hoy es <strong>BCDeX</strong>.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_sobre_el_creador_3_title">
+                    <svg class="w-7 h-7" data-lucide="palette"></svg>
+                    ¿Y de dónde viene el nombre "BCDeX"?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_3_p1">
+                    Una vez la aplicación empezó a tomar forma, necesitaba un nombre. Algo que reflejara lo que hacía, pero que también tuviera un poco de identidad personal.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_3_p2">
+                    Ahí fue donde se me ocurrió combinar dos cosas:
+                    BCD, por el famoso Boot Configuration Data que manipula la app para crear las entradas de arranque de Windows...
+                    y PadeX, que es el nombre de mi canal de YouTube, donde comparto muchos de estos proyectos.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_3_p3">
+                    Así nació el nombre BCDeX: una fusión de lo técnico y lo personal. 😄
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_sobre_el_creador_4_title">
+                    <svg class="w-7 h-7" data-lucide="user"></svg>
+                    ¿Y quién está detrás?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_4_p1">
+                    Como te dije antes, soy PadeX, y sí, hago de todo: programador, diseñador, tester, creador de contenido y hasta soporte técnico en los comentarios de mis videos 😅.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_4_p2">
+                    Todo lo que ves en esta web, en el canal de YouTube, y en la app, lo hago yo mismo (por ahora). Con errores, con mejoras continuas y con muchas ganas de seguir avanzando.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_4_p3">
+                    BCDeX no es solo una herramienta. Es el resultado de muchas pruebas, fracasos, aprendizajes, y sobre todo, de una obsesión por hacerle la vida más fácil a quien quiera instalar Windows sin complicaciones.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_sobre_el_creador_5_title">
+                    <svg class="w-7 h-7" data-lucide="trending-up"></svg>
+                    ¿Qué sigue?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_5_p1">
+                    Seguir mejorando. Quiero integrar nuevas funciones, como optimizaciones post-instalación, más compatibilidad, y alguna que otra sorpresa pensada para dejar tu Windows listo y afinado desde el primer inicio.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_5_p2">
+                    Por eso también es tan importante el apoyo y las contribuciones de quienes usan la app. Gracias a eso puedo seguir manteniendo la web, actualizando la herramienta y dedicando tiempo a mejorarla constantemente.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_5_p3">
+                    Y si te interesa saber más o dar ideas, te invito a seguirme en redes, en
+                    <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" class="external-link">YouTube</a>,
+                    <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" class="external-link">Instagram</a>,
+                    <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" class="external-link">TikTok</a>,
+                    <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" class="external-link">X</a>,
+                    <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" class="external-link">Facebook</a>
+                    y dejar un comentario por allí.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_5_p4">
+                    Gracias por ser parte de esto. 💙
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_sobre_el_creador_5_p5">
+                    — <strong>PadeX</strong> 💻
+                </p>
+            </section>
+
+            <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2 mt-8">
+                <a href="blog.html" class="hover:underline" data-i18n="article_sobre_el_creador_back_link">← Volver a todos los artículos</a>
+            </p>
+        </div>
+        </div>
+        <aside class="w-full lg:w-1/5 mt-8 lg:mt-0 min-w-0 flex-shrink-0">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="other_articles_heading">Otros Artículos del Blog</h3>
+                <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="win11-25h2.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_win11_25h2">Windows 11 25H2: Menos Bloatware, Más Control</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i1en="other_article_archivo_desatendido">BCDeX - Guía Archivo Desatendido</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_uefi_bios">Diferencias entre arranque UEFI y BIOS Legacy</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_liberar_espacio">Liberar Espacio y Optimizar PC</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_instalacion_particion">Guía: Instalar Windows desde Partición con BCDeX</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="optimizacion-win11.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_optimizacion_win11">Guía para Optimizar Windows 11 en la Instalación</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+    <!-- 3. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <!-- PadeX - Creador de contenido y desarrollador -->
+            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <!-- Enlaces Legales -->
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
+            <div class="footer-links">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                
+                <!-- Gmail/Mail -->
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                
+                <!-- X (Twitter) -->
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+    <script src="tutorial-script.js"></script>
+</body>
+
+</html>

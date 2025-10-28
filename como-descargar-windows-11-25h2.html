@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="article_25h2_page_title">Cómo descargar e instalar Windows 11 25H2 (Guía paso a paso + Video)</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        .footer-text { color: #D1D5DB; }
+        .btn-primary { display:inline-flex; align-items:center; justify-content:center; padding:0.75rem 1.5rem; border-radius:0.5rem; font-weight:600; background-color: var(--color-accent); color: var(--color-primary-base); box-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1); transition: all .2s; text-decoration:none; }
+        .btn-primary:hover { background-color: var(--color-accent-dark); box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1); }
+        .article-container { background-color: var(--color-primary-base); padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .section-title { display:flex; align-items:center; font-size:1.5rem; font-weight:700; color: var(--color-accent); margin-top:1.25rem; margin-bottom:.5rem; }
+        .section-title svg { margin-right:.5rem; color: var(--color-accent-dark); }
+        .yt-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:0.75rem; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+        .yt-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        @media (max-width:640px) { .article-container{ padding:1.5rem; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Descarga</a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display:flex; flex-direction:row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+                    <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                        <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2"><a href="blog.html" class="hover:underline" data-i18n="article_25h2_back_to_all">← Volver a todos los artículos</a></p>
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] mb-4">🧼 <span data-i18n="article_25h2_header_title">Cómo descargar e instalar Windows 11 25H2 (Guía paso a paso + Video)</span></h1>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]" data-i18n="article_25h2_intro">Microsoft lanzó la versión 25H2 de Windows 11, una actualización que muchos quieren instalar desde cero para evitar arrastrar errores, bloatware o configuraciones viejas. En este artículo tienes el video donde muestro exactamente cómo descargar, preparar e instalar Windows 11 25H2 paso a paso sin complicarte la vida.</p>
+                    </header>
+
+                    <section class="mt-6">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="play-circle"></svg><span data-i18n="article_25h2_video_title">Video paso a paso</span></h2>
+                        <div class="yt-container mt-3 mb-6">
+                            <iframe src="https://www.youtube.com/embed/N01gr4fhsQI" title="Cómo descargar e instalar Windows 11 25H2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <a href="descarga.html" class="btn-primary" data-i18n="btn_download_bcdex">Descargar BCDeX</a>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="list"></svg><span data-i18n="article_25h2_what_you_will_see">¿Qué verás en el tutorial?</span></h2>
+                        <ul class="list-disc list-inside text-base text-[color:var(--color-text-secondary)] space-y-2">
+                            <li data-i18n="article_25h2_li_1">Cómo descargar la ISO oficial de Windows 11 25H2</li>
+                            <li data-i18n="article_25h2_li_2">Cómo preparar el USB o medio de instalación</li>
+                            <li data-i18n="article_25h2_li_3">Cómo iniciar la instalación desde cero</li>
+                            <li data-i18n="article_25h2_li_4">Qué opciones elegir para evitar errores comunes</li>
+                            <li data-i18n="article_25h2_li_5">Consejos para dejar Windows limpio y optimizado desde el primer arranque</li>
+                        </ul>
+                        <p class="mt-4 text-base text-[color:var(--color-text-secondary)]" data-i18n="article_25h2_extra_note">Además, durante el video explico detalles importantes para que no tengas problemas de compatibilidad ni pantallas negras, algo que suele pasar cuando se instala Windows sin saber qué tocar.</p>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="download"></svg><span data-i18n="article_25h2_recommended_download">Descarga recomendada</span></h2>
+                        <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="article_25h2_recommended_download_desc">Para simplificar el proceso, te recomiendo usar BCDeX: prepara todo automáticamente y evita errores típicos. Con un clic creas la partición temporal, montas la ISO y dejas lista la instalación.</p>
+                        <a href="descarga.html" class="btn-primary" data-i18n="btn_download_bcdex">Descargar BCDeX</a>
+                    </section>
+
+                    <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2 mt-8"><a href="blog.html" class="hover:underline">← Volver a todos los artículos</a></p>
+                </div>
+            </div>
+
+            <aside class="lg:w-1/5 mt-8 lg:mt-0 min-w-0 flex-shrink-0">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="other_articles_heading">Otros Artículos del Blog</h3>
+                    <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_instalacion_particion">Instalación desde Partición con BCDeX</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_archivo_desatendido">BCDeX - Guía Archivo Desatendido</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_uefi_bios">UEFI vs BIOS Legacy</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_liberar_espacio">Libera Espacio y Optimiza PC</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <p class="footer-text text-lg font-medium" data-i18n="footer_creator">PadeX - Creador de contenido y desarrollador</p>
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube"><img src="img/youtube.png" alt="YouTube" class="footer-icon"></a>
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook"><img src="img/facebook.png" alt="Facebook" class="footer-icon"></a>
+                <a href="mailto:contact@padex.com" title="Gmail"><img src="img/gmail.png" alt="Gmail" class="footer-icon"></a>
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok"><img src="img/tiktok.png" alt="TikTok" class="footer-icon"></a>
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram"><img src="img/instagram.png" alt="Instagram" class="footer-icon"></a>
+                <a href="https://x.com/padex" target="_blank" title="X"><img src="img/x.png" alt="X" class="footer-icon"></a>
+            </div>
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+</body>
+</html>

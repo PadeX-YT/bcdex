@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title_article_1">BCDeX 2.3: Modo Turbo – Qué desactiva y cómo reactivarlo</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+    
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="estilos.css">
+
+    
+    <style>
+
+        
+        /* Estilos de Artículos (Content) */
+        .article-container {
+            background-color: var(--color-primary-base);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Títulos de sección */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: var(--color-accent);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-title svg {
+            margin-right: 0.5rem;
+            color: var(--color-accent-dark);
+        }
+
+        /* Estilo para bloques de código (PowerShell) */
+        .code-block {
+            background-color: #1F2937; /* Gris oscuro */
+            color: #F9FAFB;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            user-select: all; /* Permite seleccionar fácilmente el texto */
+        }
+        
+        /* Botón de Copiar */
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.4rem;
+            background-color: #374151; /* Gris medio */
+            color: #D1D5DB;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .copy-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            transform: scale(1.05);
+        }
+        .copy-button svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Tabla de servicios */
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .service-table th, .service-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .service-table th {
+            background-color: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            position: sticky;
+            top: 0;
+        }
+        .service-table tr:hover {
+            background-color: #F3F4F6;
+        }
+        .service-table .service-name {
+            font-family: monospace;
+            font-weight: 500;
+            color: var(--color-accent-dark);
+        }
+        
+        /* Contenedor de la imagen (Bloque de usuario) */
+        .blog-image-center {
+            text-align:center; 
+            margin:1rem 0 1.5rem 0;
+        }
+        .blog-image-center img {
+            max-width:40%; 
+            height:auto; 
+            border-radius:10px; 
+            box-shadow:0 2px 12px rgba(0,0,0,0.1); 
+            display:inline-block;
+        }
+        
+        /* Responsividad de la imagen en móvil */
+        @media (max-width: 640px) {
+            .article-container {
+                padding: 1.5rem;
+            }
+            .blog-image-center img {
+                max-width: 80%; /* Más grande en móvil */
+            }
+            .service-table th:nth-child(2), .service-table td:nth-child(2) {
+                display: none; /* Ocultar columna 'Para qué sirve' en móvil para ahorrar espacio */
+            }
+        }
+        
+        /* Enlace de Tienda/Página oficial */
+        .external-link {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .external-link:hover {
+            color: var(--color-accent-dark);
+        }
+        /* Estilos para alinear los iconos del footer horizontalmente */
+        .footer-links {
+            display: flex;
+            justify-content: center; /* Centra los iconos horizontalmente */
+            align-items: center; /* Alinea los iconos verticalmente */
+            gap: 1rem; /* Espacio entre iconos */
+            margin-top: 1rem; /* Margen superior para separación */
+        }
+
+        .footer-icon {
+            width: 32px; /* Tamaño de los iconos */
+            height: 32px; /* Tamaño de los iconos */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .footer-links a:hover .footer-icon {
+            transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+        }
+        /* Estilos para alinear los iconos del footer horizontalmente */
+        .footer-links {
+            display: flex;
+            justify-content: center; /* Centra los iconos horizontalmente */
+            align-items: center; /* Alinea los iconos verticalmente */
+            gap: 1rem; /* Espacio entre iconos */
+            margin-top: 1rem; /* Margen superior para separación */
+        }
+
+        .footer-icon {
+            width: 32px; /* Tamaño de los iconos */
+            height: 32px; /* Tamaño de los iconos */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .footer-links a:hover .footer-icon {
+            transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. Barra de Navegación (Header/Nav) -->
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Logo/Título -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <!-- Enlaces de Navegación -->
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150" aria-current="page">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <div class="language-selector" id="language-selector-desktop"></div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil (Visible solo en móvil/tablet) -->
+                <div class="lg:hidden flex items-center">
+                    <!-- Selector de Idioma (Móvil) -->
+                     <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile"></div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Hamburguesa -->
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="text-[color:var(--color-accent)] bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150" aria-current="page">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <!-- ENLACE DE DESCARGA MÓVIL: Usa la clase btn-primary (rojo) -->
+                <a href="descarga.html" data-i18n="nav_download" class="btn-primary block mt-2 mx-3 text-center text-base font-medium transition transform hover:scale-100">
+                    Descarga
+                </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Contenido Principal del Blog (Artículo) -->
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display: flex; flex-direction: row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+            
+            <!-- Título y Resumen del Artículo -->
+            <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2">
+                    <a href="blog.html" class="hover:underline" data-i18n="article_modo_turbo_back_to_all">← Volver a todos los artículos</a>
+                </p>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="article_1_title">
+                    🚀 BCDeX 2.3: Modo Turbo – Qué desactiva y cómo volver a activarlo
+                </h1>
+                <p class="text-lg text-[color:var(--color-text-secondary)]" data-i18n="article_1_summary">
+                    El Modo Turbo de BCDeX 2.3 es como un botón mágico: apaga lo que Windows trae de serie pero casi nunca usas. Así tu PC respira y va más rápido. ¿Que luego echas de menos algo (imprimir, VPN, escáner)? No pasa nada, aquí mismo te dejo cómo encenderlo otra vez en segundos.
+                </p>
+            </header>
+
+            <!-- Imagen del Artículo -->
+            <div class="blog-image-center">
+                <img src="img/bcdex2_3/pub.png" alt="BCDeX 2.3 Modo Turbo" 
+                    style="max-width:40%; height:auto; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.1); display:inline-block;"
+                    onerror="this.onerror=null; this.style.display='none';"> 
+            </div>
+
+            <!-- Sección: ¿Qué hace exactamente el Modo Turbo? -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_1_title">
+                    <svg class="w-7 h-7" data-lucide="zap"></svg>
+                    ¿Qué hace exactamente el Modo Turbo?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_1_intro">
+                    Esta optimización se centra en liberar la máxima cantidad de recursos sin comprometer la estabilidad básica del sistema.
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-base">
+                    <li data-i18n="turbo_point_1">Crea un **Punto de Restauración** antes de tocar nada (seguridad ante todo).</li>
+                    <li data-i18n="turbo_point_2">Apaga **servicios poco usados** (impresión, mapas, Xbox, sensores...).</li>
+                    <li data-i18n="turbo_point_3">Pone en **manual** cosas de red y actualización para que no estén chupando recursos todo el rato.</li>
+                    <li data-i18n="turbo_point_4">Recorta **telemetría** y tareas programadas de “experiencia de usuario”.</li>
+                    <li data-i18n="turbo_point_5">Activa el plan de energía de **Máximo rendimiento** y quita la hibernación.</li>
+                    <li data-i18n="turbo_point_6">Ajusta **privacidad**: adiós a Recall, Copilot y demás funciones que mandan datos.</li>
+                </ul>
+            </section>
+            
+            <!-- Sección: ¿Se apagó algo que sí necesitas? (Ejemplos rápidos) -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_2_title">
+                    <svg class="w-7 h-7" data-lucide="wrench"></svg>
+                    🔧 ¿Se apagó algo que sí necesitas?
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_2_intro">
+                    Ejemplo rápido: si tu impresora no responde porque el servicio `Spooler` está apagado. Solución: abre **PowerShell** como administrador y pega el comando de activación.
+                </p>
+                
+                <h3 class="text-xl font-bold mt-6 mb-2" data-i18n="section_2_subtitle_1">
+                    📋 Lista de servicios básicos que el Modo Turbo toca
+                </h3>
+                
+                <div class="overflow-x-auto rounded-lg border border-[color:var(--color-border)]">
+                    <table class="service-table min-w-full">
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th class="hidden sm:table-cell">Función (Apagado por defecto)</th>
+                                <th>Comando de Reactivación (Automático)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Impresoras -->
+                            <tr>
+                                <td class="service-name">Spooler (Impresoras)</td>
+                                <td class="hidden sm:table-cell">Gestiona las colas de impresión y los trabajos.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service Spooler -StartupType Automatic; Start-Service Spooler">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service Spooler -StartupType Automatic; Start-Service Spooler</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Avisos de impresión -->
+                            <tr>
+                                <td class="service-name">PrintNotify</td>
+                                <td class="hidden sm:table-cell">Muestra notificaciones y complementos al imprimir.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service PrintNotify -StartupType Automatic; Start-Service PrintNotify">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service PrintNotify -StartupType Automatic; Start-Service PrintNotify</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Escáner/Cámara -->
+                            <tr>
+                                <td class="service-name">StiSvc (Escáner/Cámara)</td>
+                                <td class="hidden sm:table-cell">Detecta y comunica dispositivos de imagen como escáneres y algunas cámaras.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service StiSvc -StartupType Automatic; Start-Service StiSvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service StiSvc -StartupType Automatic; Start-Service StiSvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- VPN y PPPoE -->
+                            <tr>
+                                <td class="service-name">RasMan / RasAuto (VPN y PPPoE)</td>
+                                <td class="hidden sm:table-cell">Gestionan conexiones VPN y de acceso telefónico/PPPoE.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service RasMan -StartupType Automatic; Start-Service RasMan">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service RasMan -StartupType Automatic; Start-Service RasMan</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- Zona Wi-Fi/Compartir Internet -->
+                            <tr>
+                                <td class="service-name">icssvc (Zona Wi-Fi/Compartir Internet)</td>
+                                <td class="hidden sm:table-cell">Permite crear un hotspot y compartir tu conexión con otros dispositivos.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service icssvc -StartupType Automatic; Start-Service icssvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service icssvc -StartupType Automatic; Start-Service icssvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- Unidades Web/WebDAV -->
+                            <tr>
+                                <td class="service-name">WebClient</td>
+                                <td class="hidden sm:table-cell">Permite abrir carpetas/archivos alojados en servidores WebDAV.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service WebClient -StartupType Automatic; Start-Service WebClient">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service WebClient -StartupType Automatic; Start-Service WebClient</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- Optimización de arranque/apps -->
+                            <tr>
+                                <td class="service-name">SysMain (Superfetch)</td>
+                                <td class="hidden sm:table-cell">Aprende tus hábitos para precargar apps y acelerar el inicio (consume recursos).</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service SysMain -StartupType Automatic; Start-Service SysMain">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service SysMain -StartupType Automatic; Start-Service SysMain</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- Windows Hello/Huella -->
+                            <tr>
+                                <td class="service-name">WbioSrvc</td>
+                                <td class="hidden sm:table-cell">Gestiona el inicio de sesión con huella, rostro u otros datos biométricos.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service WbioSrvc -StartupType Automatic; Start-Service WbioSrvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service WbioSrvc -StartupType Automatic; Start-Service WbioSrvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                             <!-- Compartir multimedia -->
+                            <tr>
+                                <td class="service-name">WMPNetworkSvc</td>
+                                <td class="hidden sm:table-cell">Comparte música y vídeos del Reproductor de Windows a otros dispositivos de tu red.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service WMPNetworkSvc -StartupType Automatic; Start-Service WMPNetworkSvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service WMPNetworkSvc -StartupType Automatic; Start-Service WMPNetworkSvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Administración remota -->
+                            <tr>
+                                <td class="service-name">WinRM</td>
+                                <td class="hidden sm:table-cell">Permite administrar el equipo de forma remota (entornos profesionales).</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service WinRM -StartupType Automatic; Start-Service WinRM">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service WinRM -StartupType Automatic; Start-Service WinRM</code>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Sección: Otros servicios que podrías ver apagados -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_3_title">
+                    <svg class="w-7 h-7" data-lucide="list-checks"></svg>
+                    Otros servicios que podrías ver apagados
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_3_intro">
+                    No todos aparecen en todos los Windows. Si los necesitas, enciéndelos con el comando que ves debajo (PowerShell como administrador).
+                </p>
+                
+                <div class="overflow-x-auto rounded-lg border border-[color:var(--color-border)]">
+                    <table class="service-table min-w-full">
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th class="hidden sm:table-cell">Para qué sirve</th>
+                                <th>Reactivar (Comando PowerShell)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- AJRouter -->
+                            <tr>
+                                <td class="service-name">AJRouter</td>
+                                <td class="hidden sm:table-cell">Comunicación entre dispositivos IoT/AllJoyn.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service AJRouter -StartupType Automatic; Start-Service AJRouter">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service AJRouter -StartupType Automatic; Start-Service AJRouter</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- ALG -->
+                            <tr>
+                                <td class="service-name">ALG</td>
+                                <td class="hidden sm:table-cell">Compatibilidad NAT para algunas apps antiguas.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service ALG -StartupType Automatic; Start-Service ALG">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service ALG -StartupType Automatic; Start-Service ALG</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- IKEEXT -->
+                            <tr>
+                                <td class="service-name">IKEEXT</td>
+                                <td class="hidden sm:table-cell">Necesario para ciertos tipos de VPN.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service IKEEXT -StartupType Automatic; Start-Service IKEEXT">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service IKEEXT -StartupType Automatic; Start-Service IKEEXT</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- iphlpsvc -->
+                            <tr>
+                                <td class="service-name">iphlpsvc</td>
+                                <td class="hidden sm:table-cell">Tecnologías de red como Teredo/IPv6.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service iphlpsvc -StartupType Automatic; Start-Service iphlpsvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service iphlpsvc -StartupType Automatic; Start-Service iphlpsvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- lltdsvc -->
+                            <tr>
+                                <td class="service-name">lltdsvc</td>
+                                <td class="hidden sm:table-cell">Muestra dispositivos en el mapa de red (Descubrimiento de topología).</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service lltdsvc -StartupType Automatic; Start-Service lltdsvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service lltdsvc -StartupType Automatic; Start-Service lltdsvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- VaultSvc -->
+                            <tr>
+                                <td class="service-name">VaultSvc</td>
+                                <td class="hidden sm:table-cell">Guarda contraseñas y credenciales del sistema.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service VaultSvc -StartupType Automatic; Start-Service VaultSvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service VaultSvc -StartupType Automatic; Start-Service VaultSvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- wscsvc -->
+                            <tr>
+                                <td class="service-name">wscsvc (Centro de seguridad)</td>
+                                <td class="hidden sm:table-cell">Notifica sobre antivirus, firewall y actualizaciones.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service wscsvc -StartupType Automatic; Start-Service wscsvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service wscsvc -StartupType Automatic; Start-Service wscsvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Otros servicios (simplificados para la tabla) -->
+                            <tr><td class="service-name">CertPropSvc</td><td class="hidden sm:table-cell">Gestiona certificados de tarjeta inteligente.</td><td><div class="code-block" data-code="Set-Service CertPropSvc -StartupType Automatic; Start-Service CertPropSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service CertPropSvc -StartupType Automatic; Start-Service CertPropSvc</code></div></td></tr>
+                            <tr><td class="service-name">DeviceAssociationService</td><td class="hidden sm:table-cell">Emparejamiento de dispositivos (Bluetooth/USB).</td><td><div class="code-block" data-code="Set-Service DeviceAssociationService -StartupType Automatic; Start-Service DeviceAssociationService"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service DeviceAssociationService -StartupType Automatic; Start-Service DeviceAssociationService</code></div></td></tr>
+                            <tr><td class="service-name">DmEnrollmentSvc</td><td class="hidden sm:table-cell">Administración de dispositivos en empresas/escuelas (MDM).</td><td><div class="code-block" data-code="Set-Service DmEnrollmentSvc -StartupType Automatic; Start-Service DmEnrollmentSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service DmEnrollmentSvc -StartupType Automatic; Start-Service DmEnrollmentSvc</code></div></td></tr>
+                            <tr><td class="service-name">dmwappushservice</td><td class="hidden sm:table-cell">Mensajería push y telemetría.</td><td><div class="code-block" data-code="Set-Service dmwappushservice -StartupType Automatic; Start-Service dmwappushservice"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service dmwappushservice -StartupType Automatic; Start-Service dmwappushservice</code></div></td></tr>
+                            <tr><td class="service-name">fhsvc (Historial de archivos)</td><td class="hidden sm:table-cell">Copias de seguridad automáticas de tus archivos.</td><td><div class="code-block" data-code="Set-Service fhsvc -StartupType Automatic; Start-Service fhsvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service fhsvc -StartupType Automatic; Start-Service fhsvc</code></div></td></tr>
+                            <tr><td class="service-name">Netlogon</td><td class="hidden sm:table-cell">Inicios de sesión en dominios (empresas).</td><td><div class="code-block" data-code="Set-Service Netlogon -StartupType Automatic; Start-Service Netlogon"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service Netlogon -StartupType Automatic; Start-Service Netlogon</code></div></td></tr>
+                            <tr><td class="service-name">netprofm</td><td class="hidden sm:table-cell">Detecta si tu red es pública/privada y aplica reglas.</td><td><div class="code-block" data-code="Set-Service netprofm -StartupType Automatic; Start-Service netprofm"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service netprofm -StartupType Automatic; Start-Service netprofm</code></div></td></tr>
+                            <tr><td class="service-name">RemoteAccess</td><td class="hidden sm:table-cell">Servidor VPN/Enrutamiento en equipos avanzados.</td><td><div class="code-block" data-code="Set-Service RemoteAccess -StartupType Automatic; Start-Service RemoteAccess"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service RemoteAccess -StartupType Automatic; Start-Service RemoteAccess</code></div></td></tr>
+                            <tr><td class="service-name">SensorDataService / SensrSvc</td><td class="hidden sm:table-cell">Gestionan sensores (brillo, rotación, ubicación).</td><td><div class="code-block" data-code="Set-Service SensorService -StartupType Automatic; Start-Service SensorService"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service SensorService -StartupType Automatic; Start-Service SensorService</code></div></td></tr>
+                            <tr><td class="service-name">WdiServiceHost / WdiSystemHost</td><td class="hidden sm:table-cell">Diagnósticos y solución de problemas de Windows.</td><td><div class="code-block" data-code="Set-Service WdiServiceHost -StartupType Automatic; Start-Service WdiServiceHost"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WdiServiceHost -StartupType Automatic; Start-Service WdiServiceHost</code></div></td></tr>
+                            <tr><td class="service-name">WinHttpAutoProxySvc</td><td class="hidden sm:table-cell">Detecta automáticamente proxy en la red.</td><td><div class="code-block" data-code="Set-Service WinHttpAutoProxySvc -StartupType Automatic; Start-Service WinHttpAutoProxySvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WinHttpAutoProxySvc -StartupType Automatic; Start-Service WinHttpAutoProxySvc</code></div></td></tr>
+                            <tr><td class="service-name">wlidsvc</td><td class="hidden sm:table-cell">Iniciar sesión con cuenta Microsoft en apps.</td><td><div class="code-block" data-code="Set-Service wlidsvc -StartupType Automatic; Start-Service wlidsvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service wlidsvc -StartupType Automatic; Start-Service wlidsvc</code></div></td></tr>
+                            <tr><td class="service-name">WPDBusEnum</td><td class="hidden sm:table-cell">Gestiona móviles/cámaras como dispositivos de almacenamiento.</td><td><div class="code-block" data-code="Set-Service WPDBusEnum -StartupType Automatic; Start-Service WPDBusEnum"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WPDBusEnum -StartupType Automatic; Start-Service WPDBusEnum</code></div></td></tr>
+                            <tr><td class="service-name">WerSvc (Informes de errores)</td><td class="hidden sm:table-cell">Envía a Microsoft informes cuando un programa falla.</td><td><div class="code-block" data-code="Set-Service WerSvc -StartupType Automatic; Start-Service WerSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WerSvc -StartupType Automatic; Start-Service WerSvc</code></div></td></tr>
+                            <tr><td class="service-name">RemoteRegistry</td><td class="hidden sm:table-cell">Permite modificar el Registro de Windows a distancia.</td><td><div class="code-block" data-code="Set-Service RemoteRegistry -StartupType Automatic; Start-Service RemoteRegistry"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service RemoteRegistry -StartupType Automatic; Start-Service RemoteRegistry</code></div></td></tr>
+                            <tr><td class="service-name">wudfsvc</td><td class="hidden sm:table-cell">Controladores en modo usuario (Windows Driver Foundation).</td><td><div class="code-block" data-code="Set-Service wudfsvc -StartupType Automatic; Start-Service wudfsvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service wudfsvc -StartupType Automatic; Start-Service wudfsvc</code></div></td></tr>
+                            <tr><td class="service-name">Xbox (varios)</td><td class="hidden sm:table-cell">Funciones online de Xbox y sincronización de partidas.</td><td><div class="code-block" data-code="Set-Service XboxNetApiSvc -StartupType Automatic; Start-Service XboxNetApiSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service XboxNetApiSvc -StartupType Automatic; Start-Service XboxNetApiSvc</code></div></td></tr>
+                            <tr><td class="service-name">MapsBroker</td><td class="hidden sm:table-cell">Administra las descargas y el uso de mapas sin conexión.</td><td><div class="code-block" data-code="Set-Service MapsBroker -StartupType Automatic; Start-Service MapsBroker"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service MapsBroker -StartupType Automatic; Start-Service MapsBroker</code></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección: Servicios en "pausa" (Manual) -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_4_title">
+                    <svg class="w-7 h-7" data-lucide="pause"></svg>
+                    🕒 Servicios en “pausa” (Manual): arrancan solos si los necesitas
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_4_intro">
+                    Estos servicios se ponen en modo "Manual", lo que significa que Windows los inicia automáticamente solo cuando una aplicación o función los requiere, ahorrando recursos en el arranque. Si prefieres que siempre estén listos, puedes forzar el modo Automático:
+                </p>
+                
+                <div class="overflow-x-auto rounded-lg border border-[color:var(--color-border)]">
+                    <table class="service-table min-w-full">
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th class="hidden sm:table-cell">Función principal</th>
+                                <th>Forzar Automático</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- BITS -->
+                            <tr>
+                                <td class="service-name">BITS</td>
+                                <td class="hidden sm:table-cell">Descargas en segundo plano (Windows Update, Defender).</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service BITS -StartupType Automatic; Start-Service BITS">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service BITS -StartupType Automatic; Start-Service BITS</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- UsoSvc -->
+                            <tr>
+                                <td class="service-name">UsoSvc</td>
+                                <td class="hidden sm:table-cell">Orquestador de actualizaciones.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service UsoSvc -StartupType Automatic; Start-Service UsoSvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service UsoSvc -StartupType Automatic; Start-Service UsoSvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- wuauserv -->
+                            <tr>
+                                <td class="service-name">wuauserv</td>
+                                <td class="hidden sm:table-cell">Windows Update.</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service wuauserv -StartupType Automatic; Start-Service wuauserv">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service wuauserv -StartupType Automatic; Start-Service wuauserv</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- DoSvc -->
+                            <tr>
+                                <td class="service-name">DoSvc</td>
+                                <td class="hidden sm:table-cell">Optimización de entrega (compartir actualizaciones con la red).</td>
+                                <td>
+                                    <div class="code-block" data-code="Set-Service DoSvc -StartupType Automatic; Start-Service DoSvc">
+                                        <button class="copy-button" aria-label="Copiar comando">
+                                            <svg data-lucide="copy"></svg>
+                                        </button>
+                                        <code>Set-Service DoSvc -StartupType Automatic; Start-Service DoSvc</code>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Sección: Desinstalación de aplicaciones y componentes -->
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_5_title">
+                    <svg class="w-7 h-7" data-lucide="trash-2"></svg>
+                    🗑️ Desinstalación de aplicaciones y componentes
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_5_intro">
+                    El Modo Turbo también elimina algunas aplicaciones preinstaladas y componentes que considera "bloatware" para aligerar el sistema. Aquí te explico qué quita y cómo recuperarlo.
+                </p>
+                
+                <h3 class="text-xl font-bold mt-6 mb-2" data-i18n="section_5_subtitle_1">
+                    Apps (El Tiempo, Microsoft 365, Teams, To-Do)
+                </h3>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_5_apps_desc">
+                    **Función:** Son aplicaciones de Microsoft que vienen con Windows. Se eliminan para limpiar el menú de inicio y liberar espacio.<br>
+                    **Reactivar:** Búscalas e instálalas gratis desde la <a href="https://www.microsoft.com/es-es/store/apps/windows" target="_blank" class="external-link">Microsoft Store</a>.
+                </p>
+
+                <h3 class="text-xl font-bold mt-6 mb-2" data-i18n="section_5_subtitle_2">
+                    Microsoft Edge y su Bloqueo de Reinstalación
+                </h3>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-2" data-i18n="section_5_edge_desc">
+                    **Función:** Edge se quita por si prefieres usar otro navegador y no quieres tenerlo consumiendo recursos.<br>
+                    **Reactivar Edge:** Descarga el instalador desde la <a href="https://www.microsoft.com/es-es/edge" target="_blank" class="external-link">página oficial de Microsoft Edge</a>.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" data-i18n="section_5_edge_block_desc">
+                    **Bloqueo de Reinstalación:** El Modo Turbo activa un bloqueo en el Registro para evitar que Windows Update te reinstale Edge. Para desactivar este bloqueo y permitir las actualizaciones de Edge, ejecuta el siguiente comando en PowerShell como administrador:
+                </p>
+                <div class="code-block" data-code="Remove-Item -Path 'HKLM:\SOFTWARE\Microsoft\EdgeUpdate' -Name 'DoNotUpdateToEdgeWithChromium' -Force">
+                    <button class="copy-button" aria-label="Copiar comando">
+                        <svg data-lucide="copy"></svg>
+                    </button>
+                    <code>Remove-Item -Path 'HKLM:\SOFTWARE\Microsoft\EdgeUpdate' -Name 'DoNotUpdateToEdgeWithChromium' -Force</code>
+                </div>
+            </section>
+            
+            <!-- Aviso Importante -->
+            <section class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-md">
+                <h3 class="font-bold text-yellow-800 text-lg" data-i18n="important_note_title">
+                    🚨 ¡Importante: Variabilidad en Windows!
+                </h3>
+                <p class="text-sm text-yellow-700 mt-2" data-i18n="important_note_content">
+                    No todos los servicios existen en todas las versiones de Windows. Windows 7, 10 y 11 no traen exactamente lo mismo, y además cambian cosas entre ediciones (Home, Pro, Enterprise) y entre *builds*/actualizaciones. **Si pruebas un comando y te sale un error diciendo que el servicio no existe, no pasa nada:** en tu Windows simplemente no está presente. **Consejo:** reactiva solo lo que de verdad necesites.
+                </p>
+            </section>
+        </div>
+        </div>
+            <!-- Barra Lateral (Artículos Relacionados/Navegación) -->
+    <aside class="lg:w-1/5 mt-10 lg:mt-0">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="other_articles_heading">Otros Artículos del Blog</h3>
+                <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="win11-25h2.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_win11_25h2">Windows 11 25H2: Menos Bloatware, Más Control</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_archivo_desatendido">BCDeX - Guía Archivo Desatendido</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_uefi_bios">Diferencias entre arranque UEFI y BIOS Legacy</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_liberar_espacio">Liberar Espacio y Optimizar PC</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_instalacion_particion">Guía: Instalar Windows desde Partición con BCDeX</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="optimizacion-win11.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_optimizacion_win11">Guía para Optimizar Windows 11 en la Instalación</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+    <!-- 3. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <!-- PadeX - Creador de contenido y desarrollador -->
+            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <!-- Enlaces Legales -->
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <!-- Enlaces a Redes Sociales (Usando íconos) -->
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+            
+            // --- Lógica del Selector de Idioma ---
+            const toggleDropdown = (selectorId, dropdownId) => {
+                const selector = document.getElementById(selectorId);
+                const dropdown = document.getElementById(dropdownId);
+                if (selector && dropdown) {
+                    selector.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        // Ocultar el otro dropdown si está abierto (para evitar conflictos)
+                        const otherDropdownId = (dropdownId === 'language-dropdown-desktop') ? 'language-dropdown-mobile' : 'language-dropdown-desktop';
+                        const otherDropdown = document.getElementById(otherDropdownId);
+                        if(otherDropdown) otherDropdown.classList.remove('active');
+                        
+                        dropdown.classList.toggle('active');
+                    });
+                    document.addEventListener('click', (event) => {
+                        // Cerrar si se hace clic fuera del selector o del dropdown
+                        if (dropdown.classList.contains('active') && !dropdown.contains(event.target) && event.target !== selector) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                    dropdown.querySelectorAll('.language-option').forEach(option => {
+                        option.addEventListener('click', (event) => {
+                            let selectedLang = event.currentTarget.getAttribute('data-lang');
+                            setLanguage(selectedLang);
+                            dropdown.classList.remove('active');
+                            console.log('Idioma seleccionado:', selectedLang);
+                        });
+                    });
+                }
+            };
+
+            // Inicializar selectores
+            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
+            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
+
+            // --- Cargar idioma inicial ---
+            const initialLang = localStorage.getItem('bcdeXLang') || 'es';
+            setLanguage(initialLang);
+
+            // Inicializar los botones de copiar
+            document.querySelectorAll('.copy-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const codeBlock = event.currentTarget.closest('.code-block');
+                    const codeToCopy = codeBlock.getAttribute('data-code');
+                    copyToClipboard(codeToCopy, event.currentTarget);
+                });
+            });
+
+            // Inicializa los iconos de Lucide
+            lucide.createIcons();
+        });
+    </script>
+
+</body>
+
+</html>

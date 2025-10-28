@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title_article_6">Guía para Optimizar Windows 11 en la Instalación</title>
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+       crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="uploaded:LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilachos.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><img src="img/Logo.webp" alt="Logo BCDeX" class="logo-img"></a></div>
+    <div class="hamburguesa" aria-label="Menú de navegación" role="button" tabindex="0">☰</div>
+    <nav>
+      <a href="index.html" data-i18n="nav_home">Inicio</a>
+      <a href="tutorial.html" data-i18n="nav_tutorial">Tutorial</a>
+      <a href="info.html" data-i18n="nav_what_is">¿Qué es BCDeX?</a>
+      <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="donaciones.html" data-i18n="nav_donations">Donaciones</a> 
+      <a href="descarga.html" data-i18n="nav_download">Descarga</a>
+  <a href="contacto.html" data-i18n="nav_contact">Contacto</a>
+  <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador">Sobre el Creador</a>
+      <div class="language-container">
+        <div class="language-selector" id="language-selector"></div>
+        <div class="language-dropdown">
+          <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+          <div class="language-option" data-lang="en-EU" style="background-image: url('img/usa.png')"></div>
+          <div class="language-option" data-lang="pt-BR" style="background-image: url('img/brasil.png')"></div>
+        </div>
+      </div>
+    </nav>
+    
+  </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <article class="bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-2xl">
+            <h1 data-i18n="article_6_title" class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">🛠️ Guía completa para optimizar Windows 11 durante la instalación</h1>
+            <div class="article-content space-y-6 text-lg text-gray-800">
+                <p data-i18n="article_6_p1">Instalar Windows 11 no tiene por qué ser una tarea lenta ni repetitiva. Con las herramientas adecuadas, puedes hacer que la instalación se realice prácticamente sola y además dejar el sistema limpio, optimizado y sin rastros de bloatware desde el primer arranque.</p>
+                <p data-i18n="article_6_p2">En esta guía te explico cómo funciona esa automatización, <strong>cómo puedes usar un archivo desatendido para personalizar el instalador de Windows</strong>, y cómo <strong>BCDeX</strong> simplifica todo ese proceso incluso si no tienes experiencia con XML.</p>
+                
+                <h2 data-i18n="article_6_h2_1" class="titulo-seccion">💡 ¿Qué es un archivo desatendido?</h2>
+                <p data-i18n="article_6_p3">El archivo desatendido, llamado <code>autounattend.xml</code>, es un documento en formato XML que le indica al instalador de Windows <strong>todo lo que debe hacer automáticamente</strong>, sin intervención del usuario.</p>
+                <p data-i18n="article_6_p4">Este archivo puede personalizar:</p>
+                <ul class="list-disc list-inside space-y-3 pl-5">
+                    <li data-i18n="article_6_li_1">Idioma, teclado y formato regional</li>
+                    <li data-i18n="article_6_li_2">Aceptación de términos y condiciones</li>
+                    <li data-i18n="article_6_li_3">Edición de Windows (Home, Pro, Education...)</li>
+                    <li data-i18n="article_6_li_4">Configuración de particiones (avanzado)</li>
+                    <li data-i18n="article_6_li_5">Tipo de cuenta (local o Microsoft)</li>
+                    <li data-i18n="article_6_li_6">Nombre del equipo y usuario</li>
+                    <li data-i18n="article_6_li_7">Saltar Cortana, ubicación, y otras opciones de privacidad</li>
+                    <li data-i18n="article_6_li_8">Eliminar apps sugeridas (bloatware)</li>
+                    <li data-i18n="article_6_li_9">Ejecutar scripts o tareas tras finalizar la instalación</li>
+                    <li data-i18n="article_6_li_10">Y mucho más…</li>
+                </ul>
+                <p data-i18n="article_6_p5">La instalación se convierte en una experiencia <strong>completamente automática y personalizada</strong>.</p>
+
+                <h2 data-i18n="article_6_h2_2" class="titulo-seccion">⚙️ ¿Cómo se usa el archivo desatendido?</h2>
+                <p data-i18n="article_6_p6">Solo tienes que guardarlo con el nombre exacto <code>autounattend.xml</code> y colocarlo <strong>en la raíz del medio de instalación</strong> (ya sea un USB o una partición interna).</p>
+                <p data-i18n="article_6_p7">Cuando arranca el instalador de Windows, detecta ese archivo automáticamente y lo sigue paso a paso. No es necesario tocar nada. Literalmente, puedes dejar que Windows se instale solo mientras tú te tomas un café.</p>
+
+                <h2 data-i18n="article_6_h2_3" class="titulo-seccion">🚀 ¿Y qué hace BCDeX con esto?</h2>
+                <p data-i18n="article_6_p8"><strong>BCDeX</strong> automatiza toda esa parte por ti. Cuando eliges una ISO de Windows 10 u 11, la app no solo extrae los archivos y configura el arranque desde disco, sino que además:</p>
+                <p data-i18n="article_6_p9">🔧 <strong>Genera automáticamente un archivo desatendido personalizado</strong>, pensado para:</p>
+                <ul class="list-disc list-inside space-y-3 pl-5">
+                    <li data-i18n="article_6_li_11">Eliminar bloatware</li>
+                    <li data-i18n="article_6_li_12">Omitir preguntas innecesarias</li>
+                    <li data-i18n="article_6_li_13">Saltarse la cuenta Microsoft</li>
+                    <li data-i18n="article_6_li_14">Activar cuenta local</li>
+                    <li data-i18n="article_6_li_15">Desactivar sugerencias y servicios molestos</li>
+                    <li data-i18n="article_6_li_16">Acelerar la instalación inicial</li>
+                </ul>
+                <p data-i18n="article_6_p10">Este XML ya está optimizado para la mayoría de usuarios. Solo con usar la app, ya estás obteniendo una <strong>instalación limpia, rápida y afinada</strong> sin complicarte la vida.</p>
+                <p data-i18n="article_6_p11">Además, <strong>BCDeX evita que necesites un USB</strong>. Todo se instala desde el propio disco duro, utilizando una partición dedicada. Más cómodo, más rápido y más moderno.</p>
+
+                <h2 data-i18n="article_6_h2_4" class="titulo-seccion">🛠️ ¿Y si quiero personalizar aún más?</h2>
+                <p data-i18n="article_6_p12">Si quieres ir más allá, puedes crear tu propio archivo desatendido y reemplazar el que genera BCDeX.</p>
+                <p data-i18n="article_6_p13">Por ejemplo, podrías:</p>
+                <ul class="list-disc list-inside space-y-3 pl-5">
+                    <li data-i18n="article_6_li_17">Usar un nombre de equipo o de usuario distinto</li>
+                    <li data-i18n="article_6_li_18">Establecer una contraseña</li>
+                    <li data-i18n="article_6_li_19">Elegir la edición exacta de Windows</li>
+                    <li data-i18n="article_6_li_20">Crear múltiples cuentas</li>
+                    <li data-i18n="article_6_li_21">Ejecutar un script de post-instalación</li>
+                    <li data-i18n="article_6_li_22">Activar características opcionales como Hyper-V, WSL o SMB1</li>
+                    <li data-i18n="article_6_li_23">Preconfigurar redes o tareas programadas</li>
+                </ul>
+                <p data-i18n="article_6_p14">Es un mundo muy potente para quienes quieran tener su instalación 100% adaptada a sus necesidades.</p>
+                <p data-i18n="article_6_p15">📹 Aquí te dejo un video donde explico <strong>paso a paso cómo crear un archivo desatendido desde cero</strong>: 👉 <a href="https://youtu.be/RSKYRmXCwpk" target="_blank" class="text-red-600 hover:underline">Ver en YouTube</a></p>
+                <div class="video-contenedor"><iframe src="https://www.youtube.com/embed/RSKYRmXCwpk" frameborder="0" allowfullscreen></iframe></div>
+
+                <h2 data-i18n="article_6_h2_5" class="titulo-seccion">📄 Ejemplo real: cómo se ve por dentro un <code>autounattend.xml</code></h2>
+                <div class="bloque-codigo">
+                    <button onclick="copyCode(this)" class="boton-copiar" data-i18n="btn_copy">Copiar</button>
+                    <pre><code class="language-xml">&lt;unattend xmlns="urn:schemas-microsoft-com:unattend"&gt;
+  &lt;settings pass="oobeSystem"&gt;
+    &lt;!-- Configuración durante la primera ejecución del sistema (OOBE) --&gt;
+    &lt;component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+      &lt;OOBE&gt;
+        &lt;!-- Oculta la pantalla de aceptación de licencia --&gt;
+        &lt;HideEULAPage&gt;true&lt;/HideEULAPage&gt;
+
+        &lt;!-- Establece el tipo de red como 'Trabajo' --&gt;
+        &lt;NetworkLocation&gt;Work&lt;/NetworkLocation&gt;
+
+        &lt;!-- Omite la configuración inicial del sistema --&gt;
+        &lt;SkipMachineOOBE&gt;true&lt;/SkipMachineOOBE&gt;
+
+        &lt;!-- Omite la creación guiada de usuarios --&gt;
+        &lt;SkipUserOOBE&gt;true&lt;/SkipUserOOBE&gt;
+      &lt;/OOBE&gt;
+
+      &lt;UserAccounts&gt;
+        &lt;LocalAccounts&gt;
+          &lt;LocalAccount&gt;
+            &lt;Password&gt;
+              &lt;Value&gt;1234&lt;/Value&gt;
+              &lt;PlainText&gt;true&lt;/PlainText&gt;
+            &lt;/Password&gt;
+
+            &lt;!-- Nombre visible para la cuenta --&gt;
+            &lt;DisplayName&gt;Admin&lt;/DisplayName&gt;
+
+            &lt;!-- Nombre del usuario local --&gt;
+            &lt;Name&gt;admin&lt;/Name&gt;
+
+            &lt;!-- Grupo al que se añade (Administradores) --&gt;
+            &lt;Group&gt;Administrators&lt;/Group&gt;
+          &lt;/LocalAccount&gt;
+        &lt;/LocalAccounts&gt;
+      &lt;/UserAccounts&gt;
+    &lt;/component&gt;
+  &lt;/settings&gt;
+&lt;/unattend&gt;</code></pre>
+                </div>
+                <p data-i18n="article_6_p16">Este ejemplo básico crea una cuenta local llamada "admin", salta toda la configuración inicial y evita que el usuario tenga que hacer clic en nada. Ideal para instalaciones rápidas y limpias.</p>
+
+                <h2 data-i18n="article_6_h2_6" class="titulo-seccion">✅ Conclusión</h2>
+                <p data-i18n="article_6_p17">El archivo <code>autounattend.xml</code> es una de las herramientas más potentes para quien quiere <strong>control total sobre la instalación de Windows</strong>. Y si no tienes tiempo para crear uno desde cero, <strong>BCDeX ya se encarga por ti</strong>, generando una versión optimizada que deja el sistema limpio desde el primer arranque.</p>
+                <a href="blog.html" data-i18n="article_6_back_link" class="inline-block mt-8 text-color-accent hover:text-red-600 transition duration-150 font-medium">← Volver a todos los artículos</a>
+            </div>
+        </article>
+    </main>
+<footer class="footer">
+  <div class="text-center" data-i18n="footer_creator">
+    PadeX - Creador de contenido y desarrollador
+  </div>
+  <div class="footer-pages">
+    <a href="privacidad.html" data-i18n="footer_privacy">Privacidad</a> | 
+    <a href="terminos.html" data-i18n="footer_terms">Términos y Condiciones</a>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.youtube.com/@PadeXchn" target="_blank" title="YouTube">
+      <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+    </a>
+    <a href="https://www.facebook.com/PadeXch/" target="_blank" title="Facebook">
+      <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+    </a>
+    <a href="mailto:padexchn@gmail.com" title="Gmail">
+      <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+    </a>
+    <a href="https://www.tiktok.com/@padexch" target="_blank" title="TikTok">
+      <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+    </a>
+    <a href="https://www.instagram.com/padexchn/" target="_blank" title="Instagram">
+      <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+    </a>
+    <a href="https://x.com/PadeXchn" target="_blank" title="X">
+      <img src="img/x.png" alt="X" class="footer-icon">
+    </a>
+  </div>
+ 
+</footer>
+    <script type="text/javascript">
+        const translations = {
+            'es': {
+                'nav_home': 'Inicio',
+                'nav_tutorial': 'Tutorial',
+                'nav_what_is': '¿BCDeX?',
+                'nav_blog': 'Blog',
+                'nav_donations': 'Donaciones',
+                'nav_download': 'Descarga',
+                'nav_contact': 'Contacto',
+                'nav_sobre_el_creador': 'Sobre el Creador',
+                'page_title_article_6': 'Guía para Optimizar Windows 11 en la Instalación',
+                'article_6_title': '🛠️ Guía completa para optimizar Windows 11 durante la instalación',
+                'article_6_p1': 'Instalar Windows 11 no tiene por qué ser una tarea lenta ni repetitiva. Con las herramientas adecuadas, puedes hacer que la instalación se realice prácticamente sola y además dejar el sistema limpio, optimizado y sin rastros de bloatware desde el primer arranque.',
+                'article_6_p2': 'En esta guía te explico cómo funciona esa automatización, <strong>cómo puedes usar un archivo desatendido para personalizar el instalador de Windows</strong>, y cómo <strong>BCDeX</strong> simplifica todo ese proceso incluso si no tienes experiencia con XML.',
+                'article_6_h2_1': '💡 ¿Qué es un archivo desatendido?',
+                'article_6_p3': 'El archivo desatendido, llamado <code>autounattend.xml</code>, es un documento en formato XML que le indica al instalador de Windows <strong>todo lo que debe hacer automáticamente</strong>, sin intervención del usuario.',
+                'article_6_p4': 'Este archivo puede personalizar:',
+                'article_6_li_1': 'Idioma, teclado y formato regional',
+                'article_6_li_2': 'Aceptación de términos y condiciones',
+                'article_6_li_3': 'Edición de Windows (Home, Pro, Education...)',
+                'article_6_li_4': 'Configuración de particiones (avanzado)',
+                'article_6_li_5': 'Tipo de cuenta (local o Microsoft)',
+                'article_6_li_6': 'Nombre del equipo y usuario',
+                'article_6_li_7': 'Saltar Cortana, ubicación, y otras opciones de privacidad',
+                'article_6_li_8': 'Eliminar apps sugeridas (bloatware)',
+                'article_6_li_9': 'Ejecutar scripts o tareas tras finalizar la instalación',
+                'article_6_li_10': 'Y mucho más…',
+                'article_6_p5': 'La instalación se convierte en una experiencia <strong>completamente automática y personalizada</strong>.',
+                'article_6_h2_2': '⚙️ ¿Cómo se usa el archivo desatendido?',
+                'article_6_p6': 'Solo tienes que guardarlo con el nombre exacto <code>autounattend.xml</code> y colocarlo <strong>en la raíz del medio de instalación</strong> (ya sea un USB o una partición interna).',
+                'article_6_p7': 'Cuando arranca el instalador de Windows, detecta ese archivo automáticamente y lo sigue paso a paso. No es necesario tocar nada. Literalmente, puedes dejar que Windows se instale solo mientras tú te tomas un café.',
+                'article_6_h2_3': '🚀 ¿Y qué hace BCDeX con esto?',
+                'article_6_p8': '<strong>BCDeX</strong> automatiza toda esa parte por ti. Cuando eliges una ISO de Windows 10 u 11, la app no solo extrae los archivos y configura el arranque desde disco, sino que además:',
+                'article_6_p9': '🔧 <strong>Genera automáticamente un archivo desatendido personalizado</strong>, pensado para:',
+                'article_6_li_11': 'Eliminar bloatware',
+                'article_6_li_12': 'Omitir preguntas innecesarias',
+                'article_6_li_13': 'Saltarse la cuenta Microsoft',
+                'article_6_li_14': 'Activar cuenta local',
+                'article_6_li_15': 'Desactivar sugerencias y servicios molestos',
+                'article_6_li_16': 'Acelerar la instalación inicial',
+                'article_6_p10': 'Este XML ya está optimizado para la mayoría de usuarios. Solo con usar la app, ya estás obteniendo una <strong>instalación limpia, rápida y afinada</strong> sin complicarte la vida.',
+                'article_6_p11': 'Además, <strong>BCDeX evita que necesites un USB</strong>. Todo se instala desde el propio disco duro, utilizando una partición dedicada. Más cómodo, más rápido y más moderno.',
+                'article_6_h2_4': '🛠️ ¿Y si quiero personalizar aún más?',
+                'article_6_p12': 'Si quieres ir más allá, puedes crear tu propio archivo desatendido y reemplazar el que genera BCDeX.',
+                'article_6_p13': 'Por ejemplo, podrías:',
+                'article_6_li_17': 'Usar un nombre de equipo o de usuario distinto',
+                'article_6_li_18': 'Establecer una contraseña',
+                'article_6_li_19': 'Elegir la edición exacta de Windows',
+                'article_6_li_20': 'Crear múltiples cuentas',
+                'article_6_li_21': 'Ejecutar un script de post-instalación',
+                'article_6_li_22': 'Activar características opcionales como Hyper-V, WSL o SMB1',
+                'article_6_li_23': 'Preconfigurar redes o tareas programadas',
+                'article_6_p14': 'Es un mundo muy potente para quienes quieran tener su instalación 100% adaptada a sus necesidades.',
+                'article_6_p15': '📹 Aquí te dejo un video donde explico <strong>paso a paso cómo crear un archivo desatendido desde cero</strong>: 👉 <a href="https://youtu.be/RSKYRmXCwpk" target="_blank" class="text-red-600 hover:underline">Ver en YouTube</a>',
+                'article_6_h2_5': '📄 Ejemplo real: cómo se ve por dentro un <code>autounattend.xml</code>',
+                'article_6_p16': 'Este ejemplo básico crea una cuenta local llamada "admin", salta toda la configuración inicial y evita que el usuario tenga que hacer clic en nada. Ideal para instalaciones rápidas y limpias.',
+                'article_6_h2_6': '✅ Conclusión',
+                'article_6_p17': 'El archivo <code>autounattend.xml</code> es una de las herramientas más potentes para quien quiere <strong>control total sobre la instalación de Windows</strong>. Y si no tienes tiempo para crear uno desde cero, <strong>BCDeX ya se encarga por ti</strong>, generando una versión optimizada que deja el sistema limpio desde el primer arranque.',
+                'article_6_back_link': '← Volver a todos los artículos',
+                'btn_copy': 'Copiar',
+                'footer_copyright': '&copy; 2025 BCDeX. Todos los derechos reservados.',
+                'footer_privacy': 'Política de Privacidad',
+                'footer_terms': 'Términos de Servicio',
+            },
+            'en': {},
+            'pt-br': {}
+        };
+
+        let currentLang = 'es';
+
+        function copyCode(button) {
+            const codeBlock = button.parentElement;
+            const code = codeBlock.querySelector('pre code');
+            navigator.clipboard.writeText(code.innerText);
+            const originalText = button.innerText;
+            button.innerText = '¡Copiado!';
+            setTimeout(() => { button.innerText = originalText; }, 2000);
+        }
+
+        const setLanguage = (lang) => {
+            currentLang = lang;
+            localStorage.setItem('bcdeXLang', lang);
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'SPAN' || element.tagName === 'TITLE' || element.tagName === 'A' || element.tagName === 'BUTTON') {
+                        element.textContent = translations[lang][key];
+                    } else if (element.tagName === 'LI' || element.tagName === 'P' || element.tagName === 'DIV' || element.tagName === 'BLOCKQUOTE') {
+                        let content = translations[lang][key];
+                        content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        element.innerHTML = content;
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            const titleElement = document.querySelector('title');
+            const titleKey = titleElement.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][titleKey]) {
+                titleElement.textContent = translations[lang][titleKey];
+            }
+            const updateSelector = (selectorId, dropdownId) => {
+                const selector = document.getElementById(selectorId);
+                const dropdown = document.getElementById(dropdownId);
+                if (selector && dropdown) {
+                    const activeOption = dropdown.querySelector(`.language-option[data-lang="${lang}"]`);
+                    dropdown.querySelectorAll('.language-option').forEach(option => option.classList.remove('active'));
+                    if (activeOption) {
+                        const flagImgSrc = activeOption.getAttribute('data-flag-img');
+                        selector.style.backgroundImage = `url('${flagImgSrc}')`;
+                        activeOption.classList.add('active');
+                    }
+                }
+            };
+            updateSelector('language-selector-desktop', 'language-dropdown-desktop');
+            updateSelector('language-selector-mobile', 'language-dropdown-mobile');
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+            const toggleDropdown = (selectorId, dropdownId) => {
+                const selector = document.getElementById(selectorId);
+                const dropdown = document.getElementById(dropdownId);
+                if (selector && dropdown) {
+                    selector.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        document.querySelectorAll('.language-dropdown.active').forEach(d => {
+                            if (d.id !== dropdownId) d.classList.remove('active');
+                        });
+                        dropdown.classList.toggle('active');
+                    });
+                    dropdown.querySelectorAll('.language-option').forEach(option => {
+                        option.addEventListener('click', (event) => {
+                            let selectedLang = event.currentTarget.getAttribute('data-lang');
+                            setLanguage(selectedLang);
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                }
+            };
+            document.addEventListener('click', (event) => {
+                document.querySelectorAll('.language-dropdown.active').forEach(dropdown => {
+                    const selector = document.getElementById(dropdown.id.replace('dropdown', 'selector'));
+                    if (!dropdown.contains(event.target) && !selector.contains(event.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
+            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
+            const initialLang = localStorage.getItem('bcdeXLang') || 'es';
+            setLanguage(initialLang);
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

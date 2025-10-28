@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">BCDeX - ¿Qué es?</title>
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos.css"> 
+
+    <style>
+        /* Definición de Variables de Color y Tipografía */
+        :root {
+            --color-primary-base: #FFFFFF; /* Fondo principal BLANCO */
+            --color-surface: #F9FAFB;      /* Fondo de secciones (Gris muy claro) */
+            --color-nav-footer: #1F2937;   /* Fondo oscuro para Nav y Footer (Gris 800) */
+            --color-accent: #E53E3E;       /* Color de acento/Botón principal (Rojo 600) */
+            --color-accent-dark: #C53030;  /* Rojo 700 para hover */
+            --color-text-primary: #111827; /* Texto principal (Gris 900) */
+            --color-text-secondary: #4B5563; /* Texto secundario (Gris 600) */
+            --color-border: #E5E7EB;       /* Borde/Divisor (Gris 200) */
+            --font-primary: 'Inter', sans-serif;
+            /* header-height se hereda de estilos.css */
+        }
+
+        /* Estilo general del cuerpo */
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-surface); /* Fondo Gris muy claro */
+            color: var(--color-text-primary);
+        }
+
+        /* Estilos de la Navegación y Footer se heredan de estilos.css */
+
+        /* Botón Principal (btn-primary) */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* font-semibold */
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-dark);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Selector de idioma: hereda de estilos.css */
+        
+        /* Estilos de Artículos (Content) */
+        .article-container {
+            background-color: var(--color-primary-base);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Títulos de sección */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: var(--color-accent);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-title svg {
+            margin-right: 0.5rem;
+            color: var(--color-accent-dark);
+        }
+
+        /* Estilo para bloques de código (PowerShell) */
+        .code-block {
+            background-color: #1F2937; /* Gris oscuro */
+            color: #F9FAFB;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            user-select: all; /* Permite seleccionar fácilmente el texto */
+        }
+        
+        /* Botón de Copiar */
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.4rem;
+            background-color: #374151; /* Gris medio */
+            color: #D1D5DB;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .copy-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            transform: scale(1.05);
+        }
+        .copy-button svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Tabla de servicios */
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .service-table th, .service-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .service-table th {
+            background-color: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            position: sticky;
+            top: 0;
+        }
+        .service-table tr:hover {
+            background-color: #F3F4F6;
+        }
+        .service-table .service-name {
+            font-family: monospace;
+            font-weight: 500;
+            color: var(--color-accent-dark);
+        }
+        
+        /* Contenedor de la imagen (Bloque de usuario) */
+        .blog-image-center {
+            text-align:center; 
+            margin:1rem 0 1.5rem 0;
+        }
+        .blog-image-center img {
+            max-width:40%; 
+            height:auto; 
+            border-radius:10px; 
+            box-shadow:0 2px 12px rgba(0,0,0,0.1); 
+            display:inline-block;
+        }
+        
+        /* Responsividad de la imagen en móvil */
+        @media (max-width: 640px) {
+            .article-container {
+                padding: 1.5rem;
+            }
+            .blog-image-center img {
+                max-width: 80%; /* Más grande en móvil */
+            }
+            .service-table th:nth-child(2), .service-table td:nth-child(2) {
+                display: none; /* Ocultar columna 'Para qué sirve' en móvil para ahorrar espacio */
+            }
+        }
+        
+        /* Enlace de Tienda/Página oficial */
+        .external-link {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .external-link:hover {
+            color: var(--color-accent-dark);
+        }
+    </style>
+
+<body class="min-h-screen flex flex-col">
+     <!-- 1. Barra de Navegación (Header/Nav) -->
+   <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Logo/Título -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <!-- Enlaces de Navegación -->
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <!-- ENLACE DE DESCARGA: Mismas clases que el resto -->
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <!-- Usaremos una bandera por defecto, ya que no puedo cargar img/españa.png -->
+                            <div class="language-selector" id="language-selector-desktop" 
+                                style="background-image: url('img/españa.png');">
+                            </div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" 
+                                     style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" 
+                                     style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" 
+                                     style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil (Visible solo en móvil/tablet) -->
+                <div class="lg:hidden flex items-center">
+                    <!-- Selector de Idioma (Móvil) - Lo colocamos antes de la hamburguesa para fácil acceso -->
+                    <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" 
+                            style="background-image: url('img/españa.png');">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" 
+                                 style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" 
+                                 style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" 
+                                 style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+                    <!-- Botón Hamburguesa -->
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2 z-50" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <!-- ENLACE DE DESCARGA MÓVIL: Usa la clase btn-primary (rojo) -->
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
+                    Descarga
+                </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-grow py-12 sm:py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <header class="info-hero text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="header_title">¿Qué es BCDeX?</h1>
+                <p class="text-xl text-gray-600" data-i18n="header_subtitle">La herramienta que revoluciona tu manera de instalar Windows.</p>
+            </header>
+
+            <div class="info-card space-y-10">
+                <section>
+                    <h2 class="accent-underline text-2xl font-bold text-gray-900 mb-4" data-i18n="section_title_main">Definición Ampliada</h2>
+                    <p class="text-lg text-gray-700" data-i18n="text_definition_1">BCDeX es una utilidad de software avanzada, creada para modernizar y simplificar drásticamente el proceso de instalación y reinstalación de sistemas operativos Windows. Su principal innovación es que elimina por completo la dependencia de medios físicos como unidades USB o DVDs, permitiendo que todo el proceso se gestione directamente desde el disco duro del ordenador.</p>
+                    <p class="mt-4 p-4 bg-gray-50 border-l-4 border-red-500 rounded-r-lg italic text-lg text-gray-800" data-i18n="text_definition_2_italic">En esencia, BCDeX funciona como un asistente inteligente que automatiza una serie de tareas técnicas complejas. Esto permite que tanto usuarios principiantes como expertos puedan preparar una instalación de Windows limpia y eficiente con solo unos pocos clics, reduciendo errores y ahorrando tiempo.</p>
+                </section>
+
+                <section class="border-t border-gray-200 pt-8">
+                    <h2 class="accent-underline text-2xl font-bold text-gray-900 mb-6" data-i18n="section_title_features">Funcionalidades Detalladas</h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="info-feature-card">
+                            <div class="text-4xl text-red-600 mb-3">⚙️</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="feature_1_title">Gestión de Particiones Segura</h3>
+                            <p class="text-gray-600" data-i18n="feature_1_desc">BCDeX crea una partición temporal en tu disco duro de forma no destructiva. Este espacio aislado y seguro es donde se alojarán los archivos de instalación de Windows, garantizando que tus datos personales no corran peligro durante el proceso.</p>
+                        </div>
+                        <div class="info-feature-card">
+                            <div class="text-4xl text-red-600 mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="feature_2_title">Automatización con PowerShell</h3>
+                            <p class="text-gray-600" data-i18n="feature_2_desc">La herramienta utiliza el poder de PowerShell, el lenguaje de scripting de Windows, para ejecutar secuencias de comandos que montan la imagen ISO, configuran el entorno de arranque (BCD) y preparan el sistema para la instalación, todo sin que necesites escribir una sola línea de código.</p>
+                        </div>
+                        <div class="info-feature-card">
+                            <div class="text-4xl text-red-600 mb-3">📁</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="feature_3_title">Copia Inteligente de Archivos</h3>
+                            <p class="text-gray-600" data-i18n="feature_3_desc">En lugar de copiar una imagen ISO completa, BCDeX identifica y extrae únicamente los archivos esenciales para el arranque y la instalación. Este método optimiza drásticamente el tiempo de preparación y reduce el espacio en disco necesario.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="border-t border-gray-200 pt-8">
+                    <h2 class="accent-underline text-2xl font-bold text-gray-900 mb-4" data-i18n="section_title_safety">¿Es seguro usar BCDeX?</h2>
+                    <p class="text-lg text-gray-700 mb-4" data-i18n="text_safety_1">Sí, BCDeX es <strong class="text-red-600">completamente seguro</strong>. La aplicación ha sido diseñada con la máxima precaución para interactuar con el sistema operativo de una manera predecible y controlada, utilizando solo comandos y herramientas oficiales de Windows.</p>
+                    <div class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-5 w-5 text-yellow-500" data-lucide="alert-triangle" fill="currentColor" viewBox="0 0 20 20"></svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-base sm:text-lg" data-i18n="text_safety_warning">Debido a que realiza operaciones a nivel de sistema (como modificar particiones o editar el menú de arranque), algunos antivirus pueden mostrar una alerta de "falso positivo". Esto es un comportamiento esperado en herramientas de administración avanzadas. Garantizamos que BCDeX no contiene malware y solo realiza las acciones documentadas y necesarias para cumplir su función.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+             <div class="text-center mt-12">
+                <a href="descarga.html" class="btn-primary text-lg transition transform hover:scale-105" data-i18n="cta_button"><span class="sm:hidden">Descarga BCDeX</span><span class="hidden sm:inline">¡Descarga BCDeX y simplifica tu vida!</span></a>
+             </div>
+        </div>
+    </main>
+
+    <!-- 3. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <!-- PadeX - Creador de contenido y desarrollador -->
+            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <!-- Enlaces Legales -->
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
+            <div class="footer-links">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                
+                <!-- Gmail/Mail -->
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                
+                <!-- X (Twitter) -->
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

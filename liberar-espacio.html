@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title_article_liberar_espacio">Espacio Adicional Rápidamente | Pasos Simples para Optimizar tu PC</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Definición de Variables de Color y Tipografía */
+        :root {
+            --color-primary-base: #FFFFFF; /* Fondo principal BLANCO */
+            --color-surface: #F9FAFB;      /* Fondo de secciones (Gris muy claro) */
+            --color-nav-footer: #1F2937;   /* Fondo oscuro para Nav y Footer (Gris 800) */
+            --color-accent: #E53E3E;       /* Color de acento/Botón principal (Rojo 600) */
+            --color-accent-dark: #C53030;  /* Rojo 700 para hover */
+            --color-text-primary: #111827; /* Texto principal (Gris 900) */
+            --color-text-secondary: #4B5563; /* Texto secundario (Gris 600) */
+            --color-border: #E5E7EB;       /* Borde/Divisor (Gris 200) */
+            --font-primary: 'Inter', sans-serif;
+            --header-height: 80px; /* 64px */
+        }
+
+        /* Estilo general del cuerpo */
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-surface); /* Fondo Gris muy claro */
+            color: var(--color-text-primary);
+        }
+
+        /* Estilos de la Navegación y Footer */
+        .bg-nav-footer {
+            background-color: var(--color-nav-footer);
+        }
+        .nav-logo-color {
+            color: var(--color-primary-base); /* Logo blanco */
+        }
+        .nav-text-color {
+            color: var(--color-primary-base); /* Enlaces blancos */
+        }
+        .nav-link-hover:hover {
+            color: var(--color-accent); /* Hover de enlaces en rojo */
+            background-color: #374151; /* Gris oscuro sutil */
+            border-radius: 0.375rem; /* rounded-md */
+        }
+        .footer-text {
+            color: #D1D5DB; /* Gris claro en el footer */
+        }
+
+        /* Botón Principal (btn-primary) */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* font-semibold */
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-dark);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Selector de Idioma: Banderas */
+        .language-container {
+            position: relative;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .language-selector, .language-option {
+            width: 30px;
+            height: 20px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+            box-shadow: 0 0 0 1px #fff; 
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background-color: var(--color-nav-footer);
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            padding: 4px;
+        }
+        .language-dropdown.active {
+            display: flex;
+        }
+        .language-option {
+            margin-bottom: 4px;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 0 1px var(--color-nav-footer); 
+        }
+        .language-option:last-child {
+            margin-bottom: 0;
+        }
+        .language-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+        
+        /* Estilos de Artículos (Content) */
+        .article-container {
+            background-color: var(--color-primary-base);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Títulos de sección */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: var(--color-accent);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-title svg {
+            margin-right: 0.5rem;
+            color: var(--color-accent-dark);
+        }
+
+        /* Estilo para bloques de código (PowerShell) */
+        .code-block {
+            background-color: #1F2937; /* Gris oscuro */
+            color: #F9FAFB;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            user-select: all; /* Permite seleccionar fácilmente el texto */
+        }
+        
+        /* Botón de Copiar */
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.4rem;
+            background-color: #374151; /* Gris medio */
+            color: #D1D5DB;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .copy-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary-base);
+            transform: scale(1.05);
+        }
+        .copy-button svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Tabla de servicios */
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .service-table th, .service-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .service-table th {
+            background-color: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            position: sticky;
+            top: 0;
+        }
+        .service-table tr:hover {
+            background-color: #F3F4F6;
+        }
+        .service-table .service-name {
+            font-family: monospace;
+            font-weight: 500;
+            color: var(--color-accent-dark);
+        }
+        
+        /* Contenedor de la imagen (Bloque de usuario) */
+        .blog-image-center {
+            text-align:center; 
+            margin:1rem 0 1.5rem 0;
+        }
+        .blog-image-center img {
+            max-width:40%; 
+            height:auto; 
+            border-radius:10px; 
+            box-shadow:0 2px 12px rgba(0,0,0,0.1); 
+            display:inline-block;
+        }
+        
+        /* Responsividad de la imagen en móvil */
+        @media (max-width: 640px) {
+            .article-container {
+                padding: 1.5rem;
+            }
+            .blog-image-center img {
+                max-width: 80%; /* Más grande en móvil */
+            }
+            .service-table th:nth-child(2), .service-table td:nth-child(2) {
+                display: none; /* Ocultar columna 'Para qué sirve' en móvil para ahorrar espacio */
+            }
+        }
+        
+        /* Enlace de Tienda/Página oficial */
+        .external-link {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .external-link:hover {
+            color: var(--color-accent-dark);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. Barra de Navegación (Header/Nav) -->
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Logo/Título -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <!-- Enlaces de Navegación -->
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <!-- ENLACE DE DESCARGA: Mismas clases que el resto -->
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
+                            Descarga
+                        </a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <!-- Usaremos una bandera por defecto, ya que no puedo cargar img/españa.png -->
+                            <div class="language-selector" id="language-selector-desktop" 
+                                style="background-image: url('img/españa.png');">
+                            </div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" 
+                                     style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" 
+                                     style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" 
+                                     style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil (Visible solo en móvil/tablet) -->
+                <div class="lg:hidden flex items-center">
+                    <!-- Selector de Idioma (Móvil) - Lo colocamos antes de la hamburguesa para fácil acceso -->
+                     <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" 
+                            style="background-image: url('img/españa.png');">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" 
+                                 style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" 
+                                 style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" 
+                                 style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Hamburguesa -->
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <!-- ENLACE DE DESCARGA MÓVIL: Usa la clase btn-primary (rojo) -->
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
+                            Descarga
+                        </a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Contenido Principal del Blog (Artículo) -->
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display: flex; flex-direction: row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+            
+            <!-- Título y Resumen del Artículo -->
+            <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2">
+                    <a href="blog.html" class="hover:underline">← Volver a todos los artículos</a>
+                </p>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="article_liberar_espacio_title">
+                    🧼 Espacio Adicional Rápidamente | Pasos Simples para Optimizar tu PC
+                </h1>
+                <p class="text-lg text-[color:var(--color-text-secondary)]" data-i18n="article_liberar_espacio_summary">
+                    ¿Te estás quedando sin espacio en tu disco y el PC cada vez va más lento? No te preocupes. En este post te muestro una serie de pasos sencillos que puedes hacer en minutos para liberar <strong>más de 100 GB</strong> de espacio y mejorar el rendimiento general de tu equipo, especialmente si usas Windows 10 u 11.
+                </p>
+            </header>
+
+            <!-- Contenido del Artículo -->
+            <section class="mt-8">
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Este artículo está basado en el siguiente video, que también puedes ver si prefieres una guía visual:
+                    <a href="https://youtu.be/zaJOghKulcI" target="_blank" class="external-link">Ver video en YouTube</a>
+                </p>
+                <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/zaJOghKulcI" frameborder="0" allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_1_title">
+                    <svg class="w-7 h-7" data-lucide="trash-2"></svg>
+                    1. Limpia carpetas temporales innecesarias
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Abriremos la herramienta "Ejecutar" (tecla Windows + R) y escribiremos lo siguiente:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_1_li_1"><code>prefetch</code> → Borra todos los archivos. Algunos estarán en uso, simplemente omítelos.</li>
+                    <li data-i18n="section_liberar_espacio_1_li_2"><code>temp</code> → Selecciona y elimina todo lo que veas.</li>
+                    <li data-i18n="section_liberar_espacio_1_li_3"><code>%temp%</code> → Repite el paso anterior.</li>
+                </ul>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Estas carpetas almacenan archivos temporales que Windows ya no necesita. Solo estas limpiezas pueden liberar varios GB.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_2_title">
+                    <svg class="w-7 h-7" data-lucide="hard-drive"></svg>
+                    2. Usa el Liberador de espacio en disco
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_2_li_1">Busca en Inicio: <code>Liberador de espacio en disco</code></li>
+                    <li data-i18n="section_liberar_espacio_2_li_2">Selecciona la unidad C</li>
+                    <li data-i18n="section_liberar_espacio_2_li_3">Marca:
+                        <ul class="list-disc pl-5 space-y-1 text-base text-[color:var(--color-text-secondary)]">
+                            <li data-i18n="section_liberar_espacio_2_li_3a">Papelera de reciclaje</li>
+                            <li data-i18n="section_liberar_espacio_2_li_3b">Archivos temporales</li>
+                            <li data-i18n="section_liberar_espacio_2_li_3c">Miniaturas</li>
+                        </ul>
+                    </li>
+                    <li data-i18n="section_liberar_espacio_2_li_4">Haz clic en <strong>Aceptar</strong> y deja que se libere espacio automáticamente.</li>
+                </ol>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Este método elimina archivos del sistema que no son útiles y suele ser bastante seguro.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_3_title">
+                    <svg class="w-7 h-7" data-lucide="package-x"></svg>
+                    3. Desinstala programas pesados que no usas
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_3_li_1">Ve a <strong>Configuración > Aplicaciones</strong></li>
+                    <li data-i18n="section_liberar_espacio_3_li_2">Ordena por <strong>Tamaño</strong></li>
+                    <li data-i18n="section_liberar_espacio_3_li_3">Desinstala lo que no uses (juegos olvidados, software antiguo, etc.)</li>
+                </ol>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Cada programa innecesario no solo ocupa espacio, sino que también puede ralentizar el inicio del sistema.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_4_title">
+                    <svg class="w-7 h-7" data-lucide="search"></svg>
+                    4. Busca archivos gigantes olvidados
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Abre el Explorador de Archivos y escribe en la barra de búsqueda:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_4_li_1"><strong>"Tamaño: Gigantesco"</strong> para encontrar archivos mayores a 4 GB</li>
+                    <li data-i18n="section_liberar_espacio_4_li_2"><strong>"Tamaño: Enorme"</strong> para buscar entre 1 y 4 GB</li>
+                </ul>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Revisa bien los resultados. Muchas veces encontrarás ISOs antiguas, vídeos, instaladores… que ya no necesitas.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_5_title">
+                    <svg class="w-7 h-7" data-lucide="settings"></svg>
+                    5. Usa la herramienta de almacenamiento
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_5_li_1">Abre <strong>Configuración > Sistema > Almacenamiento</strong></li>
+                    <li data-i18n="section_liberar_espacio_5_li_2">Haz clic en <strong>Archivos temporales</strong></li>
+                    <li data-i18n="section_liberar_espacio_5_li_3">Marca:
+                        <ul class="list-disc pl-5 space-y-1 text-base text-[color:var(--color-text-secondary)]">
+                            <li data-i18n="section_liberar_espacio_5_li_3a">Archivos temporales</li>
+                            <li data-i18n="section_liberar_espacio_5_li_3b">Papelera de reciclaje</li>
+                            <li data-i18n="section_liberar_espacio_5_li_3c">Archivos de actualizaciones anteriores</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-md">
+                    <h3 class="font-bold text-yellow-800 text-lg" data-i18n="section_liberar_espacio_5_warning_title">
+                        ⚠️ Antes de marcar la carpeta de <strong>Descargas</strong>, asegúrate de revisar su contenido. Podrías borrar algo importante sin querer.
+                    </h3>
+                </div>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4 mt-4">
+                    Presiona <strong>Quitar archivos</strong> y libera aún más espacio.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_6_title">
+                    <svg class="w-7 h-7" data-lucide="disc-3"></svg>
+                    6. Optimiza el disco duro
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                    <li data-i18n="section_liberar_espacio_6_li_1">Abre el <strong>Explorador de Archivos</strong></li>
+                    <li data-i18n="section_liberar_espacio_6_li_2">Haz clic derecho en el disco C y selecciona <strong>Propiedades</strong></li>
+                    <li data-i18n="section_liberar_espacio_6_li_3">Ve a la pestaña <strong>Herramientas</strong> y pulsa <strong>Optimizar</strong></li>
+                </ol>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Selecciona la unidad y pulsa otra vez en <strong>Optimizar</strong>. Esta función reorganiza los datos en el disco para que el sistema los lea más rápido. Puedes programarla para que se haga semanalmente.
+                </p>
+            </section>
+
+            <section class="mt-8">
+                <h2 class="section-title text-3xl" data-i18n="section_liberar_espacio_7_title">
+                    <svg class="w-7 h-7" data-lucide="brain"></svg>
+                    Conclusión
+                </h2>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Con estos simples pasos puedes liberar una cantidad significativa de espacio y mejorar la fluidez de tu PC, <strong>sin necesidad de instalar ningún programa adicional</strong>.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Ideal si te estás quedando sin espacio o si quieres hacer una limpieza profunda antes de instalar algo nuevo.
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4">
+                    Recuerda que puedes ver el proceso completo en este video paso a paso:
+                    <a href="https://youtu.be/zaJOghKulcI" target="_blank" class="external-link">Espacio Adicional Rápidamente | Ver en YouTube</a>
+                </p>
+                <p class="text-base text-[color:var(--color-text-secondary)] mb-4" style="text-align: left; font-style: italic; margin-top: 2rem;">
+                    — <strong>PadeX</strong> 😉
+                </p>
+            </section>
+
+            <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2 mt-8">
+                <a href="blog.html" class="hover:underline" data-i18n="article_liberar_espacio_back_link">← Volver a todos los artículos</a>
+            </p>
+        </div>
+        </div>
+        <aside class="lg:w-1/5 mt-8 lg:mt-0 min-w-0 flex-shrink-0">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Otros Artículos del Blog</h3>
+                <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="win11-25h2.html" class="text-blue-600 hover:text-blue-800 hover:underline">Windows 11 25H2: Menos Bloatware, Más Control</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline">BCDeX - Guía Archivo Desatendido</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline">Diferencias entre arranque UEFI y BIOS Legacy</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline">Liberar Espacio y Optimizar PC</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline">Guía: Instalar Windows desde Partición con BCDeX</a></li>
+                    <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="optimizacion-win11.html" class="text-blue-600 hover:text-blue-800 hover:underline">Guía para Optimizar Windows 11 en la Instalación</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+    <!-- 3. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <!-- PadeX - Creador de contenido y desarrollador -->
+            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+            
+            <!-- Enlaces Legales -->
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            
+            <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
+            <div class="footer-links">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                </a>
+                
+                <!-- Gmail/Mail -->
+                <a href="mailto:contact@padex.com" title="Gmail">
+                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                </a>
+                
+                <!-- X (Twitter) -->
+                <a href="https://x.com/padex" target="_blank" title="X">
+                    <img src="img/x.png" alt="X" class="footer-icon">
+                </a>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Script para la funcionalidad del menú móvil y selector de idioma -->
+    <script>
+        // Función de utilidad para copiar texto al portapapeles
+        function copyToClipboard(text, button) {
+            try {
+                // Crea un área de texto temporal
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed'; // Evita el desplazamiento
+                textarea.style.opacity = 0;
+                document.body.appendChild(textarea);
+                
+                // Selecciona y copia
+                textarea.select();
+                document.execCommand('copy'); 
+                
+                document.body.removeChild(textarea);
+
+                // Feedback visual
+                const originalText = button.innerHTML;
+                button.innerHTML = '<svg data-lucide="check" class="w-4 h-4"></svg>';
+                button.classList.add('bg-green-600', 'hover:bg-green-700');
+                lucide.createIcons(); // Recarga el ícono de Lucide
+                
+                setTimeout(() => {
+                    button.innerHTML = '<svg data-lucide="copy" class="w-4 h-4"></svg>';
+                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    lucide.createIcons(); // Recarga el ícono de Lucide
+                }, 1500);
+
+            } catch (err) {
+                console.error('No se pudo copiar el texto: ', err);
+            }
+        }
+        
+        // Objeto de traducciones para todos los textos de la página
+        const translations = {
+            'es': {
+                'page_title_article_1': 'BCDeX 2.3: Modo Turbo – Qué desactiva y cómo reactivarlo',
+                'article_1_title': '🚀 BCDeX 2.3: Modo Turbo – Qué desactiva y cómo volver a activarlo',
+                'article_1_summary': 'El Modo Turbo de BCDeX 2.3 es como un botón mágico: apaga lo que Windows trae de serie pero casi nunca usas. Así tu PC respira y va más rápido. ¿Que luego echas de menos algo (imprimir, VPN, escáner)? No pasa nada, aquí mismo te dejo cómo encenderlo otra vez en segundos.',
+                'section_1_title': '💡 ¿Qué hace exactamente el Modo Turbo?',
+                'section_1_intro': 'Esta optimización se centra en liberar la máxima cantidad de recursos sin comprometer la estabilidad básica del sistema.',
+                'turbo_point_1': 'Crea un **Punto de Restauración** antes de tocar nada (seguridad ante todo).',
+                'turbo_point_2': 'Apaga **servicios poco usados** (impresión, mapas, Xbox, sensores...).',
+                'turbo_point_3': 'Pone en **manual** cosas de red y actualización para que no estén chupando recursos todo el rato.',
+                'turbo_point_4': 'Recorta **telemetría** y tareas programadas de “experiencia de usuario”.',
+                'turbo_point_5': 'Activa el plan de energía de **Máximo rendimiento** y quita la hibernación.',
+                'turbo_point_6': 'Ajusta **privacidad**: adiós a Recall, Copilot y demás funciones que mandan datos.',
+                'section_2_title': '🔧 ¿Se apagó algo que sí necesitas?',
+                'section_2_intro': 'Ejemplo rápido: si tu impresora no responde porque el servicio Spooler está apagado. Solución: abre **PowerShell** como administrador y pega el comando de activación.',
+                'section_2_subtitle_1': '📋 Lista de servicios básicos que el Modo Turbo toca',
+                'section_3_title': '📋 Otros servicios que podrías ver apagados',
+                'section_3_intro': 'No todos aparecen en todos los Windows. Si los necesitas, enciéndelos con el comando que ves debajo (PowerShell como administrador).',
+                'section_4_title': '🕒 Servicios en “pausa” (Manual): arrancan solos si los necesitas',
+                'section_4_intro': 'Estos servicios se ponen en modo "Manual", lo que significa que Windows los inicia automáticamente solo cuando una aplicación o función los requiere, ahorrando recursos en el arranque. Si prefieres que siempre estén listos, puedes forzar el modo Automático:',
+                'section_5_title': '🗑️ Desinstalación de aplicaciones y componentes',
+                'section_5_intro': 'El Modo Turbo también elimina algunas aplicaciones preinstaladas y componentes que considera "bloatware" para aligerar el sistema. Aquí te explico qué quita y cómo recuperarlo.',
+                'section_5_subtitle_1': 'Apps (El Tiempo, Microsoft 365, Teams, To-Do)',
+                'section_5_apps_desc': 'Función: Son aplicaciones de Microsoft que vienen con Windows. Se eliminan para limpiar el menú de inicio y liberar espacio.<br>Reactivar: Búscalas e instálalas gratis desde la <a href="https://www.microsoft.com/es-es/store/apps/windows" target="_blank" class="external-link">Microsoft Store</a>.',
+                'section_5_subtitle_2': 'Microsoft Edge y su Bloqueo de Reinstalación',
+                'section_5_edge_desc': 'Función: Edge se quita por si prefieres usar otro navegador y no quieres tenerlo consumiendo recursos.<br>Reactivar Edge: Descarga el instalador desde la <a href="https://www.microsoft.com/es-es/edge" target="_blank" class="external-link">página oficial de Microsoft Edge</a>.',
+                'section_5_edge_block_desc': 'Bloqueo de Reinstalación: El Modo Turbo activa un bloqueo en el Registro para evitar que Windows Update te reinstale Edge. Para desactivar este bloqueo y permitir las actualizaciones de Edge, ejecuta el siguiente comando en PowerShell como administrador:',
+                'important_note_title': '🚨 ¡Importante: Variabilidad en Windows!',
+                'important_note_content': 'No todos los servicios existen en todas las versiones de Windows. Windows 7, 10 y 11 no traen exactamente lo mismo, y además cambian cosas entre ediciones (Home, Pro, Enterprise) y entre *builds*/actualizaciones. **Si pruebas un comando y te sale un error diciendo que el servicio no existe, no pasa nada:** en tu Windows simplemente no está presente. **Consejo:** reactiva solo lo que de verdad necesites.',
+                
+                // NAV and FOOTER (omitted for brevity, assume they are the same as in blog.html)
+                'nav_home': 'Inicio',
+                'nav_tutorial': 'Tutorial',
+                'nav_what_is': '¿BCDeX?',
+                'nav_blog': 'Blog',
+                'nav_donations': 'Donaciones',
+                'nav_download': 'Descarga',
+                'nav_contact': 'Contacto',
+                'nav_sobre_el_creador': 'Sobre el Creador',
+                'footer_creator': 'PadeX - Creador de contenido y desarrollador',
+                'footer_privacy': 'Privacidad',
+                'footer_terms': 'Términos y Condiciones',
+                'footer_copyright': '© 2025 BCDeX. Todos los derechos reservados.',
+
+                // New article translations
+                'page_title_article_win11_25h2': 'Windows 11 25H2: Menos Bloatware, Más Control',
+                'article_win11_25h2_title': '🧹 Windows 11 25H2: Menos Bloatware, Más Control',
+                'article_win11_25h2_summary': 'Microsoft lo intenta de nuevo. Con la actualización de Windows 11 25H2 (esperada para finales de 2025), la compañía planea abordar una de las quejas más comunes de los usuarios: demasiadas aplicaciones preinstaladas que no se pueden eliminar fácilmente. Esta vez, habrá una forma oficial de decir adiós a aplicaciones como Media Player, Paint, Cortana o el Bloc de Notas, sin usar PowerShell ni herramientas de terceros.',
+                'section_win11_25h2_1_title': 'Paso 1: Abre el Editor de Políticas de Grupo',
+                'section_win11_25h2_2_title': '⚙️ ¿Cómo funciona?',
+                'important_note_win11_25h2_title': '🔔 Notas importantes',
+                'section_win11_25h2_3_title': '🗓️ ¿Cuándo estará disponible?',
+                'section_win11_25h2_4_title': '❓ ¿Por qué es importante?',
+                'section_win11_25h2_5_title': '🔎 Más detalles',
+                'conclusion_win11_25h2_title': '✅ Conclusión',
+
+                // New article: instalacion-particion.html
+                'page_title_article_instalacion_particion': 'Guía: Instalar Windows desde Partición con BCDeX',
+                'article_instalacion_particion_title': '🛠️ Guía: Instalar Windows desde una partición con BCDeX',
+                'article_instalacion_particion_summary': 'Olvídate del USB. Con BCDeX puedes instalar Windows directamente desde el disco duro. Aquí te explicamos cómo hacerlo paso a paso, sin complicaciones.',
+                'section_instalacion_particion_1_title': 'Paso 1: Inicia BCDeX y elige el disco',
+                'section_instalacion_particion_2_title': 'Paso 2: Selecciona la imagen ISO de Windows',
+                'section_instalacion_particion_3_title': 'Paso 3: Deja que la aplicación trabaje',
+                'section_instalacion_particion_4_title': 'Paso 4: Personaliza tu instalación (Opcional)',
+                'section_instalacion_particion_5_title': 'Paso 5: Reinicia e instala',
+                'important_note_instalacion_particion_title': '💡 Importante:',
+                'section_instalacion_particion_6_title': 'Paso 6: Finalización y limpieza',
+
+                // New article: uefi-bios.html
+                'page_title_article_uefi_bios': 'Diferencias entre arranque UEFI y BIOS Legacy',
+                'article_uefi_bios_title': 'Diferencias entre arranque UEFI y BIOS Legacy',
+                'article_uefi_bios_summary': 'Cuando instalas o configuras un sistema operativo, es fundamental conocer si tu equipo utiliza <strong>UEFI</strong> o <strong>BIOS Legacy</strong>. Ambos son sistemas de firmware que permiten arrancar el ordenador, pero existen diferencias clave que pueden afectar la compatibilidad, seguridad y rendimiento de tu PC.',
+                'article_uefi_bios_h2_1': '¿Qué es BIOS Legacy?',
+                'article_uefi_bios_p2': 'El <strong>BIOS Legacy</strong> (Basic Input/Output System) es el sistema tradicional presente en computadoras más antiguas. Su función principal es iniciar el hardware básico y buscar un dispositivo de arranque, como un disco duro o USB. Solo reconoce discos con formato MBR (Master Boot Record), lo que limita el tamaño máximo de las particiones a 2 TB y el número de particiones primarias a cuatro. Además, su interfaz suele ser simple y basada en texto.',
+                'article_uefi_bios_h2_2': '¿Qué es UEFI?',
+                'article_uefi_bios_p3': '<strong>UEFI</strong> (Unified Extensible Firmware Interface) es el reemplazo moderno del BIOS. Ofrece una interfaz gráfica más avanzada, soporte para ratón y mayores opciones de configuración. UEFI permite el uso de discos con formato GPT (GUID Partition Table), lo que elimina las limitaciones de tamaño y número de particiones. Además, incluye funciones de seguridad como <strong>Secure Boot</strong>, que ayuda a proteger el sistema contra malware durante el arranque.',
+                'article_uefi_bios_h2_3': 'Principales diferencias',
+                'article_uefi_bios_li_1': '<strong>Compatibilidad de discos:</strong> BIOS solo soporta MBR; UEFI soporta GPT y MBR.',
+                'article_uefi_bios_li_2': '<strong>Interfaz:</strong> BIOS es simple y solo usa teclado; UEFI puede tener gráficos y soporte para ratón.',
+                'article_uefi_bios_li_3': '<strong>Seguridad:</strong> UEFI incluye Secure Boot y otras funciones avanzadas.',
+                'article_uefi_bios_li_4': '<strong>Velocidad:</strong> UEFI suele arrancar más rápido que BIOS.',
+                'article_uefi_bios_li_5': '<strong>Capacidad:</strong> UEFI permite discos y particiones mucho más grandes.',
+                'article_uefi_bios_h2_4': '¿Por qué es importante elegir el modo correcto?',
+                'article_uefi_bios_p4': 'Elegir el modo de arranque adecuado afecta la instalación y funcionamiento del sistema operativo. Por ejemplo, Windows instalado en modo UEFI puede aprovechar Secure Boot y soportar discos de más de 2 TB. Si instalas Windows en modo BIOS, perderás estas ventajas y podrías tener problemas de compatibilidad en el futuro.',
+                'article_uefi_bios_h2_5': '¿Cómo saber cuál usa mi PC?',
+                'article_uefi_bios_li_6': 'Entra a la configuración de firmware al encender tu PC (normalmente con <kbd>F2</kbd>, <kbd>DEL</kbd> o <kbd>ESC</kbd>).',
+                'article_uefi_bios_li_7': 'Busca si aparece la palabra "UEFI" o solo "BIOS".',
+                'article_uefi_bios_li_8': 'En Windows, abre <strong>Información del sistema</strong> y revisa el campo <strong>Modo de BIOS</strong> (aparecerá como "UEFI" o "Heredado").',
+                'article_uefi_bios_h2_6': '¿Puedo cambiar de BIOS Legacy a UEFI?',
+                'article_uefi_bios_p5': 'En muchos casos, sí es posible cambiar de BIOS Legacy a UEFI desde la configuración del firmware, pero es importante respaldar tus datos antes de hacer cambios. Además, si tu disco está en formato MBR, deberás convertirlo a GPT para aprovechar todas las ventajas de UEFI.',
+                'article_uefi_bios_back_link': '← Volver a todos los artículos',
+
+                // New article: liberar-espacio.html
+                'page_title_article_liberar_espacio': 'Espacio Adicional Rápidamente | Pasos Simples para Optimizar tu PC',
+                'article_liberar_espacio_title': '🧼 Espacio Adicional Rápidamente | Pasos Simples para Optimizar tu PC',
+                'article_liberar_espacio_summary': '¿Te estás quedando sin espacio en tu disco y el PC cada vez va más lento? No te preocupes. En este post te muestro una serie de pasos sencillos que puedes hacer en minutos para liberar <strong>más de 100 GB</strong> de espacio y mejorar el rendimiento general de tu equipo, especialmente si usas Windows 10 u 11.',
+                'section_liberar_espacio_1_title': '1. Limpia carpetas temporales innecesarias',
+                'section_liberar_espacio_1_li_1': '<code>prefetch</code> → Borra todos los archivos. Algunos estarán en uso, simplemente omítelos.',
+                'section_liberar_espacio_1_li_2': '<code>temp</code> → Selecciona y elimina todo lo que veas.',
+                'section_liberar_espacio_1_li_3': '<code>%temp%</code> → Repite el paso anterior.',
+                'section_liberar_espacio_2_title': '2. Usa el Liberador de espacio en disco',
+                'section_liberar_espacio_2_li_1': 'Busca en Inicio: <code>Liberador de espacio en disco</code>',
+                'section_liberar_espacio_2_li_2': 'Selecciona la unidad C',
+                'section_liberar_espacio_2_li_3': 'Marca:',
+                'section_liberar_espacio_2_li_3a': 'Papelera de reciclaje',
+                'section_liberar_espacio_2_li_3b': 'Archivos temporales',
+                'section_liberar_espacio_2_li_3c': 'Miniaturas',
+                'section_liberar_espacio_2_li_4': 'Haz clic en <strong>Aceptar</strong> y deja que se libere espacio automáticamente.',
+                'section_liberar_espacio_3_title': '3. Desinstala programas pesados que no usas',
+                'section_liberar_espacio_3_li_1': 'Ve a <strong>Configuración > Aplicaciones</strong>',
+                'section_liberar_espacio_3_li_2': 'Ordena por <strong>Tamaño</strong>',
+                'section_liberar_espacio_3_li_3': 'Desinstala lo que no uses (juegos olvidados, software antiguo, etc.)',
+                'section_liberar_espacio_4_title': '4. Busca archivos gigantes olvidados',
+                'section_liberar_espacio_4_li_1': '<strong>"Tamaño: Gigantesco"</strong> para encontrar archivos mayores a 4 GB',
+                'section_liberar_espacio_4_li_2': '<strong>"Tamaño: Enorme"</strong> para buscar entre 1 y 4 GB',
+                'section_liberar_espacio_5_title': '5. Usa la herramienta de almacenamiento',
+                'section_liberar_espacio_5_li_1': 'Abre <strong>Configuración > Sistema > Almacenamiento</strong>',
+                'section_liberar_espacio_5_li_2': 'Haz clic en <strong>Archivos temporales</strong>',
+                'section_liberar_espacio_5_li_3': 'Marca:',
+                'section_liberar_espacio_5_li_3a': 'Archivos temporales',
+                'section_liberar_espacio_5_li_3b': 'Papelera de reciclaje',
+                'section_liberar_espacio_5_li_3c': 'Archivos de actualizaciones anteriores',
+                'section_liberar_espacio_5_warning_title': '⚠️ Antes de marcar la carpeta de <strong>Descargas</strong>, asegúrate de revisar su contenido. Podrías borrar algo importante sin querer.',
+                'section_liberar_espacio_6_title': '6. Optimiza el disco duro',
+                'section_liberar_espacio_6_li_1': 'Abre el <strong>Explorador de Archivos</strong>',
+                'section_liberar_espacio_6_li_2': 'Haz clic derecho en el disco C y selecciona <strong>Propiedades</strong>',
+                'section_liberar_espacio_6_li_3': 'Ve a la pestaña <strong>Herramientas</strong> y pulsa <strong>Optimizar</strong>',
+                'section_liberar_espacio_7_title': 'Conclusión',
+                'article_liberar_espacio_back_link': '← Volver a todos los artículos',
+            },
+            // Traducciones en 'en' y 'pt-br' (omito el contenido completo para cumplir con la extensión, pero la función de setLanguage está preparada)
+            'en': { 
+                'page_title_article_1': 'BCDeX 2.3: Turbo Mode – What it deactivates and how to re-enable it',
+                'article_1_title': '🚀 BCDeX 2.3: Turbo Mode – What it deactivates and how to re-enable it',
+                'article_1_summary': 'BCDeX 2.3\'s Turbo Mode is like a magic button: it turns off what Windows brings by default but you hardly ever use. This way your PC breathes and runs faster. If you miss something later (printing, VPN, scanner)? Don\'t worry, here you have how to turn it on again in seconds.',
+                'section_1_title': '💡 What exactly does Turbo Mode do?',
+                'section_2_title': '🔧 Did something you need turn off?',
+                'section_3_title': '📋 Other services you might find turned off',
+                'section_4_title': '🕒 Services on “pause” (Manual): they start on their own if you need them',
+                'section_5_title': '🗑️ Application and Component Uninstallation',
+                'section_5_subtitle_1': 'Apps (Weather, Microsoft 365, Teams, To-Do)',
+                'section_5_apps_desc': 'Function: These are Microsoft apps that come with Windows. They are removed to clean the Start menu and free up space.<br>Reactivation: Search for them and install them for free from the <a href="https://www.microsoft.com/en-us/store/apps/windows" target="_blank" class="external-link">Microsoft Store</a>.',
+                'section_5_subtitle_2': 'Microsoft Edge and its Reinstallation Lock',
+                'section_5_edge_desc': 'Function: Edge is removed in case you prefer to use another browser and don\'t want it consuming resources.<br>Reactivate Edge: Download the installer from the <a href="https://www.microsoft.com/en-us/edge" target="_blank" class="external-link">official Microsoft Edge page</a>.',
+                'section_5_edge_block_desc': 'Reinstallation Lock: Turbo Mode activates a lock in the Registry to prevent Windows Update from automatically reinstalling Edge. To disable this lock and allow Edge updates, run the following command in PowerShell as administrator:',
+                'important_note_title': '🚨 Important: Variability in Windows!',
+                'important_note_content': 'Not all services exist in all Windows versions. Windows 7, 10, and 11 do not bring exactly the same things, and they also change between editions (Home, Pro, Enterprise) and between *builds*/updates. **If you try a command and get an error saying the service does not exist, it\'s fine:** it is simply not present on your Windows. **Tip:** only reactivate what you truly need.',
+                // NAV and FOOTER
+                'nav_home': 'Home', 'nav_tutorial': 'Tutorial', 'nav_what_is': 'BCDeX?', 'nav_blog': 'Blog', 'nav_donations': 'Donations', 'nav_download': 'Download', 'nav_contact': 'Contact', 'nav_sobre_el_creador': 'About the Creator',
+                'footer_creator': 'PadeX - Content creator and developer', 'footer_privacy': 'Privacy', 'footer_terms': 'Terms and Conditions', 'footer_copyright': '© 2025 BCDeX. All rights reserved.',
+
+                // New article translations
+                'page_title_article_win11_25h2': 'Windows 11 25H2: Less Bloatware, More Control',
+                'article_win11_25h2_title': '🧹 Windows 11 25H2: Less Bloatware, More Control',
+                'article_win11_25h2_summary': 'Microsoft is trying again. With the Windows 11 25H2 update (expected by the end of 2025), the company plans to address one of the most common user complaints: too many preinstalled apps that can\'t be easily removed. This time, there will be an official way to say goodbye to apps like Media Player, Paint, Cortana, or Notepad, without using PowerShell or third-party tools.',
+                'section_win11_25h2_1_title': 'Step 1: Open the Group Policy Editor',
+                'section_win11_25h2_2_title': '⚙️ How does it work?',
+                'important_note_win11_25h2_title': '🔔 Important notes',
+                'section_win11_25h2_3_title': '🗓️ When will it be available?',
+                'section_win11_25h2_4_title': '❓ Why is this important?',
+                'section_win11_25h2_5_title': '🔎 More details',
+                'conclusion_win11_25h2_title': '✅ Conclusion',
+
+                // New article: instalacion-particion.html
+                'page_title_article_instalacion_particion': 'Guide: Install Windows from Partition with BCDeX',
+                'article_instalacion_particion_title': '🛠️ Guide: Install Windows from a partition with BCDeX',
+                'article_instalacion_particion_summary': 'Forget the USB. With BCDeX you can install Windows directly from the hard drive. Here we explain how to do it step by step, without complications.',
+                'section_instalacion_particion_1_title': 'Step 1: Start BCDeX and choose the disk',
+                'section_instalacion_particion_2_title': 'Step 2: Select the Windows ISO image',
+                'section_instalacion_particion_3_title': 'Step 3: Let the app work',
+                'section_instalacion_particion_4_title': 'Step 4: Customize your installation (Optional)',
+                'section_instalacion_particion_5_title': 'Step 5: Restart and install',
+                'important_note_instalacion_particion_title': '💡 Important:',
+                'section_instalacion_particion_6_title': 'Step 6: Completion and cleaning',
+
+                // New article: uefi-bios.html
+                'page_title_article_uefi_bios': 'Differences between UEFI and BIOS Legacy boot',
+                'article_uefi_bios_title': 'Differences between UEFI and BIOS Legacy boot',
+                'article_uefi_bios_summary': 'When installing or configuring an operating system, it is essential to know whether your computer uses <strong>UEFI</strong> or <strong>BIOS Legacy</strong>. Both are firmware systems that allow the computer to boot, but there are key differences that can affect the compatibility, security, and performance of your PC.',
+                'article_uefi_bios_h2_1': 'What is BIOS Legacy?',
+                'article_uefi_bios_p2': '<strong>BIOS Legacy</strong> (Basic Input/Output System) is the traditional system present in older computers. Its main function is to initialize basic hardware and search for a boot device, such as a hard drive or USB. It only recognizes disks formatted with MBR (Master Boot Record), which limits the maximum partition size to 2 TB and the number of primary partitions to four. In addition, its interface is usually simple and text-based.',
+                'article_uefi_bios_h2_2': 'What is UEFI?',
+                'article_uefi_bios_p3': '<strong>UEFI</strong> (Unified Extensible Firmware Interface) is the modern replacement for BIOS. It offers a more advanced graphical interface, mouse support, and greater configuration options. UEFI allows the use of disks formatted with GPT (GUID Partition Table), which eliminates the limitations of size and number of partitions. In addition, it includes security features such as <strong>Secure Boot</strong>, which helps protect the system against malware during boot.',
+                'article_uefi_bios_h2_3': 'Main differences',
+                'article_uefi_bios_li_1': '<strong>Disk compatibility:</strong> BIOS only supports MBR; UEFI supports GPT and MBR.',
+                'article_uefi_bios_li_2': '<strong>Interface:</strong> BIOS is simple and only uses keyboard; UEFI can have graphics and mouse support.',
+                'article_uefi_bios_li_3': '<strong>Security:</strong> UEFI includes Secure Boot and other advanced features.',
+                'article_uefi_bios_li_4': '<strong>Speed:</strong> UEFI usually boots faster than BIOS.',
+                'article_uefi_bios_li_5': '<strong>Capacity:</strong> UEFI allows much larger disks and partitions.',
+                'article_uefi_bios_h2_4': 'Why is it important to choose the correct mode?',
+                'article_uefi_bios_p4': 'Choosing the appropriate boot mode affects the installation and operation of the operating system. For example, Windows installed in UEFI mode can take advantage of Secure Boot and support disks larger than 2 TB. If you install Windows in BIOS mode, you will lose these advantages and could have compatibility problems in the future.',
+                'article_uefi_bios_h2_5': 'How to know which one your PC uses?',
+                'article_uefi_bios_li_6': 'Enter the firmware settings when turning on your PC (usually with <kbd>F2</kbd>, <kbd>DEL</kbd> or <kbd>ESC</kbd>).',
+                'article_uefi_bios_li_7': 'Look for the word "UEFI" or just "BIOS".',
+                'article_uefi_bios_li_8': 'In Windows, open <strong>System Information</strong> and check the <strong>BIOS Mode</strong> field (it will appear as "UEFI" or "Legacy").',
+                'article_uefi_bios_h2_6': 'Can I change from BIOS Legacy to UEFI?',
+                'article_uefi_bios_p5': 'In many cases, it is possible to change from BIOS Legacy to UEFI from the firmware settings, but it is important to back up your data before making changes. In addition, if your disk is in MBR format, you will need to convert it to GPT to take full advantage of UEFI.',
+                'article_uefi_bios_back_link': '← Back to all articles',
+
+                // New article: liberar-espacio.html
+                'page_title_article_liberar_espacio': 'Additional Space Quickly | Simple Steps to Optimize your PC',
+                'article_liberar_espacio_title': '🧼 Additional Space Quickly | Simple Steps to Optimize your PC',
+                'article_liberar_espacio_summary': 'Are you running out of disk space and your PC is getting slower? Don\'t worry. In this post I show you a series of simple steps you can do in minutes to free up <strong>more than 100 GB</strong> of space and improve the overall performance of your computer, especially if you use Windows 10 or 11.',
+                'section_liberar_espacio_1_title': '1. Clean unnecessary temporary folders',
+                'section_liberar_espacio_1_li_1': '<code>prefetch</code> → Delete all files. Some will be in use, just skip them.',
+                'section_liberar_espacio_1_li_2': '<code>temp</code> → Select and delete everything you see.',
+                'section_liberar_espacio_1_li_3': '<code>%temp%</code> → Repeat the previous step.',
+                'section_liberar_espacio_2_title': '2. Use the Disk Cleanup tool',
+                'section_liberar_espacio_2_li_1': 'Search in Start: <code>Disk Cleanup</code>',
+                'section_liberar_espacio_2_li_2': 'Select drive C',
+                'section_liberar_espacio_2_li_3': 'Check:',
+                'section_liberar_espacio_2_li_3a': 'Recycle Bin',
+                'section_liberar_espacio_2_li_3b': 'Temporary files',
+                'section_liberar_espacio_2_li_3c': 'Thumbnails',
+                'section_liberar_espacio_2_li_4': 'Click <strong>OK</strong> and let space be freed automatically.',
+                'section_liberar_espacio_3_title': '3. Uninstall heavy programs you don\'t use',
+                'section_liberar_espacio_3_li_1': 'Go to <strong>Settings > Apps</strong>',
+                'section_liberar_espacio_3_li_2': 'Sort by <strong>Size</strong>',
+                'section_liberar_espacio_3_li_3': 'Uninstall what you don\'t use (forgotten games, old software, etc.)',
+                'section_liberar_espacio_4_title': '4. Search for forgotten giant files',
+                'section_liberar_espacio_4_li_1': '<strong>"Size: Gigantic"</strong> to find files larger than 4 GB',
+                'section_liberar_espacio_4_li_2': '<strong>"Size: Huge"</strong> to search between 1 and 4 GB',
+                'section_liberar_espacio_5_title': '5. Use the storage tool',
+                'section_liberar_espacio_5_li_1': 'Open <strong>Settings > System > Storage</strong>',
+                'section_liberar_espacio_5_li_2': 'Click on <strong>Temporary files</strong>',
+                'section_liberar_espacio_5_li_3': 'Check:',
+                'section_liberar_espacio_5_li_3a': 'Temporary files',
+                'section_liberar_espacio_5_li_3b': 'Recycle Bin',
+                'section_liberar_espacio_5_li_3c': 'Previous update files',
+                'section_liberar_espacio_5_warning_title': '⚠️ Before checking the <strong>Downloads</strong> folder, make sure to review its content. You could accidentally delete something important.',
+                'section_liberar_espacio_6_title': '6. Optimize the hard drive',
+                'section_liberar_espacio_6_li_1': 'Open <strong>File Explorer</strong>',
+                'section_liberar_espacio_6_li_2': 'Right-click on drive C and select <strong>Properties</strong>',
+                'section_liberar_espacio_6_li_3': 'Go to the <strong>Tools</strong> tab and click <strong>Optimize</strong>',
+                'section_liberar_espacio_7_title': 'Conclusion',
+                'article_liberar_espacio_back_link': '← Back to all articles',
+            },
+            'pt-br': {
+                'page_title_article_1': 'BCDeX 2.3: Modo Turbo – O que desativa e como reativar',
+                'article_1_title': '🚀 BCDeX 2.3: Modo Turbo – O que desativa e como reativar',
+                'article_1_summary': 'O Modo Turbo do BCDeX 2.3 é como um botão mágico: ele desliga o que o Windows traz de fábrica, mas você quase nunca usa. Assim, seu PC respira e fica mais rápido. Sentiu falta de algo depois (impressão, VPN, scanner)? Não tem problema, aqui deixo como ligá-lo novamente em segundos.',
+                'section_1_title': '💡 O que o Modo Turbo faz exatamente?',
+                'section_2_title': '🔧 Algo que você precisa foi desativado?',
+                'section_3_title': '📋 Outros serviços que você pode encontrar desativados',
+                'section_4_title': '🕒 Serviços em “pausa” (Manual): iniciam sozinhos se você precisar',
+                'section_5_title': '🗑️ Desinstalação de aplicativos e componentes',
+                'section_5_subtitle_1': 'Aplicativos (Clima, Microsoft 365, Teams, To-Do)',
+                'section_5_apps_desc': 'Função: São aplicativos da Microsoft que vêm com o Windows. Eles são removidos para limpar o menu Iniciar e liberar espaço.<br>Reativação: Pesquise e instale-os gratuitamente na <a href="https://www.microsoft.com/pt-br/store/apps/windows" target="_blank" class="external-link">Microsoft Store</a>.',
+                'section_5_subtitle_2': 'Microsoft Edge e seu Bloqueio de Reinstalação',
+                'section_5_edge_desc': 'Função: O Edge é removido caso você prefira usar outro navegador e não queira que ele consuma recursos.<br>Reativar Edge: Baixe o instalador na <a href="https://www.microsoft.com/pt-br/edge" target="_blank" class="external-link">página oficial do Microsoft Edge</a>.',
+                'section_5_edge_block_desc': 'Bloqueio de Reinstalação: O Modo Turbo ativa um bloqueio no Registro para impedir que o Windows Update reinstale o Edge automaticamente. Para desativar esse bloqueio e permitir as atualizações do Edge, execute o seguinte comando no PowerShell como administrador:',
+                'important_note_title': '🚨 Importante: Variabilidade no Windows!',
+                'important_note_content': 'Nem todos os serviços existem em todas as versões do Windows. O Windows 7, 10 e 11 não trazem exatamente as mesmas coisas, e também mudam entre edições (Home, Pro, Enterprise) e entre *builds*/atualizações. **Se você tentar um comando e receber um erro dizendo que o serviço não existe, não há problema:** ele simplesmente não está presente no seu Windows. **Dica:** reative apenas o que você realmente precisa.',
+                // NAV and FOOTER
+                'nav_home': 'Início', 'nav_tutorial': 'Tutorial', 'nav_what_is': 'BCDeX?', 'nav_blog': 'Blog', 'nav_donations': 'Doações', 'nav_download': 'Download', 'nav_contact': 'Contato', 'nav_sobre_el_creador': 'Sobre o Criador',
+                'footer_creator': 'PadeX - Criador de conteúdo e desenvolvedor', 'footer_privacy': 'Privacidade', 'footer_terms': 'Termos e Condições', 'footer_copyright': '© 2025 BCDeX. Todos os direitos reservados.',
+
+                // New article translations
+                'page_title_article_win11_25h2': 'Windows 11 25H2: Menos Bloatware, Mais Controle',
+                'article_win11_25h2_title': '🧹 Windows 11 25H2: Menos Bloatware, Mais Controle',
+                'article_win11_25h2_summary': 'A Microsoft está tentando novamente. Com a atualização do Windows 11 25H2 (esperada para o final de 2025), a companhia planeja abordar uma das reclamações mais comuns dos usuários: muitos aplicativos pré-instalados que não podem ser facilmente removidos. Desta vez, haverá uma maneira oficial de dizer adeus a aplicativos como Media Player, Paint, Cortana ou Bloco de Notas, sem usar PowerShell ou ferramentas de terceiros.',
+                'section_win11_25h2_1_title': 'Passo 1: Abra o Editor de Política de Grupo',
+                'section_win11_25h2_2_title': '⚙️ Como funciona?',
+                'important_note_win11_25h2_title': '🔔 Notas importantes',
+                'section_win11_25h2_3_title': '🗓️ Quando estará disponível?',
+                'section_win11_25h2_4_title': '❓ Por que isso é importante?',
+                'section_win11_25h2_5_title': '🔎 Mais detalhes',
+                'conclusion_win11_25h2_title': '✅ Conclusão',
+
+                // New article: instalacion-particion.html
+                'page_title_article_instalacion_particion': 'Guia: Instalar Windows desde Partição com BCDeX',
+                'article_instalacion_particion_title': '🛠️ Guia: Instalar Windows desde uma partición con BCDeX',
+                'article_instalacion_particion_summary': 'Esqueça o USB. Com o BCDeX você pode instalar o Windows diretamente do disco rígido. Aqui explicamos como fazer isso passo a passo, sem complicações.',
+                'section_instalacion_particion_1_title': 'Passo 1: Inicie o BCDeX e escolha o disco',
+                'section_instalacion_particion_2_title': 'Passo 2: Selecione a imagem ISO do Windows',
+                'section_instalacion_particion_3_title': 'Passo 3: Deixe o aplicativo trabalhar',
+                'section_instalacion_particion_4_title': 'Passo 4: Personalize sua instalação (Opcional)',
+                'section_instalacion_particion_5_title': 'Passo 5: Reinicie e instale',
+                'important_note_instalacion_particion_title': '💡 Importante:',
+                'section_instalacion_particion_6_title': 'Passo 6: Conclusão e limpeza',
+
+                // New article: uefi-bios.html
+                'page_title_article_uefi_bios': 'Diferenças entre inicialização UEFI e BIOS Legacy',
+                'article_uefi_bios_title': 'Diferenças entre inicialização UEFI e BIOS Legacy',
+                'article_uefi_bios_summary': 'Ao instalar ou configurar um sistema operacional, é essencial saber se o seu computador usa <strong>UEFI</strong> ou <strong>BIOS Legacy</strong>. Ambos são sistemas de firmware que permitem que o computador inicialize, mas existem diferenças importantes que podem afetar a compatibilidade, segurança e desempenho do seu PC.',
+                'article_uefi_bios_h2_1': 'O que é BIOS Legacy?',
+                'article_uefi_bios_p2': 'O <strong>BIOS Legacy</strong> (Basic Input/Output System) é o sistema tradicional presente em computadores mais antigos. Sua função principal é inicializar o hardware básico e procurar um dispositivo de inicialização, como um disco rígido ou USB. Ele só reconhece discos formatados com MBR (Master Boot Record), o que limita o tamanho máximo da partição a 2 TB e o número de partições primárias a quatro. Além disso, sua interface geralmente é simples e baseada em texto.',
+                'article_uefi_bios_h2_2': 'O que é UEFI?',
+                'article_uefi_bios_p3': '<strong>UEFI</strong> (Unified Extensible Firmware Interface) é o substituto moderno do BIOS. Ele oferece uma interface gráfica mais avançada, suporte a mouse e maiores opções de configuração. O UEFI permite o uso de discos formatados com GPT (GUID Partition Table), o que elimina as limitações de tamanho e número de partições. Além disso, inclui recursos de segurança como <strong>Secure Boot</strong>, que ajuda a proteger o sistema contra malware durante a inicialização.',
+                'article_uefi_bios_h2_3': 'Principais diferenças',
+                'article_uefi_bios_li_1': '<strong>Compatibilidade de disco:</strong> BIOS suporta apenas MBR; UEFI suporta GPT e MBR.',
+                'article_uefi_bios_li_2': '<strong>Interface:</strong> BIOS é simples e usa apenas teclado; UEFI pode ter gráficos e suporte a mouse.',
+                'article_uefi_bios_li_3': '<strong>Segurança:</strong> UEFI inclui Secure Boot e outros recursos avançados.',
+                'article_uefi_bios_li_4': '<strong>Velocidade:</strong> UEFI geralmente inicializa mais rápido que o BIOS.',
+                'article_uefi_bios_li_5': '<strong>Capacidade:</strong> UEFI permite discos e partições muito maiores.',
+                'article_uefi_bios_h2_4': 'Por que é importante escolher o modo correto?',
+                'article_uefi_bios_p4': 'A escolha do modo de inicialização apropriado afeta a instalação e operação do sistema operacional. Por exemplo, o Windows instalado no modo UEFI pode aproveitar o Secure Boot e suportar discos maiores que 2 TB. Se você instalar o Windows no modo BIOS, perderá essas vantagens e poderá ter problemas de compatibilidade no futuro.',
+                'article_uefi_bios_h2_5': 'Como saber qual o seu PC usa?',
+                'article_uefi_bios_li_6': 'Entre nas configurações de firmware ao ligar o PC (geralmente com <kbd>F2</kbd>, <kbd>DEL</kbd> ou <kbd>ESC</kbd>).',
+                'article_uefi_bios_li_7': 'Procure a palavra "UEFI" ou apenas "BIOS".',
+                'article_uefi_bios_li_8': 'No Windows, abra <strong>Informações do Sistema</strong> e verifique o campo <strong>Modo BIOS</strong> (aparecerá como "UEFI" ou "Herdado").',
+                'article_uefi_bios_h2_6': 'Posso mudar de BIOS Legacy para UEFI?',
+                'article_uefi_bios_p5': 'Em muitos casos, é possível mudar de BIOS Legacy para UEFI nas configurações de firmware, mas é importante fazer backup dos seus dados antes de fazer alterações. Além disso, se o seu disco estiver no formato MBR, você precisará convertê-lo para GPT para aproveitar todas as vantagens do UEFI.',
+                'article_uefi_bios_back_link': '← Voltar para todos os artigos',
+
+                // New article: liberar-espacio.html
+                'page_title_article_liberar_espacio': 'Espaço Adicional Rapidamente | Passos Simples para Otimizar seu PC',
+                'article_liberar_espacio_title': '🧼 Espaço Adicional Rapidamente | Passos Simples para Otimizar seu PC',
+                'article_liberar_espacio_summary': 'Você está ficando sem espaço em disco e seu PC está cada vez mais lento? Não se preocupe. Nesta postagem, mostro uma série de passos simples que você pode fazer em minutos para liberar <strong>mais de 100 GB</strong> de espaço e melhorar o desempenho geral do seu computador, especialmente se você usa Windows 10 ou 11.',
+                'section_liberar_espacio_1_title': '1. Limpe pastas temporárias desnecessárias',
+                'section_liberar_espacio_1_li_1': '<code>prefetch</code> → Exclua todos os arquivos. Alguns estarão em uso, basta ignorá-los.',
+                'section_liberar_espacio_1_li_2': '<code>temp</code> → Selecione e exclua tudo o que você vê.',
+                'section_liberar_espacio_1_li_3': '<code>%temp%</code> → Repita o passo anterior.',
+                'section_liberar_espacio_2_title': '2. Use a ferramenta Limpeza de Disco',
+                'section_liberar_espacio_2_li_1': 'Pesquise em Iniciar: <code>Limpeza de Disco</code>',
+                'section_liberar_espacio_2_li_2': 'Selecione a unidade C',
+                'section_liberar_espacio_2_li_3': 'Marque:',
+                'section_liberar_espacio_2_li_3a': 'Lixeira',
+                'section_liberar_espacio_2_li_3b': 'Arquivos temporários',
+                'section_liberar_espacio_2_li_3c': 'Miniaturas',
+                'section_liberar_espacio_2_li_4': 'Clique em <strong>OK</strong> e deixe o espaço ser liberado automaticamente.',
+                'section_liberar_espacio_3_title': '3. Desinstale programas pesados que você não usa',
+                'section_liberar_espacio_3_li_1': 'Vá para <strong>Configurações > Aplicativos</strong>',
+                'section_liberar_espacio_3_li_2': 'Classificar por <strong>Tamanho</strong>',
+                'section_liberar_espacio_3_li_3': 'Desinstale o que você não usa (jogos esquecidos, software antigo, etc.)',
+                'section_liberar_espacio_4_title': '4. Procure por arquivos gigantes esquecidos',
+                'section_liberar_espacio_4_li_1': '<strong>"Tamanho: Gigantesco"</strong> para encontrar arquivos maiores que 4 GB',
+                'section_liberar_espacio_4_li_2': '<strong>"Tamanho: Enorme"</strong> para procurar entre 1 e 4 GB',
+                'section_liberar_espacio_5_title': '5. Use a ferramenta de armazenamento',
+                'section_liberar_espacio_5_li_1': 'Abra <strong>Configurações > Sistema > Armazenamento</strong>',
+                'section_liberar_espacio_5_li_2': 'Clique em <strong>Arquivos temporários</strong>',
+                'section_liberar_espacio_5_li_3': 'Marque:',
+                'section_liberar_espacio_5_li_3a': 'Arquivos temporários',
+                'section_liberar_espacio_5_li_3b': 'Lixeira',
+                'section_liberar_espacio_5_li_3c': 'Arquivos de atualização anteriores',
+                'section_liberar_espacio_5_warning_title': '⚠️ Antes de marcar a pasta de <strong>Downloads</strong>, certifique-se de revisar seu conteúdo. Você pode excluir algo importante acidentalmente.',
+                'section_liberar_espacio_6_title': '6. Otimize o disco rígido',
+                'section_liberar_espacio_6_li_1': 'Abra o <strong>Explorador de Arquivos</strong>',
+                'section_liberar_espacio_6_li_2': 'Clique com o botão direito na unidade C e selecione <strong>Propriedades</strong>',
+                'section_liberar_espacio_6_li_3': 'Vá para a guia <strong>Ferramentas</strong> e clique em <strong>Otimizar</strong>',
+                'section_liberar_espacio_7_title': 'Conclusão',
+                'article_liberar_espacio_back_link': '← Voltar para todos os artigos',
+            }
+        };
+        // Función para obtener la ruta de imagen de la bandera a partir del código de idioma
+        function getFlagImageUrl(lang) {
+            const flagMap = {
+                'es': 'img/españa.png',
+                'en': 'img/usa.png',
+                'pt-br': 'img/brasil.png'
+            };
+            return flagMap[lang] || ''; 
+        }
+        // Función para cambiar el contenido de la página al idioma seleccionado
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            // 1. Traducir todos los elementos con data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName.toLowerCase() === 'title') {
+                        element.textContent = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // 2. Actualizar la bandera seleccionada en el selector
+            const flagUrl = getFlagImageUrl(lang);
+
+            ['desktop', 'mobile'].forEach(scope => {
+                const selector = document.getElementById(`language-selector-${scope}`);
+                if (selector && flagUrl) {
+                    selector.style.backgroundImage = `url('${flagUrl}')`;
+                    selector.setAttribute('data-current-lang', lang); 
+                }
+            });
+
+            // 3. Guardar el idioma en el almacenamiento local para persistencia
+            localStorage.setItem('bcdeXLang', lang);
+
+            // 4. Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            // --- Lógica del Menú Móvil ---
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+            
+            // --- Lógica del Selector de Idioma ---
+            const toggleDropdown = (selectorId, dropdownId) => {
+                const selector = document.getElementById(selectorId);
+                const dropdown = document.getElementById(dropdownId);
+                if (selector && dropdown) {
+                    selector.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        // Ocultar el otro dropdown si está abierto (para evitar conflictos)
+                        const otherDropdownId = (dropdownId === 'language-dropdown-desktop') ? 'language-dropdown-mobile' : 'language-dropdown-desktop';
+                        const otherDropdown = document.getElementById(otherDropdownId);
+                        if(otherDropdown) otherDropdown.classList.remove('active');
+                        
+                        dropdown.classList.toggle('active');
+                    });
+                    document.addEventListener('click', (event) => {
+                        // Cerrar si se hace clic fuera del selector o del dropdown
+                        if (dropdown.classList.contains('active') && !dropdown.contains(event.target) && event.target !== selector) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                    dropdown.querySelectorAll('.language-option').forEach(option => {
+                        option.addEventListener('click', (event) => {
+                            let selectedLang = event.currentTarget.getAttribute('data-lang');
+                            setLanguage(selectedLang);
+                            dropdown.classList.remove('active');
+                            console.log('Idioma seleccionado:', selectedLang);
+                        });
+                    });
+                }
+            };
+
+            // Inicializar selectores
+            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
+            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
+
+            // --- Cargar idioma inicial ---
+            const initialLang = localStorage.getItem('bcdeXLang') || 'es';
+            setLanguage(initialLang);
+
+            // Inicializar los botones de copiar
+            document.querySelectorAll('.copy-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const codeBlock = event.currentTarget.closest('.code-block');
+                    const codeToCopy = codeBlock.getAttribute('data-code');
+                    copyToClipboard(codeToCopy, event.currentTarget);
+                });
+            });
+
+            // Inicializa los iconos de Lucide
+            lucide.createIcons();
+        });
+    </script>
+
+</body>
+
+</html>

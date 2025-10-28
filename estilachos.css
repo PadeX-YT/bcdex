@@ -1,0 +1,300 @@
+/* ----------------------------------------------------------------------- */
+/* Estilos Principales para BCDeX Website                    */
+/* ----------------------------------------------------------------------- */
+
+/* Definición de variables de color actualizada según la paleta proporcionada por el usuario */
+:root {
+    /* Colores de Fondo y Superficie */
+    --color-background: #FFFFFF;
+    --color-surface: #F8F9FA;
+
+    /* Color de Acento (Botones, Destacados): Rojo Principal */
+    --color-accent: #D90429;
+    --color-accent-hover: #EF233C;
+    
+    /* Color de Fondo para NAV y FOOTER (Nuevo color proporcionado) */
+    --color-nav-footer: #111827; 
+
+    /* Colores de Texto */
+    --color-text-primary: #212529; 
+    --color-text-secondary: #444950;
+    
+    /* Color de Borde */
+    --color-border: #E9ECEF;
+
+    /* Altura del Header */
+    --header-height: 80px; 
+    
+    /* Variables para el Muro de Donantes */
+    --color-donor-primary: var(--color-accent); /* Ahora usa el color de acento */
+    --color-donor-text: #1f2937;    /* gray-800 */
+    --color-donor-accent: #f59e0b;  /* amber-500 (mantenido para el borde del avatar) */
+}
+
+/* Aplicar la fuente Inter a todo el cuerpo y colores de fondo/texto */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-surface); /* Fondo de contenido ligeramente gris */
+    color: var(--color-text-primary);
+}
+
+/* Estilos para el NAV y FOOTER: Usamos el Gris Oscuro */
+.bg-nav-footer {
+    background-color: var(--color-nav-footer); 
+}
+
+/* Estilos de texto específicos para el footer y enlaces del nav */
+.footer-text, .nav-text-color {
+    color: #E5E7EB; /* Gris muy claro para alto contraste sobre el fondo oscuro */
+}
+/* Ajustamos el color del logo en el nav */
+.nav-logo-color {
+    color: var(--color-background); /* Blanco puro para el logo */
+}
+
+/* Estilos para el botón principal (Acento Rojo) */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-background); /* Usamos el fondo blanco para contraste */
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3); 
+    line-height: normal; /* Asegura que el texto esté centrado verticalmente */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: 0 6px 16px rgba(217, 4, 41, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Estilos para el botón secundario (Borde Gris Oscuro) */
+.btn-secondary-outline {
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-border);
+    background-color: transparent;
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-secondary-outline:hover {
+    background-color: var(--color-border);
+}
+
+/* Estilos para el VIDEO PRINCIPAL (reemplaza a hero-image) */
+.video-container {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border: 4px solid var(--color-border); /* Borde suave */
+    /* Contenedor responsivo 16:9 */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste de color para el texto resaltado */
+.text-primary-accent {
+    color: var(--color-accent);
+}
+
+/* Ajuste de color para los íconos de funcionalidad */
+.feature-icon-color {
+    color: var(--color-accent);
+}
+
+/* Ajuste para los enlaces del nav sobre fondo oscuro */
+.nav-link-hover {
+    padding: 0.5rem 0.75rem; /* Ajuste de padding para los enlaces */
+}
+.nav-link-hover:hover {
+    color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil al hacer hover */
+    border-radius: 0.375rem;
+}
+
+/* Estilos específicos para el selector de idioma (manteniendo la estructura original) */
+.language-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.language-selector {
+    width: 30px;
+    height: 20px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%; /* Justo debajo del selector */
+    right: 0;
+    background-color: var(--color-nav-footer);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    z-index: 60;
+    min-width: 60px;
+    display: none; /* Oculto por defecto */
+}
+
+.language-dropdown.active {
+    display: block;
+}
+
+.language-option {
+    width: 30px;
+    height: 20px;
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.language-option:last-child {
+    margin-bottom: 0;
+}
+
+.language-option:hover {
+    border-color: var(--color-accent);
+}
+
+.logo-img {
+    height: 48px; /* Ajuste para que el logo tenga un buen tamaño */
+    width: auto;
+}
+
+/* Clase de Estilo para Bloques de Anuncios */
+.adsense-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Altura mínima para que el espacio no colapse antes de cargar el anuncio */
+    min-height: 90px; 
+    background-color: var(--color-background); /* Fondo blanco para mejor contraste con anuncios */
+    border-radius: 0.75rem;
+    text-align: center;
+    overflow: hidden; /* Importante para que los anuncios no rompan el layout */
+    border: 1px solid var(--color-border); /* Borde sutil */
+}
+/* Ajuste de altura para bloques grandes en escritorio */
+@media (min-width: 1024px) {
+    .adsense-block.lg-display-ad {
+        min-height: 280px; /* Altura para anuncio de display grande */
+    }
+}
+
+/* --- ESTILOS ESPECÍFICOS DEL MURO DE DONANTES --- */
+
+.supporters-wall {
+    padding: 2.5rem 1rem;
+    background-color: #f9fafb; /* gray-50 */
+}
+
+/* Separador con color de acento (rojo) */
+.supporters-divider {
+    border: 0;
+    height: 2px; /* Ligeramente más grueso para más presencia */
+    /* Degradado de transparente a rojo y de vuelta a transparente */
+    background-image: linear-gradient(to right, rgba(217, 4, 41, 0), var(--color-accent), rgba(217, 4, 41, 0));
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+/* Cuadrícula de colaboradores */
+.supporters-grid {
+    display: grid;
+    gap: 1rem; 
+    padding: 0 1rem;
+    max-width: 1000px; /* Ancho máximo para el grid */
+    margin: 0 auto;
+    
+    /* Responsive Grid Columns (Mobile First) */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en móvil */
+}
+
+@media (min-width: 640px) {
+    .supporters-grid {
+        grid-template-columns: repeat(5, 1fr); /* Aumentado a 5 en sm para juntar más */
+    }
+}
+
+@media (min-width: 1024px) {
+    .supporters-grid {
+        grid-template-columns: repeat(7, 1fr); /* Aumentado a 7 en lg+ para juntar más */
+    }
+}
+
+/* Tarjeta del Colaborador */
+.supporter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+/* Avatar */
+.supporter-avatar-bg {
+    width: 64px; 
+    height: 64px; 
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    border: 3px solid var(--color-donor-accent); /* Borde destacado (Amber) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.3rem; 
+    transition: transform 0.2s;
+}
+
+.supporter-card:hover .supporter-avatar-bg {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.supporter-name {
+    font-size: 0.8rem; 
+    color: var(--color-donor-text);
+    line-height: 1.2;
+    overflow-wrap: break-word; 
+}
+
+/* Placeholder y lista inferior */
+.donaciones-destacado {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* semibold */
+    color: var(--color-donor-primary); /* Ya usa el color de acento */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(217, 4, 41, 0.1); /* Fondo rojo claro */
+}
+
+.supporters-list span {
+    display: block;
+    margin-top: 0.5rem;
+    color: #6b7280; /* gray-500 */
+    font-size: 0.9rem;
+}
