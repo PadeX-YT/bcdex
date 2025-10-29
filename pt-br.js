@@ -183,8 +183,8 @@ const translations_pt_br = {
     "donations_why_item3_title": "☕ Alimenta a paixão (e o desenvolvedor)",
     "donations_why_item3_text": "Este é um projeto de um único desenvolvedor. Cada doação literalmente vira café, horas de código, correção de bugs e suporte aos usuários. É uma forma de dizer ‘você me ajudou — aqui vai meu soquinho na vida real’.", 
     "donations_why_footer": "Se o BCDeX te ajudou, retribua. Se não, ao menos não deixe que desapareça por falta de apoio.",
-    "donations_how_title": "Escolha sua forma de contribuir",
-    "donations_how_text": "Cada doação, independentemente do valor, nos ajuda a cobrir custos de desenvolvimento, manutenção e servidores. Obrigado por fazer parte da comunidade BCDeX!",
+    "donations_how_title": "Seu Apoio Sustenta o BCDeX: Toda Contribuição Conta!",
+    "donations_how_text": "O BCDeX continua crescendo graças a você. Sua doação —de qualquer valor— é vital para financiar a manutenção, garantir servidores estáveis e acelerar o desenvolvimento de novos recursos. Ajude-nos a seguir em frente! Obrigado por ser um pilar da nossa comunidade.",
 
     "article_instalacion_particion_back_to_all": "← Voltar para todos os artigos",
     "section_instalacion_particion_process_title": "O processo com o BCDeX: Fácil e Rápido",
