@@ -23,6 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // If page loads with a hash, center the target after layout is ready
+    try {
+        if (location.hash && location.hash.length > 1) {
+            const id = decodeURIComponent(location.hash.slice(1));
+            const target = document.getElementById(id);
+            if (target) {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 75);
+            }
+        }
+    } catch {}
+
     // Smooth-scroll: center any in-page anchor target (works on all pages)
     document.addEventListener('click', (event) => {
         const link = event.target.closest('a[href^="#"]');
@@ -34,12 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = document.getElementById(id);
         if (!target) return;
         event.preventDefault();
-        const rect = target.getBoundingClientRect();
-        const absoluteTop = rect.top + window.pageYOffset;
-        const targetCenter = absoluteTop + rect.height / 2;
-        const viewportCenter = window.innerHeight / 2;
-        const scrollTop = Math.max(0, targetCenter - viewportCenter);
-        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
 });
