@@ -27,6 +27,7 @@ const translations_pt_br = {
     "index_security_description": "Devido à manipulação necessária da configuração de inicialização (BCD) e partições, alguns antivírus podem relatar o BCDeX como um \"falso positivo\". Garantimos que a ferramenta é completamente segura e executa apenas comandos fundamentais do Windows para sua funcionalidade.",
     "donations_supporters_title": "Obrigado aos super CRACKS da Comunidade",
     "donations_supporters_placeholder": "Seu nome pode estar aqui!",
+    "donations_supporter_1": "->Descubra como apoiar o BCDeX<-",
     "footer_creator": "PadeX - Criador de Conteúdo e Desenvolvedor",
     "footer_privacy": "Privacidade",
     "footer_terms": "Termos e Condições",
