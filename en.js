@@ -207,8 +207,8 @@ const translations_en = {
     "donations_why_item3_title": "☕ Fuels the passion (and the developer)",
     "donations_why_item3_text": "This is a one‑developer project. Every donation literally turns into coffee, hours of code, bug fixing, and user support. It's a way to say ‘you helped me — here’s my real‑life fist bump’.",
     "donations_why_footer": "If BCDeX helped you, give back. If not, at least don't let it disappear for lack of support.",
-    "donations_how_title": "Choose your way to contribute",
-    "donations_how_text": "Every donation, no matter the size, helps us cover development, maintenance, and server costs. Thank you for being part of the BCDeX community!",
+    "donations_how_title": "Your Support Keeps BCDeX Going: Every Contribution Matters!",
+    "donations_how_text": "BCDeX keeps growing thanks to you. Your donation—of any size—is vital to fund maintenance, ensure stable servers, and accelerate the development of new features. Help us keep moving forward! Thank you for being a pillar of our community.",
 
     "download_page_title": "BCDeX - Download",
     "download_header_title": "Download BCDeX",
