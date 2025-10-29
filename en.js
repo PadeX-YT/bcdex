@@ -27,6 +27,7 @@ const translations_en = {
     "index_security_description": "Due to the necessary manipulation of boot configuration (BCD) and partitions, some antivirus programs may report BCDeX as a \"false positive\". We assure you that the tool is completely safe and only executes fundamental Windows commands for its functionality.",
     "donations_supporters_title": "Thanks to the super CRACKS of the Community",
     "donations_supporters_placeholder": "Your name could be here!",
+    "donations_supporter_1": "->Discover how to support BCDeX<-",
     "footer_creator": "PadeX - Content Creator and Developer",
     "footer_privacy": "Privacy",
     "footer_terms": "Terms and Conditions",
