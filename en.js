@@ -28,6 +28,8 @@ const translations_en = {
     "donations_supporters_title": "Thanks to the super CRACKS of the Community",
     "donations_supporters_placeholder": "Your name could be here!",
     "donations_supporter_1": "->Discover how to support BCDeX<-",
+    "donations_cta_combo": "Your name could be here. Learn how",
+    "donations_cta_here": "Here",
     "footer_creator": "PadeX - Content Creator and Developer",
     "footer_privacy": "Privacy",
     "footer_terms": "Terms and Conditions",
