@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteBase /
+Options -MultiViews
+
+# Redirigir /index.html o /index a la raíz /
+RewriteCond %{THE_REQUEST} /index(\.html)? [NC]
+RewriteRule ^index(\.html)?$ / [R=301,L]
+
+# Forzar HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Quitar la extensión .html de la URL en la barra del navegador
+RewriteCond %{THE_REQUEST} \s([^.]+)\.html[\s?] [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# Permitir acceder sin extensión a los archivos .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Servir index.html por defecto
+DirectoryIndex index.html
