@@ -45,6 +45,7 @@
                         <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150" aria-current="page">Descarga</a>
                         <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
                         <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+                        <a href="https://dextore.ink/" target="_blank" data-i18n="nav_store" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tienda</a>
                         <div class="language-container ml-4">
                             <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
                             <div class="language-dropdown" id="language-dropdown-desktop">
@@ -81,186 +82,236 @@
                 <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
                 <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
                 <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+                <a href="https://dextore.ink/" target="_blank" data-i18n="nav_store" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tienda</a>
             </div>
         </div>
     </header>
     
-    <main class="flex-grow py-12 sm:py-16 px-4">
-        <div class="max-w-7xl mx-auto">
-            <header class="text-center mb-12">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="download_header_title">Descarga BCDeX</h1>
-                <p class="text-xl text-gray-600" data-i18n="download_header_subtitle">Estás a un solo clic de simplificar tus instalaciones de Windows para siempre.</p>
-            </header>
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
-                    <br>Gracias a los super CRACKS de la Comunidad
-                </h2>
-                
-                <!-- El separador ahora usa el degradado de color-accent (rojo) -->
-                <hr class="supporters-divider">
-                
-                <div id="donantes-grid-descarga" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                <script>
-                  fetch('bloque-donantes.html')
-                    .then(r => r.text())
-                    .then(html => { document.getElementById('donantes-grid-descarga').innerHTML = html; })
-                    .catch(console.error);
-                </script>
-                
-                <div class="flex items-center justify-center gap-3 mt-4 md:mt-5">
-                    <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
-                    <a href="donaciones.html#como-apoyar" class="btn-primary inline-block px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
-                </div>
-            </div>
-        </section>
-            <!-- Sección de Descarga de Versión 2.3 -->
-            <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div class="p-6 bg-gray-100 rounded-lg text-center">
-                        <h3 class="font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
-                        <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md">
-                            <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                            <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
-                            <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
-                            <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                            <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
-                            <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
-                        </ul>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">  
-                        <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                        <div class="space-y-4">
-                            <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
-                            <a href="https://ouo.io/T2zo3H" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
-                            <a href="https://ouo.io/S1940" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
-                    <p class="text-lg text-gray-700" data-i18n="download_changes_text">Se han implementado mejoras de rendimiento y estabilidad.</p>
-                </div>
-                <!-- Compatibilidad con Windows 7 -->
-                <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_win7_compat_title">Compatibilidad con Windows 7</h3>
-                    <p class="text-lg text-gray-700 mb-4" data-i18n="download_win7_compat_desc">Paquete .rar con instaladores de .NET Framework 4.0 y actualizaciones acumulativas x86/x64 requeridas para ejecutar BCDeX en Windows 7.</p>
-                    <a id="win7-libs-link" href="https://katfile.cloud/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" class="btn-primary inline-block" data-i18n="download_win7_package_btn">Descargar paquete Windows 7</a>
-                </div>
-            </section>
 
-            <!-- Sección de Descarga de Versión 1.3 -->
-            <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
-                <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> 
-                    <div class="p-6 bg-gray-200 rounded-lg text-center">
-                        <h3 class="font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
-                        <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-md">
-                            <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
-                            <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
-                            <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
-                        </ul>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">
-                        <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                        <div class="space-y-4">
-                            <a href="https://ko-fi.com/s/7cc7403907" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
-                            <a href="https://ouo.io/r9FjqW" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
-                            <a href="https://ouo.io/aeRBxBi" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-grow min-w-0">
+            <main class="flex-grow py-12 sm:py-16 px-4">
+                <div class="max-w-7xl mx-auto">
+                    <header class="text-center mb-12">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="download_header_title">Descarga BCDeX</h1>
+                        <p class="text-xl text-gray-600" data-i18n="download_header_subtitle">Estás a un solo clic de simplificar tus instalaciones de Windows para siempre.</p>
+                    </header>
+                <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                    <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
+                            <br>Gracias a los super CRACKS de la Comunidad
+                        </h2>
+                        
+                        <!-- El separador ahora usa el degradado de color-accent (rojo) -->
+                        <hr class="supporters-divider">
+                        
+                        <div id="donantes-grid-descarga" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
+                        <script>
+                          fetch('bloque-donantes.html')
+                            .then(r => r.text())
+                            .then(html => { document.getElementById('donantes-grid-descarga').innerHTML = html; })
+                            .catch(console.error);
+                        </script>
+                        
+                        <div class="flex items-center justify-center gap-3 mt-4 md:mt-5">
+                            <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
+                            <a href="donaciones.html#como-apoyar" class="btn-primary inline-block px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
                         </div>
                     </div>
+                </section>
+
+                <!-- Store Section - Descarga -->
+                <section class="bg-white py-16">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-3xl font-extrabold text-center mb-12 text-gray-900" data-i18n="store_section_title_descarga">Productos Destacados de la Tienda</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <!-- Product 1 -->
+                            <a href="https://dextore.ink/products/sudadera-strong-together-caricatura-de-unidad-familiar?variant=56823662936451" target="_blank" class="block group text-center">
+                                <div class="product-image-wrapper relative rounded-lg border border-gray-200">
+                                    <img src="img/tienda/unisex-heavy-blend-hoodie-indigo-blue-front-69122dbd7f80f.jpg" alt="Sudadera Strong Together" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1 group-hover:text-accent transition-colors" data-i18n="store_product_descarga1_name">Sudadera Strong Together</h3>
+                                <p class="text-sm text-gray-500" data-i18n="store_product_cta">Ver en la tienda</p>
+                            </a>
+
+                            <!-- Product 2 -->
+                            <a href="https://dextore.ink/products/sudadera-unisex-rise-tipografia-fragmentada?variant=56823471997315" target="_blank" class="block group text-center">
+                                <div class="product-image-wrapper relative rounded-lg border border-gray-200">
+                                    <img src="img/tienda/unisex-pullover-hoodie-black-front-68f14d62a78e2.jpg" alt="Sudadera Unisex Rise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1 group-hover:text-accent transition-colors" data-i18n="store_product_descarga2_name">Sudadera Unisex Rise</h3>
+                                <p class="text-sm text-gray-500" data-i18n="store_product_cta">Ver en la tienda</p>
+                            </a>
+
+                            <!-- Product 3 -->
+                            <a href="https://dextore.ink/products/sudadera-con-capucha-fuerza-infinita-unisex?variant=56838024692099" target="_blank" class="block group text-center">
+                                <div class="product-image-wrapper relative rounded-lg border border-gray-200">
+                                    <img src="img/tienda/cotton-heritage-m2580-i-unisex-premium-pullover-hoodie-black-back-6914fbdacf643.jpg" alt="Sudadera Fuerza Infinita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1 group-hover:text-accent transition-colors" data-i18n="store_product_descarga3_name">Sudadera Fuerza Infinita</h3>
+                                <p class="text-sm text-gray-500" data-i18n="store_product_cta">Ver en la tienda</p>
+                            </a>
+
+                            <!-- Product 4 -->
+                            <a href="https://dextore.ink/products/sudadera-infantil-global-united-tipografia-grunge?variant=56823349674371" target="_blank" class="block group text-center">
+                                <div class="product-image-wrapper relative rounded-lg border border-gray-200">
+                                    <img src="img/tienda/Gemini_Generated_Image_kd12y2kd12y2kd12.png" alt="Sudadera Infantil Global United" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <h3 class="text-base font-semibold text-gray-800 mt-4 mb-1 group-hover:text-accent transition-colors" data-i18n="store_product_descarga4_name">Sudadera Infantil Global United</h3>
+                                <p class="text-sm text-gray-500" data-i18n="store_product_cta">Ver en la tienda</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                    <!-- Sección de Descarga de Versión 2.3 -->
+                    <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
+                        <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div class="p-6 bg-gray-100 rounded-lg text-center">
+                                <h3 class="font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
+                                <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md">
+                                    <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
+                                    <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
+                                    <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
+                                    <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
+                                    <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
+                                    <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">  
+                                <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
+                                <div class="space-y-4">
+                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://ouo.io/T2zo3H" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
+                                    <a href="https://ouo.io/S1940" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
+                            <p class="text-lg text-gray-700" data-i18n="download_changes_text">Se han implementado mejoras de rendimiento y estabilidad.</p>
+                        </div>
+                        <!-- Compatibilidad con Windows 7 -->
+                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_win7_compat_title">Compatibilidad con Windows 7</h3>
+                            <p class="text-lg text-gray-700 mb-4" data-i18n="download_win7_compat_desc">Paquete .rar con instaladores de .NET Framework 4.0 y actualizaciones acumulativas x86/x64 requeridas para ejecutar BCDeX en Windows 7.</p>
+                            <a id="win7-libs-link" href="https://katfile.cloud/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" class="btn-primary inline-block" data-i18n="download_win7_package_btn">Descargar paquete Windows 7</a>
+                        </div>
+                    </section>
+
+                    <!-- Sección de Descarga de Versión 1.3 -->
+                    <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
+                        <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> 
+                            <div class="p-6 bg-gray-200 rounded-lg text-center">
+                                <h3 class="font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
+                                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-md">
+                                    <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
+                                    <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
+                                    <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">
+                                <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
+                                <div class="space-y-4">
+                                    <a href="https://ko-fi.com/s/7cc7403907" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://ouo.io/r9FjqW" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
+                                    <a href="https://ouo.io/aeRBxBi" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Cambios en esta versión</h3>
+                            <p class="text-lg text-gray-700">
+                                - Se corrigió el error en la elección de la imagen o la versión de Windows en ISOs AIO. Ahora si se puede elegir la versión a instalar. 
+                                <br>- Se modificó el instalador para evitar la necesidad de copiarlo a una carpeta o ubicación distinta a la de la descarga. La App se instala en el disco C y crea un icono en el escritorio y el menú inicio (Opcionales). De esta forma todo lo hará la App.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Sección de Advertencia -->
+                    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-10">
+                        <div class="p-8 bg-white border-l-4 border-red-500 rounded-lg shadow-md md:flex md:items-center md:space-x-6">
+                            <div class="flex-shrink-0 text-5xl text-red-500 mb-4 md:mb-0">
+                                ⚠️
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-red-800 mb-2" data-i18n="download_warning_title">Aviso Importante</h3>
+                                <p class="text-red-700" data-i18n="download_warning_text">BCDeX es una herramienta pensada para usuarios con cierta experiencia. Aunque hemos diseñado la app con mucho cuidado, un uso incorrecto podría afectar el sistema. Recomendamos seguir las instrucciones y usarla con criterio. Para más información, consulta nuestros <a href="terminos.html" class="text-red-600 hover:underline">Términos y Condiciones</a>.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección de Contacto/Sugerencias -->
+                    <section class="text-center mb-10">
+                        <p class="text-lg text-gray-700 mb-4" data-i18n="download_contact_text">Si tienes problemas con la descarga o alguna sugerencia, no dudes en <a href="contacto.html" class="text-red-600 hover:underline">contactarnos</a>.</p>
+                    </section>
+
+                    <!-- Sección de Muro de Colaboradores --> 
+                    
+
+                    <!-- Trio de banners abajo -->
+                   
                 </div>
-                <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cambios en esta versión</h3>
-                    <p class="text-lg text-gray-700">
-                        - Se corrigió el error en la elección de la imagen o la versión de Windows en ISOs AIO. Ahora si se puede elegir la versión a instalar. 
-                        <br>- Se modificó el instalador para evitar la necesidad de copiarlo a una carpeta o ubicación distinta a la de la descarga. La App se instala en el disco C y crea un icono en el escritorio y el menú inicio (Opcionales). De esta forma todo lo hará la App.
+            </main>
+
+            <footer class="bg-nav-footer mt-12 py-8">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+                    <!-- PadeX - Creador de contenido y desarrollador -->
+                    <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+                        PadeX - Creador de contenido y desarrollador
                     </p>
-                </div>
-            </section>
-
-            <!-- Sección de Advertencia -->
-            <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-10">
-                <div class="p-8 bg-white border-l-4 border-red-500 rounded-lg shadow-md md:flex md:items-center md:space-x-6">
-                    <div class="flex-shrink-0 text-5xl text-red-500 mb-4 md:mb-0">
-                        ⚠️
+                    
+                    <!-- Enlaces Legales -->
+                    <p class="footer-pages text-sm space-x-4">
+                        <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
+                        <span class="text-gray-500">|</span>
+                        <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+                    </p>
+                    
+                    <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
+                    <div class="footer-links">
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
+                            <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+                        </a>
+                        
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
+                            <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                        </a>
+                        
+                        <!-- Gmail/Mail -->
+                        <a href="mailto:contact@padex.com" title="Gmail">
+                            <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                        </a>
+                        
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
+                            <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
+                            <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                        </a>
+                        
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/padex" target="_blank" title="X">
+                            <img src="img/x.png" alt="X" class="footer-icon">
+                        </a>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-red-800 mb-2" data-i18n="download_warning_title">Aviso Importante</h3>
-                        <p class="text-red-700" data-i18n="download_warning_text">BCDeX es una herramienta pensada para usuarios con cierta experiencia. Aunque hemos diseñado la app con mucho cuidado, un uso incorrecto podría afectar el sistema. Recomendamos seguir las instrucciones y usarla con criterio. Para más información, consulta nuestros <a href="terminos.html" class="text-red-600 hover:underline">Términos y Condiciones</a>.</p>
-                    </div>
+                    
+                    <!-- Copyright -->
+                    <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
                 </div>
-            </section>
-
-            <!-- Sección de Contacto/Sugerencias -->
-            <section class="text-center mb-10">
-                <p class="text-lg text-gray-700 mb-4" data-i18n="download_contact_text">Si tienes problemas con la descarga o alguna sugerencia, no dudes en <a href="contacto.html" class="text-red-600 hover:underline">contactarnos</a>.</p>
-            </section>
-
-            <!-- Sección de Muro de Colaboradores --> 
-            
-
-            <!-- Trio de banners abajo -->
-           
+            </footer>
         </div>
-    </main>
-
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <!-- PadeX - Creador de contenido y desarrollador -->
-            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
-                PadeX - Creador de contenido y desarrollador
-            </p>
-            
-            <!-- Enlaces Legales -->
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
-            </p>
-            
-            <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
-            <div class="footer-links">
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
-                </a>
-                
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
-                </a>
-                
-                <!-- Gmail/Mail -->
-                <a href="mailto:contact@padex.com" title="Gmail">
-                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
-                </a>
-                
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
-                </a>
-                
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
-                </a>
-                
-                <!-- X (Twitter) -->
-                <a href="https://x.com/padex" target="_blank" title="X">
-                    <img src="img/x.png" alt="X" class="footer-icon">
-                </a>
-            </div>
-            
-            <!-- Copyright -->
-            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 
     <script src="translation.js"></script>
     <script src="script.js"></script>
