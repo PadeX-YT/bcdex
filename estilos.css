@@ -4,31 +4,77 @@
         /* Removed padding: 1rem; to allow more width for text */
     }
 
-    article.lg\:w-2\/3 p {
+/* Bloque de claves KMS: estilo similar a tabla de Microsoft, fondo blanco */
+.kms-keys-block {
+    background-color: #F3F4F6; /* un tono más oscuro que el fondo principal */
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem auto 1.75rem auto; /* centrado y con algo más de margen vertical */
+    max-width: 640px; /* bloque más estrecho para reducir espacio vacío */
+}
+.kms-keys-block p {
+    margin-bottom: 0.75rem;
+}
+.kms-keys-block .service-table {
+    width: 100%;                 /* ocupa todo el ancho del bloque estrecho */
+    margin: 0.5rem 0 0.75rem 0;  /* sin centrado adicional, ya lo hace el bloque */
+    font-size: 0.9rem;
+}
+.kms-keys-block .service-table th {
+    background-color: #F9FAFB;
+    color: #111827;
+    position: static; /* sin sticky dentro del bloque */
+}
+.kms-keys-block .service-table td {
+    color: #111827;
+}
+.kms-keys-block .service-table tr:hover {
+    background-color: #F3F4F6; /* gris suave, como Microsoft */
+}
+.kms-keys-block .service-table td:nth-child(2) {
+    padding-right: 0.25rem;      /* casi sin espacio vacío a la derecha del código */
+    white-space: nowrap;         /* evita saltos raros de línea en el serial */
+    font-family: monospace;      /* hace más legible y compacto el código */
+}
+.kms-keys-block pre,
+.kms-keys-block code {
+    margin: 0;                   /* elimina márgenes por defecto que añaden aire extra */
+    padding: 0;                  /* sin padding interno */
+    background: transparent;     /* sin fondo distinto al de la celda */
+    display: inline;             /* que fluya como texto normal dentro de la celda */
+}
+.kms-keys-note {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+    .article-container p {
         font-size: 1rem; /* Base font size for paragraphs */
         line-height: 1.6; /* Improve line spacing */
-        margin-bottom: 1rem; /* Space between paragraphs */
+        margin-bottom: 2rem; /* Further increased space between paragraphs */
     }
 
-    article.lg\:w-2\/3 h1 {
+    .article-container h1 {
         font-size: 2rem; /* Larger heading for main title */
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
 
-    article.lg\:w-2\/3 h2 {
+    .article-container h2 {
         font-size: 1.75rem; /* Subheading size */
         margin-top: 1.5rem;
         margin-bottom: 0.75rem;
     }
 
-    article.lg\:w-2\/3 h3 {
+    .article-container h3 {
         font-size: 1.5rem; /* Smaller subheading size */
         margin-top: 1.25rem;
         margin-bottom: 0.5rem;
     }
 
-    article.lg\:w-2\/3 img {
+    .article-container img {
         max-width: 100%; /* Ensure images don't overflow */
         height: auto; /* Maintain aspect ratio */
         display: block; /* Remove extra space below image */
@@ -36,14 +82,14 @@
         border-radius: 0.5rem; /* Slightly rounded corners for images */
     }
 
-    article.lg\:w-2\/3 ul,
-    article.lg\:w-2\/3 ol {
+    .article-container ul,
+    .article-container ol {
         margin-left: 1.5rem; /* Indent lists */
         margin-bottom: 1rem;
     }
 
-    article.lg\:w-2\/3 li {
-        margin-bottom: 0.5rem; /* Space between list items */
+    .article-container li {
+        margin-bottom: 1.5rem; /* Further increased space between list items */
     }
 
     aside.lg\:w-1\/3 {
@@ -344,17 +390,22 @@ body {
 
 /* Contenedor de la imagen (Bloque de usuario) */
 .blog-image-center {
-    text-align:center; 
-    margin:1rem 0 1.5rem 0;
+    max-width: 80%; /* Constrain width for single images */
+    margin: 1.5rem auto 2rem auto; /* Increased vertical margin */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
+    border-radius: 10px; /* Reduced border-radius on the container */
 }
 .blog-image-center img {
-    max-width:40%; 
-    height:auto; 
-    border-radius:10px; 
-    box-shadow:0 2px 12px rgba(0,0,0,0.1); 
-    display:inline-block;
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto; /* Maintain aspect ratio without cropping */
+    object-fit: contain; /* Show the full image */
+    object-position: center; /* Center the screenshot */
+    /* border-radius removed from img, now on parent */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: block; /* Ensure it behaves as a block element */
 }
-
 /* Responsividad de la imagen en móvil */
 @media (max-width: 640px) {
     .article-container {
@@ -534,4 +585,80 @@ border-bottom-color: transparent;
 .product-image-wrapper {
     height: 14rem; /* 224px */
     overflow: hidden;
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh; /* Limit height to viewport height */
+    object-fit: contain; /* Ensure the whole image is visible */
+}
+
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add Animation */
+.modal-content, #modal-caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:transform(1)}
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="post_productkey_title">BCDeX: Cómo Corregir el Error "&lt;ProductKey&gt;" en WinPE</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
+                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Descarga</a>
+                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+                        <a href="https://dextore.ink/" target="_blank" data-i18n="nav_store" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tienda</a>
+                        <!-- Selector de Idioma (Desktop) -->
+                        <div class="language-container ml-4">
+                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
+                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
+                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+                <a href="https://dextore.ink/" target="_blank" data-i18n="nav_store" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tienda</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display:flex; flex-direction:row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+                    <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                        <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2"><a href="blog.html" class="hover:underline" data-i18n="article_25h2_back_to_all">← Volver a todos los artículos</a></p>
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] mb-4">BCDeX: Cómo Corregir el Error "&lt;ProductKey&gt;" en WinPE</h1>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]">Al utilizar BCDeX para instalar Windows, es posible que te encuentres con un mensaje de error que indica "&lt;ProductKey&gt;" al intentar iniciar el proceso de instalación desde el entorno de recuperación de Windows (WinPE). Este problema, aunque puede parecer intimidante, tiene una solución sencilla. A continuación, te explicamos por qué ocurre y cómo puedes corregirlo paso a paso.</p>
+                    </header>
+
+                    <section class="mt-6">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="alert-triangle"></svg><span>¿Por qué aparece el error "&lt;ProductKey&gt;"?</span></h2>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]">Este error suele aparecer cuando el sistema no puede encontrar o acceder correctamente a la clave de producto de Windows durante la fase inicial de instalación en WinPE. Aunque BCDeX prepara el entorno de instalación de forma automática, en ocasiones, la ruta o el acceso a los archivos de configuración pueden verse afectados, impidiendo que el instalador de Windows detecte la clave de producto necesaria para continuar.</p>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="wrench"></svg><span>Solución Paso a Paso</span></h2>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]">Para corregir este problema, simplemente necesitamos indicarle al instalador de Windows dónde encontrar el archivo de configuración que contiene la clave de producto. Sigue estos pasos:</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                            <div class="blog-image-center w-full sm:w-1/2">
+                                <a href="img/product key/1.png">
+                                    <img src="img/product key/1.png" alt="Error ProductKey en WinPE" class="w-full rounded-lg shadow-md object-contain">
+                                </a>
+                            </div>
+                            <div class="blog-image-center w-full sm:w-1/2">
+                                <a href="img/product key/1.2.png">
+                                    <img src="img/product key/1.2.png" alt="Ventana de error ProductKey" class="w-full rounded-lg shadow-md object-contain">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="border-b border-gray-200 my-12"></div>
+                        <ol class="list-decimal list-inside text-lg text-[color:var(--color-text-secondary)] space-y-2">
+                            <li>Cuando aparezca el error <strong>&lt;ProductKey&gt;</strong>, presiona las teclas `Shift + F10`.</li>
+                            <li>
+                                En la ventana de la consola de comandos (CMD), escribe `notepad` y presiona Enter.
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/2.png">
+                                        <img src="img/product key/2.png" alt="Escribir notepad en CMD" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>Esto abrirá el Bloc de Notas.</li>
+                            <li>
+                                En el Bloc de Notas, ve a <strong>Archivo > Abrir</strong>.
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/3.png">
+                                        <img src="img/product key/3.png" alt="Abrir archivo en Bloc de Notas" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>
+                                En la ventana que se abre, dirigete hasta la partición que creó la BCDeX, la que tiene la etiqueta o nombre <strong>BCDeX Vol</strong>.
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/4.png">
+                                        <img src="img/product key/4.png" alt="Ventana de Abrir archivo" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>
+                                Teniendo seleccionado en "Tipo" <strong>Todos los archivos</strong>, selecciona el archivo <strong>autounattend.xml</strong> y presiona "Abrir".
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/5.png">
+                                        <img src="img/product key/5.png" alt="Seleccionar autounattend.xml" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>
+                                Con el archivo abierto, busca el bloque que dice: "&lt;UserData&gt;".
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/6.png">
+                                        <img src="img/product key/6.png" alt="Bloque UserData en autounattend.xml" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>
+                                Dentro de ese bloque, localiza la sección "&lt;Key&gt;&lt;/Key&gt;" y escribe una clave de producto genérica según tu edición de Windows (Pro, Home, Enterprise, etc.). En este ejemplo se usa una clave para Windows&nbsp;Pro.
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/7.png">
+                                        <img src="img/product key/7.png" alt="Ejemplo de sección Key con clave de producto" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="kms-keys-block">
+                                    <p><strong>Claves KMS gen&eacute;ricas de Microsoft para Windows 10 y 11</strong> (solo para activaci&oacute;n por KMS, no sustituyen una licencia v&aacute;lida):</p>
+                                    <table class="service-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Edici&oacute;n</th>
+                                                <th>Clave KMS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Windows 11 / 10 Home</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>TX9XD-98N7V-6WMQ6-BX7FG-H8Q99</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Home N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>3KHY7-WNT83-DGQKR-F7HPR-844BM</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Home Single Language</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Home Country Specific</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>PVMJN-6DFY6-9CCP6-7BKTT-D3WVR</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>W269N-WFGWX-YVC9B-4J6C9-T83GX</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>MH37W-N47XK-V7XM9-C7227-GCQG9</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro for Workstations</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro for Workstations N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>9FNHH-K3HBT-3W4TD-6383H-6XYWF</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro Education</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Pro Education N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Education</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Education N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Enterprise</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>NPPR9-FWDCX-D2C8J-H872K-2YT43</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Enterprise N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Enterprise G</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</code></pre>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Windows 11 / 10 Enterprise G N</td>
+                                                <td>
+                                                    <button class="copy-button" onclick="copyToClipboard(this)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v2"/></svg>
+                                                    </button>
+                                                    <pre><code>44RPN-FTY23-9VTTB-MP9BX-T84FV</code></pre>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="kms-keys-note">
+                                        Puedes consultar todas las claves KMS actualizadas directamente en la documentaci&oacute;n oficial de Microsoft:
+                                        <a href="https://learn.microsoft.com/windows-server/get-started/kms-client-activation-keys" target="_blank" class="external-link">Ver claves KMS en Microsoft Learn</a>.
+                                    </p>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>
+                                Después de introducir la clave de producto en la sección "&lt;Key&gt;&lt;/Key&gt;", guarda los cambios del archivo.
+                                <div class="blog-image-center mt-6 mb-12">
+                                    <a href="img/product key/8.png">
+                                        <img src="img/product key/8.png" alt="Guardando cambios en autounattend.xml" class="w-full rounded-lg shadow-md object-contain">
+                                    </a>
+                                </div>
+                                <div class="border-b border-gray-200 my-12"></div>
+                            </li>
+                            <li>Cierra el Bloc de Notas y la ventana de Símbolo del sistema. Luego, reinicia el proceso de instalación de Windows. El error "&lt;ProductKey&gt;" debería haber desaparecido y podrás continuar con la instalación normalmente.</li>
+                        </ol>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title"><svg class="w-6 h-6" data-lucide="check-circle"></svg><span>Conclusión</span></h2>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]">El error "&lt;ProductKey&gt;" en WinPE es un inconveniente menor que se resuelve fácilmente verificando la presencia y el contenido del archivo `ei.cfg`. Con estos pasos, podrás superar este obstáculo y disfrutar de una instalación de Windows fluida con BCDeX.</p>
+                    </section>
+
+                    <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2 mt-8"><a href="blog.html" class="hover:underline">← Volver a todos los artículos</a></p>
+                </div>
+            </div>
+
+            <aside class="lg:w-1/5 mt-8 lg:mt-0 min-w-0 flex-shrink-0">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="other_articles_heading">Otros Artículos del Blog</h3>
+                    <ul id="other-articles-list" class="space-y-3 list-none pl-0">
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="como-descargar-windows-11-25h2.html" class="text-blue-600 hover:text-blue-800 hover:underline">Cómo descargar e instalar Windows 11 25H2</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="instalacion-particion.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_instalacion_particion">Instalación desde Partición con BCDeX</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="archivo-desatendido-windows.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_archivo_desatendido">BCDeX - Guía Archivo Desatendido</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="uefi-bios.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_uefi_bios">UEFI vs BIOS Legacy</a></li>
+                        <li class="flex items-start"><span class="mr-2 text-gray-500">&#8226;</span><a href="liberar-espacio.html" class="text-blue-600 hover:text-blue-800 hover:underline" data-i18n="other_article_liberar_espacio">Libera Espacio y Optimiza PC</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <p class="footer-text text-lg font-medium" data-i18n="footer_creator">PadeX - Creador de contenido y desarrollador</p>
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube"><img src="img/youtube.png" alt="YouTube" class="footer-icon"></a>
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook"><img src="img/facebook.png" alt="Facebook" class="footer-icon"></a>
+                <a href="mailto:contact@padex.com" title="Gmail"><img src="img/gmail.png" alt="Gmail" class="footer-icon"></a>
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok"><img src="img/tiktok.png" alt="TikTok" class="footer-icon"></a>
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram"><img src="img/instagram.png" alt="Instagram" class="footer-icon"></a>
+                <a href="https://x.com/padex" target="_blank" title="X"><img src="img/x.png" alt="X" class="footer-icon"></a>
+            </div>
+            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.nextElementSibling; // Assuming <pre><code> is next sibling
+            const textToCopy = codeBlock.textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>'; // Check icon
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+
+    <!-- Modal para imágenes -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close-button">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="modal-caption"></div>
+    </div>
+</body>
+</html>

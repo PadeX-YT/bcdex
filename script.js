@@ -50,4 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
+    // Modal functionality for images
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-image");
+    const captionText = document.getElementById("modal-caption");
+    const closeButton = document.getElementsByClassName("modal-close-button")[0];
+
+    document.querySelectorAll('.blog-image-center a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent opening image in new tab
+            modal.style.display = "block";
+            modalImg.src = this.href;
+            captionText.innerHTML = this.querySelector('img').alt;
+        });
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+    }
+
+    // Close modal when clicking outside the image
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
 });
