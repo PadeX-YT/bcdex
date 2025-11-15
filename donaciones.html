@@ -127,8 +127,8 @@
         </div>
     </header>
 
-   <main class="flex-grow py-8 sm:py-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+   <main class="flex-grow">
+        <div class="max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
             <header class="donations-hero text-center mb-8">
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4" data-i18n="donations_title">Conviértete en un Socio del Proyecto</h1>
                 <p class="text-xl text-gray-600" data-i18n="donations_intro">
@@ -136,7 +136,7 @@
                 </p>
             </header>
 
-            <div class="info-card space-y-6 max-w-3xl mx-auto">
+            <div class="info-card space-y-6 mx-auto">
                 <section class="donation-card">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center" data-i18n="donations_why_title">¿Por qué tu apoyo es tan importante?</h2>
                     <ul class="list-none text-lg text-gray-700 space-y-5">
@@ -168,29 +168,31 @@
                     </div>
                 </section>
 
-        </div>
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
-                    Gracias a los super CRACKS de la Comunidad
-                </h2>
-                
-                <hr class="supporters-divider">
-                
-                <div id="donantes-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                <script>
-                  fetch('bloque-donantes.html')
-                    .then(r => r.text())
-                    .then(html => { document.getElementById('donantes-grid').innerHTML = html; })
-                    .catch(console.error);
-                </script>
-                
-                <div class="text-center">
-                    <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
-                    <a href="#como-apoyar" class="btn-primary inline-block mt-3 px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
-                </div>
+                <!-- Sección de supporters dentro del mismo contenedor principal -->
+                <section class="py-6">
+                    <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
+                            Gracias a los super CRACKS de la Comunidad
+                        </h2>
+                        
+                        <hr class="supporters-divider">
+                        
+                        <div id="donantes-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
+                        <script>
+                          fetch('bloque-donantes.html')
+                            .then(r => r.text())
+                            .then(html => { document.getElementById('donantes-grid').innerHTML = html; })
+                            .catch(console.error);
+                        </script>
+                        
+                        <div class="text-center">
+                            <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
+                            <a href="#como-apoyar" class="btn-primary inline-block mt-3 px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="bg-nav-footer mt-12 py-8">
