@@ -25,11 +25,22 @@
         }
         
         /* Sidebars flotantes para anuncios */
+        body {
+            display: grid;
+            grid-template-columns: 160px 1fr 160px;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+        }
+        
+        .flex-grow {
+            grid-column: 2;
+        }
+        
         .ads-sidebar {
-            position: sticky;
-            top: 150px;
-            width: 160px;
-            z-index: 40;
             padding: 5px;
             display: flex;
             flex-direction: column;
@@ -37,11 +48,13 @@
         }
         
         .ads-sidebar-left {
-            left: 5px;
+            grid-column: 1;
+            grid-row: 2;
         }
         
         .ads-sidebar-right {
-            right: 5px;
+            grid-column: 3;
+            grid-row: 2;
         }
         
         .ads-container {
@@ -49,7 +62,6 @@
             padding: 5px;
             border-radius: 6px;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
             width: 100%;
             min-height: 250px;
         }
@@ -59,10 +71,22 @@
             display: block !important;
         }
         
+        footer {
+            grid-column: 1 / -1;
+        }
+        
         /* Ocultar sidebars en pantallas pequeñas */
         @media (max-width: 1280px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+            
             .ads-sidebar {
                 display: none;
+            }
+            
+            .flex-grow {
+                grid-column: 1;
             }
         }
     </style>
