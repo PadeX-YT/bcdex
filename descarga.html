@@ -23,6 +23,40 @@
             border-radius: 0.5rem;
             background-color: rgba(217, 4, 41, 0.1);
         }
+        
+        /* Sidebars flotantes para anuncios */
+        .ads-sidebar {
+            position: fixed;
+            top: 150px;
+            width: 300px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            z-index: 40;
+            padding: 10px;
+        }
+        
+        .ads-sidebar-left {
+            left: 10px;
+        }
+        
+        .ads-sidebar-right {
+            right: 10px;
+        }
+        
+        .ads-container {
+            margin-bottom: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ocultar sidebars en pantallas pequeñas */
+        @media (max-width: 1280px) {
+            .ads-sidebar {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -159,19 +193,6 @@
                         </div>
                     </section>
 
-                    <!-- Google Ads - Columnas -->
-                    <section class="bg-white py-8 px-6 rounded-xl shadow-lg mb-10 text-center">
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-4767336397819252"
-                             data-ad-slot="7573871679"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </section>
-
                     <!-- Sección de Descarga de Versión 1.3 -->
                     <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
                         <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
@@ -285,6 +306,58 @@
 
     <script src="translation.js"></script>
     <script src="script.js"></script>
+
+    <!-- Sidebar de Anuncios Izquierda -->
+    <div class="ads-sidebar ads-sidebar-left">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Sidebar de Anuncios Derecha -->
+    <div class="ads-sidebar ads-sidebar-right">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>
