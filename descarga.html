@@ -29,10 +29,13 @@
             position: fixed;
             top: 150px;
             width: 300px;
-            max-height: calc(100vh - 200px);
-            overflow-y: auto;
+            max-height: none;
+            overflow-y: visible;
             z-index: 40;
             padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .ads-sidebar-left {
@@ -44,11 +47,11 @@
         }
         
         .ads-container {
-            margin-bottom: 20px;
             background: white;
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
         }
         
         /* Ocultar sidebars en pantallas pequeñas */
