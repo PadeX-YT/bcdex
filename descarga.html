@@ -26,11 +26,9 @@
         
         /* Sidebars flotantes para anuncios */
         .ads-sidebar {
-            position: fixed;
+            position: sticky;
             top: 150px;
             width: 160px;
-            height: 70vh;
-            overflow-y: auto;
             z-index: 40;
             padding: 5px;
             display: flex;
@@ -59,25 +57,6 @@
         .ads-container ins {
             width: 100% !important;
             display: block !important;
-        }
-        
-        /* Scrollbar estilo */
-        .ads-sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .ads-sidebar::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        
-        .ads-sidebar::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        
-        .ads-sidebar::-webkit-scrollbar-thumb:hover {
-            background: #555;
         }
         
         /* Ocultar sidebars en pantallas pequeñas */
