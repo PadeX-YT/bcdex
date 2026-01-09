@@ -42,6 +42,71 @@
         .read-more-link svg { margin-left: 0.5rem; transition: transform 0.2s ease; }
         .read-more-link:hover svg { transform: translateX(3px); }
         
+        /* Sidebars flotantes para anuncios */
+        body {
+            display: grid;
+            grid-template-columns: 160px 1fr 160px;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+        }
+        
+        .flex-grow {
+            grid-column: 2;
+        }
+        
+        .ads-sidebar {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .ads-sidebar-left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .ads-sidebar-right {
+            grid-column: 3;
+            grid-row: 2;
+        }
+        
+        .ads-container {
+            background: white;
+            padding: 5px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            min-height: 250px;
+        }
+        
+        .ads-container ins {
+            width: 100% !important;
+            display: block !important;
+        }
+        
+        footer {
+            grid-column: 1 / -1;
+        }
+        
+        /* Ocultar sidebars en pantallas pequeñas */
+        @media (max-width: 1280px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+            
+            .ads-sidebar {
+                display: none;
+            }
+            
+            .flex-grow {
+                grid-column: 1;
+            }
+        }
     </style>
 
 </head>
@@ -233,6 +298,58 @@
 
     <script src="translation.js"></script>
     <script src="tutorial-script.js"></script>
+
+    <!-- Sidebar de Anuncios Izquierda -->
+    <div class="ads-sidebar ads-sidebar-left">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Sidebar de Anuncios Derecha -->
+    <div class="ads-sidebar ads-sidebar-right">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 
 </body>
 

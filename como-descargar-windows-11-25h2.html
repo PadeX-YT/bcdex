@@ -23,6 +23,71 @@
         .yt-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:0.75rem; box-shadow:0 10px 25px rgba(0,0,0,.08); }
         .yt-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
         @media (max-width:640px) { .article-container{ padding:1.5rem; } }
+        /* Sidebars flotantes para anuncios */
+        body {
+            display: grid;
+            grid-template-columns: 160px 1fr 160px;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+        }
+        
+        .flex-grow {
+            grid-column: 2;
+        }
+        
+        .ads-sidebar {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .ads-sidebar-left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .ads-sidebar-right {
+            grid-column: 3;
+            grid-row: 2;
+        }
+        
+        .ads-container {
+            background: white;
+            padding: 5px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            min-height: 250px;
+        }
+        
+        .ads-container ins {
+            width: 100% !important;
+            display: block !important;
+        }
+        
+        footer {
+            grid-column: 1 / -1;
+        }
+        
+        /* Ocultar sidebars en pantallas pequeñas */
+        @media (max-width: 1280px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+            
+            .ads-sidebar {
+                display: none;
+            }
+            
+            .flex-grow {
+                grid-column: 1;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -160,6 +225,58 @@
             <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Sidebar de Anuncios Izquierda -->
+    <div class="ads-sidebar ads-sidebar-left">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Sidebar de Anuncios Derecha -->
+    <div class="ads-sidebar ads-sidebar-right">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 
     <script src="translation.js"></script>
 </body>
