@@ -332,10 +332,12 @@
             z-index: 10;
         }
 
-        /* Sidebars flotantes para anuncios */
+        /* Sidebars flotantes para anuncios: layout base en una columna
+           En pantallas grandes los sidebars se muestran como elementos fijos
+           en los extremos y reservamos espacio con padding en la columna principal. */
         body {
             display: grid;
-            grid-template-columns: 160px 1fr 160px;
+            grid-template-columns: 1fr;
             grid-template-rows: auto 1fr auto;
             min-height: 100vh;
         }
@@ -345,28 +347,30 @@
         }
         
         .main-column {
-            grid-column: 2;
+            grid-column: 1;
         }
-        
+
         .ads-sidebar {
             padding: 5px;
-            display: flex;
+            display: none; /* Oculto por defecto (móvil) */
             flex-direction: column;
             gap: 10px;
-            position: sticky; /* Mantener visible sin empujar el footer */
-            top: calc(var(--header-height) + 16px);
-            align-self: start; /* No estirar en la fila del grid */
-            z-index: 5;
+            position: fixed; /* Fijo en los extremos en escritorio */
+            top: calc(var(--header-height) + 12px);
+            bottom: auto; /* No ocupar el footer */
+            max-height: calc(100vh - var(--header-height) - 64px); /* Dejar espacio para el footer */
+            width: 160px;
+            overflow: auto;
+            z-index: 40;
+            background: transparent; /* transparente por defecto, los contenedores internos son blancos */
         }
-        
+
         .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
+            left: 0;
         }
-        
+
         .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
+            right: 0;
         }
         
         .ads-container {
@@ -387,18 +391,16 @@
             grid-column: 1 / -1;
         }
         
-        /* Ocultar sidebars en pantallas pequeñas */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
+        /* Mostrar sidebars en pantallas de escritorio y reservar espacio en la columna principal */
+        @media (min-width: 1280px) {
             .ads-sidebar {
-                display: none;
+                display: flex;
             }
-            
+
+            /* Reservar espacio para los sidebars en la columna central */
             .main-column {
-                grid-column: 1;
+                padding-left: 180px; /* 160px ancho + espacio interior */
+                padding-right: 180px;
             }
         }
 
