@@ -244,12 +244,67 @@
                         <hr class="supporters-divider">
                         
                         <div id="donantes-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                        <script>
-                          fetch('bloque-donantes.html')
-                            .then(r => r.text())
-                            .then(html => { document.getElementById('donantes-grid').innerHTML = html; })
-                            .catch(console.error);
-                        </script>
+                                                <div class="supporters-carousel-wrapper relative">
+                                                    <button id="carousel-prev-donaciones" aria-label="Anterior" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8592;</button>
+                                                    <div id="donantes-carousel-donaciones" class="supporters-carousel px-2" tabindex="0" style="display: grid; grid-auto-flow: column; grid-template-rows: repeat(4, 1fr); gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth; min-height: 320px;">
+                                                        <!-- Cards se insertan aquí -->
+                                                    </div>
+                                                    <button id="carousel-next-donaciones" aria-label="Siguiente" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8594;</button>
+                                                </div>
+                                                <script>
+                                                fetch('bloque-donantes.html')
+                                                    .then(r => r.text())
+                                                    .then(html => {
+                                                        const temp = document.createElement('div');
+                                                        temp.innerHTML = html;
+                                                        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+                                                        const carousel = document.getElementById('donantes-carousel-donaciones');
+                                                        const numRows = 4;
+                                                        const perRow = Math.ceil(cards.length / numRows);
+                                                        carousel.innerHTML = '';
+                                                        for (let i = 0; i < perRow; i++) {
+                                                            for (let row = 0; row < numRows; row++) {
+                                                                const idx = row * perRow + i;
+                                                                if (cards[idx]) {
+                                                                    const card = cards[idx];
+                                                                    card.classList.add('mx-2', 'my-1');
+                                                                    card.style.width = '110px';
+                                                                    card.style.verticalAlign = 'top';
+                                                                    carousel.appendChild(card);
+                                                                }
+                                                            }
+                                                        }
+                                                    })
+                                                    .catch(console.error);
+                                                function scrollCarouselDonaciones(direction) {
+                                                    const carousel = document.getElementById('donantes-carousel-donaciones');
+                                                    if (!carousel) return;
+                                                    const scrollAmount = 120 * 3;
+                                                    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                                                }
+                                                document.getElementById('carousel-prev-donaciones').addEventListener('click', () => scrollCarouselDonaciones(-1));
+                                                document.getElementById('carousel-next-donaciones').addEventListener('click', () => scrollCarouselDonaciones(1));
+                                                function updateCarouselButtonsDonaciones() {
+                                                    const carousel = document.getElementById('donantes-carousel-donaciones');
+                                                    const prev = document.getElementById('carousel-prev-donaciones');
+                                                    const next = document.getElementById('carousel-next-donaciones');
+                                                    if (!carousel || !prev || !next) return;
+                                                    if (window.innerWidth < 768) {
+                                                        prev.style.display = 'none';
+                                                        next.style.display = 'none';
+                                                        return;
+                                                    }
+                                                    setTimeout(() => {
+                                                        prev.style.display = carousel.scrollLeft > 0 ? 'flex' : 'none';
+                                                        next.style.display = (carousel.scrollLeft + carousel.offsetWidth) < carousel.scrollWidth ? 'flex' : 'none';
+                                                    }, 100);
+                                                }
+                                                window.addEventListener('resize', updateCarouselButtonsDonaciones);
+                                                document.addEventListener('DOMContentLoaded', () => {
+                                                    setTimeout(updateCarouselButtonsDonaciones, 500);
+                                                });
+                                                document.addEventListener('scroll', updateCarouselButtonsDonaciones, true);
+                                                </script>
                         
                         <div class="text-center">
                             <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
