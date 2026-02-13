@@ -344,7 +344,7 @@
             grid-column: 1 / -1;
         }
         
-        .flex-grow {
+        .main-column {
             grid-column: 2;
         }
         
@@ -393,7 +393,7 @@
                 display: none;
             }
             
-            .flex-grow {
+            .main-column {
                 grid-column: 1;
             }
         }
@@ -401,7 +401,7 @@
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen">
 
     <!-- 1. Barra de Navegación (Header/Nav) -->
     <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
@@ -505,9 +505,9 @@
     
 
 
-    <!-- Main Content Wrapper -->
-    <div class="flex-grow min-w-0">
-            <main class="flex-grow">
+        <!-- Main Content Wrapper -->
+        <div class="main-column min-w-0">
+            <main class="main-column">
                
                 
                 <!-- 3. SECCIÓN DE DEFINICIÓN (HOOK) - AHORA EN LA PARTE SUPERIOR -->
