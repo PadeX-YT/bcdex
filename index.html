@@ -651,12 +651,77 @@
                         <hr class="supporters-divider"> 
                         
                         <div id="donantes-grid-index" class="supporters-grid"></div>
-                        <script>
-                          fetch('bloque-donantes.html')
-                            .then(r => r.text())
-                            .then(html => { document.getElementById('donantes-grid-index').innerHTML = html; })
-                            .catch(console.error);
-                        </script>
+                                                <div class="supporters-carousel-wrapper relative">
+                                                <button id="carousel-prev" aria-label="Anterior" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8592;</button>
+                                                <div id="donantes-carousel" class="supporters-carousel px-2" tabindex="0" style="display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, 1fr); gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth; min-height: 160px;">
+                                                    <!-- Cards se insertan aquí -->
+                                                </div>
+                                                <button id="carousel-next" aria-label="Siguiente" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8594;</button>
+                                                </div>
+                                                <script>
+                                                // Cargar los donantes y mostrarlos en dos filas tipo carrusel
+                                                fetch('bloque-donantes.html')
+                                                    .then(r => r.text())
+                                                    .then(html => {
+                                                        const temp = document.createElement('div');
+                                                        temp.innerHTML = html;
+                                                        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+                                                        const carousel = document.getElementById('donantes-carousel');
+                                                        // Distribuir en dos filas
+                                                        const numRows = 2;
+                                                        const perRow = Math.ceil(cards.length / numRows);
+                                                        // Limpiar el carrusel
+                                                        carousel.innerHTML = '';
+                                                        // Insertar en orden por filas (columna por columna)
+                                                        for (let i = 0; i < perRow; i++) {
+                                                            for (let row = 0; row < numRows; row++) {
+                                                                const idx = row * perRow + i;
+                                                                if (cards[idx]) {
+                                                                    const card = cards[idx];
+                                                                    card.classList.add('mx-2', 'my-1');
+                                                                    card.style.width = '110px';
+                                                                    card.style.verticalAlign = 'top';
+                                                                    carousel.appendChild(card);
+                                                                }
+                                                            }
+                                                        }
+                                                    })
+                                                    .catch(console.error);
+
+                                                // Funcionalidad de botones de navegación
+                                                function scrollCarousel(direction) {
+                                                    const carousel = document.getElementById('donantes-carousel');
+                                                    if (!carousel) return;
+                                                    const scrollAmount = 120 * 3; // 3 tarjetas aprox
+                                                    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                                                }
+                                                document.getElementById('carousel-prev').addEventListener('click', () => scrollCarousel(-1));
+                                                document.getElementById('carousel-next').addEventListener('click', () => scrollCarousel(1));
+
+                                                // Mostrar/ocultar botones según scroll
+                                                function updateCarouselButtons() {
+                                                    const carousel = document.getElementById('donantes-carousel');
+                                                    const prev = document.getElementById('carousel-prev');
+                                                    const next = document.getElementById('carousel-next');
+                                                    if (!carousel || !prev || !next) return;
+                                                    // Solo mostrar en desktop
+                                                    if (window.innerWidth < 768) {
+                                                        prev.style.display = 'none';
+                                                        next.style.display = 'none';
+                                                        return;
+                                                    }
+                                                    // Mostrar si hay overflow
+                                                    setTimeout(() => {
+                                                        prev.style.display = carousel.scrollLeft > 0 ? 'flex' : 'none';
+                                                        next.style.display = (carousel.scrollLeft + carousel.offsetWidth) < carousel.scrollWidth ? 'flex' : 'none';
+                                                    }, 100);
+                                                }
+                                                window.addEventListener('resize', updateCarouselButtons);
+                                                document.addEventListener('DOMContentLoaded', () => {
+                                                    setTimeout(updateCarouselButtons, 500);
+                                                });
+                                                document.addEventListener('scroll', updateCarouselButtons, true);
+                                                </script>
                         
                         <div class="flex items-center justify-center gap-3 mt-4 md:mt-5">
                             <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
@@ -772,6 +837,57 @@
     <script src="translation.js"></script>
     <script src="script.js"></script>
 
+    <!-- Sidebar de Anuncios Izquierda -->
+    <div class="ads-sidebar ads-sidebar-left">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Sidebar de Anuncios Derecha -->
+    <div class="ads-sidebar ads-sidebar-right">
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="ads-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4767336397819252"
+                 data-ad-slot="7573871679"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 
 </body>
 

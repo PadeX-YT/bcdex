@@ -1,0 +1,36 @@
+# Guía del Bloque de Donantes (Carrusel)
+
+## ¿Qué es el bloque de donantes?
+Es un bloque visual que muestra a los colaboradores/donantes de la comunidad BCDeX, usando tarjetas con avatar y nombre. El contenido real de las tarjetas está en el archivo `bloque-donantes.html` y se carga dinámicamente en cada página donde se muestra el muro de donantes.
+
+## ¿Cómo funciona el carrusel?
+El carrusel es un componente horizontal con navegación por botones (flechas) y soporte para scroll con el mouse. El número de filas visibles varía según la página:
+
+- **index.html**: Carrusel con 2 filas de donantes.
+- **donaciones.html**: Carrusel con 4 filas de donantes (más compacto, muestra más donantes a la vez).
+- **descarga.html**: Carrusel con 3 filas de donantes.
+
+Cada tarjeta mantiene un tamaño fijo y el carrusel es responsivo. Los botones de navegación solo aparecen en escritorio y si hay más donantes de los que caben en pantalla.
+
+## ¿Cómo se aplica en cada página?
+- En cada página, el carrusel se implementa con un bloque `<div class="supporters-carousel-wrapper ...">` y un `<script>` que carga y distribuye las tarjetas en filas.
+- El número de filas se controla en el script de cada página (ver variable `numRows`).
+- El archivo `bloque-donantes.html` NO debe contener el carrusel, solo las tarjetas `.supporter-card`.
+
+## ¿Cómo agregar o modificar donantes?
+1. Edita `bloque-donantes.html` y agrega/quita/modifica los bloques `.supporter-card`.
+2. No es necesario modificar los scripts de las páginas, ya que el carrusel se adapta automáticamente al número de donantes.
+
+## ¿Cómo personalizar el diseño?
+- Los estilos principales están en el CSS de cada página y en la clase `.supporters-carousel`.
+- Para cambiar el número de filas, ajusta la variable `numRows` en el script correspondiente de la página.
+- Para cambiar el color/acento de los botones, edita las clases de los botones en el HTML.
+
+## Resumen visual
+- El carrusel es horizontal, con tarjetas alineadas en varias filas.
+- Los botones de navegación son rojos con borde blanco y solo aparecen en escritorio.
+- El bloque es responsivo y se adapta a cualquier cantidad de donantes.
+
+---
+
+**Actualizado: 2026-02-13**
