@@ -353,6 +353,10 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            position: sticky; /* Mantener visible sin empujar el footer */
+            top: calc(var(--header-height) + 16px);
+            align-self: start; /* No estirar en la fila del grid */
+            z-index: 5;
         }
         
         .ads-sidebar-left {
@@ -401,7 +405,7 @@
     </style>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen flex flex-col">
 
     <!-- 1. Barra de Navegación (Header/Nav) -->
     <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
@@ -505,9 +509,9 @@
     
 
 
-        <!-- Main Content Wrapper -->
-        <div class="main-column min-w-0">
-            <main class="main-column">
+    <!-- Main Content Wrapper -->
+    <div class="flex-grow min-w-0">
+            <main class="flex-grow">
                
                 
                 <!-- 3. SECCIÓN DE DEFINICIÓN (HOOK) - AHORA EN LA PARTE SUPERIOR -->
@@ -667,6 +671,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
                     <p class="footer-text text-lg font-medium" data-i18n="footer_creator">
                         PadeX - Creador de contenido y desarrollador
+                        
                     </p>
                     
                     <p class="footer-pages text-sm space-x-4">
@@ -699,6 +704,7 @@
                     <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2025 BCDeX. Todos los derechos reservados.</p>
                 </div>
             </footer>
+            
         </div>
 
     <!-- Script para la funcionalidad del menú móvil y selector de idioma -->
@@ -760,62 +766,9 @@
             toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
         });
     </script>
-
+    
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
-
-    <!-- Sidebar de Anuncios Izquierda -->
-    <div class="ads-sidebar ads-sidebar-left">
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
-    <!-- Sidebar de Anuncios Derecha -->
-    <div class="ads-sidebar ads-sidebar-right">
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
-<script src="translation.js"></script>
-<script src="script.js"></script>
 
 </html>
