@@ -33,7 +33,7 @@ const translations_en = {
     "footer_creator": "PadeX - Content Creator and Developer",
     "footer_privacy": "Privacy",
     "footer_terms": "Terms and Conditions",
-    "footer_copyright": "&copy; 2025 BCDeX. All rights reserved.",
+    "footer_copyright": "&copy; 2026 BCDeX. All rights reserved.",
     "tutorial_page_title": "BCDeX - Tutorial: User Guide",
     "tutorial_hero_title": "BCDeX in Action",
     "tutorial_hero_subtitle": "Tired of traditional methods? BCDeX revolutionizes the process by letting you create an installation drive directly on your hard drive. Watch the videos to see how easy and fast it is.",
@@ -182,7 +182,7 @@ const translations_en = {
     "important_win11_25h2_li3": "Availability may vary depending on the build and region.",
     "important_win11_25h2_li4": "Always back up before removing important apps.",
 
-    "section_win11_25h2_3_p1": "The new feature is expected in the Windows 11 25H2 update, scheduled for late 2025. Insider program users may get it earlier.",
+    "section_win11_25h2_3_p1": "The new feature is expected in the Windows 11 25H2 update, scheduled for late 2026. Insider program users may get it earlier.",
 
     "section_win11_25h2_4_li1": "Less bloatware means a cleaner, faster system with more free space.",
     "section_win11_25h2_4_li2": "It gives users more control over what remains installed on their PC.",

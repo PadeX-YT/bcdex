@@ -33,7 +33,7 @@ const translations_pt_br = {
     "footer_creator": "PadeX - Criador de Conteúdo e Desenvolvedor",
     "footer_privacy": "Privacidade",
     "footer_terms": "Termos e Condições",
-    "footer_copyright": "&copy; 2025 BCDeX. Todos os direitos reservados.",
+    "footer_copyright": "&copy; 2026 BCDeX. Todos os direitos reservados.",
     "tutorial_page_title": "BCDeX - Tutorial: Guia de Uso",
     "tutorial_hero_title": "BCDeX em Ação",
     "tutorial_hero_subtitle": "Cansado dos métodos tradicionais? O BCDeX revoluciona o processo permitindo criar uma unidade de instalação diretamente no seu disco. Assista aos vídeos para ver como é fácil e rápido.",
@@ -161,7 +161,7 @@ const translations_pt_br = {
     "important_win11_25h2_li3": "A disponibilidade pode variar conforme a compilação e a região.",
     "important_win11_25h2_li4": "Sempre faça backup antes de remover aplicativos importantes.",
 
-    "section_win11_25h2_3_p1": "O novo recurso é esperado na atualização do Windows 11 25H2, prevista para o fim de 2025. Usuários do programa Insider podem recebê-lo antes.",
+    "section_win11_25h2_3_p1": "O novo recurso é esperado na atualização do Windows 11 25H2, prevista para o fim de 2026. Usuários do programa Insider podem recebê-lo antes.",
     "section_win11_25h2_4_li1": "Menos bloatware significa um sistema mais limpo, rápido e com mais espaço livre.",
     "section_win11_25h2_4_li2": "Oferece ao usuário mais controle sobre o que permanece instalado no PC.",
     "section_win11_25h2_5_li1": "Além dos aplicativos mencionados, outros podem se tornar removíveis no futuro conforme o Windows evolui.",

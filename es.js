@@ -46,7 +46,7 @@ const translations_es = {
     'footer_creator': 'PadeX - Creador de contenido y desarrollador',
     'footer_privacy': 'Privacidad',
     'footer_terms': 'Términos y Condiciones',
-    'footer_copyright': '&copy; 2025 BCDeX. Todos los derechos reservados.',
+    'footer_copyright': '&copy; 2026 BCDeX. Todos los derechos reservados.',
     'page_title_index': 'BCDeX - Instalación Windows sin USB',
     'index_hero_title': 'Instalación de Windows a Nivel Experto.',
     'index_hero_subtitle': 'BCDeX es la herramienta de automación avanzada que **elimina la dependencia de USB o DVD** para reinstalar Windows (7-11). Garantiza un proceso de arranque limpio, seguro y **directo desde el disco duro**.',
