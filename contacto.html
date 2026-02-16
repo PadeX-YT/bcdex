@@ -255,60 +255,69 @@
         </div>
     </footer>
 
+
+         <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            // Toggle function para el menú móvil
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                
+                // Toggle ARIA attribute
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                
+                // Toggle visibility of the menu
+                mobileMenu.classList.toggle('hidden');
+
+                // Toggle icon visibility
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+            
+            // Lógica para el selector de idioma
+            const toggleDropdown = (selectorId, dropdownId) => {
+                const selector = document.getElementById(selectorId);
+                const dropdown = document.getElementById(dropdownId);
+                if (selector && dropdown) {
+                    selector.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    });
+
+                    // Cierra el dropdown al hacer clic fuera
+                    document.addEventListener('click', (event) => {
+                        if (dropdown.classList.contains('active') && !dropdown.contains(event.target) && event.target !== selector) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Lógica para seleccionar opción (opcional, simulación)
+                    dropdown.querySelectorAll('.language-option').forEach(option => {
+                        option.addEventListener('click', (event) => {
+                            // En una aplicación real, aquí cambiarías el idioma
+                            const selectedLang = event.currentTarget.getAttribute('data-lang');
+                            // Simular cambio de bandera
+                            const currentStyle = event.currentTarget.getAttribute('style');
+                            selector.setAttribute('style', currentStyle); 
+                            dropdown.classList.remove('active');
+                            console.log('Idioma seleccionado:', selectedLang);
+                        });
+                    });
+                }
+            };
+
+            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
+            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
+        });
+    </script>
     <script src="translation.js"></script>
     <script src="script.js"></script>
 
-    <!-- Sidebar de Anuncios Izquierda -->
-    <div class="ads-sidebar ads-sidebar-left">
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
-    <!-- Sidebar de Anuncios Derecha -->
-    <div class="ads-sidebar ads-sidebar-right">
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        <div class="ads-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4767336397819252"
-                 data-ad-slot="7573871679"
-                 data-ad-format="vertical"
-                 data-full-width-responsive="false"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
+  
 </body>
 
 </html>
