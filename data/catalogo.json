@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "isos": [
+    {
+      "nombre": "Windows 11 24H2 Pro x64",
+      "url": "https://...",
+      "sha256": ""
+    },
+    {
+      "nombre": "Windows 10 LTSC 2021 x64",
+      "url": "https://...",
+      "sha256": ""
+    }
+  ]
+}
