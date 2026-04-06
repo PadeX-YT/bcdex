@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -93,7 +93,7 @@
             grid-column: 1 / -1;
         }
         
-        /* Ocultar sidebars en pantallas pequeñas */
+        /* Ocultar sidebars en pantallas pequeÃ±as */
         @media (max-width: 1280px) {
             body {
                 grid-template-columns: 1fr;
@@ -194,7 +194,7 @@
                 
             </div>
         </div>
-    </header>
+
     
     <main class="flex-grow bg-surface py-12 sm:py-16">
         <div class="tutorial-container px-4 sm:px-6 lg:px-8">
@@ -204,6 +204,17 @@
                     ¿Cansado de los métodos tradicionales? BCDeX revoluciona el proceso permitiéndote crear una unidad de instalación directamente en tu disco duro. Mira los videos para ver lo fácil y rápido que es.
                 </p>
             </header>
+            <div id="banner-promo-tutorial"></div>
+            <script>
+            fetch('banner-promo.html')
+                .then(r => r.text())
+                .then(html => {
+                    const destino = document.getElementById('banner-promo-tutorial');
+                    if (destino) destino.innerHTML = html;
+                })
+                .catch(console.error);
+            </script>
+
             
             <div class="main-videos-wrapper">
                 <div class="video-container">
@@ -218,21 +229,21 @@
                 <h2 class="text-3xl font-bold text-[color:var(--color-text-primary)] text-center mt-12 mb-8" data-i18n="tutorial_blog_articles_title">Más artículos del blog</h2>
                 <div class="blog-carousel">
                     <a href="modo-turbo.html" class="article-card">
-                        <div class="article-icon">🚀</div>
+                        <div class="article-icon">ðŸš€</div>
                         <h3 class="article-title" data-i18n="tutorial_blog_article1_title">BCDeX 2.3: Modo Turbo</h3>
                         <p class="article-description" data-i18n="tutorial_blog_article1_description">Conoce qué cambia Modo Turbo y cómo reactivar características.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                     <a href="win11-25h2.html" class="article-card">
-                        <div class="article-icon">🧼</div>
+                        <div class="article-icon">ðŸ§¼</div>
                         <h3 class="article-title" data-i18n="tutorial_blog_article2_title">Optimiza Windows 11 25H2</h3>
                         <p class="article-description" data-i18n="tutorial_blog_article2_description">Descubre cómo eliminar bloatware desde la instalación.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                     <a href="instalacion-particion.html" class="article-card">
-                        <div class="article-icon">🛠️</div>
-                        <h3 class="article-title" data-i18n="tutorial_blog_article3_title">Instalación desde Partición</h3>
-                        <p class="article-description" data-i18n="tutorial_blog_article3_description">Olvídate del USB. Instala Windows directamente desde el disco duro.</p>
+                        <div class="article-icon">ðŸ› ï¸</div>
+                        <h3 class="article-title" data-i18n="tutorial_blog_article3_title">InstalaciÃ³n desde ParticiÃ³n</h3>
+                        <p class="article-description" data-i18n="tutorial_blog_article3_description">OlvÃ­date del USB. Instala Windows directamente desde el disco duro.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                 </div>
@@ -254,7 +265,7 @@
             </section>
 
             <div class="text-center mt-16">
-                 <a href="descarga.html" class="btn-primary inline-block text-xl transition transform hover:scale-105" data-i18n="tutorial_start_now_button">¡Empieza a usar BCDeX ahora!</a>
+                 <a href="descarga.html" class="btn-primary inline-block text-xl transition transform hover:scale-105" data-i18n="tutorial_start_now_button">Â¡Empieza a usar BCDeX ahora!</a>
              </div>
         </div>
     </main>
@@ -303,3 +314,4 @@
 </body>
 
 </html>
+

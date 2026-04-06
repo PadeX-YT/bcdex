@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+﻿<!DOCTYPE html> 
 <html lang="es">
 
 <head>
@@ -75,7 +75,7 @@
             grid-column: 1 / -1;
         }
         
-        /* Ocultar sidebars en pantallas pequeñas */
+        /* Ocultar sidebars en pantallas pequeÃ±as */
         @media (max-width: 1280px) {
             body {
                 grid-template-columns: 1fr;
@@ -89,6 +89,265 @@
                 grid-column: 1;
             }
         }
+
+                .versiones-anteriores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 0 auto 2.5rem;
+            align-items: stretch;
+            max-width: 980px;
+        }
+
+        .version-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            border-top: 4px solid var(--color-accent, #D90429);
+            border-radius: 1.25rem;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+            padding: 1.5rem 1.25rem;
+            height: 100%;
+            max-width: 470px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .version-card .version-panel {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1rem;
+            padding: 1.25rem;
+        }
+
+        .version-card .version-list {
+            min-height: 170px;
+        }
+
+        .version-card .version-meta {
+            color: #475569;
+            font-size: 0.98rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .version-card .version-action {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .version-card .version-action .btn-primary {
+            width: 200px;
+        }
+
+        .version-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            z-index: 80;
+        }
+
+        .version-modal-overlay.is-open {
+            display: flex;
+        }
+
+        .version-modal {
+            width: min(920px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1.5rem;
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .version-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.08);
+            color: #0f172a;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .version-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .version-modal-panel {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .version-modal-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .version-modal-links .btn-primary {
+            width: min(240px, 100%);
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .versiones-anteriores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .version-card {
+                padding: 1.25rem 1rem;
+            }
+
+            .version-modal {
+                padding: 1.5rem 1rem;
+            }
+
+            .version-modal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .supporters-scroll-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+            gap: 0.75rem;
+            max-height: 360px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent, #D90429) rgba(148, 163, 184, 0.18);
+        }
+
+        .supporters-scroll-list::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .supporters-scroll-list::-webkit-scrollbar-track {
+            background: rgba(148, 163, 184, 0.12);
+            border-radius: 999px;
+        }
+
+        .supporters-scroll-list::-webkit-scrollbar-thumb {
+            background: var(--color-accent, #D90429);
+            border-radius: 999px;
+        }
+
+        .supporters-scroll-list .supporter-card {
+            width: 100%;
+            min-height: 110px;
+            padding: 0.75rem 0.5rem;
+            margin: 0;
+        }
+
+        .supporters-scroll-list .supporter-avatar-bg {
+            width: 52px !important;
+            height: 52px !important;
+            margin: 0 auto 0.5rem;
+        }
+
+        .supporters-scroll-list .supporter-name {
+            font-size: 0.85rem;
+            line-height: 1.15;
+            word-break: break-word;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+
+            .supporters-wall {
+                padding: 1.25rem 0.85rem !important;
+                border-radius: 1rem;
+            }
+
+            .supporters-wall h2 {
+                font-size: 2rem !important;
+                line-height: 1.12;
+            }
+
+            .supporters-scroll-list {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.6rem;
+                max-height: 300px;
+                padding: 0.35rem;
+            }
+
+            .supporters-scroll-list .supporter-card {
+                min-height: 98px;
+                padding: 0.6rem 0.35rem;
+                border-radius: 0.85rem;
+            }
+
+            .supporters-scroll-list .supporter-avatar-bg {
+                width: 46px !important;
+                height: 46px !important;
+                margin-bottom: 0.4rem;
+            }
+
+            .supporters-scroll-list .supporter-name {
+                font-size: 0.76rem;
+                line-height: 1.1;
+            }
+
+            .version-card {
+                max-width: 100%;
+                padding: 1rem 0.85rem;
+                border-radius: 1rem;
+            }
+
+            .version-card .version-panel {
+                padding: 1rem;
+            }
+
+            .version-card .version-list {
+                min-height: auto;
+            }
+
+            .version-card .version-action .btn-primary {
+                width: min(180px, 100%);
+            }
+
+            .version-modal {
+                width: 100%;
+                max-height: 92vh;
+                padding: 1.25rem 0.85rem;
+                border-radius: 1.1rem;
+            }
+
+            .version-modal-panel {
+                padding: 1rem;
+            }
+
+            .version-modal-links .btn-primary {
+                width: min(220px, 100%);
+            }
+        }
+
     </style>
 </head>
 
@@ -112,9 +371,9 @@
                         <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
                         <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
+                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/espaÃ±a.png');"></div>
                             <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="es" style="background-image: url('img/espaÃ±a.png')"></div>
                                 <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
                                 <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
                             </div>
@@ -123,9 +382,9 @@
                 </div>
                 <div class="lg:hidden flex items-center">
                     <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/espaÃ±a.png');"></div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="es" style="background-image: url('img/espaÃ±a.png')"></div>
                             <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
                             <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
                         </div>
@@ -172,142 +431,153 @@
                         <hr class="supporters-divider">
                         
                         <div id="donantes-grid-descarga" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                                                <div class="supporters-carousel-wrapper relative">
-                                                    <button id="carousel-prev-descarga" aria-label="Anterior" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8592;</button>
-                                                    <div id="donantes-carousel-descarga" class="supporters-carousel px-2" tabindex="0" style="display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, 1fr); gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth; min-height: 240px;">
-                                                        <!-- Cards se insertan aquí -->
-                                                    </div>
-                                                    <button id="carousel-next-descarga" aria-label="Siguiente" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8594;</button>
-                                                </div>
-                                                <script>
-                                                fetch('bloque-donantes.html')
-                                                    .then(r => r.text())
-                                                    .then(html => {
-                                                        const temp = document.createElement('div');
-                                                        temp.innerHTML = html;
-                                                        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
-                                                        const carousel = document.getElementById('donantes-carousel-descarga');
-                                                        const numRows = 3;
-                                                        const perRow = Math.ceil(cards.length / numRows);
-                                                        carousel.innerHTML = '';
-                                                        for (let i = 0; i < perRow; i++) {
-                                                            for (let row = 0; row < numRows; row++) {
-                                                                const idx = row * perRow + i;
-                                                                if (cards[idx]) {
-                                                                    const card = cards[idx];
-                                                                    card.classList.add('mx-2', 'my-1');
-                                                                    card.style.width = '110px';
-                                                                    card.style.verticalAlign = 'top';
-                                                                    carousel.appendChild(card);
-                                                                }
-                                                            }
-                                                        }
-                                                    })
-                                                    .catch(console.error);
-                                                function scrollCarouselDescarga(direction) {
-                                                    const carousel = document.getElementById('donantes-carousel-descarga');
-                                                    if (!carousel) return;
-                                                    const scrollAmount = 120 * 3;
-                                                    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-                                                }
-                                                document.getElementById('carousel-prev-descarga').addEventListener('click', () => scrollCarouselDescarga(-1));
-                                                document.getElementById('carousel-next-descarga').addEventListener('click', () => scrollCarouselDescarga(1));
-                                                function updateCarouselButtonsDescarga() {
-                                                    const carousel = document.getElementById('donantes-carousel-descarga');
-                                                    const prev = document.getElementById('carousel-prev-descarga');
-                                                    const next = document.getElementById('carousel-next-descarga');
-                                                    if (!carousel || !prev || !next) return;
-                                                    if (window.innerWidth < 768) {
-                                                        prev.style.display = 'none';
-                                                        next.style.display = 'none';
-                                                        return;
-                                                    }
-                                                    setTimeout(() => {
-                                                        prev.style.display = carousel.scrollLeft > 0 ? 'flex' : 'none';
-                                                        next.style.display = (carousel.scrollLeft + carousel.offsetWidth) < carousel.scrollWidth ? 'flex' : 'none';
-                                                    }, 100);
-                                                }
-                                                window.addEventListener('resize', updateCarouselButtonsDescarga);
-                                                document.addEventListener('DOMContentLoaded', () => {
-                                                    setTimeout(updateCarouselButtonsDescarga, 500);
-                                                });
-                                                document.addEventListener('scroll', updateCarouselButtonsDescarga, true);
-                                                </script>
--i18n="donations_cta_here">Aquí</a>
+                                                <div class="supporters-scroll-list" id="donantes-carousel-descarga" tabindex="0"></div>
+<script>
+fetch('bloque-donantes.html')
+    .then(r => r.text())
+    .then(html => {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+        const lista = document.getElementById('donantes-carousel-descarga');
+        if (!lista) return;
+        lista.innerHTML = '';
+        cards.forEach((card) => {
+            lista.appendChild(card);
+        });
+    })
+    .catch(console.error);
+</script>
                         </div>
                     </div>
                 </section>
-
-             
-                    <!-- Sección de Descarga de Versión 2.3 -->
-                    <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                        <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div class="p-6 bg-gray-100 rounded-lg text-center">
-                                <h3 class=5font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
-                                <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md">
-                                    <li 5ata-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                    <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
-                                    <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
-                                    <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                                    <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
-                                    <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
-                                </ul>
-                            </div>
-                            <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">  
-                                <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                <div class="space-y-4">
-                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
-                                    <a href="https://ouo.io/AA1awiY" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
-                                    <!-- <a href="https://ouo.io/S1940" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>-->
+                <div id="banner-promo-descarga" class="pb-10 md:pb-14"></div>
+                <script>
+                fetch('banner-promo.html')
+                    .then(r => r.text())
+                    .then(html => {
+                        const destino = document.getElementById('banner-promo-descarga');
+                        if (destino) destino.innerHTML = html;
+                    })
+                    .catch(console.error);
+                </script>
+                    <div class="versiones-anteriores-grid">
+                        <section class="version-card">
+                            <div>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
+                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
+                                <div class="version-panel version-list">
+                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
+                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
+                                        <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
+                                        <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
+                                        <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
+                                        <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
+                                        <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
-                            <p class="text-lg text-gray-700" data-i18n="download_changes_text">Se han implementado mejoras de rendimiento y estabilidad.</p>
-                        </div>
-                        <!-- Compatibilidad con Windows 7 -->
-                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_win7_compat_title">Compatibilidad con Windows 7</h3>
-                            <p class="text-lg text-gray-700 mb-4" data-i18n="download_win7_compat_desc">Paquete .rar con instaladores de .NET Framework 4.0 y actualizaciones acumulativas x86/x64 requeridas para ejecutar BCDeX en Windows 7.</p>
-                            <a id="win7-libs-link" href="https://katfile.online/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" class="btn-primary inline-block" data-i18n="download_win7_package_btn">Descargar paquete Windows 7</a>
-                        </div>
-                    </section>
-
-                    <!-- Sección de Descarga de Versión 1.3 -->
-                    <section class="bg-white py-8 px-6 rounded-xl shadow-lg border-t-4 border-primary-accent mb-10">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
-                        <p class="text-center text-gray-600 mb-6"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> 
-                            <div class="p-6 bg-gray-200 rounded-lg text-center">
-                                <h3 class="font-bold text-xl mb-2" data-i18n="download_features_title">Características Principales</h3>
-                                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-md">
-                                    <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
-                                    <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
-                                    <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
-                                </ul>
+                            <div class="version-action">
+                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v23">Ver más</button>
                             </div>
-                            <div class="p-6 bg-gray-50 rounded-lg text-center flex flex-col justify-center">
-                                <h3 class="font-bold text-xl mb-4" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                <div class="space-y-4">
-                                    <a href="https://ko-fi.com/s/7cc7403907" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
-                                    <a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
-                                   <!-- <a href="https://ouo.io/aeRBxBi" target="_blank" class="btn-primary block max-w-xs mx-auto text-sm py-2" data-i18n="download_server_3">⬇️ Servidor #3</a>-->
+                        </section>
+
+                        <section class="version-card">
+                            <div>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
+                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
+                                <div class="version-panel version-list">
+                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
+                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
+                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
+                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
+                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
+                                    </ul>
+
+
                                 </div>
                             </div>
+                            <div class="version-action">
+                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v13">Ver más</button>
+                            </div>
+                        </section>
+                    </div>
+                <div id="banner-promo-carrusel-descarga"></div>
+                <script>
+                fetch('banner-promo-carrusel.html')
+                    .then(r => r.text())
+                    .then(html => {
+                        const destino = document.getElementById('banner-promo-carrusel-descarga');
+                        if (destino) destino.innerHTML = html;
+                    })
+                    .catch(console.error);
+                </script>
+
+
+                    <div class="version-modal-overlay" id="version-modal-v23" aria-hidden="true">
+                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v23-title">
+                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
+                            <h2 id="version-modal-v23-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
+                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
+                            <div class="version-modal-grid">
+                                <div class="version-modal-panel">
+                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
+                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
+                                        <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
+                                        <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
+                                        <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
+                                        <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
+                                        <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
+                                        <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
+                                    </ul>
+                                </div>
+                                <div class="version-modal-panel version-modal-links">
+                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
+                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://ouo.io/AA1awiY" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
+                                <p class="text-lg text-gray-700" data-i18n="download_changes_text">Se han implementado mejoras de rendimiento y estabilidad.</p>
+                            </div>
+                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_win7_compat_title">Compatibilidad con Windows 7</h3>
+                                <p class="text-lg text-gray-700 mb-4" data-i18n="download_win7_compat_desc">Paquete .rar con instaladores de .NET Framework 4.0 y actualizaciones acumulativas x86/x64 requeridas para ejecutar BCDeX en Windows 7.</p>
+                                <a id="win7-libs-link" href="https://katfile.online/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" class="btn-primary inline-block" data-i18n="download_win7_package_btn">Descargar paquete Windows 7</a>
+                            </div>
                         </div>
-                        <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Cambios en esta versión</h3>
-                            <p class="text-lg text-gray-700">
-                                - Se corrigió el error en la elección de la imagen o la versión de Windows en ISOs AIO. Ahora si se puede elegir la versión a instalar. 
-                                <br>- Se modificó el instalador para evitar la necesidad de copiarlo a una carpeta o ubicación distinta a la de la descarga. La App se instala en el disco C y crea un icono en el escritorio y el menú inicio (Opcionales). De esta forma todo lo hará la App.
-                            </p>
+                    </div>
+
+                    <div class="version-modal-overlay" id="version-modal-v13" aria-hidden="true">
+                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v13-title">
+                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
+                            <h2 id="version-modal-v13-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
+                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
+                            <div class="version-modal-grid">
+                                <div class="version-modal-panel">
+                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
+                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
+                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
+                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
+                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
+                                    </ul>
+                                </div>
+                                <div class="version-modal-panel version-modal-links">
+                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
+                                    <a href="https://ko-fi.com/s/7cc7403907" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
+                                </div>
+                            </div>
+                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Cambios en esta versión</h3>
+                                <p class="text-lg text-gray-700">
+                                    - Se corrigió el error en la elección de la imagen o la versión de Windows en ISOs AIO. Ahora si se puede elegir la versión a instalar.
+                                    <br>- Se modificó el instalador para evitar la necesidad de copiarlo a una carpeta o ubicación distinta a la de la descarga. La App se instala en el disco C y crea un icono en el escritorio y el menú inicio (Opcionales). De esta forma todo lo hará la App.
+                                </p>
+                            </div>
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Sección de Advertencia -->
                     <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-10">
@@ -388,6 +658,43 @@
             </footer>
         </div>
 
+        <script>
+        (function () {
+            const abrir = document.querySelectorAll('.version-open-btn');
+            const overlays = document.querySelectorAll('.version-modal-overlay');
+
+            function cerrarModales() {
+                overlays.forEach((overlay) => {
+                    overlay.classList.remove('is-open');
+                    overlay.setAttribute('aria-hidden', 'true');
+                });
+                document.body.style.overflow = '';
+            }
+
+            abrir.forEach((boton) => {
+                boton.addEventListener('click', () => {
+                    const objetivo = document.getElementById(boton.dataset.modalTarget);
+                    if (!objetivo) return;
+                    cerrarModales();
+                    objetivo.classList.add('is-open');
+                    objetivo.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            overlays.forEach((overlay) => {
+                overlay.addEventListener('click', (evento) => {
+                    if (evento.target === overlay || evento.target.hasAttribute('data-modal-close')) {
+                        cerrarModales();
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (evento) => {
+                if (evento.key === 'Escape') cerrarModales();
+            });
+        })();
+    </script>
     <script src="translation.js"></script>
     <script src="script.js"></script>
 
@@ -395,3 +702,20 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

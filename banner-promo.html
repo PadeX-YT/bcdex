@@ -1,0 +1,236 @@
+﻿<style>
+  .promo-banner-wrap {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .promo-banner-dark {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #11182d 0%, #1c1d4f 100%);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.22);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promo-banner-dark::before {
+    content: '';
+    position: absolute;
+    inset: auto auto -30% -10%;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(245, 158, 11, 0) 70%);
+    pointer-events: none;
+  }
+
+  .promo-offer-box {
+    position: relative;
+    z-index: 1;
+    min-width: 226px;
+    padding: 0.9rem 1.1rem 0.8rem;
+    border-radius: 0.95rem;
+    background: linear-gradient(180deg, #facc15 0%, #fbbf24 100%);
+    box-shadow: 0 12px 32px rgba(250, 204, 21, 0.34);
+    color: #050505;
+    text-align: center;
+  }
+
+  .promo-offer-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .promo-offer-value {
+    display: block;
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    line-height: 0.9;
+    font-weight: 1000;
+    letter-spacing: -0.06em;
+  }
+
+  .promo-copy {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+  }
+
+  .promo-copy-title {
+    margin: 0;
+    color: #f8fafc;
+    font-size: clamp(1.9rem, 3vw, 3.25rem);
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  .promo-copy-title em {
+    display: block;
+    color: #facc15;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-top: 0.18rem;
+  }
+
+  .promo-copy-subtitle {
+    margin: 0.65rem 0 0;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .promo-copy-subtitle strong {
+    color: #f8fafc;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .promo-code-panel {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .promo-code-panel-label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .promo-code-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 132px;
+    padding: 0.82rem 1.15rem;
+    border-radius: 0.95rem;
+    border: 1.5px dashed rgba(250, 204, 21, 0.6);
+    color: #facc15;
+    background: rgba(17, 24, 39, 0.16);
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  .promo-buy-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    min-height: 72px;
+    padding: 0.95rem 1.2rem;
+    border-radius: 1rem;
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .promo-buy-btn:hover {
+    transform: translateY(-1px);
+    background: #ffffff;
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.24);
+  }
+
+  @media (max-width: 1040px) {
+    .promo-banner-dark {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .promo-copy {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    .promo-offer-box,
+    .promo-code-panel,
+    .promo-buy-btn {
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .promo-banner-wrap {
+      padding: 0 0.85rem;
+    }
+
+    .promo-banner-dark {
+      grid-template-columns: 1fr;
+      padding: 1.2rem;
+      gap: 1rem;
+      border-radius: 1.5rem;
+      text-align: center;
+    }
+
+    .promo-offer-box,
+    .promo-code-panel,
+    .promo-buy-btn {
+      width: 100%;
+    }
+
+    .promo-offer-box {
+      min-width: 0;
+    }
+
+    .promo-buy-btn {
+      min-width: 0;
+      min-height: 60px;
+    }
+
+    .promo-copy-title {
+      font-size: 2.2rem;
+    }
+  }
+</style>
+
+<section class="promo-banner-wrap py-2 md:py-3 mb-14 md:mb-20">
+  <div class="promo-banner-dark">
+    <div class="promo-offer-box">
+      <span class="promo-offer-label">Cupón especial</span>
+      <span class="promo-offer-value">30% OFF</span>
+    </div>
+
+    <div class="promo-copy">
+      <h3 class="promo-copy-title">Licencias OEM y Office <em>Originales</em></h3>
+      <p class="promo-copy-subtitle">Windows 10/11 Pro, Office y más en <strong>GVGMall</strong>.</p>
+    </div>
+
+    <div class="promo-code-panel">
+      <span class="promo-code-panel-label">Usa este código</span>
+      <span class="promo-code-chip">GVGLC</span>
+    </div>
+
+    <a href="https://www.gvgmall.com" target="_blank" rel="noopener noreferrer" class="promo-buy-btn">
+      Comprar<br>licencia
+    </a>
+  </div>
+</section>
+
+
+
+
