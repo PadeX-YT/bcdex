@@ -514,28 +514,15 @@ fetch('bloque-donantes.html')
                             </div>
                         </section>
                     </div>
-                <div id="banner-promo-carrusel-descarga"></div>
-                <script>
-                fetch('banner-promo-carrusel.html')
-                    .then(r => r.text())
-                    .then(html => {
-                        const destino = document.getElementById('banner-promo-carrusel-descarga');
-                        if (destino) {
-                            destino.innerHTML = html;
-                            destino.querySelectorAll('script').forEach((bloque) => {
-                                const script = document.createElement('script');
-                                if (bloque.src) {
-                                    script.src = bloque.src;
-                                } else {
-                                    script.textContent = bloque.textContent;
-                                }
-                                document.body.appendChild(script);
-                                bloque.remove();
-                            });
-                        }
-                    })
-                    .catch(console.error);
-                </script>
+                <div class="w-full my-8 md:my-10">
+  <iframe
+    src="banner-promo-carrusel.html"
+    title="Promoción licencias BCDeX"
+    loading="lazy"
+    class="w-full border-0 block"
+    style="height: 470px; background: transparent; overflow: hidden;"
+  ></iframe>
+</div>
 
 
                     <div class="version-modal-overlay" id="version-modal-v23" aria-hidden="true">
@@ -726,6 +713,15 @@ fetch('bloque-donantes.html')
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

@@ -694,28 +694,15 @@
                 
               
 
-                <div id="banner-promo-carrusel-index-debajo"></div>
-                <script>
-                fetch('banner-promo-carrusel.html')
-                    .then(r => r.text())
-                    .then(html => {
-                        const destino = document.getElementById('banner-promo-carrusel-index-debajo');
-                        if (destino) {
-                            destino.innerHTML = html;
-                            destino.querySelectorAll('script').forEach((bloque) => {
-                                const script = document.createElement('script');
-                                if (bloque.src) {
-                                    script.src = bloque.src;
-                                } else {
-                                    script.textContent = bloque.textContent;
-                                }
-                                document.body.appendChild(script);
-                                bloque.remove();
-                            });
-                        }
-                    })
-                    .catch(console.error);
-                </script>
+                <div class="w-full my-8 md:my-10">
+  <iframe
+    src="banner-promo-carrusel.html"
+    title="Promoción licencias BCDeX"
+    loading="lazy"
+    class="w-full border-0 block"
+    style="height: 470px; background: transparent; overflow: hidden;"
+  ></iframe>
+</div>
 
                 <!-- SecciÃ³n: Funcionalidades Principales (AHORA VA AQUÃ ABAJO) -->
                 <section class="bg-white py-16 border-t border-[color:var(--color-border)]">
@@ -911,6 +898,15 @@
 <script src="script.js"></script>
 
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

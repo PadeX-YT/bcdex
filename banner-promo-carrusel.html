@@ -1,433 +1,389 @@
-﻿<style>
-  :root {
-    --banner-win-blue: #4b6cb7;
-    --banner-text-main: #0f172a;
-    --banner-gv-gold: #fbbf24;
-    --banner-gv-red: #d91b31;
-  }
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Promo Carrusel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gv-gold: #fbbf24;
+            --gv-red: #d91b31;
+        }
 
-  .promo-carousel-shell {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 16px;
-  }
+        * { box-sizing: border-box; }
 
-  .special-offer-tag {
-    position: absolute;
-    top: -15px;
-    left: -5px;
-    z-index: 100;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
-    transform: rotate(-8deg) scale(1);
-  }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: transparent;
+            margin: 0;
+            padding: 20px 12px;
+            overflow: hidden;
+        }
 
-  .tag-layers {
-    position: relative;
-    width: 160px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+        .special-offer-tag {
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            z-index: 100;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
+            transform: rotate(-8deg) scale(1);
+        }
 
-  .layer-black {
-    position: absolute;
-    width: 100%;
-    height: 75%;
-    background: #000;
-    transform: skew(-25deg) rotate(-2deg);
-    z-index: 1;
-  }
+        .tag-layers {
+            position: relative;
+            width: 160px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  .layer-red {
-    position: absolute;
-    width: 92%;
-    height: 70%;
-    background: var(--banner-gv-red);
-    transform: skew(-18deg) rotate(1deg);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #fff;
-  }
+        .layer-black {
+            position: absolute;
+            width: 100%;
+            height: 75%;
+            background: #000;
+            transform: skew(-25deg) rotate(-2deg);
+            z-index: 1;
+        }
 
-  .tag-content {
-    position: relative;
-    z-index: 3;
-    color: white;
-    text-align: center;
-    font-family: 'Permanent Marker', cursive;
-    line-height: 0.8;
-  }
+        .layer-red {
+            position: absolute;
+            width: 92%;
+            height: 70%;
+            background: var(--gv-red);
+            transform: skew(-18deg) rotate(1deg);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
 
-  .text-oferta {
-    font-size: 1.5rem;
-    display: block;
-  }
+        .tag-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+            line-height: 0.8;
+        }
 
-  .text-especial {
-    font-size: 0.7rem;
-    display: block;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 800;
-  }
+        .text-oferta { font-size: 1.5rem; display: block; }
+        .text-especial { font-size: 0.7rem; display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
 
-  .promo-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 20px auto;
-  }
+        .promo-container {
+            position: relative;
+            max-width: 1120px;
+            margin: 20px auto;
+        }
 
-  .promo-header {
-    background: linear-gradient(135deg, #2d314d 0%, #1a1c2e 100%);
-    border-radius: 1.5rem 1.5rem 0 0;
-    padding: 1rem 2.5rem;
-    border-bottom: 3px solid var(--banner-gv-gold);
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    position: relative;
-    z-index: 5;
-  }
+        .promo-header {
+            background: linear-gradient(135deg, #2d314d 0%, #1a1c2e 100%);
+            border-radius: 1.5rem 1.5rem 0 0;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--gv-gold);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            position: relative;
+            z-index: 5;
+        }
 
-  .header-brand {
-    text-align: center;
-  }
+        .header-brand { text-align: center; }
 
-  .discount-badge-float {
-    position: absolute;
-    left: 50%;
-    bottom: -22px;
-    transform: translateX(-50%);
-    background: var(--banner-gv-gold);
-    color: #000;
-    padding: 0.4rem 1.8rem;
-    border-radius: 1rem;
-    font-weight: 900;
-    font-size: 1.6rem;
-    line-height: 1;
-    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+        .discount-badge-float {
+            position: absolute;
+            left: 50%;
+            bottom: -22px;
+            transform: translateX(-50%);
+            background: var(--gv-gold);
+            color: #000;
+            padding: 0.4rem 1.8rem;
+            border-radius: 1rem;
+            font-weight: 900;
+            font-size: 1.6rem;
+            line-height: 1;
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            white-space: nowrap;
+        }
 
-  .code-pill-header {
-    font-family: 'JetBrains Mono', monospace;
-    background: #d1d5db;
-    color: #111827;
-    padding: 0.3rem 1.2rem;
-    border-radius: 0.6rem;
-    font-size: 1.4rem;
-    font-weight: 900;
-  }
+        .code-pill-header {
+            font-family: 'JetBrains Mono', monospace;
+            background: #d1d5db;
+            color: #111827;
+            padding: 0.3rem 1.2rem;
+            border-radius: 0.6rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
 
-  .carousel-wrapper {
-    background: #e5e7eb;
-    border-radius: 0 0 1.5rem 1.5rem;
-    padding: 2.5rem 0 1.5rem 0;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
-  }
+        .carousel-wrapper {
+            background: #e5e7eb;
+            border-radius: 0 0 1.5rem 1.5rem;
+            padding: 2.5rem 3rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
+        }
 
-  .carousel-track {
-    display: flex;
-    width: max-content;
-    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
-  }
+        .carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+        }
 
-  .nav-btn {
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 60;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: #1e293b;
-    border: 0;
-  }
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
 
-  .nav-btn:hover {
-    background: var(--banner-gv-gold);
-    color: black;
-    transform: translateY(-50%) scale(1.1);
-  }
+        .nav-btn {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 60;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #1e293b;
+            border: 0;
+        }
 
-  .nav-btn-prev {
-    left: 10px;
-  }
+        .nav-btn:hover {
+            background: var(--gv-gold);
+            color: black;
+            transform: translateY(-50%) scale(1.1);
+        }
 
-  .nav-btn-next {
-    right: 10px;
-  }
+        .nav-btn-prev { left: 10px; }
+        .nav-btn-next { right: 10px; }
 
-  .product-card {
-    flex: 0 0 180px;
-    margin: 0 0.5rem;
-    height: 240px;
-    border-radius: 1rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: #1e293b;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
+        .product-card {
+            flex: 0 0 160px;
+            height: 220px;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #1e293b;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
 
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
+        .product-card:hover { transform: translateY(-5px); }
 
-  .card-visual {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    font-size: 0.9rem;
-  }
+        .card-visual {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: white;
+            font-weight: 800;
+            text-align: center;
+            font-size: 0.85rem;
+        }
 
-  .card-info {
-    height: 50%;
-    padding: 0.8rem 0.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #0f172a;
-  }
+        .card-info {
+            height: 50%;
+            padding: 0.7rem 0.35rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #0f172a;
+        }
 
-  .card-info .title {
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-    display: block;
-  }
+        .card-info .title { color: white; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; display: block; }
+        .card-info .subtitle { color: #64748b; font-size: 0.6rem; margin-bottom: 6px; display: block; }
+        .price-old { color: #94a3b8; text-decoration: line-through; font-size: 0.7rem; }
+        .price-new { color: var(--gv-gold); font-size: 0.95rem; font-weight: 900; }
 
-  .card-info .subtitle {
-    color: #64748b;
-    font-size: 0.6rem;
-    margin-bottom: 6px;
-    display: block;
-  }
+        .bg-win-blue { background: #4b6cb7; }
+        .bg-office-orange { background: #f85032; }
+        .bg-win-purple { background: #6a11cb; }
+        .bg-win-dark { background: #334155; }
 
-  .price-old {
-    color: #94a3b8;
-    text-decoration: line-through;
-    font-size: 0.7rem;
-  }
-
-  .price-new {
-    color: var(--banner-gv-gold);
-    font-size: 1rem;
-    font-weight: 900;
-  }
-
-  .bg-win-blue { background: #4b6cb7; }
-  .bg-office-orange { background: #f85032; }
-  .bg-win-purple { background: #6a11cb; }
-  .bg-win-dark { background: #334155; }
-  .bg-win-cyan { background: #00a4ef; }
-
-  @media (max-width: 768px) {
-    .promo-header {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      text-align: center;
-      padding: 1rem 1rem 2.4rem;
-    }
-
-    .special-offer-tag {
-      transform: rotate(-8deg) scale(0.85);
-      left: -12px;
-      top: -12px;
-    }
-
-    .discount-badge-float {
-      bottom: -18px;
-      font-size: 1.25rem;
-      padding: 0.35rem 1.2rem;
-    }
-
-    .carousel-wrapper {
-      padding-top: 2.2rem;
-    }
-  }
-</style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400&family=Permanent+Marker&display=swap" rel="stylesheet">
-
-<div class="promo-carousel-shell">
-  <div class="promo-container">
-    <div class="special-offer-tag">
-      <div class="tag-layers">
-        <div class="layer-black"></div>
-        <div class="layer-red">
-          <div class="tag-content">
-            <span class="text-oferta">OFERTA</span>
-            <span class="text-especial">ESPECIAL</span>
-          </div>
+        @media (max-width: 768px) {
+            body { padding: 16px 8px; }
+            .promo-header {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                text-align: center;
+                padding: 1rem 1rem 2.4rem;
+            }
+            .special-offer-tag {
+                transform: rotate(-8deg) scale(0.85);
+                left: -12px;
+                top: -12px;
+            }
+            .discount-badge-float {
+                bottom: -18px;
+                font-size: 1.25rem;
+                padding: 0.35rem 1.2rem;
+            }
+            .carousel-wrapper {
+                padding: 2.2rem 2.4rem 1.2rem;
+            }
+            .product-card {
+                flex-basis: 140px;
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-container">
+        <div class="special-offer-tag">
+            <div class="tag-layers">
+                <div class="layer-black"></div>
+                <div class="layer-red">
+                    <div class="tag-content">
+                        <span class="text-oferta">OFERTA</span>
+                        <span class="text-especial">ESPECIAL</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="promo-header shadow-xl">
+            <div class="spacer"></div>
+            <div class="header-brand">
+                <h2 class="text-white text-2xl font-black tracking-tight leading-none">
+                    Comunidad <span class="text-blue-400 italic">BCDeX</span>
+                </h2>
+            </div>
+            <div class="flex flex-col items-end">
+                <span class="text-[9px] text-white font-black uppercase tracking-widest mb-1 opacity-50">Cupón:</span>
+                <div class="code-pill-header">GVGLC</div>
+            </div>
+            <div class="discount-badge-float">
+                <span class="text-[8px] uppercase tracking-[0.3em] font-black opacity-60 mb-1 text-black">Ahorra</span>
+                30% OFF
+            </div>
+        </div>
+
+        <div class="carousel-wrapper shadow-xl" id="carouselWrapper">
+            <button class="nav-btn nav-btn-prev" type="button" id="promoPrev" aria-label="Anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="nav-btn nav-btn-next" type="button" id="promoNext" aria-label="Siguiente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <a href="https://www.gvgmall.com/key/202110081330187068.html" target="_blank" rel="noopener noreferrer" class="product-card">
+                        <div class="card-visual bg-win-blue"><span>Win 11<br><small>Pro</small></span></div>
+                        <div class="card-info"><span class="title">MS Win 11 Pro</span><span class="subtitle">OEM GLOBAL KEY</span><div class="price-old">30.89€</div><div class="price-new">21.62€</div></div>
+                    </a>
+                    <a href="https://www.gvgmall.com/key/202208271410334285.html" target="_blank" rel="noopener noreferrer" class="product-card">
+                        <div class="card-visual bg-win-purple"><span>Win 10<br><small>Pro</small></span></div>
+                        <div class="card-info"><span class="title">MS Win 10 Pro</span><span class="subtitle">OEM GLOBAL KEY</span><div class="price-old">22.30€</div><div class="price-new">15.61€</div></div>
+                    </a>
+                    <a href="https://www.gvgmall.com/key/201810041728402402.html" target="_blank" rel="noopener noreferrer" class="product-card">
+                        <div class="card-visual bg-office-orange"><span>Office<br><small>2019 Pro</small></span></div>
+                        <div class="card-info"><span class="title">Office 2019 Plus</span><span class="subtitle">PRO PLUS KEY</span><div class="price-old">58.64€</div><div class="price-new">41.05€</div></div>
+                    </a>
+                    <a href="https://www.gvgmall.com/key/202110081332391209.html" target="_blank" rel="noopener noreferrer" class="product-card">
+                        <div class="card-visual bg-win-blue opacity-90"><span>Win 11<br><small>Home</small></span></div>
+                        <div class="card-info"><span class="title">MS Win 11 Home</span><span class="subtitle">OEM GLOBAL KEY</span><div class="price-old">26.03€</div><div class="price-new">18.22€</div></div>
+                    </a>
+                    <a href="https://www.gvgmall.com/key/202502111101156953.html" target="_blank" rel="noopener noreferrer" class="product-card">
+                        <div class="card-visual bg-win-dark"><span>Win 10<br><small>LTSC</small></span></div>
+                        <div class="card-info"><span class="title">Win 10 Enterprise</span><span class="subtitle">LTSC GLOBAL KEY</span><div class="price-old">16.58€</div><div class="price-new">11.61€</div></div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="promo-header">
-      <div class="spacer"></div>
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const wrapper = document.getElementById('carouselWrapper');
+        const prev = document.getElementById('promoPrev');
+        const next = document.getElementById('promoNext');
+        const cards = Array.from(track.children);
+        const cardsToMove = 1;
+        const timeBetweenSteps = 4000;
+        let currentIndex = 0;
+        let isPaused = false;
+        let autoInterval;
 
-      <div class="header-brand">
-        <h2 class="text-white text-2xl font-black tracking-tight leading-none">
-          Comunidad <span class="text-blue-400 italic">BCDeX</span>
-        </h2>
-      </div>
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
 
-      <div class="flex flex-col items-end">
-        <span class="text-[9px] text-white font-black uppercase tracking-widest mb-1 opacity-50">Cupón:</span>
-        <div class="code-pill-header">GVGLC</div>
-      </div>
+        function getCardWidth() {
+            const base = cards[0];
+            const styles = window.getComputedStyle(base);
+            const gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap) || 16;
+            return base.getBoundingClientRect().width + gap;
+        }
 
-      <div class="discount-badge-float">
-        <span class="text-[8px] uppercase tracking-[0.3em] font-black opacity-60 mb-1 text-black">Ahorra</span>
-        30% OFF
-      </div>
-    </div>
+        function updatePosition() {
+            const cardWidth = getCardWidth();
+            track.style.transition = 'transform 0.5s ease';
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 
-    <div class="carousel-wrapper" id="carouselWrapperPromo">
-      <button class="nav-btn nav-btn-prev" type="button" data-promo-nav="prev" aria-label="Anterior">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="nav-btn nav-btn-next" type="button" data-promo-nav="next" aria-label="Siguiente">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
+            if (currentIndex >= cards.length) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentIndex = 0;
+                    track.style.transform = 'translateX(0)';
+                }, 500);
+            } else if (currentIndex < 0) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentIndex = cards.length - 1;
+                    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                }, 500);
+            }
+        }
 
-      <div class="carousel-track" id="carouselTrackPromo">
-        <a href="https://www.gvgmall.com/key/202110081330187068.html" target="_blank" rel="noopener noreferrer" class="product-card">
-          <div class="card-visual bg-win-blue"><span>Win 11<br><small>Pro</small></span></div>
-          <div class="card-info">
-            <span class="title">MS Win 11 Pro</span>
-            <span class="subtitle">OEM GLOBAL KEY</span>
-            <div class="price-old">30.89€</div><div class="price-new">21.62€</div>
-          </div>
-        </a>
-        <a href="https://www.gvgmall.com/key/202208271410334285.html" target="_blank" rel="noopener noreferrer" class="product-card">
-          <div class="card-visual bg-win-purple"><span>Win 10<br><small>Pro</small></span></div>
-          <div class="card-info">
-            <span class="title">MS Win 10 Pro</span>
-            <span class="subtitle">OEM GLOBAL KEY</span>
-            <div class="price-old">22.30€</div><div class="price-new">15.61€</div>
-          </div>
-        </a>
-        <a href="https://www.gvgmall.com/key/201810041728402402.html" target="_blank" rel="noopener noreferrer" class="product-card">
-          <div class="card-visual bg-office-orange"><span>Office<br><small>2019 Pro</small></span></div>
-          <div class="card-info">
-            <span class="title">Office 2019 Plus</span>
-            <span class="subtitle">PRO PLUS KEY</span>
-            <div class="price-old">58.64€</div><div class="price-new">41.05€</div>
-          </div>
-        </a>
-        <a href="https://www.gvgmall.com/key/202110081332391209.html" target="_blank" rel="noopener noreferrer" class="product-card">
-          <div class="card-visual bg-win-blue opacity-90"><span>Win 11<br><small>Home</small></span></div>
-          <div class="card-info">
-            <span class="title">MS Win 11 Home</span>
-            <span class="subtitle">OEM GLOBAL KEY</span>
-            <div class="price-old">26.03€</div><div class="price-new">18.22€</div>
-          </div>
-        </a>
-        <a href="https://www.gvgmall.com/key/202502111101156953.html" target="_blank" rel="noopener noreferrer" class="product-card">
-          <div class="card-visual bg-win-dark"><span>Win 10<br><small>LTSC</small></span></div>
-          <div class="card-info">
-            <span class="title">Win 10 Enterprise</span>
-            <span class="subtitle">LTSC GLOBAL KEY</span>
-            <div class="price-old">16.58€</div><div class="price-new">11.61€</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+        function move(direction) {
+            currentIndex += direction * cardsToMove;
+            updatePosition();
+        }
 
-<script>
-(function () {
-  const track = document.getElementById('carouselTrackPromo');
-  const wrapper = document.getElementById('carouselWrapperPromo');
-  if (!track || !wrapper || track.dataset.ready === '1') return;
-  track.dataset.ready = '1';
+        function restartAuto() {
+            clearInterval(autoInterval);
+            autoInterval = setInterval(() => {
+                if (!isPaused) move(1);
+            }, timeBetweenSteps);
+        }
 
-  let cards = Array.from(track.children);
-  const cardsToMove = 2;
-  const timeBetweenSteps = 4000;
-  let currentIndex = 0;
-  let isPaused = false;
-  let autoInterval;
+        prev.addEventListener('click', () => {
+            move(-1);
+            restartAuto();
+        });
 
-  cards.forEach(card => track.appendChild(card.cloneNode(true)));
+        next.addEventListener('click', () => {
+            move(1);
+            restartAuto();
+        });
 
-  function updatePosition() {
-    const baseCard = cards[0];
-    if (!baseCard) return;
-    const cardWidth = baseCard.offsetWidth + 16;
-    track.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
-    if (currentIndex >= cards.length) {
-      setTimeout(() => {
-        track.style.transition = 'none';
-        currentIndex = 0;
-        track.style.transform = 'translateX(0)';
-      }, 800);
-    } else if (currentIndex < 0) {
-      setTimeout(() => {
-        track.style.transition = 'none';
-        currentIndex = cards.length - cardsToMove;
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      }, 800);
-    }
-  }
-
-  function moveNext() {
-    if (!isPaused) {
-      currentIndex += cardsToMove;
-      updatePosition();
-    }
-  }
-
-  function handleNavClick(direction) {
-    clearInterval(autoInterval);
-    currentIndex += direction * cardsToMove;
-    updatePosition();
-    autoInterval = setInterval(moveNext, timeBetweenSteps);
-  }
-
-  const prev = wrapper.querySelector('[data-promo-nav="prev"]');
-  const next = wrapper.querySelector('[data-promo-nav="next"]');
-  if (prev) prev.addEventListener('click', () => handleNavClick(-1));
-  if (next) next.addEventListener('click', () => handleNavClick(1));
-
-  autoInterval = setInterval(moveNext, timeBetweenSteps);
-  wrapper.addEventListener('mouseenter', () => { isPaused = true; });
-  wrapper.addEventListener('mouseleave', () => { isPaused = false; });
-})();
-</script>
-
-
+        wrapper.addEventListener('mouseenter', () => { isPaused = true; });
+        wrapper.addEventListener('mouseleave', () => { isPaused = false; });
+        window.addEventListener('resize', updatePosition);
+        restartAuto();
+    </script>
+</body>
+</html>
