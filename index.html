@@ -631,7 +631,19 @@
                     .then(r => r.text())
                     .then(html => {
                         const destino = document.getElementById('banner-promo-index');
-                        if (destino) destino.innerHTML = html;
+                        if (destino) {
+                            destino.innerHTML = html;
+                            destino.querySelectorAll('script').forEach((bloque) => {
+                                const script = document.createElement('script');
+                                if (bloque.src) {
+                                    script.src = bloque.src;
+                                } else {
+                                    script.textContent = bloque.textContent;
+                                }
+                                document.body.appendChild(script);
+                                bloque.remove();
+                            });
+                        }
                     })
                     .catch(console.error);
                 </script>
@@ -688,7 +700,19 @@
                     .then(r => r.text())
                     .then(html => {
                         const destino = document.getElementById('banner-promo-carrusel-index-debajo');
-                        if (destino) destino.innerHTML = html;
+                        if (destino) {
+                            destino.innerHTML = html;
+                            destino.querySelectorAll('script').forEach((bloque) => {
+                                const script = document.createElement('script');
+                                if (bloque.src) {
+                                    script.src = bloque.src;
+                                } else {
+                                    script.textContent = bloque.textContent;
+                                }
+                                document.body.appendChild(script);
+                                bloque.remove();
+                            });
+                        }
                     })
                     .catch(console.error);
                 </script>
@@ -887,6 +911,7 @@
 <script src="script.js"></script>
 
 </html>
+
 
 
 
