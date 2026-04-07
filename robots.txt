@@ -1,0 +1,8 @@
+﻿User-agent: *
+Allow: /
+Disallow: /banner-promo.html
+Disallow: /banner-promo-carrusel.html
+Disallow: /bloque-donantes.html
+Disallow: /descarga.head.snapshot.html
+
+Sitemap: https://bcdexapp.com/sitemap.xml
