@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCDeX 3.0 Core: Modo Turbo Reforzado</title>
+    <meta name="description" content="Qué hace el Modo Turbo Reforzado de BCDeX 3.0 Core, qué servicios puede tocar, cómo restaurarlos y en qué mejora frente a BCDeX 2.3.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bcdexapp.com/modo-turbo-3-core.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="BCDeX">
+    <meta property="og:title" content="BCDeX 3.0 Core: Modo Turbo Reforzado">
+    <meta property="og:description" content="Guía del Modo Turbo Reforzado de BCDeX 3.0 Core con listado real de servicios y comandos de restauración.">
+    <meta property="og:url" content="https://bcdexapp.com/modo-turbo-3-core.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BCDeX 3.0 Core: Modo Turbo Reforzado">
+    <meta name="twitter:description" content="Qué optimiza el Modo Turbo Reforzado, qué servicios toca y cómo reactivarlos si los necesitas.">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        .article-container { background-color: var(--color-primary-base); padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+        .section-title { display: flex; align-items: center; font-size: 1.75rem; font-weight: 700; color: var(--color-accent); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .section-title svg { margin-right: 0.5rem; color: var(--color-accent-dark); }
+        .code-block { background-color: #1F2937; color: #F9FAFB; padding: 0.85rem 3.5rem 0.85rem 0.85rem; border-radius: 0.5rem; font-family: monospace; overflow-x: auto; margin-top: 0.5rem; margin-bottom: 1rem; position: relative; user-select: all; }
+        .copy-button { position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.4rem; background-color: #374151; color: #D1D5DB; border: none; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.2s, transform 0.1s; }
+        .copy-button:hover { background-color: var(--color-accent); color: var(--color-primary-base); transform: scale(1.05); }
+        .copy-button svg { width: 1rem; height: 1rem; }
+        .compare-table, .service-table { width: 100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 2rem; font-size: 0.95rem; }
+        .compare-table th, .compare-table td, .service-table th, .service-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+        .compare-table th, .service-table th { background-color: var(--color-surface); font-weight: 700; color: var(--color-text-primary); }
+        .compare-table tr:hover, .service-table tr:hover { background-color: #F8FAFC; }
+        .service-name { font-family: monospace; font-weight: 700; color: var(--color-accent-dark); }
+        .highlight-box { background: linear-gradient(180deg, #fff7ed 0%, #fffbeb 100%); border: 1px solid #fdba74; border-radius: 0.85rem; padding: 1rem 1.1rem; margin: 1rem 0 1.5rem; }
+        .warning-box { background: #fef2f2; border: 1px solid #fca5a5; border-left: 4px solid #ef4444; padding: 1rem 1.1rem; border-radius: 0.85rem; margin: 1rem 0 1.5rem; }
+        .info-box { background: #eff6ff; border: 1px solid #93c5fd; border-left: 4px solid #3b82f6; padding: 1rem 1.1rem; border-radius: 0.85rem; margin: 1rem 0 1.5rem; }
+        .blog-image-center { text-align: center; margin: 1rem 0 1.5rem 0; }
+        .blog-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 240px; padding: 1rem 1.5rem; border-radius: 1rem; background: linear-gradient(180deg, #111827 0%, #1f2937 100%); color: #fff; box-shadow: 0 10px 25px rgba(15,23,42,.16); font-size: 1.35rem; font-weight: 800; }
+        .footer-links { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1rem; }
+        .footer-icon { width: 32px; height: 32px; transition: transform 0.2s ease-in-out; }
+        .footer-links a:hover .footer-icon { transform: scale(1.1); }
+        body { display: grid; grid-template-columns: 160px 1fr 160px; grid-template-rows: auto 1fr auto; min-height: 100vh; }
+        header { grid-column: 1 / -1; }
+        .flex-grow { grid-column: 2; }
+        .ads-sidebar { padding: 5px; display: flex; flex-direction: column; gap: 10px; }
+        .ads-sidebar-left { grid-column: 1; grid-row: 2; }
+        .ads-sidebar-right { grid-column: 3; grid-row: 2; }
+        .ads-container { background: white; padding: 5px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); width: 100%; min-height: 250px; }
+        .ads-container ins { width: 100% !important; display: block !important; }
+        footer { grid-column: 1 / -1; }
+        @media (max-width: 1280px) { body { grid-template-columns: 1fr; } .ads-sidebar { display: none; } .flex-grow { grid-column: 1; } }
+        @media (max-width: 768px) { .service-table th:nth-child(2), .service-table td:nth-child(2) { display: none; } }
+        @media (max-width: 640px) { .article-container { padding: 1.5rem; } .compare-table th:nth-child(2), .compare-table td:nth-child(2) { display: none; } }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "BCDeX 3.0 Core: Modo Turbo Reforzado",
+      "description": "Qué hace el Modo Turbo Reforzado de BCDeX 3.0 Core, qué servicios puede tocar y cómo reactivarlos.",
+      "url": "https://bcdexapp.com/modo-turbo-3-core.html",
+      "author": { "@type": "Person", "name": "PadeX" },
+      "publisher": { "@type": "Organization", "name": "BCDeX" }
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-full">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    </a>
+                </div>
+                <div class="hidden lg:ml-6 lg:block">
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
+                        <a href="tutorial.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
+                        <a href="info.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
+                        <a href="blog.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150" aria-current="page">Blog</a>
+                        <a href="donaciones.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
+                        <a href="descarga.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Descarga</a>
+                        <a href="contacto.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
+                        <a href="sobre-el-creador.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
+                        <div class="language-container ml-4">
+                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
+                            <div class="language-dropdown" id="language-dropdown-desktop">
+                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <div class="language-container mr-4">
+                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                        </div>
+                    </div>
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
+                <a href="tutorial.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
+                <a href="info.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
+                <a href="blog.html" class="text-[color:var(--color-accent)] bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150" aria-current="page">Blog</a>
+                <a href="donaciones.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
+                <a href="descarga.html" class="btn-primary block mt-2 mx-3 text-center text-base font-medium transition transform hover:scale-100">Descarga</a>
+                <a href="contacto.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
+                <a href="sobre-el-creador.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-screen-2xl mx-auto flex flex-row lg:space-x-16 py-8 sm:py-12 px-4" style="display: flex; flex-direction: row;">
+            <div class="lg:w-4/5 min-w-0">
+                <div class="article-container">
+                    <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
+                        <p class="text-sm font-semibold text-[color:var(--color-accent)] mb-2">
+                            <a href="blog.html" class="hover:underline">← Volver a todos los artículos</a>
+                        </p>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[color:var(--color-text-primary)] mb-4">BCDeX 3.0 Core: Modo Turbo Reforzado</h1>
+                        <p class="text-lg text-[color:var(--color-text-secondary)]">En BCDeX 3.0 Core, el Modo Turbo ya no es solo un apagado agresivo de servicios. Ahora forma parte de un flujo más estable: limpia más, valida mejor y remata el proceso con menos fricción, incluida la expulsión automática de la USB cuando corresponde.</p>
+                    </header>
+
+                    <div class="blog-image-center">
+                        <div class="blog-badge">BCDeX 3.0 Core<br>Modo Turbo Reforzado</div>
+                    </div>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="zap"></svg>Qué hace exactamente en la v3.0</h2>
+                        <p class="text-base text-[color:var(--color-text-secondary)] mb-4">El objetivo sigue siendo liberar carga del sistema, pero la 3.0 Core lo hace con un enfoque más utilitario: despejar el entorno para preparar instalaciones, copiar archivos, validar el flujo y reducir interferencias durante el proceso.</p>
+                        <div class="highlight-box">
+                            <p class="text-base text-[color:var(--color-text-primary)]"><strong>Resumen corto:</strong> el Modo Turbo Reforzado no solo acelera Windows. También deja a BCDeX trabajar en un entorno más limpio, más predecible y con menos ruido de fondo que en la v2.3.</p>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                            <li>Limpieza más consistente de servicios y procesos poco útiles.</li>
+                            <li>Mejor control del estado general del sistema antes y después de preparar la instalación.</li>
+                            <li>Bloqueo de partes de Windows Update que pueden revertir o interferir en la optimización.</li>
+                            <li>Mayor estabilidad general del flujo frente a la v2.3.</li>
+                            <li>Expulsión automática de la USB al finalizar, cuando aplica.</li>
+                        </ul>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="split-square-horizontal"></svg>Diferencias frente a BCDeX 2.3</h2>
+                        <div class="overflow-x-auto rounded-lg border border-[color:var(--color-border)]">
+                            <table class="compare-table min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Aspecto</th>
+                                        <th class="hidden sm:table-cell">BCDeX 2.3</th>
+                                        <th>BCDeX 3.0 Core</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Foco principal</strong></td>
+                                        <td class="hidden sm:table-cell">Liberar recursos desactivando servicios poco usados.</td>
+                                        <td>Optimización más integrada en el flujo completo de preparación.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Windows Update</strong></td>
+                                        <td class="hidden sm:table-cell">Menos insistente y más básica.</td>
+                                        <td>Bloqueo más claro de servicios que pueden reactivar carga o revertir cambios.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Estabilidad</strong></td>
+                                        <td class="hidden sm:table-cell">Buena, pero más dependiente del estado previo del sistema.</td>
+                                        <td>Flujo más pulido y con mejor cierre del proceso.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Finalización</strong></td>
+                                        <td class="hidden sm:table-cell">Más centrado en la optimización en sí.</td>
+                                        <td>Incluye expulsión automática de la USB y un remate más limpio.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="list-restart"></svg>Servicios que puede tocar y cómo reactivarlos</h2>
+                        <p class="text-base text-[color:var(--color-text-secondary)] mb-4">Esta lista está adaptada a la lógica actual de la v3.0 Core y al reactivador de servicios que acompaña al proyecto. Si después del Modo Turbo necesitas recuperar una función concreta, puedes hacerlo con PowerShell como administrador.</p>
+                        <div class="warning-box">
+                            <strong>Importante:</strong> no todos los equipos usan todos los servicios. La lista representa los candidatos reales que BCDeX 3.0 Core contempla para optimización o restauración. Si un servicio no existe en tu edición de Windows, simplemente no aplicará.
+                        </div>
+                        <div class="overflow-x-auto rounded-lg border border-[color:var(--color-border)]">
+                            <table class="service-table min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 24%;">Servicio</th>
+                                        <th style="width: 36%;">Uso práctico</th>
+                                        <th style="width: 40%;">Comando para reactivarlo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="service-name">Spooler</td><td>Impresoras y cola de impresión.</td><td><div class="code-block" data-code="Set-Service Spooler -StartupType Automatic; Start-Service Spooler"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service Spooler -StartupType Automatic; Start-Service Spooler</code></div></td></tr>
+                                    <tr><td class="service-name">StiSvc</td><td>Escáneres y cámaras.</td><td><div class="code-block" data-code="Set-Service StiSvc -StartupType Automatic; Start-Service StiSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service StiSvc -StartupType Automatic; Start-Service StiSvc</code></div></td></tr>
+                                    <tr><td class="service-name">RasMan</td><td>Conexiones VPN y acceso remoto.</td><td><div class="code-block" data-code="Set-Service RasMan -StartupType Automatic; Start-Service RasMan"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service RasMan -StartupType Automatic; Start-Service RasMan</code></div></td></tr>
+                                    <tr><td class="service-name">icssvc</td><td>Hotspot WiFi y compartir Internet.</td><td><div class="code-block" data-code="Set-Service icssvc -StartupType Automatic; Start-Service icssvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service icssvc -StartupType Automatic; Start-Service icssvc</code></div></td></tr>
+                                    <tr><td class="service-name">WebClient</td><td>Acceso a rutas WebDAV y carpetas de red específicas.</td><td><div class="code-block" data-code="Set-Service WebClient -StartupType Automatic; Start-Service WebClient"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WebClient -StartupType Automatic; Start-Service WebClient</code></div></td></tr>
+                                    <tr><td class="service-name">SysMain</td><td>Precarga y optimización de arranque; en muchos SSD aporta poco.</td><td><div class="code-block" data-code="Set-Service SysMain -StartupType Automatic; Start-Service SysMain"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service SysMain -StartupType Automatic; Start-Service SysMain</code></div></td></tr>
+                                    <tr><td class="service-name">bthserv</td><td>Bluetooth.</td><td><div class="code-block" data-code="Set-Service bthserv -StartupType Automatic; Start-Service bthserv"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service bthserv -StartupType Automatic; Start-Service bthserv</code></div></td></tr>
+                                    <tr><td class="service-name">MapsBroker</td><td>Funciones de mapas integradas de Windows.</td><td><div class="code-block" data-code="Set-Service MapsBroker -StartupType Automatic; Start-Service MapsBroker"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service MapsBroker -StartupType Automatic; Start-Service MapsBroker</code></div></td></tr>
+                                    <tr><td class="service-name">DiagTrack</td><td>Telemetría y diagnóstico de Microsoft.</td><td><div class="code-block" data-code="Set-Service DiagTrack -StartupType Automatic; Start-Service DiagTrack"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service DiagTrack -StartupType Automatic; Start-Service DiagTrack</code></div></td></tr>
+                                    <tr><td class="service-name">WinDefend</td><td>Windows Defender.</td><td><div class="code-block" data-code="Set-Service WinDefend -StartupType Automatic; Start-Service WinDefend"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WinDefend -StartupType Automatic; Start-Service WinDefend</code></div></td></tr>
+                                    <tr><td class="service-name">wuauserv</td><td>Windows Update.</td><td><div class="code-block" data-code="Set-Service wuauserv -StartupType Automatic; Start-Service wuauserv"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service wuauserv -StartupType Automatic; Start-Service wuauserv</code></div></td></tr>
+                                    <tr><td class="service-name">UsoSvc</td><td>Orquestador de actualizaciones.</td><td><div class="code-block" data-code="Set-Service UsoSvc -StartupType Automatic; Start-Service UsoSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service UsoSvc -StartupType Automatic; Start-Service UsoSvc</code></div></td></tr>
+                                    <tr><td class="service-name">DoSvc</td><td>Delivery Optimization para descargas y distribución.</td><td><div class="code-block" data-code="Set-Service DoSvc -StartupType Automatic; Start-Service DoSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service DoSvc -StartupType Automatic; Start-Service DoSvc</code></div></td></tr>
+                                    <tr><td class="service-name">BITS</td><td>Transferencia inteligente en segundo plano.</td><td><div class="code-block" data-code="Set-Service BITS -StartupType Automatic; Start-Service BITS"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service BITS -StartupType Automatic; Start-Service BITS</code></div></td></tr>
+                                    <tr><td class="service-name">OneSyncSvc</td><td>Sincronización de datos de usuario, correo y calendario.</td><td><div class="code-block" data-code="Set-Service OneSyncSvc -StartupType Automatic; Start-Service OneSyncSvc"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service OneSyncSvc -StartupType Automatic; Start-Service OneSyncSvc</code></div></td></tr>
+                                    <tr><td class="service-name">XblAuthManager</td><td>Inicio de sesión y funciones de Xbox Live.</td><td><div class="code-block" data-code="Set-Service XblAuthManager -StartupType Automatic; Start-Service XblAuthManager"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service XblAuthManager -StartupType Automatic; Start-Service XblAuthManager</code></div></td></tr>
+                                    <tr><td class="service-name">WinRM</td><td>Administración remota de Windows.</td><td><div class="code-block" data-code="Set-Service WinRM -StartupType Automatic; Start-Service WinRM"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service WinRM -StartupType Automatic; Start-Service WinRM</code></div></td></tr>
+                                    <tr><td class="service-name">RemoteRegistry</td><td>Acceso remoto al registro; no suele ser necesario y conviene tratarlo con cautela.</td><td><div class="code-block" data-code="Set-Service RemoteRegistry -StartupType Automatic; Start-Service RemoteRegistry"><button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button><code>Set-Service RemoteRegistry -StartupType Automatic; Start-Service RemoteRegistry</code></div></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="terminal-square"></svg>Comandos clásicos que siguen encajando en la lógica del Turbo</h2>
+                        <p class="text-base text-[color:var(--color-text-secondary)] mb-4">En documentación anterior aparecen comandos con <code>sc config ... start= disabled</code>. La idea de fondo sigue siendo válida en la v3.0 Core para ciertos servicios de bajo impacto, especialmente telemetría o carga secundaria.</p>
+                        <div class="code-block" data-code="sc config DiagTrack start= disabled&#10;sc config dmwappushservice start= disabled&#10;sc config WSearch start= disabled&#10;sc config SysMain start= disabled&#10;sc config XblAuthManager start= disabled">
+                            <button class="copy-button" aria-label="Copiar comando"><svg data-lucide="copy"></svg></button>
+                            <code>sc config DiagTrack start= disabled
+sc config dmwappushservice start= disabled
+sc config WSearch start= disabled
+sc config SysMain start= disabled
+sc config XblAuthManager start= disabled</code>
+                        </div>
+                        <div class="info-box">
+                            <strong>Matiz importante:</strong> en la 3.0 Core el valor no está solo en “desactivar más cosas”, sino en hacerlo dentro de un flujo mejor cerrado. Por eso esta guía prioriza los servicios que luego puedes restaurar de forma limpia si echas algo en falta.
+                        </div>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="circle-help"></svg>Cuándo conviene reactivar algo</h2>
+                        <ul class="list-disc pl-5 space-y-2 text-base text-[color:var(--color-text-secondary)]">
+                            <li>Si vuelves a necesitar imprimir, escanear o usar Bluetooth en ese mismo sistema.</li>
+                            <li>Si vas a usar VPN, administración remota o funciones de Xbox.</li>
+                            <li>Si necesitas reabrir Windows Update para actualizar el sistema tras terminar la preparación.</li>
+                            <li>Si el equipo pasa de un uso técnico a un uso generalista y quieres recuperar funciones de comodidad.</li>
+                        </ul>
+                    </section>
+
+                    <section class="mt-8">
+                        <h2 class="section-title text-3xl"><svg class="w-7 h-7" data-lucide="shield-check"></svg>Qué no debes perder de vista</h2>
+                        <div class="warning-box">
+                            <strong>No es un modo pensado para ir a ciegas.</strong> Si el equipo depende de impresión, VPN, sincronización, Windows Update o servicios concretos de gestión remota, conviene validar ese escenario después de usar el Turbo.
+                        </div>
+                        <p class="text-base text-[color:var(--color-text-secondary)]">La ventaja de la 3.0 Core es que el enfoque es más reversible y más ordenado que antes. Si una función te hace falta, puedes recuperarla sin desmontar el resto de la preparación.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-nav-footer mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
+            <p class="footer-text text-lg font-medium">PadeX - Creador de contenido y desarrollador</p>
+            <p class="footer-pages text-sm space-x-4">
+                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150">Privacidad</a>
+                <span class="text-gray-500">|</span>
+                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150">Términos y Condiciones</a>
+            </p>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube"><img src="img/youtube.png" alt="YouTube" class="footer-icon"></a>
+                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook"><img src="img/facebook.png" alt="Facebook" class="footer-icon"></a>
+                <a href="mailto:contact@padex.com" title="Gmail"><img src="img/gmail.png" alt="Gmail" class="footer-icon"></a>
+                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok"><img src="img/tiktok.png" alt="TikTok" class="footer-icon"></a>
+                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram"><img src="img/instagram.png" alt="Instagram" class="footer-icon"></a>
+                <a href="https://x.com/padex" target="_blank" title="X"><img src="img/x.png" alt="X" class="footer-icon"></a>
+            </div>
+            <p class="footer-text text-sm mt-4">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="translation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+            }
+
+            document.querySelectorAll('.copy-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeBlock = button.closest('.code-block');
+                    const codeText = codeBlock?.getAttribute('data-code');
+                    if (!codeText) return;
+                    navigator.clipboard.writeText(codeText).then(() => {
+                        const original = button.innerHTML;
+                        button.innerHTML = '<svg data-lucide="check"></svg>';
+                        lucide.createIcons();
+                        setTimeout(() => {
+                            button.innerHTML = original;
+                            lucide.createIcons();
+                        }, 1200);
+                    });
+                });
+            });
+
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
