@@ -41,77 +41,21 @@
         .read-more-link:hover { color: var(--color-accent-dark); }
         .read-more-link svg { margin-left: 0.5rem; transition: transform 0.2s ease; }
         .read-more-link:hover svg { transform: translateX(3px); }
-        
-        /* Sidebars flotantes para anuncios */
         body {
-            display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
+            display: block;
             min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
+
         .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
-        }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
-        }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeÃ±as */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
-            }
+            min-width: 0;
         }
     </style>
 
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen">
    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
@@ -165,7 +109,6 @@
                                  style="background-image: url('img/brasil.png')"></div>
                             </div>
                         </div>
-                    </div>
 
                     <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
                         <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -196,6 +139,7 @@
         </div>
 
     
+    </header>
     <main class="flex-grow bg-surface py-12 sm:py-16">
         <div class="tutorial-container px-4 sm:px-6 lg:px-8">
             <header>
@@ -205,7 +149,7 @@
                 </p>
             </header>
             <div id="banner-promo-tutorial"></div>
-            <script>
+           <script>
             fetch('banner-promo.html')
                 .then(r => r.text())
                 .then(html => {
@@ -213,9 +157,9 @@
                     if (destino) destino.innerHTML = html;
                 })
                 .catch(console.error);
-            </script>
+            </script> 
 
-            
+        
             <div class="main-videos-wrapper">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/wP8V3Pc6hQM?autoplay=0&rel=0" title="Video de YouTube: Guía de Uso BCDeX - Parte 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -229,21 +173,21 @@
                 <h2 class="text-3xl font-bold text-[color:var(--color-text-primary)] text-center mt-12 mb-8" data-i18n="tutorial_blog_articles_title">Más artículos del blog</h2>
                 <div class="blog-carousel">
                     <a href="modo-turbo.html" class="article-card">
-                        <div class="article-icon">ðŸš€</div>
+                        <div class="article-icon">⚡</div>
                         <h3 class="article-title" data-i18n="tutorial_blog_article1_title">BCDeX 2.3: Modo Turbo</h3>
                         <p class="article-description" data-i18n="tutorial_blog_article1_description">Conoce qué cambia Modo Turbo y cómo reactivar características.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                     <a href="win11-25h2.html" class="article-card">
-                        <div class="article-icon">ðŸ§¼</div>
+                        <div class="article-icon">🧹</div>
                         <h3 class="article-title" data-i18n="tutorial_blog_article2_title">Optimiza Windows 11 25H2</h3>
                         <p class="article-description" data-i18n="tutorial_blog_article2_description">Descubre cómo eliminar bloatware desde la instalación.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                     <a href="instalacion-particion.html" class="article-card">
-                        <div class="article-icon">ðŸ› ï¸</div>
-                        <h3 class="article-title" data-i18n="tutorial_blog_article3_title">InstalaciÃ³n desde ParticiÃ³n</h3>
-                        <p class="article-description" data-i18n="tutorial_blog_article3_description">OlvÃ­date del USB. Instala Windows directamente desde el disco duro.</p>
+                        <div class="article-icon">🛠️</div>
+                        <h3 class="article-title" data-i18n="tutorial_blog_article3_title">Instalación desde Partición</h3>
+                        <p class="article-description" data-i18n="tutorial_blog_article3_description">Olvídate del USB. Instala Windows directamente desde el disco duro.</p>
                         <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
                     </a>
                 </div>
@@ -265,7 +209,7 @@
             </section>
 
             <div class="text-center mt-16">
-                 <a href="descarga.html" class="btn-primary inline-block text-xl transition transform hover:scale-105" data-i18n="tutorial_start_now_button">Â¡Empieza a usar BCDeX ahora!</a>
+                 <a href="descarga.html" class="btn-primary inline-block text-xl transition transform hover:scale-105" data-i18n="tutorial_start_now_button">¡Empieza a usar BCDeX ahora!</a>
              </div>
         </div>
     </main>
@@ -314,4 +258,13 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
 
