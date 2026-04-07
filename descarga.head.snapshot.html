@@ -92,12 +92,11 @@
 
                 .versiones-anteriores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(335px, 380px));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 0 auto 2.5rem;
             align-items: stretch;
-            justify-content: center;
-            max-width: 1200px;
+            max-width: 980px;
         }
 
         .version-card {
@@ -108,7 +107,7 @@
             box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
             padding: 1.5rem 1.25rem;
             height: 100%;
-            max-width: 600px;
+            max-width: 470px;
             width: 100%;
             margin: 0 auto;
             display: flex;
@@ -120,7 +119,7 @@
             background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
             border: 1px solid rgba(148, 163, 184, 0.2);
             border-radius: 1rem;
-            padding: 1.25rem 1.5rem;
+            padding: 1.25rem;
         }
 
         .version-card .version-list {
@@ -152,7 +151,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 1.25rem 1.5rem;
+            padding: 1.25rem;
             z-index: 80;
         }
 
@@ -474,29 +473,11 @@ fetch('bloque-donantes.html')
                     })
                     .catch(console.error);
                 </script>
-                                        <div class="versiones-anteriores-grid">
-                        <section class="version-card">
-                            <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
-                                <div class="version-panel version-list">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
-                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
-                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-action">
-                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v13">Ver más</button>
-                            </div>
-                        </section>
-
+                    <div class="versiones-anteriores-grid">
                         <section class="version-card">
                             <div>
                                 <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
+                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
                                 <div class="version-panel version-list">
                                     <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
                                     <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
@@ -515,25 +496,25 @@ fetch('bloque-donantes.html')
 
                         <section class="version-card">
                             <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Versión 3.0 Core</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
+                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
                                 <div class="version-panel version-list">
                                     <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
                                     <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li>Compatible con <strong>Windows 8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li>Creación de Unidades <strong>USB Booteables</strong></li>
-                                        <li><strong>Modo Turbo Reforzado</strong> y más estable</li>
-                                        <li><strong>Expulsión automática de la USB</strong>                                       
-                                        <li><strong>Enlaces a ISOs oficiales de Windows</strong> en el panel Logs</li>
-                                        <li><strong>100% seguro y libre de malware</strong></li>
+                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
+                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
+                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
                                     </ul>
+
+
                                 </div>
                             </div>
                             <div class="version-action">
-                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v30">Ver más</button>
+                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v13">Ver más</button>
                             </div>
                         </section>
-                    </div><div class="w-full my-8 md:my-10">
+                    </div>
+                <div class="w-full my-8 md:my-10">
   <iframe
     src="banner-promo-carrusel.html"
     title="Promoción licencias BCDeX"
@@ -548,7 +529,7 @@ fetch('bloque-donantes.html')
                         <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v23-title">
                             <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
                             <h2 id="version-modal-v23-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
+                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>16/09/2025</strong></p>
                             <div class="version-modal-grid">
                                 <div class="version-modal-panel">
                                     <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
@@ -562,12 +543,9 @@ fetch('bloque-donantes.html')
                                     </ul>
                                 </div>
                                 <div class="version-modal-panel version-modal-links">
-                                    <p class="text-sm text-gray-800 text-center mt-3">​🫸​🗣️​ Toma el acortador como tu forma de contribuir al proyecto a cambio de lo que te aportará BCDeX. Si no quieres acortadores, está en enlace directo.</p>
                                     <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                    <a href="https://ouo.io/1i7fu8" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1 (Acortado)</a>
-                                    <a href="https://ouo.io/YNVB08M" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2 (Acortado)</a>
-                                    <h3 class="font-bold text-xl mb-2 text-center">Enlace Directo V3.0 Core</h3>
-                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #3 (Directo)</a>
+                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://ouo.io/AA1awiY" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
                                 </div>
                             </div>
                             <div class="border-t border-gray-200 pt-6 mt-6 text-center">
@@ -582,42 +560,7 @@ fetch('bloque-donantes.html')
                         </div>
                     </div>
 
-                                        <div class="version-modal-overlay" id="version-modal-v30" aria-hidden="true">
-                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v30-title">
-                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
-                            <h2 id="version-modal-v30-title" class="text-3xl font-bold text-gray-900 mb-3 text-center">Versión 3.0 Core</h2>
-                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
-                            <div class="version-modal-grid">
-                                <div class="version-modal-panel">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li>Compatible con <strong>Windows 8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li>Creación de Unidades <strong>USB Booteables</strong> con flujo más estable y validaciones extra</li>
-                                        <li><strong>Modo Turbo Reforzado</strong>: limpieza más profunda de servicios y procesos poco útiles para dejar una diferencia clara frente a la v2.3</li>
-                                        <li><strong>Expulsión automática de la USB</strong> al terminar la preparación para evitar errores al retirarla</li>
-                                        <li><strong>Enlaces a ISOs oficiales de Windows</strong> accesibles desde el panel Logs para descarga y referencia rápida</li>
-                                        <li>Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                                        <li><strong>100% seguro y libre de malware</strong></li>
-                                        <li><strong>Flujo más robusto</strong> en copia, preparación y cierre del proceso</li>
-                                        <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
-                                    </ul>
-                                </div>
-                                <div class="version-modal-panel version-modal-links">
-                                    <p class="text-sm text-gray-800 text-center mt-3">​🫸​🗣️​ Toma el acortador como tu forma de contribuir al proyecto a cambio de lo que te aportará BCDeX. Si no quieres acortadores, está en enlace directo.</p>
-                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlace de Descarga</h3>
-                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #1 (Directo)</a>
-                                    <a href="https://ouo.io/BadvUP" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #2 (Acortado)</a>
-                                    <a href="https://ouo.io/UKPq4q" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #3 (Acortado)</a>
-                                    <p class="text-sm text-gray-600 text-center mt-3">Versión más pulida, con mejor cierre del proceso y automatización reforzada.</p>
-                                </div>
-                            </div>
-                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
-                                <p class="text-lg text-gray-700">Se reforzó el Modo Turbo, se mejoró la estabilidad general del flujo y se añadió expulsión automática de la USB al finalizar.</p>
-                            </div>
-                        </div>
-                    </div>
-<div class="version-modal-overlay" id="version-modal-v13" aria-hidden="true">
+                    <div class="version-modal-overlay" id="version-modal-v13" aria-hidden="true">
                         <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v13-title">
                             <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
                             <h2 id="version-modal-v13-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
@@ -633,8 +576,8 @@ fetch('bloque-donantes.html')
                                 </div>
                                 <div class="version-modal-panel version-modal-links">
                                     <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                    <a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1 (Publi)</a>
-                                    <!--<a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>-->
+                                    <a href="https://ko-fi.com/s/7cc7403907" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1</a>
+                                    <a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>
                                 </div>
                             </div>
                             <div class="border-t border-gray-200 pt-6 mt-6 text-center">
@@ -770,13 +713,6 @@ fetch('bloque-donantes.html')
 </body>
 
 </html>
-
-
-
-
-
-
-
 
 
 
