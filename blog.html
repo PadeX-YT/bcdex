@@ -1,10 +1,27 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="blog_page_title">Blog de BCDeX</title>
+
+    <title data-i18n="blog_page_title">Blog de BCDeX - Guías, Novedades y Tutoriales</title>
+    <meta name="description"
+        content="Explora artículos, guías técnicas, trucos de optimización y novedades sobre BCDeX y la instalación moderna de Windows.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bcdexapp.com/blog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="BCDeX">
+    <meta property="og:title" content="Blog de BCDeX - Guías y Tutoriales">
+    <meta property="og:description"
+        content="Guías detalladas y artículos sobre instalación de Windows sin USB, Modo Turbo y optimización de sistema.">
+    <meta property="og:url" content="https://bcdexapp.com/blog.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog de BCDeX">
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
         crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
@@ -12,281 +29,459 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="estilos.css">
+
     <style>
-        /* Sidebars flotantes para anuncios */
-        body {
+        .blog-grid {
             display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
-        .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
+
+        .blog-card {
+            background: linear-gradient(180deg, #131926 0%, #0d121c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(217, 4, 41, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(217, 4, 41, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(217, 4, 41, 0.15);
         }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
+
+        .blog-card:hover::before {
+            opacity: 1;
         }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
+
+        .blog-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(217, 4, 41, 0.15);
+            border: 1px solid rgba(217, 4, 41, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.2s ease;
         }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeÃ±as */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
-            }
+
+        .blog-card:hover .blog-card-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-   <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Â¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
-                            Descarga
-                        </a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                        
 
-                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" 
-                                style="background-image: url('img/espaÃ±a.png');">
-                            </div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" 
-                                     style="background-image: url('img/espaÃ±a.png')"></div>
-                                <div class="language-option" data-lang="en" 
-                                     style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" 
-                                     style="background-image: url('img/brasil.png')"></div>
-                            </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog"
+                        class="nav-link-hover active text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <!-- Botón Descarga en Nav -->
+                    <a href="descarga.html" data-i18n="nav_download"
+                        class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:hidden flex items-center">
-                     <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" 
-                            style="background-image: url('img/espaÃ±a.png');">
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
+                            style="background-image: url('img/españa.png');">
                         </div>
-                                                <div class="language-dropdown" id="language-dropdown-mobile">
-                                                    <div class="language-option" data-lang="es" 
-                                                         style="background-image: url('img/espaÃ±a.png')"></div>
-                                                    <div class="language-option" data-lang="en" 
-                                                         style="background-image: url('img/usa.png')"></div>
-                                                    <div class="language-option" data-lang="pt-br" 
-                                                         style="background-image: url('img/brasil.png')"></div>
-                                                    </div>                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
+                            </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
+                        </div>
                     </div>
 
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="MenÃº de navegaciÃ³n">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
         </nav>
 
-        <!-- MenÃº MÃ³vil Desplegable -->
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Â¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <!-- ENLACE DE DESCARGA MÃ“VIL: Usa la clase btn-primary (rojo) -->
-                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
-                    Descarga
-                </a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-                
-            </div>
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
     </header>
-    
+
+    <!-- Main Content -->
     <main class="flex-grow py-12 sm:py-16 px-4">
         <div class="max-w-7xl mx-auto">
-            <header class="text-center mb-10">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="blog_header_title">Blog de BCDeX</h1>
-                <p class="text-lg sm:text-xl text-[color:var(--color-text-secondary)] max-w-3xl mx-auto" data-i18n="blog_header_subtitle">Aquí encontrarás guías detalladas, trucos y las últimas noticias sobre BCDeX y el mundo de la instalación de sistemas operativos.</p>
+
+            <!-- Blog Hero Header -->
+            <header class="text-center max-w-3xl mx-auto mb-14">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/30 text-red-300 text-xs sm:text-sm font-semibold mb-4 shadow-inner">
+                    <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>Artículos, Guías & Novedades Técnicas</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4"
+                    data-i18n="blog_header_title">
+                    Blog de BCDeX
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg" data-i18n="blog_header_subtitle">
+                    Aquí encontrarás guías detalladas, trucos y las últimas noticias sobre BCDeX y el mundo de la instalación de sistemas operativos.
+                </p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="modo-turbo-3-core.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">⚡</div>
-                    <h2 class="article-title" data-i18n="article_modo_turbo_v30_title">BCDeX 3.0 Core: Modo Turbo Reforzado</h2>
-                    <p class="article-description" data-i18n="article_modo_turbo_v30_description">Qué optimiza la nueva versión, qué servicios toca y cómo restaurarlos si lo necesitas.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+            <!-- Grid de Artículos -->
+            <div class="blog-grid mb-16">
+
+                <!-- 1. BCDeX 3.0 Core -->
+                <a href="modo-turbo-3-core.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-amber-400">⚡</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_modo_turbo_v30_title">
+                            BCDeX 3.0 Core: Modo Turbo Reforzado
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_modo_turbo_v30_description">
+                            Qué optimiza la nueva versión, qué servicios toca y cómo restaurarlos si lo necesitas.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="corregir-error-productkey-winpe.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🔑</div>
-                    <h2 class="article-title" data-i18n="article_productkey_error_title">BCDeX: Cómo Corregir el Error "&lt;ProductKey&gt;" en WinPE</h2>
-                    <p class="article-description" data-i18n="article_productkey_error_description">Guía paso a paso para solucionar el error "&lt;ProductKey&gt;" al instalar Windows con BCDeX.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 2. Corregir Error ProductKey -->
+                <a href="corregir-error-productkey-winpe.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-red-400">🔑</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_productkey_error_title">
+                            BCDeX: Cómo Corregir el Error "&lt;ProductKey&gt;" en WinPE
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_productkey_error_description">
+                            Guía paso a paso para solucionar el error "&lt;ProductKey&gt;" al instalar Windows con BCDeX.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="como-descargar-windows-11-25h2.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🧼</div>
-                    <h2 class="article-title" data-i18n="article_como_descargar_25h2_title">Cómo descargar e instalar Windows 11 25H2</h2>
-                    <p class="article-description" data-i18n="article_como_descargar_25h2_description">Guía paso a paso + video para descargar, preparar e instalar 25H2 sin complicaciones.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 3. Cómo descargar Win 11 25H2 -->
+                <a href="como-descargar-windows-11-25h2.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-cyan-400">📥</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_como_descargar_25h2_title">
+                            Cómo descargar e instalar Windows 11 25H2
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_como_descargar_25h2_description">
+                            Guía paso a paso + video para descargar, preparar e instalar 25H2 sin complicaciones.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="modo-turbo.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🚀</div>
-                    <h2 class="article-title" data-i18n="article_modo_turbo_title">BCDeX 2.3: Modo Turbo</h2>
-                    <p class="article-description" data-i18n="article_modo_turbo_description">Conoce qué cambia Modo Turbo y cómo reactivar características.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 4. Modo Turbo 2.3 -->
+                <a href="modo-turbo.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-emerald-400">🚀</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_modo_turbo_title">
+                            BCDeX 2.3: Modo Turbo
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_modo_turbo_description">
+                            Conoce qué cambia Modo Turbo y cómo reactivar características.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="win11-25h2.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🧼</div>
-                    <h2 class="article-title" data-i18n="article_win11_25h2_title">Optimiza Windows 11 25H2</h2>
-                    <p class="article-description" data-i18n="article_win11_25h2_description">Descubre cómo eliminar bloatware desde la instalación.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 5. Optimiza Windows 11 25H2 -->
+                <a href="win11-25h2.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-purple-400">🧼</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_win11_25h2_title">
+                            Optimiza Windows 11 25H2
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_win11_25h2_description">
+                            Descubre cómo eliminar bloatware desde la instalación.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="instalacion-particion.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🛠️</div>
-                    <h2 class="article-title" data-i18n="article_instalacion_particion_title">Instalación desde Partición</h2>
-                    <p class="article-description" data-i18n="article_instalacion_particion_description">Olvídate del USB. Instala Windows directamente desde el disco duro.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 6. Instalación desde Partición -->
+                <a href="instalacion-particion.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-blue-400">🛠️</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_instalacion_particion_title">
+                            Instalación desde Partición
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_instalacion_particion_description">
+                            Olvídate del USB. Instala Windows directamente desde el disco duro.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="uefi-bios.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">💡</div>
-                    <h2 class="article-title" data-i18n="article_uefi_bios_title">UEFI y BIOS Legacy</h2>
-                    <p class="article-description" data-i18n="article_uefi_bios_description">Diferencias, ventajas y desventajas de cada modo de arranque.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 7. UEFI y BIOS Legacy -->
+                <a href="uefi-bios.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-amber-300">💡</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_uefi_bios_title">
+                            UEFI y BIOS Legacy
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_uefi_bios_description">
+                            Diferencias, ventajas y desventajas de cada modo de arranque.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="liberar-espacio.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🧹</div>
-                    <h2 class="article-title" data-i18n="article_liberar_espacio_title">Libera Espacio en Disco</h2>
-                    <p class="article-description" data-i18n="article_liberar_espacio_description">Pasos simples para optimizar tu PC y liberar gigabytes de espacio.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 8. Libera Espacio -->
+                <a href="liberar-espacio.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-teal-400">🧹</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_liberar_espacio_title">
+                            Libera Espacio en Disco
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_liberar_espacio_description">
+                            Pasos simples para optimizar tu PC y liberar gigabytes de espacio.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                <a href="archivo-desatendido-windows.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">📄</div>
-                    <h2 class="article-title" data-i18n="article_archivo_desatendido_title">Guía Archivo Desatendido</h2>
-                    <p class="article-description" data-i18n="article_archivo_desatendido_description">Aprende a automatizar la instalación de Windows con un archivo autounattend.xml.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 9. Archivo Desatendido -->
+                <a href="archivo-desatendido-windows.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-indigo-400">📄</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_archivo_desatendido_title">
+                            Guía Archivo Desatendido
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_archivo_desatendido_description">
+                            Aprende a automatizar la instalación de Windows con un archivo autounattend.xml.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
-                 <a href="sobre-el-creador.html" class="article-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102 block">
-                    <div class="article-icon">🌟</div>
-                    <h2 class="article-title" data-i18n="article_sobre_el_creador_title">Cómo nació BCDeX</h2>
-                    <p class="article-description" data-i18n="article_sobre_el_creador_description">Conoce cómo surgió BCDeX, sus objetivos y cómo ha evolucionado para convertirse en una herramienta esencial para la instalación de Windows.</p>
-                    <div class="read-more-link" data-i18n="read_more_link">Leer mÃ¡s <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
+
+                <!-- 10. Cómo nació BCDeX -->
+                <a href="sobre-el-creador.html" class="blog-card group">
+                    <div>
+                        <div class="blog-card-icon text-amber-400">🌟</div>
+                        <h2 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="article_sobre_el_creador_title">
+                            Cómo nació BCDeX
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6"
+                            data-i18n="article_sobre_el_creador_description">
+                            Conoce cómo surgió BCDeX, sus objetivos y cómo ha evolucionado para convertirse en una herramienta esencial.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1.5 transition-transform">
+                        <span data-i18n="read_more_link">Leer más</span>
+                        <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </div>
                 </a>
+
             </div>
+
         </div>
     </main>
 
-    <!-- 3. Pie de PÃ¡gina (Footer) -->
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <!-- PadeX - Creador de contenido y desarrollador -->
-            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
                 PadeX - Creador de contenido y desarrollador
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
-            
-            <!-- Enlaces Legales -->
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">TÃ©rminos y Condiciones</a>
             </p>
-            
-            <!-- Enlaces a Redes Sociales (Usando Ã­conos SVG de Lucide) -->
-            <div class="footer-links">
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+
+                        <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                
-                <!-- Gmail/Mail -->
-                <a href="mailto:contact@padex.com" title="Gmail">
-                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                
-                <!-- X (Twitter) -->
-                <a href="https://x.com/padex" target="_blank" title="X">
-                    <img src="img/x.png" alt="X" class="footer-icon">
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
             </div>
-            
-            <!-- Copyright -->
-            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
 
@@ -296,4 +491,8 @@
 </body>
 
 </html>
+
+
+
+
 

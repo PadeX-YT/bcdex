@@ -1,38 +1,43 @@
-﻿<!DOCTYPE html> 
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Descarga BCDeX, compara versiones, consulta características y obtén la herramienta para instalar Windows sin USB o crear unidades booteables.">
+
+    <title data-i18n="download_page_title">BCDeX - Descarga Oficial</title>
+    <meta name="description"
+        content="Descarga la última versión de BCDeX para instalar Windows sin USB ni DVD, crear unidades booteables y optimizar tu sistema.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bcdexapp.com/descarga.html">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="BCDeX">
-    <meta property="og:title" content="BCDeX - Descarga">
-    <meta property="og:description" content="Descarga BCDeX, compara versiones, consulta características y obtén la herramienta para instalar Windows sin USB o crear unidades booteables.">
+    <meta property="og:title" content="BCDeX - Descarga Oficial">
+    <meta property="og:description"
+        content="Descarga BCDeX y prepara instalaciones de Windows limpias, rápidas y reversibles directamente desde el disco duro.">
     <meta property="og:url" content="https://bcdexapp.com/descarga.html">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BCDeX - Descarga">
-    <meta name="twitter:description" content="Descarga BCDeX, compara versiones, consulta características y obtén la herramienta para instalar Windows sin USB o crear unidades booteables.">
+    <meta name="twitter:title" content="BCDeX - Descarga Oficial">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "BCDeX",
       "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "Windows 8, Windows 8.1, Windows 10, Windows 11",
-      "description": "Descarga BCDeX para instalar Windows sin USB, crear unidades booteables y preparar el arranque desde disco.",
+      "operatingSystem": "Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11",
+      "description": "Herramienta para instalar Windows sin USB, crear unidades booteables y preparar el arranque desde disco.",
       "url": "https://bcdexapp.com/descarga.html",
       "downloadUrl": "https://bcdexapp.com/descarga.html",
       "author": { "@type": "Person", "name": "PadeX" }
     }
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252" crossorigin="anonymous"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -40,168 +45,54 @@
     <link rel="stylesheet" href="estilos.css">
 
     <style>
-        .donaciones-destacado {
-            display: inline-block;
-            margin-top: 0; /* aligned within flex row */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* semibold */
-            color: var(--color-accent, #D90429);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: rgba(217, 4, 41, 0.1);
-        }
-        
-        /* Sidebars flotantes para anuncios */
-        body {
+        .versiones-grid {
             display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
-        }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
-        .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
-        }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
-        }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeÃ±as */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-                .versiones-anteriores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(335px, 380px));
-            gap: 1.5rem;
-            margin: 0 auto 2.5rem;
-            align-items: stretch;
-            justify-content: center;
-            max-width: 1200px;
-        }
-
-        .version-card {
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            border-top: 4px solid var(--color-accent, #D90429);
-            border-radius: 1.25rem;
-            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
-            padding: 1.5rem 1.25rem;
-            height: 100%;
-            max-width: 600px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .version-card .version-panel {
-            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-radius: 1rem;
-            padding: 1.25rem 1.5rem;
-        }
-
-        .version-card .version-list {
-            min-height: 170px;
-        }
-
-        .version-card .version-meta {
-            color: #475569;
-            font-size: 0.98rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .version-card .version-action {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .version-card .version-action .btn-primary {
-            width: 200px;
-        }
-
-        .btn-iso-guide {
+        .version-btn-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 260px;
-            padding: 0.78rem 1rem;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: #F8FAFC !important;
+            padding: 0.9rem 1.5rem;
             border-radius: 0.75rem;
-            background: linear-gradient(180deg, #2a9d8f 0%, #21867a 100%);
-            color: #f8fafc;
             font-weight: 700;
-            box-shadow: 0 10px 22px rgba(42, 157, 143, 0.22);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            cursor: pointer;
+            width: 100%;
         }
 
-        .btn-iso-guide:hover {
-            background: linear-gradient(180deg, #35aa9b 0%, #2a9d8f 100%);
+        .version-btn-action:hover:not(:disabled) {
+            background: linear-gradient(135deg, #EF233C 0%, #D90429 100%);
+            border-color: rgba(239, 35, 60, 0.6);
+            box-shadow: 0 8px 24px rgba(217, 4, 41, 0.45);
             transform: translateY(-2px);
-            box-shadow: 0 14px 26px rgba(42, 157, 143, 0.28);
+            color: #FFFFFF !important;
+        }
+
+        .version-btn-action:active:not(:disabled) {
+            transform: translateY(0);
         }
 
         .version-modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.72);
-            backdrop-filter: blur(6px);
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(8px);
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 1.25rem 1.5rem;
-            z-index: 80;
+            padding: 1.25rem;
+            z-index: 100;
         }
 
         .version-modal-overlay.is-open {
@@ -209,13 +100,13 @@
         }
 
         .version-modal {
-            width: min(920px, 100%);
+            width: min(850px, 100%);
             max-height: 90vh;
             overflow-y: auto;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 1.5rem;
-            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.35);
-            border: 1px solid rgba(148, 163, 184, 0.2);
+            background: linear-gradient(180deg, #161E2E 0%, #0F1421 100%);
+            border-radius: 1.25rem;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             padding: 2rem;
             position: relative;
         }
@@ -224,571 +115,614 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             border: none;
             border-radius: 999px;
-            background: rgba(15, 23, 42, 0.08);
-            color: #0f172a;
-            font-size: 1.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            color: #F8FAFC;
+            font-size: 1.3rem;
             cursor: pointer;
-        }
-
-        .version-modal-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .version-modal-panel {
-            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-radius: 1rem;
-            padding: 1.5rem;
-        }
-
-        .version-modal-links {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            gap: 1rem;
+            transition: background 0.2s;
         }
 
-        .version-modal-links .btn-primary {
-            width: min(240px, 100%);
-            margin: 0 auto;
+        .version-modal-close:hover {
+            background: rgba(217, 4, 41, 0.3);
+            color: #FFFFFF;
         }
-
-        @media (max-width: 768px) {
-            .versiones-anteriores-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .version-card {
-                padding: 1.25rem 1rem;
-            }
-
-            .version-modal {
-                padding: 1.5rem 1rem;
-            }
-
-            .version-modal-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .supporters-scroll-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-            gap: 0.75rem;
-            max-height: 360px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            padding: 0.5rem;
-            scrollbar-width: thin;
-            scrollbar-color: var(--color-accent, #D90429) rgba(148, 163, 184, 0.18);
-        }
-
-        .supporters-scroll-list::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        .supporters-scroll-list::-webkit-scrollbar-track {
-            background: rgba(148, 163, 184, 0.12);
-            border-radius: 999px;
-        }
-
-        .supporters-scroll-list::-webkit-scrollbar-thumb {
-            background: var(--color-accent, #D90429);
-            border-radius: 999px;
-        }
-
-        .supporters-scroll-list .supporter-card {
-            width: 100%;
-            min-height: 110px;
-            padding: 0.75rem 0.5rem;
-            margin: 0;
-        }
-
-        .supporters-scroll-list .supporter-avatar-bg {
-            width: 52px !important;
-            height: 52px !important;
-            margin: 0 auto 0.5rem;
-        }
-
-        .supporters-scroll-list .supporter-name {
-            font-size: 0.85rem;
-            line-height: 1.15;
-            word-break: break-word;
-        }
-
-        @media (max-width: 640px) {
-            main {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-
-            .supporters-wall {
-                padding: 1.25rem 0.85rem !important;
-                border-radius: 1rem;
-            }
-
-            .supporters-wall h2 {
-                font-size: 2rem !important;
-                line-height: 1.12;
-            }
-
-            .supporters-scroll-list {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 0.6rem;
-                max-height: 300px;
-                padding: 0.35rem;
-            }
-
-            .supporters-scroll-list .supporter-card {
-                min-height: 98px;
-                padding: 0.6rem 0.35rem;
-                border-radius: 0.85rem;
-            }
-
-            .supporters-scroll-list .supporter-avatar-bg {
-                width: 46px !important;
-                height: 46px !important;
-                margin-bottom: 0.4rem;
-            }
-
-            .supporters-scroll-list .supporter-name {
-                font-size: 0.76rem;
-                line-height: 1.1;
-            }
-
-            .version-card {
-                max-width: 100%;
-                padding: 1rem 0.85rem;
-                border-radius: 1rem;
-            }
-
-            .version-card .version-panel {
-                padding: 1rem;
-            }
-
-            .version-card .version-list {
-                min-height: auto;
-            }
-
-            .version-card .version-action .btn-primary {
-                width: min(180px, 100%);
-            }
-
-            .version-modal {
-                width: 100%;
-                max-height: 92vh;
-                padding: 1.25rem 0.85rem;
-                border-radius: 1.1rem;
-            }
-
-            .version-modal-panel {
-                padding: 1rem;
-            }
-
-            .version-modal-links .btn-primary {
-                width: min(220px, 100%);
-            }
-        }
-
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
-    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150" aria-current="page">Descarga</a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                       <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/espaÃ±a.png');"></div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" style="background-image: url('img/espaÃ±a.png')"></div>
-                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
-                            </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog" class="nav-link-hover text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <a href="descarga.html" data-i18n="nav_download" class="nav-link-hover active text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Language Selector -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:hidden flex items-center">
-                    <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/espaÃ±a.png');"></div>
+
+                <!-- Mobile controls -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
+                            style="background-image: url('img/españa.png');">
+                        </div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" style="background-image: url('img/espaÃ±a.png')"></div>
-                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
+                            </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
                         </div>
                     </div>
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </nav>
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-               
-            </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre
+                el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5">Descarga</a>
         </div>
     </header>
-    
 
+    <!-- Main Content -->
+    <main class="flex-grow py-12 sm:py-16 px-4">
+        <div class="max-w-7xl mx-auto">
 
-    <!-- Main Content Wrapper -->
-    <div class="flex-grow min-w-0">
-            <main class="flex-grow py-12 sm:py-16 px-4">
-                <div class="max-w-7xl mx-auto">
-                    <header class="text-center mb-12">
-                        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="download_header_title">Descarga BCDeX</h1>
-                        <p class="text-xl text-gray-600" data-i18n="download_header_subtitle">Estás a un solo clic de simplificar tus instalaciones de Windows para siempre.</p>
-                    </header>
-                <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
-                            <br>Gracias a los super CRACKS de la Comunidad
+            <!-- Download Hero Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/30 text-red-300 text-xs sm:text-sm font-semibold mb-4 shadow-inner">
+                    <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>Centro Oficial de Descargas</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4"
+                    data-i18n="download_header_title">
+                    Descarga BCDeX
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg" data-i18n="download_header_subtitle">
+                    Estás a un solo clic de simplificar tus instalaciones de Windows para siempre. Elige tu versión
+                    recomendada.
+                </p>
+            </div>
+
+            <!-- 1. BLOQUE DE APOYO Y DONACIONES (PRIMERO) -->
+            <section
+                class="pro-card max-w-4xl mx-auto mb-14 text-center border-amber-500/30 bg-gradient-to-b from-[#161e2e] to-[#0f1422]"
+                id="como-apoyar">
+                <div
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-4">
+                    <span>☕</span>
+                    <span>Apoya el Desarrollo</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3" data-i18n="donations_how_title">
+                    Tu Apoyo Sostiene a BCDeX: ¡Cada Contribución Cuenta!
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8" data-i18n="donations_how_text">
+                    BCDeX sigue creciendo gracias a ti. Tu donación financia el mantenimiento de servidores,
+                    actualizaciones y acelera el desarrollo de nuevas funciones. ¡Gracias por ser un pilar de nuestra
+                    comunidad!
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://buymeacoffee.com/padexchn" target="_blank" rel="noopener"
+                        class="btn-primary px-6 py-3 bg-[#FFDD00] text-black hover:bg-[#FFE633] border-amber-400/50 font-bold">
+                        <img src="img/bmc.png" alt="Buy Me A Coffee" class="w-6 h-6 object-contain">
+                        <span>Buy Me a Coffee</span>
+                    </a>
+                    <a href="https://ko-fi.com/padexchn" target="_blank" rel="noopener"
+                        class="btn-primary px-6 py-3 bg-[#13C3FF] hover:bg-[#00B4F0] border-cyan-400/40">
+                        <img src="img/ko-fi.png" alt="Ko-fi" class="w-6 h-6 object-contain rounded">
+                        <span>Ko-fi</span>
+                    </a>
+                    <a href="https://www.paypal.com/paypalme/PadeXch" target="_blank" rel="noopener"
+                        class="btn-primary px-6 py-3 bg-[#0079C1] hover:bg-[#00457C] border-blue-400/40">
+                        <img src="img/paypal.png" alt="PayPal" class="w-6 h-6 object-contain rounded">
+                        <span>PayPal</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 2. GRID DE VERSIONES DE BCDeX -->
+            <div class="versiones-grid mb-16">
+
+                <!-- Card: Versión 3.2 Advanced (Próximo Lanzamiento) -->
+                <div class="pro-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+                                Próximo Lanzamiento
+                            </span>
+                            <span class="text-xs sm:text-sm text-cyan-400 font-bold">v3.2 Advanced</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight" data-i18n="download_v32_title">
+                            BCDeX 3.2 Advanced
                         </h2>
-                        
-                        <!-- El separador ahora usa el degradado de color-accent (rojo) -->
-                        <hr class="supporters-divider">
-                        
-                        <div id="donantes-grid-descarga" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                                                <div class="supporters-scroll-list" id="donantes-carousel-descarga" tabindex="0"></div>
-<script>
-fetch('bloque-donantes.html')
-    .then(r => r.text())
-    .then(html => {
-        const temp = document.createElement('div');
-        temp.innerHTML = html;
-        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
-        const lista = document.getElementById('donantes-carousel-descarga');
-        if (!lista) return;
-        lista.innerHTML = '';
-        cards.forEach((card) => {
-            lista.appendChild(card);
-        });
-    })
-    .catch(console.error);
-</script>
-                        </div>
-                    </div>
-                </section>
-                <div id="banner-promo-descarga" class="pb-10 md:pb-14"></div>
-                <script>
-                fetch('banner-promo.html')
-                    .then(r => r.text())
-                    .then(html => {
-                        const destino = document.getElementById('banner-promo-descarga');
-                        if (destino) {
-                            destino.innerHTML = html;
-                            destino.querySelectorAll('script').forEach((bloque) => {
-                                const script = document.createElement('script');
-                                if (bloque.src) {
-                                    script.src = bloque.src;
-                                } else {
-                                    script.textContent = bloque.textContent;
-                                }
-                                document.body.appendChild(script);
-                                bloque.remove();
-                            });
-                        }
-                    })
-                    .catch(console.error);
-                </script>
-                <section class="donation-card border-t border-gray-200 pt-6 w-full md:w-10/12 lg:w-6/12 mx-auto pb-6" id="como-apoyar">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="donations_how_title">Tu Apoyo Sostiene a BCDeX: ¡Cada Contribución Cuenta!</h2>
-                    <p class="text-lg text-gray-700 mb-8 text-center" data-i18n="donations_how_text">
-                        BCDeX sigue creciendo gracias a ti. Tu donación, del tamaño que sea, es vital para financiar el mantenimiento, garantizar servidores estables y acelerar el desarrollo de nuevas funcionalidades. ¡Ayúdanos a seguir adelante! Gracias por ser un pilar de nuestra comunidad.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="https://buymeacoffee.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/bmc.png" alt="Buy Me A Coffee" class="h-8"></a>
-                        <a href="https://ko-fi.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/ko-fi.png" alt="Ko-fi" class="h-8"></a>
-                        <a href="https://www.paypal.com/paypalme/PadeXch" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/paypal.png" alt="PayPal" class="h-8"></a>
-                    </div>
-                </section>
-                                        <div class="versiones-anteriores-grid mt-10">
-                        <section class="version-card">
-                            <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
-                                <div class="version-panel version-list">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
-                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
-                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-action">
-                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v13">Ver más</button>
-                            </div>
-                        </section>
+                        <p class="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+                            Motor Multi-ISO con tecnología Ventoy integrada, soporte híbrido UEFI/Legacy y arranque universal sin descomprimir.
+                        </p>
 
-                        <section class="version-card">
-                            <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
-                                <div class="version-panel version-list">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
-                                        <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
-                                        <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                                        <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-action">
-                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v23">Ver más</button>
-                            </div>
-                        </section>
-
-                        <section class="version-card">
-                            <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Versión 3.0 Core</h2>
-                                <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/08/2026</strong></p>
-                                <div class="version-panel version-list">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li>Compatible con <strong>Windows 8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li>Creación de Unidades <strong>USB Booteables</strong></li>
-                                        <li><strong>Modo Turbo Reforzado</strong> y más estable</li>
-                                        <li><strong>Expulsión automática de la USB</strong>                                       
-                                        <li><strong>Enlaces a ISOs oficiales de Windows</strong> en el panel Logs</li>
-                                        <li><strong>100% seguro y libre de malware</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="version-action">
-                                <button type="button" class="btn-primary version-open-btn" data-modal-target="version-modal-v30">Ver más</button>
-                            </div>
-                        </section>
-                    </div><div class="w-full my-8 md:my-10">
-  <iframe
-    src="banner-promo-carrusel.html"
-    title="Promoción licencias BCDeX"
-    loading="lazy"
-    class="w-full border-0 block"
-    style="height: 470px; background: transparent; overflow: hidden;"
-  ></iframe>
-</div>
- 
-
-                    <div class="version-modal-overlay" id="version-modal-v23" aria-hidden="true">
-                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v23-title">
-                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
-                            <h2 id="version-modal-v23-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v23_title">Versión 2.3</h2>
-                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/04/2026</strong></p>
-                            <div class="version-modal-grid">
-                                <div class="version-modal-panel">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li data-i18n="download_v23_b1">Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li data-i18n="download_v23_b2">Creación de Unidades <strong>USB Booteables</strong></li>
-                                        <li data-i18n="download_v23_b3"><strong>Modo Turbo</strong>: Desactivación de servicios poco usados liberando recursos del sistema</li>
-                                        <li data-i18n="download_v23_b4">Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                                        <li data-i18n="download_v23_b5"><strong>100% seguro y libre de malware</strong></li>
-                                        <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
-                                    </ul>
-                                </div>
-                                <div class="version-modal-panel version-modal-links">
-                                    <p class="text-sm text-gray-800 text-center mt-3">​🫸​🗣️​ Toma el acortador como tu forma de contribuir al proyecto a cambio de lo que te aportará BCDeX. Si no quieres acortadores, está en enlace directo.</p>
-                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                    <a href="https://ouo.io/1i7fu8" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1 (Acortado)</a>
-                                    <a href="https://ouo.io/YNVB08M" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2 (Acortado)</a>
-                                    <h3 class="font-bold text-xl mb-2 text-center">Enlace Directo V3.0 Core</h3>
-                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #3 (Directo)</a>
-                                </div>
-                            </div>
-                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
-                                <p class="text-lg text-gray-700" data-i18n="download_changes_text">Se han implementado mejoras de rendimiento y estabilidad.</p>
-                            </div>
-                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_win7_compat_title">Compatibilidad con Windows 7</h3>
-                                <p class="text-lg text-gray-700 mb-4" data-i18n="download_win7_compat_desc">Paquete .rar con instaladores de .NET Framework 4.0 y actualizaciones acumulativas x86/x64 requeridas para ejecutar BCDeX en Windows 7.</p>
-                                <a id="win7-libs-link" href="https://katfile.online/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" class="btn-primary inline-block" data-i18n="download_win7_package_btn">Descargar paquete Windows 7</a>
-                            </div>
+                        <div class="bg-[#0B0F17]/70 border border-white/10 rounded-xl p-4 sm:p-5 mb-6">
+                            <h3 class="font-bold text-xs sm:text-sm text-cyan-300 mb-3.5 uppercase tracking-wider">
+                                Novedades & Compatibilidad Probada:
+                            </h3>
+                            <ul class="space-y-3 text-sm sm:text-base text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-cyan-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span><strong>Soporte Multi-ISO directo:</strong> copia ISOs completas sin descomprimir</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-cyan-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Probado con <strong>Debian 13.6, Linux Mint 22.3 y SystemRescue 13.02</strong></span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-cyan-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Probado con <strong>MiniOS (múltiples versiones)</strong> e ISOs oficiales de Windows</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-cyan-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Partición interna en disco y USB booteable dual UEFI/Legacy</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-cyan-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Modo Turbo Reforzado y expulsión automática de unidad</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                                        <div class="version-modal-overlay" id="version-modal-v30" aria-hidden="true">
-                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v30-title">
-                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
-                            <h2 id="version-modal-v30-title" class="text-3xl font-bold text-gray-900 mb-3 text-center">Versión 3.0 Core</h2>
-                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>07/08/2026</strong></p>
-                            <div class="version-modal-grid">
-                                <div class="version-modal-panel">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li> Corregido el bug "<strong>creando particion</strong>" en SOs <strong>Modificados</strong> y <strong>LTSC</strong>.</li>
-                                        <li>Compatible con <strong>Windows 8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong></li>
-                                        <li>Creación de Unidades <strong>USB Booteables</strong> con flujo más estable y validaciones extra</li>
-                                        <li><strong>Modo Turbo Reforzado</strong>: limpieza más profunda de servicios y procesos poco útiles para dejar una diferencia clara frente a la v2.3</li>
-                                        <li><strong>Expulsión automática de la USB</strong> al terminar la preparación para evitar errores al retirarla</li>
-                                        <li><strong>Enlaces a ISOs oficiales de Windows</strong> accesibles desde el panel Logs para descarga y referencia rápida</li>
-                                        <li><a href="pestana-isos.html" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Ver guía de la pestaña ISOs <-</strong></a></li>
-                                        <li>Soporte para arranque <strong>UEFI</strong> y <strong>Legacy</strong></li>
-                                        <li><strong>100% seguro y libre de malware</strong></li>
-                                        <li><strong>Flujo más robusto</strong> en copia, preparación y cierre del proceso</li>
-                                        <li><a href="https://youtu.be/wP8V3Pc6hQM" target="_blank" rel="noopener" class="text-red-600 hover:underline"><strong>-> Como usar la app <- </strong></a></li>
-                                    </ul>
-                                </div>
-                                <div class="version-modal-panel version-modal-links">
-                                    <p class="text-sm text-gray-800 text-center mt-3">​🫸​🗣️​ Toma el acortador como tu forma de contribuir al proyecto a cambio de lo que te aportará BCDeX. Si no quieres acortadores, está en enlace directo.</p>
-                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlace de Descarga</h3>
-                                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #1 (Directo)</a>
-                                    <a href="https://ouo.io/9HcP1u" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #2 (Acortado)</a>
-                                   <!-- <a href="https://ouo.io/UKPq4q" target="_blank" class="btn-primary text-sm py-2">⬇️ Servidor #3 (Acortado)</a> -->
-                                    <div class="flex justify-center w-full"><a href="pestana-isos.html" target="_blank" rel="noopener" class="btn-iso-guide text-sm py-2">Ver guía de la pestaña ISOs</a></div>
-                                    <p class="text-sm text-gray-600 text-center mt-3">Versión más pulida, con mejor cierre del proceso y automatización reforzada.</p>
-                                </div>
-                            </div>
-                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="download_changes_title">Cambios en esta versión</h3>
-                                <p class="text-lg text-gray-700">Se reforzó el Modo Turbo, se mejoró la estabilidad general del flujo y se añadió expulsión automática de la USB al finalizar.</p>
-                            </div>
-                        </div>
+                    <div>
+                        <button type="button" disabled
+                            class="version-btn-action opacity-60 cursor-not-allowed">
+                            ⏳ Próximamente Disponible
+                        </button>
                     </div>
-<div class="version-modal-overlay" id="version-modal-v13" aria-hidden="true">
-                        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v13-title">
-                            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
-                            <h2 id="version-modal-v13-title" class="text-3xl font-bold text-gray-900 mb-3 text-center" data-i18n="download_v13_title">Versión 1.3</h2>
-                            <p class="version-meta"><span data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong>13/08/2025</strong></p>
-                            <div class="version-modal-grid">
-                                <div class="version-modal-panel">
-                                    <h3 class="font-bold text-xl mb-3 text-center" data-i18n="download_features_title">Características Principales</h3>
-                                    <ul class="list-disc list-outside pl-5 text-gray-700 text-left mx-auto max-w-md space-y-1">
-                                        <li data-i18n="download_v13_b1">Compatible con Windows 8, 10 y 11</li>
-                                        <li data-i18n="download_v13_b2">Soporte para arranque UEFI y Legacy</li>
-                                        <li data-i18n="download_v13_b3">100% seguro y libre de malware</li>
-                                    </ul>
-                                </div>
-                                <div class="version-modal-panel version-modal-links">
-                                    <h3 class="font-bold text-xl mb-2 text-center" data-i18n="download_links_title">Enlaces de Descarga</h3>
-                                    <a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_1">⬇️ Servidor #1 (Publi)</a>
-                                    <!--<a href="https://katfile.vip/imot7synhsae/BCDeXApp_1.3.rar.html" target="_blank" class="btn-primary text-sm py-2" data-i18n="download_server_2">⬇️ Servidor #2</a>-->
-                                </div>
-                            </div>
-                            <div class="border-t border-gray-200 pt-6 mt-6 text-center">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Cambios en esta versión</h3>
-                                <p class="text-lg text-gray-700">
-                                    - Se corrigió el error en la elección de la imagen o la versión de Windows en ISOs AIO. Ahora si se puede elegir la versión a instalar.
-                                    <br>- Se modificó el instalador para evitar la necesidad de copiarlo a una carpeta o ubicación distinta a la de la descarga. La App se instala en el disco C y crea un icono en el escritorio y el menú inicio (Opcionales). De esta forma todo lo hará la App.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sección de Advertencia -->
-                    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-10">
-                        <div class="p-8 bg-white border-l-4 border-red-500 rounded-lg shadow-md md:flex md:items-center md:space-x-6">
-                            <div class="flex-shrink-0 text-5xl text-red-500 mb-4 md:mb-0">
-                                ⚠️
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-red-800 mb-2" data-i18n="download_warning_title">Aviso Importante</h3>
-                                <p class="text-red-700" data-i18n="download_warning_text">BCDeX es una herramienta pensada para usuarios con cierta experiencia. Aunque hemos diseñado la app con mucho cuidado, un uso incorrecto podría afectar el sistema. Recomendamos seguir las instrucciones y usarla con criterio. Para más información, consulta nuestros <a href="terminos.html" class="text-red-600 hover:underline">Términos y Condiciones</a>.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Sección de Contacto/Sugerencias -->
-                    <section class="text-center mb-10">
-                        <p class="text-lg text-gray-700 mb-4" data-i18n="download_contact_text">Si tienes problemas con la descarga o alguna sugerencia, no dudes en <a href="contacto.html" class="text-red-600 hover:underline">contactarnos</a>.</p>
-                    </section>
-
-                    <!-- Sección de Muro de Colaboradores --> 
-                    
-
-                    <!-- Trio de banners abajo -->
-                   
                 </div>
-            </main>
 
-            <footer class="bg-nav-footer mt-12 py-8">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-                    <!-- PadeX - Creador de contenido y desarrollador -->
-                    <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
-                        PadeX - Creador de contenido y desarrollador
-                    </p>
-                    
-                    <!-- Enlaces Legales -->
-                    <p class="footer-pages text-sm space-x-4">
-                        <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                        <span class="text-gray-500">|</span>
-                        <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
-                    </p>
-                    
-                    <!-- Enlaces a Redes Sociales (Usando íconos SVG de Lucide) -->
-                    <div class="footer-links">
-                        <!-- YouTube -->
-                        <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                            <img src="img/youtube.png" alt="YouTube" class="footer-icon">
-                        </a>
-                        
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                            <img src="img/facebook.png" alt="Facebook" class="footer-icon">
-                        </a>
-                        
-                        <!-- Gmail/Mail -->
-                        <a href="mailto:contact@padex.com" title="Gmail">
-                            <img src="img/gmail.png" alt="Gmail" class="footer-icon">
-                        </a>
-                        
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                            <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
-                        </a>
-                        
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                            <img src="img/instagram.png" alt="Instagram" class="footer-icon">
-                        </a>
-                        
-                        <!-- X (Twitter) -->
-                        <a href="https://x.com/padex" target="_blank" title="X">
-                            <img src="img/x.png" alt="X" class="footer-icon">
-                        </a>
+                <!-- Card: Versión 3.0 Core (Recomendada / Estable) -->
+                <div class="pro-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 text-red-300 text-xs font-bold uppercase tracking-wider">
+                                Versión Recomendada
+                            </span>
+                            <span class="text-xs sm:text-sm text-slate-400 font-medium">07/08/2026</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight" data-i18n="download_v30_title">
+                            BCDeX 3.0 Core
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+                            Máximo rendimiento, Modo Turbo reforzado y expulsión automática de USB.
+                        </p>
+
+                        <div class="bg-[#0B0F17]/70 border border-white/10 rounded-xl p-4 sm:p-5 mb-6">
+                            <h3 class="font-bold text-xs sm:text-sm text-slate-200 mb-3.5 uppercase tracking-wider">
+                                Características Principales:
+                            </h3>
+                            <ul class="space-y-3 text-sm sm:text-base text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Compatible con <strong>Windows 11, 10, 8.1 y 8</strong></span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Instalación directa en disco y USB Booteable UEFI/Legacy</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span><strong>Modo Turbo Reforzado</strong> para máxima fluidez</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>Expulsión segura automática de la unidad</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-emerald-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span>100% seguro, limpio y libre de malware</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Enlace destacado a la Pestaña ISOs con sombreado y badge -->
+                        <div class="mb-5">
+                            <a href="pestana-isos.html" target="_blank" rel="noopener"
+                                class="group flex items-center justify-between p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-red-950/40 via-[#131926] to-[#0e1422] border border-red-500/30 hover:border-red-500/60 shadow-[0_4px_18px_rgba(217,4,41,0.18)] hover:shadow-[0_6px_25px_rgba(217,4,41,0.35)] transition-all duration-300">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                                        💿
+                                    </span>
+                                    <div class="text-left">
+                                        <div class="text-xs sm:text-sm font-bold text-white group-hover:text-red-300 transition-colors">
+                                            Guía de la Pestaña ISOs
+                                        </div>
+                                        <div class="text-[11px] sm:text-xs text-slate-400">
+                                            Aprende cómo funciona el catálogo oficial
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold text-red-400 group-hover:translate-x-1 transition-transform flex items-center">
+                                    Ver &rarr;
+                                </span>
+                            </a>
+                        </div>
                     </div>
-                    
-                    <!-- Copyright -->
-                    <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+                    <div>
+                        <button type="button" class="version-btn-action version-open-btn"
+                            data-modal-target="version-modal-v30">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>Obtener Enlaces de Descarga</span>
+                        </button>
+                    </div>
                 </div>
-            </footer>
+
+                <!-- Card: Versión 2.3 -->
+                <div class="pro-card flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider">
+                                Edición Estable
+                            </span>
+                            <span class="text-xs sm:text-sm text-slate-400 font-medium">07/04/2026</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 tracking-tight" data-i18n="download_v23_title">
+                            BCDeX 2.3
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-300 mb-6 leading-relaxed">
+                            Soporte extendido incluyendo compatibilidad con Windows 7.
+                        </p>
+
+                        <div class="bg-[#0B0F17]/70 border border-white/10 rounded-xl p-4 sm:p-5 mb-6">
+                            <h3 class="font-bold text-xs sm:text-sm text-slate-200 mb-3.5 uppercase tracking-wider">
+                                Características:
+                            </h3>
+                            <ul class="space-y-3 text-sm sm:text-base text-slate-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-red-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span data-i18n="download_v23_b1">Compatible con Windows 7, 8, 8.1, 10 y 11</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-red-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span data-i18n="download_v23_b2">Creación de Unidades USB Booteables</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-red-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span data-i18n="download_v23_b3">Modo Turbo para liberar recursos</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-red-400 font-bold text-base sm:text-lg leading-none">✓</span>
+                                    <span data-i18n="download_v23_b4">Soporte para arranque UEFI y Legacy</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="version-btn-action version-open-btn"
+                            data-modal-target="version-modal-v23">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span data-i18n="download_v23_btn">Ver Descargas v2.3</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. AVISO DE SEGURIDAD / ANTIVIRUS -->
+            <section class="max-w-4xl mx-auto py-8 mb-12">
+                <div
+                    class="p-6 sm:p-8 bg-gradient-to-r from-red-950/40 via-[#131926] to-[#131926] border border-red-500/30 rounded-2xl shadow-xl flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div
+                        class="flex-shrink-0 w-14 h-14 rounded-2xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center text-3xl shadow-inner">
+                        🛡️
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="download_warning_title">Aviso
+                            Importante & Seguridad</h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"
+                            data-i18n="download_warning_text">
+                            BCDeX interactúa directamente con el gestor de arranque (BCD) y utilidades oficiales de
+                            Windows. Aunque es completamente seguro, algunos antivirus emiten alertas de falso
+                            positivo por sus funciones avanzadas. Recomendamos seguir las instrucciones de uso.
+                            Consulta nuestros <a href="terminos.html" class="text-red-400 hover:underline">Términos
+                                y Condiciones</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Muro de Donantes en Descarga -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12">
+                <div class="supporters-wall">
+                    <div class="text-center max-w-3xl mx-auto mb-6">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-3">
+                            <span>⭐</span>
+                            <span>Muro de Honor</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2"
+                            data-i18n="donations_supporters_title">
+                            Gracias a los Super CRACKS de la Comunidad
+                        </h2>
+                    </div>
+                    <hr class="supporters-divider">
+                    <div class="supporters-scroll-list" id="donantes-carousel-descarga" tabindex="0"></div>
+                    <script>
+                        fetch('bloque-donantes.html')
+                            .then(r => r.text())
+                            .then(html => {
+                                const temp = document.createElement('div');
+                                temp.innerHTML = html;
+                                const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+                                const lista = document.getElementById('donantes-carousel-descarga');
+                                if (!lista) return;
+                                lista.innerHTML = '';
+                                cards.forEach((card) => lista.appendChild(card));
+                            })
+                            .catch(console.error);
+                    </script>
+                </div>
+            </section>
+
         </div>
+    </main>
 
-        <script>
+    <!-- MODALES DE DESCARGA -->
+    <!-- Modal V3.0 Core -->
+    <div class="version-modal-overlay" id="version-modal-v30" aria-hidden="true">
+        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v30-title">
+            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
+            <h2 id="version-modal-v30-title" class="text-2xl sm:text-3xl font-black text-white mb-2 text-center">
+                BCDeX 3.0 Core</h2>
+            <p class="text-center text-xs sm:text-sm text-slate-400 mb-6"><span
+                    data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong
+                    class="text-white">07/08/2026</strong></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-[#0B0F17]/80 border border-white/10 rounded-xl p-5">
+                    <h3 class="font-bold text-base text-white mb-3" data-i18n="download_features_title">Novedades y
+                        Ventajas</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                        <li>✓ Corregido bug en ISOs modificadas y LTSC.</li>
+                        <li>✓ Modo Turbo Reforzado para mayor rendimiento.</li>
+                        <li>✓ Expulsión automática de la USB al terminar.</li>
+                        <li>✓ Enlaces directos a ISOs oficiales de Windows.</li>
+                        <li>✓ Soporte para arranque UEFI y BIOS Legacy.</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-[#0B0F17]/80 border border-white/10 rounded-xl p-5 flex flex-col justify-center text-center gap-3">
+                    <h3 class="font-bold text-base text-white" data-i18n="download_links_title">Servidores de
+                        Descarga</h3>
+                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" rel="noopener"
+                        class="btn-primary text-sm py-2.5">
+                        ⬇️ Servidor Directo (Recomendado)
+                    </a>
+                    <a href="https://ouo.io/9HcP1u" target="_blank" rel="noopener"
+                        class="btn-secondary-outline text-sm py-2.5">
+                        ⬇️ Servidor #2 (Acortador)
+                    </a>
+                    <div class="pt-1">
+                        <a href="pestana-isos.html" target="_blank" rel="noopener"
+                            class="group flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-red-950/40 via-[#131926] to-[#0e1422] border border-red-500/30 hover:border-red-500/60 shadow-[0_4px_16px_rgba(217,4,41,0.2)] hover:shadow-[0_6px_22px_rgba(217,4,41,0.35)] text-xs font-bold text-white hover:text-red-300 transition-all duration-300">
+                            <span>💿</span>
+                            <span>Ver guía de la pestaña ISOs</span>
+                            <span class="text-red-400 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal V2.3 -->
+    <div class="version-modal-overlay" id="version-modal-v23" aria-hidden="true">
+        <div class="version-modal" role="dialog" aria-modal="true" aria-labelledby="version-modal-v23-title">
+            <button type="button" class="version-modal-close" data-modal-close aria-label="Cerrar">×</button>
+            <h2 id="version-modal-v23-title" class="text-2xl sm:text-3xl font-black text-white mb-2 text-center"
+                data-i18n="download_v23_title">BCDeX 2.3</h2>
+            <p class="text-center text-xs sm:text-sm text-slate-400 mb-6"><span
+                    data-i18n="download_updated_on_label">Fecha de Actualización:</span> <strong
+                    class="text-white">07/04/2026</strong></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-[#0B0F17]/80 border border-white/10 rounded-xl p-5">
+                    <h3 class="font-bold text-base text-white mb-3" data-i18n="download_features_title">
+                        Características</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                        <li data-i18n="download_v23_b1">✓ Compatible con Windows 7, 8, 8.1, 10 y 11</li>
+                        <li data-i18n="download_v23_b2">✓ Creación de Unidades USB Booteables</li>
+                        <li data-i18n="download_v23_b3">✓ Modo Turbo para liberar recursos</li>
+                        <li data-i18n="download_v23_b4">✓ Soporte para arranque UEFI y Legacy</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-[#0B0F17]/80 border border-white/10 rounded-xl p-5 flex flex-col justify-center text-center gap-3">
+                    <h3 class="font-bold text-base text-white" data-i18n="download_links_title">Servidores de
+                        Descarga</h3>
+                    <a href="https://ko-fi.com/s/ccde9a5a9d" target="_blank" rel="noopener"
+                        class="btn-primary text-sm py-2.5">
+                        ⬇️ Servidor Directo (Ko-fi)
+                    </a>
+                    <a href="https://ouo.io/1i7fu8" target="_blank" rel="noopener"
+                        class="btn-secondary-outline text-sm py-2.5" data-i18n="download_server_1">
+                        ⬇️ Servidor #1 (Acortado)
+                    </a>
+                    <a href="https://ouo.io/YNVB08M" target="_blank" rel="noopener"
+                        class="btn-secondary-outline text-sm py-2.5" data-i18n="download_server_2">
+                        ⬇️ Servidor #2 (Acortado)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Paquete Win 7 -->
+            <div class="border-t border-white/10 pt-4 text-center">
+                <h4 class="text-sm font-bold text-white mb-1" data-i18n="download_win7_compat_title">¿Instalas en
+                    Windows 7?</h4>
+                <p class="text-xs text-slate-400 mb-3" data-i18n="download_win7_compat_desc">Descarga el paquete con
+                    .NET Framework 4.0 y actualizaciones necesarias.</p>
+                <a href="https://katfile.online/pjjlx1uassfq/BCDeX_-_Libs_Win_7.rar.html" target="_blank" rel="noopener"
+                    class="btn-secondary-outline text-xs px-4 py-2" data-i18n="download_win7_package_btn">
+                    Descargar Librerías Windows 7
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+
+            <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts para modales e i18n -->
+    <script>
         (function () {
             const abrir = document.querySelectorAll('.version-open-btn');
             const overlays = document.querySelectorAll('.version-modal-overlay');
@@ -828,48 +762,6 @@ fetch('bloque-donantes.html')
     <script src="translation.js"></script>
     <script src="script.js"></script>
 
-    
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

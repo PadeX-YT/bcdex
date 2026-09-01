@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="page_title_index">BCDeX - Instalación Windows sin USB</title>
-    
+
     <meta name="description" content="BCDeX permite instalar Windows sin USB, crear unidades booteables y preparar el arranque desde disco con soporte BIOS, UEFI y versiones modernas de Windows.">
     <meta name="keywords" content="BCDeX, instalar Windows sin USB, USB booteable, BCD, UEFI, BIOS, Windows 11, Windows 10, instalación desde disco, ISO Windows">
     <meta name="author" content="PadeX">
@@ -22,7 +22,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BCDeX - Instalación Windows sin USB">
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,895 +54,908 @@
         crossorigin="anonymous"></script>
         <link rel="stylesheet" href="estilos.css">
     <style>
-        /* DefiniciÃ³n de variables de color actualizada segÃºn la paleta proporcionada por el usuario */
         :root {
-            /* Colores de Fondo y Superficie */
-            --color-background: #FFFFFF;
-            --color-surface: #F8F9FA;
-
-            /* Color de Acento (Botones, Destacados): Rojo Principal */
+            --color-bg-deep: #0B0F17;
+            --color-bg-surface: #0F1420;
+            --color-bg-card: #131926;
+            --color-bg-card-hover: #192235;
+            --color-bg-card-subtle: #111724;
             --color-accent: #D90429;
             --color-accent-hover: #EF233C;
-            
-            /* Color de Fondo para NAV y FOOTER (Nuevo color proporcionado) */
-            
-
-            /* Colores de Texto */
-            --color-text-primary: #212529; 
-            --color-text-secondary: #444950;
-            
-            /* Color de Borde */
-            --color-border: #E9ECEF;
-
-            /* Altura del Header */
-            --header-height: 80px; 
-            
-            /* Variables para el Muro de Donantes */
-            --color-donor-primary: var(--color-accent); /* Ahora usa el color de acento */
-            --color-donor-text: #1f2937;    /* gray-800 */
-            --color-donor-accent: #f59e0b;  /* amber-500 (mantenido para el borde del avatar) */
+            --color-accent-glow: rgba(217, 4, 41, 0.3);
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-border-hover: rgba(217, 4, 41, 0.4);
+            --color-text-primary: #F8FAFC;
+            --color-text-secondary: #94A3B8;
+            --color-text-muted: #64748B;
+            --color-nav-footer: #0B0F17;
+            --header-height: 80px;
+            --color-donor-primary: var(--color-accent);
+            --color-donor-text: #F1F5F9;
+            --color-donor-accent: #F59E0B;
         }
 
-        /* Aplicar la fuente Inter a todo el cuerpo y colores de fondo/texto */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-surface); /* Fondo de contenido ligeramente gris */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--color-bg-deep);
             color: var(--color-text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* Estilos para el NAV y FOOTER: Usamos el Gris Oscuro */
         .bg-nav-footer {
-            background-color: var(--color-nav-footer); 
+            background-color: rgba(11, 15, 23, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
-        /* Estilos de texto especÃ­ficos para el footer y enlaces del nav */
-        .footer-text, .nav-text-color {
-            color: #E5E7EB; /* Gris muy claro para alto contraste sobre el fondo oscuro */
-        }
-        /* Ajustamos el color del logo en el nav */
-        .nav-logo-color {
-            color: var(--color-background); /* Blanco puro para el logo */
-        }
-        
-        /* Estilos para el botÃ³n principal (Acento Rojo) */
-        .btn-primary {
-            background-color: var(--color-accent);
-            color: var(--color-background); /* Usamos el fondo blanco para contraste */
-            padding: 0.75rem 2rem;
+
+        .nav-link-hover {
+            color: #CBD5E1;
+            padding: 0.5rem 0.75rem;
             border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3); 
-            line-height: normal; /* Asegura que el texto estÃ© centrado verticalmente */
+            transition: all 0.2s ease;
+        }
+
+        .nav-link-hover:hover {
+            color: #FFFFFF;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-link-hover.active {
+            color: #EF233C;
+            background-color: rgba(217, 4, 41, 0.12);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #D90429 0%, #B00020 100%);
+            color: #FFFFFF;
+            padding: 0.85rem 1.85rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 22px rgba(217, 4, 41, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-decoration: none;
         }
 
         .btn-primary:hover {
-            background-color: var(--color-accent-hover);
-            box-shadow: 0 6px 16px rgba(217, 4, 41, 0.4);
+            background: linear-gradient(135deg, #EF233C 0%, #D90429 100%);
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(217, 4, 41, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
         }
 
-        /* Estilos para el botÃ³n secundario (Borde Gris Oscuro) */
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
         .btn-secondary-outline {
-            color: var(--color-text-primary);
-            border: 2px solid var(--color-border);
-            background-color: transparent;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            color: #F8FAFC;
+            padding: 0.85rem 1.75rem;
+            border-radius: 0.75rem;
             font-weight: 600;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
         }
+
         .btn-secondary-outline:hover {
-             background-color: var(--color-border);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            color: #FFFFFF;
         }
 
-        /* Estilos para la imagen principal (simulando interfaz de sistema) */
-        .hero-image {
-            width: 100%;
-            max-height: 550px;
-            object-fit: cover;
+        .pro-card {
+            background: linear-gradient(180deg, #131926 0%, #0d121c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-            border: 4px solid var(--color-border); /* Borde suave */
+            padding: 1.75rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Ajuste de color para el texto resaltado */
-        .text-primary-accent {
-            color: var(--color-accent);
+        .pro-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(217, 4, 41, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
-        /* Ajuste de color para los Ã­conos de funcionalidad */
-        .feature-icon-color {
-            color: var(--color-accent);
+
+        .pro-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(217, 4, 41, 0.35);
+            box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 4, 41, 0.12);
         }
-        
-        /* Ajuste para los enlaces del nav sobre fondo oscuro */
-        .nav-link-hover {
-            padding: 0.5rem 0.75rem; /* Ajuste de padding para los enlaces */
+
+        .pro-card:hover::before {
+            opacity: 1;
         }
-        .nav-link-hover:hover {
-            color: var(--color-accent);
-            background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil al hacer hover */
-            border-radius: 0.375rem;
+
+        .step-card {
+            background: linear-gradient(180deg, #131926 0%, #0e131d 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
         }
-        
-        /* Estilos especÃ­ficos para el selector de idioma (manteniendo la estructura original) */
+
+        .step-card:hover {
+            border-color: rgba(217, 4, 41, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .step-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #D90429 0%, #8B0000 100%);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 14px rgba(217, 4, 41, 0.4);
+            margin-bottom: 1.25rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(217, 4, 41, 0.18);
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         .language-container {
             position: relative;
             display: inline-block;
-            margin-left: 0.5rem;
         }
 
         .language-selector {
             width: 30px;
             height: 20px;
-            border-radius: 3px;
+            border-radius: 4px;
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .language-selector:hover {
+            border-color: var(--color-accent);
+            transform: scale(1.05);
         }
 
         .language-dropdown {
             position: absolute;
-            top: 100%; /* Justo debajo del selector */
+            top: calc(100% + 8px);
             right: 0;
-            background-color: var(--color-nav-footer);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background-color: #111724;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
             padding: 0.5rem;
-            z-index: 60;
-            min-width: 60px;
-            display: none; /* Oculto por defecto */
+            z-index: 70;
+            display: none;
+            flex-direction: column;
+            gap: 0.4rem;
         }
 
         .language-dropdown.active {
-            display: block;
+            display: flex;
         }
 
         .language-option {
             width: 30px;
             height: 20px;
-            margin-bottom: 0.5rem;
-            border-radius: 3px;
+            border-radius: 4px;
             background-size: cover;
             background-position: center;
             cursor: pointer;
             border: 1px solid transparent;
-            transition: border-color 0.2s;
-        }
-
-        .language-option:last-child {
-            margin-bottom: 0;
+            transition: all 0.2s;
         }
 
         .language-option:hover {
             border-color: var(--color-accent);
+            transform: scale(1.1);
         }
-        
-        .logo-img {
-            height: 48px; /* Ajuste para que el logo tenga un buen tamaÃ±o */
-            width: auto;
-        }
-        
-        /* Clase de Estilo para Bloques de Anuncios */
-        .adsense-block {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            /* Altura mÃ­nima para que el espacio no colapse antes de cargar el anuncio */
-            min-height: 90px; 
-            background-color: var(--color-background); /* Fondo blanco para mejor contraste con anuncios */
-            border-radius: 0.75rem;
-            text-align: center;
-            overflow: hidden; /* Importante para que los anuncios no rompan el layout */
-            border: 1px solid var(--color-border); /* Borde sutil */
-        }
-        /* Ajuste de altura para bloques grandes en escritorio */
-        @media (min-width: 1024px) {
-            .adsense-block.lg-display-ad {
-                min-height: 280px; /* Altura para anuncio de display grande */
-            }
-        }
-        
-        /* --- ESTILOS ESPECÃFICOS DEL MURO DE DONANTES (AJUSTADOS) --- */
 
         .supporters-wall {
-            padding: 2.5rem 1rem;
-            background-color: #f9fafb; /* gray-50 */
+            background: linear-gradient(180deg, #111724 0%, #0b0f17 100%);
+            border: 1px solid rgba(217, 4, 41, 0.22);
+            border-radius: 1.5rem;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
-        /* CAMBIO: Separador con color de acento (rojo) */
         .supporters-divider {
             border: 0;
-            height: 2px; /* Ligeramente mÃ¡s grueso para mÃ¡s presencia */
-            /* Degradado de transparente a rojo y de vuelta a transparente */
-            background-image: linear-gradient(to right, rgba(217, 4, 41, 0), var(--color-accent), rgba(217, 4, 41, 0));
-            margin: 2rem auto;
-            max-width: 500px;
-        }
-
-        /* CuadrÃ­cula de colaboradores */
-        .supporters-grid {
-            display: grid;
-            /* REDUCCIÃ“N DE ESPACIO HORIZONTAL/VERTICAL */
-            gap: 1rem; 
-            padding: 0 1rem;
-            max-width: 1000px; /* Ancho mÃ¡ximo para el grid */
-            margin: 0 auto;
-            
-            /* Responsive Grid Columns (Mobile First) */
-            grid-template-columns: repeat(3, 1fr); /* 3 columnas en mÃ³vil */
-        }
-
-        @media (min-width: 640px) {
-            .supporters-grid {
-                grid-template-columns: repeat(5, 1fr); /* Aumentado a 5 en sm para juntar mÃ¡s */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .supporters-grid {
-                grid-template-columns: repeat(7, 1fr); /* Aumentado a 7 en lg+ para juntar mÃ¡s */
-            }
-        }
-
-        /* Tarjeta del Colaborador */
-        .supporter-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            text-align: center;
-        }
-
-        /* Avatar (REDUCCIÃ“N DE TAMAÃ‘O) */
-        .supporter-avatar-bg {
-            width: 64px; /* ReducciÃ³n de 72px a 64px */
-            height: 64px; /* ReducciÃ³n de 72px a 64px */
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: block;
-            border: 3px solid var(--color-donor-accent); /* Borde destacado (Amber) */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 0.3rem; /* Espacio reducido */
-            transition: transform 0.2s;
-        }
-
-        .supporter-card:hover .supporter-avatar-bg {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .supporter-name {
-            font-size: 0.8rem; /* Ligeramente reducido de text-sm (0.875rem) a 0.8rem para evitar desbordes */
-            color: var(--color-donor-text);
-            line-height: 1.2;
-            overflow-wrap: break-word; /* Manejo de nombres largos */
+            height: 2px;
+            background-image: linear-gradient(to right, rgba(217, 4, 41, 0), #D90429, rgba(217, 4, 41, 0));
+            margin: 1.5rem auto 2rem;
+            max-width: 460px;
         }
 
         .supporters-scroll-list {
             display: grid;
             grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 0.85rem;
-            max-width: 1000px;
+            max-width: 1040px;
             margin: 0 auto;
-            max-height: 420px;
+            max-height: 440px;
             overflow-y: auto;
             overflow-x: hidden;
-            padding: 0.25rem 0.5rem 0.5rem;
+            padding: 0.5rem;
             scrollbar-width: thin;
-            scrollbar-color: rgba(217, 4, 41, 0.55) rgba(0, 0, 0, 0.08);
+            scrollbar-color: #D90429 rgba(255, 255, 255, 0.05);
         }
 
         .supporters-scroll-list::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
 
         .supporters-scroll-list::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 999px;
         }
 
         .supporters-scroll-list::-webkit-scrollbar-thumb {
-            background: rgba(217, 4, 41, 0.55);
+            background: #D90429;
             border-radius: 999px;
         }
 
         .supporters-scroll-list .supporter-card {
-            min-height: 118px;
-            padding: 0.7rem 0.45rem;
-            border-radius: 0.9rem;
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+            min-height: 116px;
+            padding: 0.75rem 0.5rem;
+            border-radius: 0.85rem;
+            background: linear-gradient(180deg, #161e2e 0%, #0f1421 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .supporters-scroll-list .supporter-card:hover {
+            transform: translateY(-3px) scale(1.03);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 158, 11, 0.2);
         }
 
         .supporters-scroll-list .supporter-avatar-bg {
             width: 52px;
             height: 52px;
-            margin-bottom: 0.45rem;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 0.5rem;
+            border: 2px solid #F59E0B;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .supporters-scroll-list .supporter-card:hover .supporter-avatar-bg {
+            transform: scale(1.08);
         }
 
         .supporters-scroll-list .supporter-name {
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            line-height: 1.15;
+            color: #F1F5F9;
+            line-height: 1.2;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            min-height: 2.1em;
+            word-break: break-word;
+        }
+
+        .donaciones-destacado {
+            display: inline-block;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #F8FAFC;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(217, 4, 41, 0.12);
+            border: 1px solid rgba(217, 4, 41, 0.25);
         }
 
         @media (max-width: 1024px) {
-            .supporters-scroll-list {
-                grid-template-columns: repeat(5, minmax(0, 1fr));
-            }
+            .supporters-scroll-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
-            .supporters-scroll-list {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                max-height: 360px;
-            }
+            .supporters-scroll-list { grid-template-columns: repeat(4, minmax(0, 1fr)); max-height: 380px; }
         }
 
         @media (max-width: 640px) {
-            .supporters-scroll-list {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 0.7rem;
-                max-height: 320px;
-                padding: 0.2rem;
-            }
-
-            .supporters-scroll-list .supporter-card {
-                min-height: 108px;
-                padding: 0.6rem 0.35rem;
-            }
-
-            .supporters-scroll-list .supporter-avatar-bg {
-                width: 48px;
-                height: 48px;
-            }
-
-            .supporters-scroll-list .supporter-name {
-                font-size: 0.82rem;
-            }
-        }        
-        /* Placeholder y lista inferior */
-        .donaciones-destacado {
-            display: inline-block;
-            margin-top: 0;
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* semibold */
-            color: var(--color-donor-primary); /* Ya usa el color de acento */
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: rgba(217, 4, 41, 0.1); /* Fondo rojo claro */
+            .supporters-scroll-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; max-height: 340px; }
+            .supporters-scroll-list .supporter-avatar-bg { width: 44px; height: 44px; }
+            .supporters-scroll-list .supporter-name { font-size: 0.75rem; }
         }
-
-        .supporters-list span {
-            display: block;
-            margin-top: 0.5rem;
-            color: #6b7280; /* gray-500 */
-            font-size: 0.9rem;
-        }
-        
-        /* --- ESTILOS ESPECÃFICOS PARA LA SECCIÃ“N DE DEFINICIÃ“N (NUEVA) --- */
-        .definition-section {
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Efecto Parallax sutil */
-            padding: 4rem 1rem;
-            position: relative;
-            color: white;
-            min-height: 400px;
-        }
-
-        .definition-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.15); /* Capa oscura para mejor contraste de texto */
-            backdrop-filter: blur(2px); /* Blur sutil para el fondo */
-            border-radius: 1rem; /* Mantiene la consistencia con otros elementos */
-        }
-        
-        .definition-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Sidebars flotantes para anuncios */
-        body {
-            display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
-        }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
-        .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
-        }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
-        }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeÃ±as */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
-            }
-        }
-
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
 
-    <!-- 1. Barra de NavegaciÃ³n (Header/Nav) -->
-    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+    <!-- 1. Barra de Navegación (Header/Nav) -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
-                <!-- Logo/TÃ­tulo -->
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <!-- LOGO: Usando el icono LittlePadeX.ico proporcionado por el usuario -->
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='uploaded:LittlePadeX.ico'">
-                        <span class="text-2xl font-bold nav-logo-color tracking-wider">
-                            
-                        </span>
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                
-                <!-- MenÃº de NavegaciÃ³n (Desktop) -->
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <!-- Enlaces de NavegaciÃ³n -->
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <!-- ENLACE DE DESCARGA: Mismas clases que el resto -->
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
-                            Descarga
-                        </a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                       
 
-                        <!-- Selector de Idioma (Desktop) -->
-                        <div class="language-container ml-4">
-                            <!-- Usaremos una bandera por defecto, ya que no puedo cargar img/espaÃ±a.png -->
-                            <div class="language-selector" id="language-selector-desktop" 
-                                style="background-image: url('img/espaÃ±a.png');">
-                            </div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" 
-                                     style="background-image: url('img/espaÃ±a.png');"></div>
-                                <div class="language-option" data-lang="en" 
-                                     style="background-image: url('img/usa.png');"></div>
-                                <div class="language-option" data-lang="pt-br" 
-                                     style="background-image: url('img/brasil.png');"></div>
-                            </div>
+                <!-- Menú de Navegación (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover active text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog" class="nav-link-hover text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations" class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact" class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <a href="descarga.html" data-i18n="nav_download" class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');" title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');" title="English"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- BotÃ³n de MenÃº MÃ³vil (Visible solo en mÃ³vil/tablet) -->
-                <div class="lg:hidden flex items-center">
-                    <!-- Selector de Idioma (MÃ³vil) - Lo colocamos antes de la hamburguesa para fÃ¡cil acceso -->
-                     <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" 
-                            style="background-image: url('img/espaÃ±a.png');">
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
+                            style="background-image: url('img/españa.png');">
                         </div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" 
-                                 style="background-image: url('img/espaÃ±a.png');"></div>
-                            <div class="language-option" data-lang="en" 
-                                 style="background-image: url('img/usa.png');"></div>
-                            <div class="language-option" data-lang="pt-br" 
-                                 style="background-image: url('img/brasil.png');"></div>
-                            </div>
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"></div>
+                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png');"></div>
                         </div>
                     </div>
 
-                    <!-- BotÃ³n Hamburguesa -->
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
-            </div> 
+            </div>
         </nav>
 
-        <!-- MenÃº MÃ³vil Desplegable -->
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <!-- ENLACE DE DESCARGA MÃ“VIL: Usa la clase btn-primary (rojo) -->
-                <a href="descarga.html" data-i18n="nav_download" class="btn-primary block mt-2 mx-3 text-center text-base font-medium transition transform hover:scale-100">
-                    Descarga
-                </a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-                
-            </div>
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2" id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home" class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
     </header>
-    
 
+    <!-- Main Content -->
+    <main class="flex-grow">
 
-    <!-- Main Content Wrapper -->
-    <div class="flex-grow min-w-0">
-            <main class="flex-grow">
-               
-                
-                <!-- 3. SECCIÃ“N DE DEFINICIÃ“N (HOOK) - AHORA EN LA PARTE SUPERIOR -->
-                <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div class="definition-section rounded-xl shadow-xl" 
-                         style="background-image: url('img/fondo_header.jpg')">
-                        <div class="definition-overlay rounded-xl"></div>
-                        <!-- 
-                            AJUSTE CLAVE: Reducimos el ancho mÃ¡ximo a 3xl (antes 4xl) y aseguramos w-full para el centrado.
-                        -->
-                        <div class="definition-content text-center max-w-3xl w-full mx-auto">
-                            <!-- TÃ­tulo (GANCHO PRINCIPAL) -->
-                            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white" data-i18n="index_hero_title">
-                                Instalación de Windows a Nivel Experto.
-                            </h2>
-                            <!-- PÃ¡rrafo ÃšNICO y ULTRA-CORTO (GANCHO) -->
-                            <p class="text-lg sm:text-xl text-gray-200 mb-6 font-semibold" data-i18n="index_hero_subtitle">
-                                BCDeX es la herramienta de automatización avanzada que <strong> elimina la dependencia de USB o DVD</strong> para reinstalar Windows (7-11). Garantiza un proceso de arranque limpio, seguro y <strong> directo desde el disco duro</strong>. 
-                            </p>
-                            <a href="tutorial.html" class="mt-8 btn-primary inline-block transition transform hover:scale-105" data-i18n="index_hero_button">
-                                Descubre Cómo Funciona
+        <!-- 2. SECCIÓN HERO (UNIFICADA Y PROFESIONAL) -->
+        <section class="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 border-b border-white/5">
+            <!-- Glow ambiental de fondo -->
+            <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] sm:w-[900px] h-[350px] bg-red-600/15 blur-[120px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- Columna Izquierda: Copy persuasivo -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+
+                        <!-- Badge de versión -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/30 text-red-300 text-xs sm:text-sm font-semibold mb-5 shadow-inner">
+                            <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                            <span data-i18n="index_badge_hero">BCDeX 3.2 Advanced • La forma moderna de instalar Windows</span>
+                        </div>
+
+                        <!-- Título Principal -->
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] mb-4" data-i18n="index_main_title">
+                            Instala o Reinstala Windows sin Usar USB ni DVD.
+                        </h1>
+
+                        <!-- Eslogan -->
+                        <p class="text-lg sm:text-xl font-bold text-red-400 mb-4" data-i18n="index_main_slogan">
+                            ¡Instalar Windows nunca fue tan rápido, seguro y fácil!
+                        </p>
+
+                        <!-- Descripción para usuario promedio -->
+                        <p class="text-base text-slate-300 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0" data-i18n="index_main_description">
+                            BCDeX es la herramienta que automatiza por completo la instalación de Windows (11, 10, 8.1, 7). Crea particiones de arranque directas en tu disco duro, prepara USBs universales con un solo clic y optimiza tu PC con Modo Turbo. 100% automático, seguro y reversible.
+                        </p>
+
+                        <!-- Puntos destacados con checkmarks -->
+                        <ul class="space-y-2.5 mb-8 text-left max-w-xl mx-auto lg:mx-0 text-sm sm:text-base text-slate-200">
+                            <li class="flex items-center gap-2.5">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold">✓</span>
+                                <span data-i18n="index_hero_bullet1">Arranque directo desde partición interna en disco duro</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold">✓</span>
+                                <span data-i18n="index_hero_bullet2">USB Booteable universal compatible con UEFI y Legacy BIOS</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs font-bold">✓</span>
+                                <span data-i18n="index_hero_bullet3">100% Reversible: recupera tu espacio con 1 clic al terminar</span>
+                            </li>
+                        </ul>
+
+                        <!-- Botones de Acción -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="descarga.html" class="btn-primary w-full sm:w-auto text-center" data-i18n="index_main_download_button">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Descargar Gratis
+                            </a>
+                            <a href="tutorial.html" class="btn-secondary-outline w-full sm:w-auto text-center" data-i18n="index_main_tutorial_button">
+                                <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                Ver Guía de Uso
                             </a>
                         </div>
-                    </div>
-                </section>
 
-                <div id="banner-promo-index"></div>
-                <script>
-                fetch('banner-promo.html')
-                    .then(r => r.text())
-                    .then(html => {
-                        const destino = document.getElementById('banner-promo-index');
-                        if (destino) {
-                            destino.innerHTML = html;
-                            destino.querySelectorAll('script').forEach((bloque) => {
-                                const script = document.createElement('script');
-                                if (bloque.src) {
-                                    script.src = bloque.src;
-                                } else {
-                                    script.textContent = bloque.textContent;
-                                }
-                                document.body.appendChild(script);
-                                bloque.remove();
-                            });
-                        }
-                    })
-                    .catch(console.error);
-                </script>
-
-                <!-- 4. SECCIÃ“N PRINCIPAL (HERO) - AHORA DEBAJO DEL GANCHO -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16 pt-4 md:pt-6">
-                    <div class="flex flex-col md:flex-row items-center gap-12">
-                        <!-- Contenido de Texto -->
-                        <div class="md:w-1/2 text-center md:text-left">
-                            <!-- TÃ­tulo Principal: Reducido a 2xl/3xl/4xl -->
-                            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[color:var(--color-text-primary)] leading-tight mb-2" data-i18n="index_main_title">
-                                BCDeX: Instala Windows sin usar USB ni DVD.
-                            </h1>
-                            <!-- Eslogan: Reducido a base/lg -->
-                            <p class="text-base sm:text-lg font-semibold text-primary-accent mb-4 max-w-xl mx-auto md:mx-0" data-i18n="index_main_slogan">
-                                ¡Instalar Windows nunca fue tan fácil!
-                            </p>
-                            <!-- DescripciÃ³n: Reducido a sm/base -->
-                            <p class="text-sm sm:text-base text-[color:var(--color-text-secondary)] mb-8 max-w-xl mx-auto md:mx-0" data-i18n="index_main_description">
-                                La herramienta que simplifica radicalmente la preparación de instalaciones de Windows directamente desde tu disco duro. Olvídate de los medios físicos.
-                            </p>
-                            <div class="space-y-4 sm:space-y-0 sm:space-x-4">
-                                <!-- BOTÃ“N DE DESCARGA PRINCIPAL: Usa la clase btn-primary (rojo) -->
-                                <a href="descarga.html" class="btn-primary inline-block transition transform hover:scale-105" data-i18n="index_main_download_button">
-                                    Descargar                        
-                                </a>
-                                <!-- BotÃ³n secundario con el color del borde/texto -->
-                                <a href="tutorial.html" class="btn-secondary-outline inline-block px-8 py-3 rounded-lg transition duration-300" data-i18n="index_main_tutorial_button">
-                                    Ver Guía de Uso
-                                </a>
-                            </div>
+                        <!-- Mini badges de compatibilidad -->
+                        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400">
+                            <span class="inline-flex items-center gap-1.5"><strong class="text-slate-200">Soporte:</strong> Windows 11, 10, 8.1, 7</span>
+                            <span class="text-slate-600">•</span>
+                            <span class="text-emerald-400 font-semibold">100% Gratuito y Limpio</span>
                         </div>
-                        <!-- Imagen Principal (simulando interfaz de sistema) -->
-                        <div class="md:w-1/2 w-full">
-                            <!-- Placeholder que simula una interfaz de consola o herramienta de sistema para Windows -->
-                            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:1rem;border:4px solid var(--color-border);box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+
+                    <!-- Columna Derecha: Mockup Video interactivo -->
+                    <div class="lg:col-span-5 w-full">
+                        <div id="video-demo" class="relative group">
+                            <!-- Glow trasero -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-red-600/30 to-amber-600/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-90 transition duration-500"></div>
+
+                            <div class="video-container relative z-10">
                                 <iframe
-                                    src="https://www.youtube-nocookie.com/embed/N01gr4fhsQI"
-                                    title="Video BCDeX"
-                                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                    src="https://www.youtube-nocookie.com/embed/gbzsMyVncFY"
+                                    title="Tutorial de instalación con BCDeX"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin"
                                     allowfullscreen>
                                 </iframe>
                             </div>
+
+                            <!-- Micro-chips flotantes -->
+                            <div class="mt-4 grid grid-cols-2 gap-3">
+                                <div class="bg-[#131926]/90 border border-white/10 rounded-xl p-3 flex items-center gap-2.5 shadow-lg backdrop-blur">
+                                    <div class="w-8 h-8 rounded-lg bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-sm">⚡</div>
+                                    <div class="text-left">
+                                        <div class="text-xs font-bold text-white">Extracción Rápida</div>
+                                        <div class="text-[11px] text-slate-400">Proceso multihilo en segundos</div>
+                                    </div>
+                                </div>
+                                <div class="bg-[#131926]/90 border border-white/10 rounded-xl p-3 flex items-center gap-2.5 shadow-lg backdrop-blur">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold text-sm">🛡️</div>
+                                    <div class="text-left">
+                                        <div class="text-xs font-bold text-white">100% Reversible</div>
+                                        <div class="text-[11px] text-slate-400">Restaura tu disco en 1 clic</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN: CÓMO FUNCIONA EN 3 PASOS -->
+        <section class="py-16 md:py-20 border-b border-white/5 bg-[#0D121C]/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3" data-i18n="index_steps_title">
+                        ¿Cómo Funciona BCDeX?
+                    </h2>
+                    <p class="text-slate-400 text-base md:text-lg" data-i18n="index_steps_subtitle">
+                        Reinstalar tu PC es tan simple como 3 pasos claros sin comandos ni configuraciones complejas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+                    <!-- Paso 1 -->
+                    <div class="step-card">
+                        <div class="step-badge">1</div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_step1_title">1. Selecciona tu ISO de Windows</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_step1_desc">
+                            Carga cualquier imagen ISO de Windows oficial o modificada. BCDeX analiza el archivo y valida el espacio disponible automáticamente.
+                        </p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="step-card">
+                        <div class="step-badge">2</div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_step2_title">2. Elige el Método de Instalación</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_step2_desc">
+                            Instala directo desde tu disco duro creando una partición segura en 1 clic, o prepara un pendrive USB booteable universal.
+                        </p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="step-card">
+                        <div class="step-badge">3</div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_step3_title">3. Reinicia, Instala y Optimiza</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_step3_desc">
+                            El instalador arranca automáticamente. Al finalizar, activa el Modo Turbo y recupera tu espacio con la opción Deshacer Cambios.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN: CARACTERÍSTICAS Y VENTAJAS CLAVE -->
+        <section class="py-16 md:py-24 border-b border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3" data-i18n="index_features_title">
+                        Todo lo que BCDeX Hace por Ti
+                    </h2>
+                    <p class="text-slate-400 text-base md:text-lg" data-i18n="index_features_subtitle">
+                        Diseñado para que cualquier usuario pueda instalar y optimizar Windows con nivel profesional.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Feature 1 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            💾
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature1_title">Instalación Directa desde Disco Duro</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature1_description">
+                            Olvídate de buscar o formatear memorias USB. BCDeX prepara una partición temporal aislada y configura el arranque automáticamente en tu disco.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            🔌
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature2_title">USB Booteable Universal (UEFI y BIOS)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature2_description">
+                            ¿Prefieres usar un pendrive? Prepara memorias con formateo inteligente y partición EFI dual compatible con cualquier tarjeta madre moderna o antigua.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            🚀
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature3_title">Modo Turbo y Debloat Integrado</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature3_description">
+                            Disfruta de un Windows ultrarrápido desde el primer minuto. Elimina bloatware, desactiva telemetría pesada y libera recursos en tu sistema.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            🔄
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature4_title">100% Reversible ("Deshacer Cambios")</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature4_description">
+                            Cero residuos en tu sistema. Con un solo clic eliminas la partición temporal, limpias el menú de arranque y recuperas todo tu espacio original.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            💿
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature5_title">Compatibilidad con Cualquier ISO</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature5_description">
+                            Soporta ISOs oficiales de Microsoft (Windows 11 25H2, 24H2, 10, 8.1), versiones personalizadas MiniOS, Lite y configuraciones desatendidas.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="pro-card">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-4">
+                            ⚙️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2" data-i18n="index_feature6_title">Cero Comandos de Consola</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="index_feature6_description">
+                            Despídete de comandos complicados de diskpart o bcdedit. La interfaz gráfica se encarga de realizar todas las operaciones de forma segura.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN: TABLA COMPARATIVA RÁPIDA -->
+        <section class="py-16 md:py-20 border-b border-white/5 bg-[#0D121C]/40">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3" data-i18n="index_compare_title">
+                        ¿Por qué Elegir BCDeX frente a Métodos Tradicionales?
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base" data-i18n="index_compare_subtitle">
+                        Compara cómo BCDeX te ahorra tiempo, dolores de cabeza y necesidad de pendrives.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-white/10 shadow-2xl bg-[#111724]">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-[#161E2E]">
+                                <th class="py-4 px-5 text-slate-300 font-bold">Característica</th>
+                                <th class="py-4 px-5 text-red-400 font-extrabold bg-red-950/40 border-x border-red-500/20">BCDeX 3.2 Advanced</th>
+                                <th class="py-4 px-5 text-slate-400 font-semibold">Método Tradicional (USB)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-slate-300">
+                            <tr>
+                                <td class="py-3.5 px-5 font-medium">¿Requiere pendrive USB físico?</td>
+                                <td class="py-3.5 px-5 font-bold text-emerald-400 bg-red-950/20 border-x border-red-500/20">❌ No necesario (opcional)</td>
+                                <td class="py-3.5 px-5 text-slate-400">⚠️ Obligatorio (8GB+)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-5 font-medium">Instalación directa desde disco interno</td>
+                                <td class="py-3.5 px-5 font-bold text-emerald-400 bg-red-950/20 border-x border-red-500/20">✅ Sí, 100% automático</td>
+                                <td class="py-3.5 px-5 text-slate-400">❌ No disponible</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-5 font-medium">Configuración de arranque BCD / EFI</td>
+                                <td class="py-3.5 px-5 font-bold text-emerald-400 bg-red-950/20 border-x border-red-500/20">✅ Automatizada sin consola</td>
+                                <td class="py-3.5 px-5 text-slate-400">⚠️ Requiere entrar a BIOS</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-5 font-medium">Optimización post-instalación (Turbo)</td>
+                                <td class="py-3.5 px-5 font-bold text-emerald-400 bg-red-950/20 border-x border-red-500/20">✅ Integrada y reversible</td>
+                                <td class="py-3.5 px-5 text-slate-400">❌ Manual / Programas externos</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-5 font-medium">Recuperación de espacio al terminar</td>
+                                <td class="py-3.5 px-5 font-bold text-emerald-400 bg-red-950/20 border-x border-red-500/20">✅ 1 Clic con "Deshacer Cambios"</td>
+                                <td class="py-3.5 px-5 text-slate-400">⚠️ Requiere formateo manual</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. SECCIÓN: SEGURIDAD Y FALSOS POSITIVOS -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="p-6 sm:p-8 bg-gradient-to-r from-red-950/40 via-[#131926] to-[#131926] border border-red-500/30 rounded-2xl shadow-xl flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center text-3xl shadow-inner">
+                    🛡️
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-2" data-i18n="index_security_title">
+                        Seguridad y Confianza: Aclaración sobre Falsos Positivos
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="index_security_description">
+                        Para configurar particiones temporales y crear entradas en el menú de arranque de Windows (BCD), BCDeX ejecuta comandos nativos del sistema. Por esta razón, algunos antivirus pueden mostrar advertencias preventivas de falso positivo. Garantizamos que la herramienta es 100% segura, limpia y solo ejecuta acciones documentadas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 7. SECCIÓN DE MURO DE SUPER CRACKS (COLABORADORES) -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="supporters-wall">
+
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-3">
+                        <span>⭐</span>
+                        <span>Muro de Honor de la Comunidad</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2" data-i18n="donations_supporters_title">
+                        Gracias a los Super CRACKS de la Comunidad
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base" data-i18n="donations_supporters_subtitle">
+                        Personas increíbles cuyo apoyo constante impulsa el desarrollo y mantenimiento continuo de BCDeX.
+                    </p>
+                </div>
+
+                <hr class="supporters-divider">
+
+                <!-- Lista dinámica de donantes -->
+                <div id="donantes-lista-index" class="supporters-scroll-list" aria-label="Lista de colaboradores"></div>
+
+                <script>
+                fetch('bloque-donantes.html')
+                    .then(r => r.text())
+                    .then(html => {
+                        const temp = document.createElement('div');
+                        temp.innerHTML = html;
+                        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+                        const lista = document.getElementById('donantes-lista-index');
+                        if (!lista) return;
+                        lista.innerHTML = '';
+                        cards.forEach(card => lista.appendChild(card));
+                    })
+                    .catch(console.error);
+                </script>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8 pt-6 border-t border-white/5">
+                    <p class="donaciones-destacado text-center sm:text-left" data-i18n="donations_cta_combo">
+                        Tu nombre y avatar también pueden estar aquí. Descubre cómo
+                    </p>
+                    <a href="donaciones.html#como-apoyar" class="btn-primary px-6 py-2.5 text-sm" data-i18n="donations_cta_here">
+                        Apoyar a BCDeX
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. BANNER FINAL CTA -->
+        <section class="py-14 md:py-20 border-t border-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-red-950/20 to-transparent pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="pro-card text-center p-8 sm:p-12 border-red-500/30 bg-gradient-to-b from-[#161e2e] to-[#0f1422]">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3" data-i18n="index_cta_title">
+                        ¿Listo para Reinstalar Windows Sin Complicaciones?
+                    </h2>
+                    <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-8" data-i18n="index_cta_subtitle">
+                        Descarga BCDeX hoy mismo y disfruta de la forma más rápida, limpia y moderna de preparar tu sistema operativo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="descarga.html" class="btn-primary w-full sm:w-auto text-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Descargar BCDeX Ahora
+                        </a>
+                        <a href="tutorial.html" class="btn-secondary-outline w-full sm:w-auto text-center">
+                            Ver Tutorial Paso a Paso
+                        </a>
                     </div>
                 </div>
-                
-              
+            </div>
+        </section>
 
-                <div class="w-full my-8 md:my-10">
-  <iframe
-    src="banner-promo-carrusel.html"
-    title="Promoción licencias BCDeX"
-    loading="lazy"
-    class="w-full border-0 block"
-    style="height: 470px; background: transparent; overflow: hidden;"
-  ></iframe>
-</div>
+    </main>
 
-                <!-- SecciÃ³n: Funcionalidades Principales (AHORA VA AQUÃ ABAJO) -->
-                <section class="bg-white py-16 border-t border-[color:var(--color-border)]">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 class="text-4xl font-extrabold text-center mb-12 text-[color:var(--color-text-primary)]" data-i18n="index_features_title">
-                            Funcionalidades Principales de BCDeX
-                        </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                            <!-- Card 1: Particiones -->
-                            <div class="p-8 bg-surface rounded-xl shadow-lg border-t-4 border-primary-accent">
-                                <div class="feature-icon-color text-4xl mb-4">⚙️</div>
-                                <h3 class="font-bold text-2xl mb-3 text-[color:var(--color-text-primary)]" data-i18n="index_feature1_title">Gestión de Particiones Segura</h3>
-                                <p class="text-[color:var(--color-text-secondary)]" data-i18n="index_feature1_description">
-                                    Utiliza herramientas nativas de Windows (`diskpart.exe`) para crear una partición temporal y dedicada, asegurando un espacio aislado para los archivos de instalación del sistema operativo.
-                                </p>
-                            </div>
-                            <!-- Card 2: AutomatizaciÃ³n PowerShell -->
-                            <div class="p-8 bg-surface rounded-xl shadow-lg border-t-4 border-primary-accent">
-                                <div class="feature-icon-color text-4xl mb-4">⚡</div>
-                                <h3 class="font-bold text-2xl mb-3 text-[color:var(--color-text-primary)]" data-i18n="index_feature2_title">Automatización BCD y Scripts</h3>
-                                <p class="text-[color:var(--color-text-secondary)]" data-i18n="index_feature2_description">
-                                    Ejecuta de forma automática y controlada scripts de PowerShell para el montaje de imágenes ISO y la configuración precisa de los datos de arranque (BCD) del sistema.
-                                </p>
-                            </div>
-                            <!-- Card 3: Copia Inteligente -->
-                            <div class="p-8 bg-surface rounded-xl shadow-lg border-t-4 border-primary-accent">
-                                <div class="feature-icon-color text-4xl mb-4">📁</div>
-                                <h3 class="font-bold text-2xl mb-3 text-[color:var(--color-text-primary)]" data-i18n="index_feature3_title">Extracción y Copia Optimizada</h3>
-                                <p class="text-[color:var(--color-text-secondary)]" data-i18n="index_feature3_description">
-                                    Extrae únicamente los archivos esenciales necesarios para el inicio de la instalación desde su ISO de Windows (original o modificada), optimizando el tiempo de preparación y el uso del espacio en disco.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    <!-- 9. Pie de Página (Footer) -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded" onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
 
-                <!-- SecciÃ³n: Seguridad y Falsos Positivos -->
-                <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div class="p-8 bg-white border-l-4 border-red-500 rounded-lg shadow-md md:flex md:items-center md:space-x-6">
-                        <div class="flex-shrink-0 text-5xl text-red-500 mb-4 md:mb-0">
-                            ⚠️
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-red-800 mb-2" data-i18n="index_security_title">Seguridad: Aclaración sobre Falsos Positivos</h3>
-                            <p class="text-red-700" data-i18n="index_security_description">
-                                Debido a la manipulación necesaria de la configuración de arranque (BCD) y particiones, algunos antivirus pueden reportar a BCDeX como un "falso positivo". Aseguramos que la herramienta es completamente segura y solo ejecuta comandos fundamentales de Windows para su funcionalidad.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                
-              
-                
-                <!-- SECCIÃ“N DE MURO DE COLABORADORES (AJUSTADA) -->
-                <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div class="supporters-wall rounded-xl shadow-xl">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 text-center" data-i18n="donations_supporters_title">
-                            <br>Gracias a los super CRACKS de la Comunidad
-                        </h2> 
-                        <!-- Julio C M -->
-                        <!-- El separador ahora usa el degradado de color-accent (rojo) -->
-                        <hr class="supporters-divider">                        <div id="donantes-lista-index" class="supporters-scroll-list" aria-label="Lista de colaboradores"></div>
-                        <script>
-                        fetch('bloque-donantes.html')
-                            .then(r => r.text())
-                            .then(html => {
-                                const temp = document.createElement('div');
-                                temp.innerHTML = html;
-                                const cards = Array.from(temp.querySelectorAll('.supporter-card'));
-                                const lista = document.getElementById('donantes-lista-index');
-                                if (!lista) return;
-                                lista.innerHTML = '';
-                                cards.forEach(card => lista.appendChild(card));
-                            })
-                            .catch(console.error);
-                        </script>
-                        
-                        <div class="flex items-center justify-center gap-3 mt-4 md:mt-5">
-                            <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
-                            <a href="donaciones.html#como-apoyar" class="btn-primary inline-block px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
-                        </div>
-                    </div>
-                </section>
-                <!-- FIN SECCIÃ“N DE MURO DE COLABORADORES -->
-                
-            </main>
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
 
-            <!-- 3. Pie de PÃ¡gina (Footer) -->
-           <footer class="bg-nav-footer mt-12 py-8">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-                    <p class="footer-text text-lg font-medium" data-i18n="footer_creator">
-                        PadeX - Creador de contenido y desarrollador
-                    </p>
-                    
-                    <p class="footer-pages text-sm space-x-4">
-                        <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                        <span class="text-gray-500">|</span>
-                        <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
-                    </p>
-                    
-                    <div class="footer-links">
-                        <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                            <img src="img/youtube.png" alt="YouTube" class="footer-icon">
-                        </a>
-                        <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                            <img src="img/facebook.png" alt="Facebook" class="footer-icon">
-                        </a>
-                        <a href="mailto:contact@padex.com" title="Gmail">
-                            <img src="img/gmail.png" alt="Gmail" class="footer-icon">
-                        </a>
-                        <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                            <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
-                        </a>
-                        <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                            <img src="img/instagram.png" alt="Instagram" class="footer-icon">
-                        </a>
-                        <a href="https://x.com/padex" target="_blank" title="X">
-                            <img src="img/x.png" alt="X" class="footer-icon">
-                        </a>
-                    </div>
-                    
-                    <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
-                </div>
-            </footer>
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition" data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition" data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+
+                        <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
         </div>
-    
-</body> 
+    </footer>
 
-     <!-- Script para la funcionalidad del menÃº mÃ³vil y selector de idioma -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
+    <!-- Scripts -->
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
 
-            // Toggle function para el menÃº mÃ³vil
-            mobileMenuButton.addEventListener('click', () => {
-                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-                
-                // Toggle ARIA attribute
-                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                
-                // Toggle visibility of the menu
-                mobileMenu.classList.toggle('hidden');
-
-                // Toggle icon visibility
-                menuIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
-            
-            // LÃ³gica para el selector de idioma
-            const toggleDropdown = (selectorId, dropdownId) => {
-                const selector = document.getElementById(selectorId);
-                const dropdown = document.getElementById(dropdownId);
-                if (selector && dropdown) {
-                    selector.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        dropdown.classList.toggle('active');
-                    });
-
-                    // Cierra el dropdown al hacer clic fuera
-                    document.addEventListener('click', (event) => {
-                        if (dropdown.classList.contains('active') && !dropdown.contains(event.target) && event.target !== selector) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-                    
-                    // LÃ³gica para seleccionar opciÃ³n (opcional, simulaciÃ³n)
-                    dropdown.querySelectorAll('.language-option').forEach(option => {
-                        option.addEventListener('click', (event) => {
-                            // En una aplicaciÃ³n real, aquÃ­ cambiarÃ­as el idioma
-                            const selectedLang = event.currentTarget.getAttribute('data-lang');
-                            // Simular cambio de bandera
-                            const currentStyle = event.currentTarget.getAttribute('style');
-                            selector.setAttribute('style', currentStyle); 
-                            dropdown.classList.remove('active');
-                            console.log('Idioma seleccionado:', selectedLang);
-                        });
-                    });
-                }
-            };
-
-            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
-            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
-        });
-    </script>
-
-
-    
-
-<script src="translation.js"></script>
-<script src="script.js"></script>
-
+</body>
 </html>
-
-
-
-
-
-
-
-
 
 
 

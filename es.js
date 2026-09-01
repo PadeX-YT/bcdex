@@ -1,4 +1,4 @@
-﻿const translations_es = {
+const translations_es = {
     'nav_home': 'Inicio',
     'nav_tutorial': 'Tutorial',
     'nav_what_is': 'Â¿BCDeX?',
@@ -117,9 +117,12 @@
     "section_sobre_el_creador_5_p5": "â€” <strong>PadeX</strong> ðŸ’»",
     "download_page_title": "BCDeX - Descarga",
     "download_header_title": "Descarga BCDeX",
-    "download_header_subtitle": "EstÃ¡s a un solo clic de simplificar tus instalaciones de Windows para siempre.",
-    "download_v23_title": "VersiÃ³n 2.3",
-    "download_updated_on_label": "Fecha de ActualizaciÃ³n:",
+    "download_header_subtitle": "Estás a un solo clic de simplificar tus instalaciones de Windows para siempre.",
+    "download_v32_title": "BCDeX 3.2 Advanced",
+    "download_v30_title": "BCDeX 3.0 Core",
+    "download_v23_title": "BCDeX 2.3",
+    "download_v23_btn": "Ver Descargas v2.3",
+    "download_updated_on_label": "Fecha de Actualización:",
     "download_features_title": "CaracterÃ­sticas Principales",
     "download_v23_b1": "Compatible con <strong>Windows 7</strong>, <strong>8</strong>, <strong>8.1</strong>, <strong>10</strong> y <strong>11</strong>",
     "download_v23_b2": "CreaciÃ³n de Unidades <strong>USB Booteables</strong>",

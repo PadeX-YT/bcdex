@@ -1,362 +1,428 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="donations_page_title">BCDeX: Cómo nació la idea y quién está detrás del proyecto</title>
+
+    <title data-i18n="donations_page_title">BCDeX - Apoya el Proyecto y Muro de Honor</title>
+    <meta name="description"
+        content="Apoya el desarrollo de BCDeX. Conoce por qué tu ayuda es fundamental para mantener el software gratuito, limpio y sin publicidad.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bcdexapp.com/donaciones.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="BCDeX">
+    <meta property="og:title" content="BCDeX - Apoya el Desarrollo">
+    <meta property="og:description"
+        content="Únete a la comunidad que impulsa BCDeX. Tu aporte mantiene vivo este proyecto independiente.">
+    <meta property="og:url" content="https://bcdexapp.com/donaciones.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BCDeX - Apoya el Desarrollo">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
         crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="estilos.css">
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    <link rel="stylesheet" href="estilos.css">
 
     <style>
-        .supporters-wall {
-            padding: 2.5rem 1rem; /* igual que index */
-            background-color: #f9fafb; /* gray-50 */
-        }
-
-        .supporters-divider {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, rgba(217, 4, 41, 0), var(--color-accent, #D90429), rgba(217, 4, 41, 0));
-            margin: 2rem auto;
-            max-width: 500px;
-        }
-
-        .donaciones-destacado {
-            display: inline-block;
-            margin-top: 2rem;
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* semibold */
-            color: var(--color-accent, #D90429);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            background-color: rgba(217, 4, 41, 0.1);
-        }
-        
-        /* Sidebars flotantes para anuncios */
-        body {
-            display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
-        }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
-        .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
+        .donation-method-card {
+            background: linear-gradient(180deg, #131926 0%, #0d121c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
+
+        .donation-method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
         }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
+
+        .why-card {
+            background: linear-gradient(180deg, #131926 0%, #0f1422 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
         }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
-        }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
-        }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeñas */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
-            }
+
+        .why-card:hover {
+            border-color: rgba(217, 4, 41, 0.35);
+            transform: translateY(-3px);
         }
     </style>
-
 </head>
-<body class="min-h-screen flex flex-col">
- 
-   <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
-                            Descarga
-                        </a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                        
 
-                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" 
-                                style="background-image: url('img/españa.png');">
-                            </div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" 
-                                     style="background-image: url('img/españa.png')"></div>
-                                <div class="language-option" data-lang="en" 
-                                     style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" 
-                                     style="background-image: url('img/brasil.png')"></div>
-                            </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog" class="nav-link-hover text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover active text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <a href="descarga.html" data-i18n="nav_download"
+                        class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:hidden flex items-center">
-                     <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" 
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
                             style="background-image: url('img/españa.png');">
                         </div>
-                                                <div class="language-dropdown" id="language-dropdown-mobile">
-                                                    <div class="language-option" data-lang="es" 
-                                                         style="background-image: url('img/españa.png')"></div>
-                                                    <div class="language-option" data-lang="en" 
-                                                         style="background-image: url('img/usa.png')"></div>
-                                                    <div class="language-option" data-lang="pt-br" 
-                                                         style="background-image: url('img/brasil.png')"></div>
-                                                    </div>                        </div>
+                        <div class="language-dropdown" id="language-dropdown-mobile">
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
+                            </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
+                        </div>
                     </div>
 
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
         </nav>
 
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
-                    Descarga
-                </a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-                
-            </div>
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
     </header>
 
-   <main class="flex-grow">
-        <div class="max-w-6xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
-            <header class="donations-hero text-center mb-8">
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4" data-i18n="donations_title">Conviértete en un Socio del Proyecto</h1>
-                <p class="text-xl text-gray-600" data-i18n="donations_intro">
+    <!-- Main Content -->
+    <main class="flex-grow py-12 sm:py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Hero Header -->
+            <header class="text-center max-w-3xl mx-auto mb-14">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-semibold mb-4 shadow-inner">
+                    <span>⭐</span>
+                    <span>Comunidad e Impulso del Proyecto</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4"
+                    data-i18n="donations_title">
+                    Conviértete en un Socio del Proyecto
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed" data-i18n="donations_intro">
                     BCDeX es gratuito y siempre lo será gracias al apoyo de una comunidad increíble. Tu contribución no es solo una donación: es el choque de puños con el proyecto que ya te ahorró pagar a un técnico, perder horas o comprar herramientas extras. Es invertir en que esta herramienta —hecha por un entusiasta para entusiastas— siga existiendo y mejorando.
                 </p>
             </header>
 
-            <div class="info-card space-y-6 mx-auto">
-                <section class="donation-card">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center" data-i18n="donations_why_title">¿Por qué tu apoyo es tan importante?</h2>
-                    <ul class="list-none text-lg text-gray-700 space-y-5">
-                        <li>
-                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item1_title">🚀 Impulsa nuevas funciones</h3>
-                            <p class="mt-1" data-i18n="donations_why_item1_text">Cada vez que Microsoft cambia algo, hay que reescribir partes enteras del código desde cero. Tu apoyo permite dedicar tiempo a esas actualizaciones y a desarrollar lo que pide la comunidad: más compatibilidad, más automatización, más personalización.</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item2_title">🛡️ Garantiza la continuidad del proyecto</h3>
-                            <p class="mt-1" data-i18n="donations_why_item2_text">Servidores, dominios, herramientas de desarrollo y pruebas no son gratis. Si nadie aporta, el proyecto termina como el 90% del software útil que muere por falta de soporte. <strong>Si la comunidad apoya, BCDeX sigue siendo gratuito, limpio y sin sponsors ni spyware.</strong></p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg flex items-center" data-i18n="donations_why_item3_title">☕ Alimenta la pasión (y al desarrollador)</h3>
-                            <p class="mt-1" data-i18n="donations_why_item3_text">Esto es un proyecto de un solo desarrollador. Cada donación literalmente se convierte en cafés, horas de código, solución de bugs y soporte para los usuarios. Es una forma de decir “<strong>me ayudaste — aquí va mi choque de puños en versión real</strong>”.</p>
-                        </li>
-                    </ul>
-                    <p class="mt-6 text-gray-800 italic" data-i18n="donations_why_footer"><strong>Si BCDeX te sirvió, devuelve el favor. Si no, al menos no dejes que desaparezca por falta de apoyo.</strong></p>
-                </section>
-
-                <section class="donation-card border-t border-gray-200 pt-6" id="como-apoyar">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-i18n="donations_how_title">Tu Apoyo Sostiene a BCDeX: ¡Cada Contribución Cuenta!</h2>
-                    <p class="text-lg text-gray-700 mb-8 text-center" data-i18n="donations_how_text">
-                        BCDeX sigue creciendo gracias a ti. Tu donación, del tamaño que sea, es vital para financiar el mantenimiento, garantizar servidores estables y acelerar el desarrollo de nuevas funcionalidades. ¡Ayúdanos a seguir adelante! Gracias por ser un pilar de nuestra comunidad.
+            <!-- Métodos de Apoyo Destacados -->
+            <section class="mb-16" id="como-apoyar">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/40 border border-red-500/20 text-red-300 text-xs font-semibold mb-3">
+                        <span>☕</span>
+                        <span>Canales Directos</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
+                        data-i18n="donations_how_title">
+                        Tu Apoyo Sostiene a BCDeX: ¡Cada Contribución Cuenta!
+                    </h2>
+                    <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto" data-i18n="donations_how_text">
+                        BCDeX sigue creciendo gracias a ti. Tu donación, del tamaño que sea, es vital para financiar el mantenimiento, garantizar servidores estables y acelerar el desarrollo de nuevas funcionalidades.
                     </p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://buymeacoffee.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/bmc.png" alt="Buy Me A Coffee" class="h-8"></a>
-                        <a href="https://ko-fi.com/padexchn" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/ko-fi.png" alt="Ko-fi" class="h-8"></a>
-                        <a href="https://www.paypal.com/paypalme/PadeXch" target="_blank" class="btn-primary text-lg transition transform hover:scale-105 px-8"><img src="img/paypal.png" alt="PayPal" class="h-8"></a>
-                    </div>
-                </section>
+                </div>
 
-                <!-- Sección de supporters dentro del mismo contenedor principal -->
-                <section class="py-6">
-                    <div class="supporters-wall rounded-xl shadow-xl max-w-5xl mx-auto">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1 text-center" data-i18n="donations_supporters_title">
-                            Gracias a los super CRACKS de la Comunidad
-                        </h2>
-                        
-                        <hr class="supporters-divider">
-                        
-                        <div id="donantes-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4 justify-items-center"></div>
-                                                <div class="supporters-carousel-wrapper relative">
-                                                    <button id="carousel-prev-donaciones" aria-label="Anterior" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8592;</button>
-                                                    <div id="donantes-carousel-donaciones" class="supporters-carousel px-2" tabindex="0" style="display: grid; grid-auto-flow: column; grid-template-rows: repeat(4, 1fr); gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth; min-height: 320px;">
-                                                        <!-- Cards se insertan aquí -->
-                                                    </div>
-                                                    <button id="carousel-next-donaciones" aria-label="Siguiente" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold transition hidden md:flex border-4 border-white">&#8594;</button>
-                                                </div>
-                                                <script>
-                                                fetch('bloque-donantes.html')
-                                                    .then(r => r.text())
-                                                    .then(html => {
-                                                        const temp = document.createElement('div');
-                                                        temp.innerHTML = html;
-                                                        const cards = Array.from(temp.querySelectorAll('.supporter-card'));
-                                                        const carousel = document.getElementById('donantes-carousel-donaciones');
-                                                        const numRows = 4;
-                                                        const perRow = Math.ceil(cards.length / numRows);
-                                                        carousel.innerHTML = '';
-                                                        for (let i = 0; i < perRow; i++) {
-                                                            for (let row = 0; row < numRows; row++) {
-                                                                const idx = row * perRow + i;
-                                                                if (cards[idx]) {
-                                                                    const card = cards[idx];
-                                                                    card.classList.add('mx-2', 'my-1');
-                                                                    card.style.width = '110px';
-                                                                    card.style.verticalAlign = 'top';
-                                                                    carousel.appendChild(card);
-                                                                }
-                                                            }
-                                                        }
-                                                    })
-                                                    .catch(console.error);
-                                                function scrollCarouselDonaciones(direction) {
-                                                    const carousel = document.getElementById('donantes-carousel-donaciones');
-                                                    if (!carousel) return;
-                                                    const scrollAmount = 120 * 3;
-                                                    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-                                                }
-                                                document.getElementById('carousel-prev-donaciones').addEventListener('click', () => scrollCarouselDonaciones(-1));
-                                                document.getElementById('carousel-next-donaciones').addEventListener('click', () => scrollCarouselDonaciones(1));
-                                                function updateCarouselButtonsDonaciones() {
-                                                    const carousel = document.getElementById('donantes-carousel-donaciones');
-                                                    const prev = document.getElementById('carousel-prev-donaciones');
-                                                    const next = document.getElementById('carousel-next-donaciones');
-                                                    if (!carousel || !prev || !next) return;
-                                                    if (window.innerWidth < 768) {
-                                                        prev.style.display = 'none';
-                                                        next.style.display = 'none';
-                                                        return;
-                                                    }
-                                                    setTimeout(() => {
-                                                        prev.style.display = carousel.scrollLeft > 0 ? 'flex' : 'none';
-                                                        next.style.display = (carousel.scrollLeft + carousel.offsetWidth) < carousel.scrollWidth ? 'flex' : 'none';
-                                                    }, 100);
-                                                }
-                                                window.addEventListener('resize', updateCarouselButtonsDonaciones);
-                                                document.addEventListener('DOMContentLoaded', () => {
-                                                    setTimeout(updateCarouselButtonsDonaciones, 500);
-                                                });
-                                                document.addEventListener('scroll', updateCarouselButtonsDonaciones, true);
-                                                </script>
-                        
-                        <div class="text-center">
-                            <p class="donaciones-destacado" data-i18n="donations_cta_combo">Tu nombre podría estar aquí. Descubre cómo</p>
-                            <a href="#como-apoyar" class="btn-primary inline-block mt-3 px-6 py-2 text-sm" data-i18n="donations_cta_here">Aquí</a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Buy Me A Coffee -->
+                    <div class="donation-method-card border-amber-500/30 hover:border-amber-500/60 hover:shadow-amber-950/30">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-4 shadow-md">
+                            <img src="img/bmc.png" alt="Buy Me A Coffee" class="w-9 h-9 object-contain">
                         </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Buy Me a Coffee</h3>
+                        <p class="text-xs text-slate-400 mb-6 flex-grow">Invítame un café para financiar las largas noches de programación y testing.</p>
+                        <a href="https://buymeacoffee.com/padexchn" target="_blank" rel="noopener"
+                            class="btn-primary w-full bg-[#FFDD00] text-black hover:bg-[#FFE633] border-amber-400/50 font-extrabold shadow-amber-500/20">
+                            Invitar un Café
+                        </a>
                     </div>
-                </section>
-            </div>
+
+                    <!-- Ko-fi -->
+                    <div class="donation-method-card border-cyan-500/30 hover:border-cyan-500/60 hover:shadow-cyan-950/30">
+                        <div class="w-16 h-16 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center mb-4 shadow-md">
+                            <img src="img/ko-fi.png" alt="Ko-fi" class="w-9 h-9 object-contain rounded-md">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Ko-fi</h3>
+                        <p class="text-xs text-slate-400 mb-6 flex-grow">Aportes 100% directos y sin comisiones para el servidor de descargas oficial.</p>
+                        <a href="https://ko-fi.com/padexchn" target="_blank" rel="noopener"
+                            class="btn-primary w-full bg-[#13C3FF] hover:bg-[#00B4F0] border-cyan-400/50 shadow-cyan-500/20">
+                            Donar en Ko-fi
+                        </a>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="donation-method-card border-blue-500/30 hover:border-blue-500/60 hover:shadow-blue-950/30">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mb-4 shadow-md">
+                            <img src="img/paypal.png" alt="PayPal" class="w-9 h-9 object-contain rounded-md">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">PayPal</h3>
+                        <p class="text-xs text-slate-400 mb-6 flex-grow">Transferencia rápida y segura en cualquier divisa internacional.</p>
+                        <a href="https://www.paypal.com/paypalme/PadeXch" target="_blank" rel="noopener"
+                            class="btn-primary w-full bg-[#0079C1] hover:bg-[#00457C] border-blue-400/50 shadow-blue-500/20">
+                            Enviar con PayPal
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ¿Por qué tu apoyo es importante? -->
+            <section class="pro-card mb-16">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/30 text-red-400 flex items-center justify-center font-bold text-lg">
+                        🎯
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" data-i18n="donations_why_title">
+                        ¿Por qué tu apoyo es tan importante?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Item 1 -->
+                    <div class="why-card">
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2" data-i18n="donations_why_item1_title">
+                            <span>🚀</span>
+                            <span>Impulsa nuevas funciones</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="donations_why_item1_text">
+                            Cada vez que Microsoft cambia algo, hay que reescribir partes enteras del código desde cero. Tu apoyo permite dedicar tiempo a esas actualizaciones y a desarrollar lo que pide la comunidad: más compatibilidad, más automatización, más personalización.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="why-card">
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2" data-i18n="donations_why_item2_title">
+                            <span>🛡️</span>
+                            <span>Garantiza la continuidad del proyecto</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="donations_why_item2_text">
+                            Servidores, dominios, herramientas de desarrollo y pruebas no son gratis. Si nadie aporta, el proyecto termina como el 90% del software útil que muere por falta de soporte. <strong>Si la comunidad apoya, BCDeX sigue siendo gratuito, limpio y sin sponsors ni spyware.</strong>
+                        </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="why-card">
+                        <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2" data-i18n="donations_why_item3_title">
+                            <span>☕</span>
+                            <span>Alimenta la pasión (y al desarrollador)</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed" data-i18n="donations_why_item3_text">
+                            Esto es un proyecto de un solo desarrollador. Cada donación literalmente se convierte en cafés, horas de código, solución de bugs y soporte para los usuarios. Es una forma de decir “<strong>me ayudaste — aquí va mi choque de puños en versión real</strong>”.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-5 bg-gradient-to-r from-red-950/40 via-[#0F1420] to-[#0F1420] border-l-4 border-red-500 rounded-r-xl">
+                    <p class="text-slate-200 italic text-sm sm:text-base leading-relaxed" data-i18n="donations_why_footer">
+                        <strong>Si BCDeX te sirvió, devuelve el favor. Si no, al menos no dejes que desaparezca por falta de apoyo.</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Muro de Honor VIP -->
+            <section class="supporters-wall mb-12">
+                <div class="text-center max-w-3xl mx-auto mb-6">
+                    <div
+                        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-3">
+                        <span>⭐</span>
+                        <span>Muro de Honor</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2"
+                        data-i18n="donations_supporters_title">
+                        Gracias a los super CRACKS de la Comunidad
+                    </h2>
+                </div>
+
+                <hr class="supporters-divider">
+
+                <div class="supporters-scroll-list" id="donantes-carousel-donaciones" tabindex="0"></div>
+
+                <script>
+                    fetch('bloque-donantes.html')
+                        .then(r => r.text())
+                        .then(html => {
+                            const temp = document.createElement('div');
+                            temp.innerHTML = html;
+                            const cards = Array.from(temp.querySelectorAll('.supporter-card'));
+                            const lista = document.getElementById('donantes-carousel-donaciones');
+                            if (!lista) return;
+                            lista.innerHTML = '';
+                            cards.forEach(card => lista.appendChild(card));
+                        })
+                        .catch(console.error);
+                </script>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8 pt-6 border-t border-white/5 text-center">
+                    <p class="donaciones-destacado" data-i18n="donations_cta_combo">
+                        Tu nombre podría estar aquí. Descubre cómo
+                    </p>
+                    <a href="#como-apoyar" class="btn-primary px-6 py-2.5 text-sm" data-i18n="donations_cta_here">
+                        Apoyar Ahora
+                    </a>
+                </div>
+            </section>
+
         </div>
     </main>
 
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <p class="footer-text text-lg font-medium" data-i18n="footer_creator">
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
                 PadeX - Creador de contenido y desarrollador
             </p>
-            
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
             </p>
-            
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+
+                        <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="mailto:contact@padex.com" title="Gmail">
-                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://x.com/padex" target="_blank" title="X">
-                    <img src="img/x.png" alt="X" class="footer-icon">
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
             </div>
-            
-            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
 
-  <script src="translation.js"></script>
-  <script src="script.js"></script>
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
 
- 
-  
 </body>
+
 </html>
+
+
+
+

@@ -1,272 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title data-i18n="terms_title_meta">Términos y Condiciones - BCDeX</title>
+    <meta name="description"
+        content="Términos y Condiciones de uso del sitio web y de la aplicación BCDeX.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bcdexapp.com/terminos.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="BCDeX">
+    <meta property="og:title" content="Términos y Condiciones - BCDeX">
+    <meta property="og:description"
+        content="Términos y Condiciones oficiales de uso de la herramienta BCDeX.">
+    <meta property="og:url" content="https://bcdexapp.com/terminos.html">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="estilos.css">
+
     <style>
-        /* Sidebars flotantes para anuncios */
-        body {
-            display: grid;
-            grid-template-columns: 160px 1fr 160px;
-            grid-template-rows: auto 1fr auto;
-            min-height: 100vh;
+        .article-card-main {
+            background: linear-gradient(180deg, #131926 0%, #0e1422 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
-        
-        header {
-            grid-column: 1 / -1;
-        }
-        
-        .flex-grow {
-            grid-column: 2;
-        }
-        
-        .ads-sidebar {
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .ads-sidebar-left {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .ads-sidebar-right {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        
-        .ads-container {
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            min-height: 250px;
-        }
-        
-        .ads-container ins {
-            width: 100% !important;
-            display: block !important;
-        }
-        
-        footer {
-            grid-column: 1 / -1;
-        }
-        
-        /* Ocultar sidebars en pantallas pequeñas */
-        @media (max-width: 1280px) {
-            body {
-                grid-template-columns: 1fr;
-            }
-            
-            .ads-sidebar {
-                display: none;
-            }
-            
-            .flex-grow {
-                grid-column: 1;
+
+        @media (min-width: 768px) {
+            .article-card-main {
+                padding: 3rem;
             }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Descarga</a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                        
-                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
-                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
-                            </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog" class="nav-link-hover text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <!-- Botón Descarga en Nav -->
+                    <a href="descarga.html" data-i18n="nav_download"
+                        class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:hidden flex items-center">
-                    <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
+                            style="background-image: url('img/españa.png');">
+                        </div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
-                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
+                            </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
                         </div>
                     </div>
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </nav>
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2 z-50" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-                
-            </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
     </header>
 
+    <!-- Contenido Principal -->
     <main class="flex-grow py-12 sm:py-16 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="article-container">
-                <header class="mb-6 border-b border-[color:var(--color-border)] pb-4">
-                    <h1 class="text-3xl font-extrabold text-[color:var(--color-text-primary)] mb-2" data-i18n="terms_title">Términos y Condiciones de Uso</h1>
-                    <p class="text-sm text-gray-600" data-i18n="terms_last_updated"><strong>Última actualización:</strong> 5 de julio de 2026</p>
+        <div class="max-w-6xl mx-auto">
+            <div class="article-card-main">
+                <header class="mb-6 border-b border-white/10 pb-4">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2" data-i18n="terms_title">Términos y Condiciones de Uso</h1>
+                    <p class="text-xs sm:text-sm text-slate-400" data-i18n="terms_last_updated"><strong>Última actualización:</strong> 5 de julio de 2026</p>
                 </header>
-                <section class="prose prose-invert max-w-none">
-                    <p data-i18n="terms_welcome">Por favor, lee estos términos y condiciones cuidadosamente antes de usar nuestro sitio web y la aplicación BCDeX (el "Servicio"), operado por PadeX ("nosotros", "nuestro").</p>
-                    <h2 class="section-title" data-i18n="terms_acceptance_title">1. Aceptación de los Términos</h2>
-                    <p data-i18n="terms_acceptance_text">Al acceder o utilizar el Servicio, aceptas estar sujeto a estos Términos. Si no estás de acuerdo con alguna parte de los términos, no puedes acceder al Servicio.</p>
-                    <h2 class="section-title" data-i18n="terms_license_title">2. Licencia de Uso de la Aplicación</h2>
-                    <p data-i18n="terms_license_text">Te otorgamos una licencia revocable, no exclusiva, no transferible y limitada para descargar, instalar y usar la aplicación BCDeX estrictamente de acuerdo con los términos de este acuerdo y para tus propósitos personales y no comerciales.</p>
-                    <h2 class="section-title" data-i18n="terms_responsibility_title">3. Responsabilidad del Usuario</h2>
-                    <p data-i18n="terms_responsibility_text_1">La aplicación BCDeX realiza modificaciones a bajo nivel en tu sistema, incluyendo la creación y eliminación de particiones de disco. <strong>Eres el único responsable de tus acciones al usar el software.</strong> Se recomienda encarecidamente que realices una <strong>copia de seguridad completa de tus datos importantes</strong> antes de utilizar BCDeX. No nos hacemos responsables de ninguna pérdida de datos, daño al sistema o cualquier otra consecuencia que resulte del <strong>Mal uso de nuestra aplicación</strong>.</p>
-                    <h2 class="section-title" data-i18n="terms_disclaimer_title">4. Exclusión de Garantías (Disclaimer)</h2>
-                    <p data-i18n="terms_disclaimer_text">Ofrecemos el Servicio “tal cual” y “según disponibilidad”. Esto significa que, aunque hacemos lo posible por que todo funcione correctamente, no podemos prometer que la aplicación esté libre de errores, que funcione sin interrupciones o que siempre esté disponible en todo momento o lugar. Al usarla, aceptas que lo haces bajo tu propia responsabilidad. No ofrecemos garantías específicas, ni implícitas ni explícitas, sobre su funcionamiento, utilidad o adecuación a un propósito en particular.</p>
-                    <h2 class="section-title" data-i18n="terms_liability_title">5. Limitación de Responsabilidad</h2>
-                    <p data-i18n="terms_liability_text">En ningún caso PadeX, ni sus directores o colaboradores, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo, sin limitación, la pérdida de datos, uso, buena voluntad u otras pérdidas intangibles, que resulten de tu acceso o uso o incapacidad para acceder o usar el Servicio.</p>
-                    <h2 class="section-title" data-i18n="terms_intellectual_title">6. Propiedad Intelectual</h2>
-                    <p data-i18n="terms_intellectual_text">El Servicio y su contenido original (excluyendo el contenido proporcionado por los usuarios), características y funcionalidad son y seguirán siendo propiedad exclusiva de PadeX. El nombre "BCDeX", el logo y todos los gráficos relacionados son marcas comerciales de PadeX.</p>
-                    <h2 class="section-title" data-i18n="terms_donations_title">7. Donaciones</h2>
-                    <p data-i18n="terms_donations_text">Todas las donaciones realizadas a través de los enlaces proporcionados son voluntarias y no son reembolsables. Las donaciones se utilizan para apoyar el desarrollo y mantenimiento del proyecto BCDeX.</p>
-                    <h2 class="section-title" data-i18n="terms_links_title">8. Enlaces a Otros Sitios Web</h2>
-                    <p data-i18n="terms_links_text">Nuestro Servicio puede contener enlaces a sitios web de terceros o servicios que no son propiedad ni están controlados por PadeX. No tenemos control ni asumimos responsabilidad por el contenido, las políticas de privacidad o las prácticas de los sitios o servicios de terceros.</p>
-                    <h2 class="section-title" data-i18n="terms_redistribution_title">9. Redistribución y Modificación No Autorizada</h2>
-                    <p data-i18n="terms_redistribution_text_1">La aplicación BCDeX y su contenido están protegidos por las leyes de propiedad intelectual y derechos de autor. No está permitido subir, redistribuir, compartir ni alojar la aplicación en otros servidores, páginas web o plataformas de descarga sin el consentimiento previo y por escrito de PadeX.</p>
-                    <p data-i18n="terms_redistribution_text_2">Asimismo, queda estrictamente prohibido modificar, descompilar, eliminar logos, nombres, créditos u otros elementos identificativos de la aplicación. Cualquier alteración del ejecutable o intento de hacerlo pasar por otro software constituye una infracción grave de los derechos de autor.</p>
-                    <p data-i18n="terms_redistribution_text_3">El incumplimiento de estas condiciones puede dar lugar a acciones legales. Si deseas compartir BCDeX, hazlo siempre desde los canales oficiales:<br>👉 <a href="https://bcdexapp.com" target="_blank" rel="noopener" data-i18n="terms_redistribution_link">https://bcdexapp.com</a></p>
-                </section>
+                <div class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+                    <p data-i18n="terms_welcome">Por favor, lee estos términos y condiciones cuidadosamente antes de usar nuestro sitio web y la aplicación BCDeX (el "Servicio"), operado por PadeX.</p>
+                    
+                    <h2 class="text-xl sm:text-2xl font-bold text-white pt-2" data-i18n="terms_acceptance_title">1. Aceptación de los Términos</h2>
+                    <p data-i18n="terms_acceptance_text">Al acceder o utilizar el Servicio, aceptas estar sujeto a estos Términos. Si no estás de acuerdo con alguna parte de los términos, no debes utilizar el Servicio.</p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-white pt-2" data-i18n="terms_license_title">2. Licencia de Uso de la Aplicación</h2>
+                    <p data-i18n="terms_license_text">Te otorgamos una licencia revocable, no exclusiva, no transferible y gratuita para descargar, instalar y usar la aplicación BCDeX de acuerdo con los términos de este acuerdo para fines personales.</p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-white pt-2" data-i18n="terms_responsibility_title">3. Responsabilidad del Usuario</h2>
+                    <p data-i18n="terms_responsibility_text_1">La aplicación BCDeX realiza modificaciones en el gestor de arranque y las particiones de disco de tu equipo. <strong>Eres el responsable de tus acciones al usar el software.</strong> Se recomienda realizar una copia de seguridad antes de reinstalar sistemas operativos.</p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-white pt-2" data-i18n="terms_disclaimer_title">4. Exclusión de Garantías (Disclaimer)</h2>
+                    <p data-i18n="terms_disclaimer_text">Ofrecemos el Servicio "tal cual" y según disponibilidad. Aunque testeamos exhaustivamente cada versión para garantizar máxima fiabilidad, no ofrecemos garantías comerciales implícitas.</p>
+
+                    <h2 class="text-xl sm:text-2xl font-bold text-white pt-2" data-i18n="terms_redistribution_title">5. Redistribución No Autorizada</h2>
+                    <p data-i18n="terms_redistribution_text_1">La aplicación BCDeX y su contenido están protegidos por derechos de autor. No está permitido subir, redistribuir, compartir ni alojar la aplicación en otros servidores o empaquetarla con instaladores de terceros sin el consentimiento previo.</p>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">PadeX - Creador de contenido y desarrollador</p>
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a>
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
             </p>
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+
+            <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="mailto:contact@padex.com" title="Gmail">
-                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://x.com/padex" target="_blank" title="X">
-                    <img src="img/x.png" alt="X" class="footer-icon">
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
             </div>
-            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
 
     <script src="translation.js"></script>
     <script src="script.js"></script>
-   <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-
-            // Toggle function para el menú móvil
-            mobileMenuButton.addEventListener('click', () => {
-                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-                
-                // Toggle ARIA attribute
-                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                
-                // Toggle visibility of the menu
-                mobileMenu.classList.toggle('hidden');
-
-                // Toggle icon visibility
-                menuIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
-            
-            // Lógica para el selector de idioma
-            const toggleDropdown = (selectorId, dropdownId) => {
-                const selector = document.getElementById(selectorId);
-                const dropdown = document.getElementById(dropdownId);
-                if (selector && dropdown) {
-                    selector.addEventListener('click', (event) => {
-                        event.stopPropagation();
-                        dropdown.classList.toggle('active');
-                    });
-
-                    // Cierra el dropdown al hacer clic fuera
-                    document.addEventListener('click', (event) => {
-                        if (dropdown.classList.contains('active') && !dropdown.contains(event.target) && event.target !== selector) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-                    
-                    // Lógica para seleccionar opción (opcional, simulación)
-                    dropdown.querySelectorAll('.language-option').forEach(option => {
-                        option.addEventListener('click', (event) => {
-                            // En una aplicación real, aquí cambiarías el idioma
-                            const selectedLang = event.currentTarget.getAttribute('data-lang');
-                            // Simular cambio de bandera
-                            const currentStyle = event.currentTarget.getAttribute('style');
-                            selector.setAttribute('style', currentStyle); 
-                            dropdown.classList.remove('active');
-                            console.log('Idioma seleccionado:', selectedLang);
-                        });
-                    });
-                }
-            };
-
-            toggleDropdown('language-selector-desktop', 'language-dropdown-desktop');
-            toggleDropdown('language-selector-mobile', 'language-dropdown-mobile');
-        });
-    </script>
- 
-
-  
 </body>
+
 </html>
+
+
+
+

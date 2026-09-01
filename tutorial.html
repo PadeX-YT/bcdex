@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
+
+    <title data-i18n="tutorial_page_title">BCDeX - Tutorial: Guía de Uso</title>
+    <meta name="description"
+        content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bcdexapp.com/tutorial.html">
 
@@ -13,12 +15,15 @@
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="BCDeX">
     <meta property="og:title" content="BCDeX - Tutorial: Guía de Uso">
-    <meta property="og:description" content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
+    <meta property="og:description"
+        content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
     <meta property="og:url" content="https://bcdexapp.com/tutorial.html">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BCDeX - Tutorial: Guía de Uso">
-    <meta name="twitter:description" content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
+    <meta name="twitter:description"
+        content="Aprende a usar BCDeX con vídeos, tutoriales y artículos para instalar Windows sin USB, crear medios booteables y preparar el arranque desde disco.">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,259 +35,546 @@
       "publisher": { "@type": "Organization", "name": "BCDeX" }
     }
     </script>
+
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
-        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="estilos.css">
+
     <style>
-        .btn-primary { background-color: var(--color-accent); color: var(--color-background); padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; transition: background-color 0.3s ease, transform 0.2s ease; box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3); line-height: normal; }
-        .btn-primary:hover { background-color: var(--color-accent-hover); box-shadow: 0 6px 16px rgba(217, 4, 41, 0.4); transform: translateY(-2px); }
-        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .tutorial-container { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .main-videos-wrapper { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 3rem; margin-bottom: 4rem; }
-        @media (min-width: 768px) { .main-videos-wrapper { grid-template-columns: repeat(2, 1fr); } }
-        .tutorial-note { text-align: center; margin-top: 2rem; font-size: 1.125rem; color: var(--color-text-secondary); }
-        .carousel-wrapper { position: relative; margin-top: 4rem; }
-        .videos-sugeridos, .blog-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; gap: 1.5rem; padding: 1rem; }
-        .videos-sugeridos::-webkit-scrollbar, .blog-carousel::-webkit-scrollbar { display: none; }
-        .video-card, .article-card { flex: 0 0 80%; scroll-snap-align: center; }
-        @media (min-width: 640px) { .video-card, .article-card { flex-basis: 45%; } }
-        @media (min-width: 1024px) { .video-card, .article-card { flex-basis: 30%; } }
-        .carousel-button { position: absolute; top: 50%; transform: translateY(-50%); z-index: 20; background-color: rgba(255, 255, 255, 0.9); color: var(--color-nav-footer); border: none; padding: 0.5rem; border-radius: 50%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); cursor: pointer; transition: all 0.2s ease-in-out; opacity: 0.8; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
-        .carousel-button:hover { opacity: 1; background-color: var(--color-accent); color: var(--color-primary-base); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); }
-        #prev-button { left: -1rem; }
-        #next-button { right: -1rem; }
-        @media (max-width: 639px) { .carousel-button { display: none; } }
-        .article-card { background-color: var(--color-primary-base); border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05); border: 1px solid var(--color-border); display: flex; flex-direction: column; transition: all 0.3s ease-in-out; }
-        .article-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); border-color: var(--color-accent); }
-        .article-icon { font-size: 2rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; background-color: #FEF2F2; border-radius: 0.5rem; }
-        .article-title { font-size: 1.25rem; font-weight: 700; color: var(--color-text-primary); margin-top: 0.5rem; line-height: 1.3; }
-        .article-description { font-size: 0.95rem; color: var(--color-text-secondary); margin-top: 0.5rem; flex-grow: 1; }
-        .read-more-link { display: inline-flex; align-items: center; font-weight: 600; color: var(--color-accent); margin-top: 1rem; transition: color 0.2s ease; }
-        .read-more-link:hover { color: var(--color-accent-dark); }
-        .read-more-link svg { margin-left: 0.5rem; transition: transform 0.2s ease; }
-        .read-more-link:hover svg { transform: translateX(3px); }
-        body {
-            display: block;
-            min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
+        .tutorial-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .flex-grow {
-            min-width: 0;
+        .main-videos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .video-card-wrapper {
+            background: linear-gradient(180deg, #131926 0%, #0d121c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .video-card-wrapper:hover {
+            border-color: rgba(217, 4, 41, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(217, 4, 41, 0.15);
+        }
+
+        .blog-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tutorial-article-card {
+            background: linear-gradient(180deg, #131926 0%, #0e1422 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+        }
+
+        .tutorial-article-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(217, 4, 41, 0.35);
+            box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 4, 41, 0.12);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            padding: 0 0.5rem;
+        }
+
+        .videos-sugeridos {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            gap: 1.25rem;
+            padding: 1rem 0.25rem 1.5rem;
+        }
+
+        .videos-sugeridos::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .videos-sugeridos::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 999px;
+        }
+
+        .videos-sugeridos::-webkit-scrollbar-thumb {
+            background: rgba(217, 4, 41, 0.6);
+            border-radius: 999px;
+        }
+
+        .video-suggested-card {
+            flex: 0 0 85%;
+            scroll-snap-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .video-suggested-card {
+                flex-basis: 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .video-suggested-card {
+                flex-basis: 31.5%;
+            }
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background-color: rgba(19, 25, 38, 0.95);
+            color: #F8FAFC;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-button:hover {
+            background-color: #D90429;
+            color: #FFFFFF;
+            border-color: #D90429;
+            transform: translateY(-50%) scale(1.08);
+            box-shadow: 0 0 20px rgba(217, 4, 41, 0.4);
+        }
+
+        #prev-button {
+            left: -1rem;
+        }
+
+        #next-button {
+            right: -1rem;
+        }
+
+        @media (max-width: 639px) {
+            .carousel-button {
+                display: none;
+            }
         }
     </style>
-
 </head>
 
-<body class="min-h-screen">
-   <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" data-i18n="nav_home" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" data-i18n="nav_what_is" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" data-i18n="nav_blog" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" data-i18n="nav_download" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">
-                            Descarga
-                        </a>
-                        <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                        
 
-                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" 
-                                style="background-image: url('img/españa.png');">
-                            </div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" 
-                                     style="background-image: url('img/españa.png')"></div>
-                                <div class="language-option" data-lang="en" 
-                                     style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" 
-                                     style="background-image: url('img/brasil.png')"></div>
-                            </div>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover active text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog" class="nav-link-hover text-sm font-medium">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <a href="descarga.html" data-i18n="nav_download"
+                        class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:hidden flex items-center">
-                     <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" 
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
                             style="background-image: url('img/españa.png');">
                         </div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" 
-                                 style="background-image: url('img/españa.png')"></div>
-                            <div class="language-option" data-lang="en" 
-                                 style="background-image: url('img/usa.png')"></div>
-                            <div class="language-option" data-lang="pt-br" 
-                                 style="background-image: url('img/brasil.png')"></div>
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
                             </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
                         </div>
+                    </div>
 
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
         </nav>
 
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" data-i18n="nav_home" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" data-i18n="nav_tutorial" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" data-i18n="nav_what_is" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" data-i18n="nav_blog" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" data-i18n="nav_donations" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <a href="descarga.html" data-i18n="nav_download" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">
-                    Descarga
-                </a>
-                <a href="contacto.html" data-i18n="nav_contact" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-                
-            </div>
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
-
-    
     </header>
-    <main class="flex-grow bg-surface py-12 sm:py-16">
+
+    <main class="flex-grow py-12 sm:py-16">
         <div class="tutorial-container px-4 sm:px-6 lg:px-8">
-            <header>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[color:var(--color-text-primary)] mb-4" data-i18n="tutorial_hero_title">BCDeX en Acción</h1>
-                <p class="text-lg sm:text-xl text-[color:var(--color-text-secondary)] mb-12 max-w-3xl mx-auto" data-i18n="tutorial_hero_subtitle">
+            <!-- Header Hero de Tutorial -->
+            <header class="text-center max-w-3xl mx-auto mb-14">
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/30 text-red-300 text-xs sm:text-sm font-semibold mb-4 shadow-inner">
+                    <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>Centro Oficial de Aprendizaje y Video</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4"
+                    data-i18n="tutorial_hero_title">
+                    BCDeX en Acción
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg" data-i18n="tutorial_hero_subtitle">
                     ¿Cansado de los métodos tradicionales? BCDeX revoluciona el proceso permitiéndote crear una unidad de instalación directamente en tu disco duro. Mira los videos para ver lo fácil y rápido que es.
                 </p>
             </header>
-            <div id="banner-promo-tutorial"></div>
-           <script>
-            fetch('banner-promo.html')
-                .then(r => r.text())
-                .then(html => {
-                    const destino = document.getElementById('banner-promo-tutorial');
-                    if (destino) destino.innerHTML = html;
-                })
-                .catch(console.error);
-            </script> 
 
-        
-            <div class="main-videos-wrapper">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/wP8V3Pc6hQM?autoplay=0&rel=0" title="Video de YouTube: Guía de Uso BCDeX - Parte 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- Grid de Videos Principales -->
+            <div class="main-videos-grid">
+                <div class="video-card-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ai9isJ5XUYY?autoplay=0&rel=0"
+                            title="Video de YouTube: Guía de Uso BCDeX - Parte 1" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 text-left">
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-400">Paso 1 • Fundamentos</span>
+                        <h2 class="text-lg font-bold text-white mt-1">Guía Rápida: Instalación desde Disco Duro</h2>
+                        <p class="text-xs text-slate-400 mt-1">Aprende a particionar y arrancar el instalador sin ninguna memoria externa.</p>
+                    </div>
                 </div>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/FnW73BG1qiw?autoplay=0&rel=0" title="Video de YouTube: Guía de Uso BCDeX - Parte 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <div class="video-card-wrapper">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/gbzsMyVncFY?autoplay=0&rel=0"
+                            title="Video de YouTube: Guía de Uso BCDeX - Parte 2" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-4 text-left">
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-400">Paso 2 • Avanzado</span>
+                        <h2 class="text-lg font-bold text-white mt-1">Creación de USB Booteable y Modo Turbo</h2>
+                        <p class="text-xs text-slate-400 mt-1">Domina la creación universal para BIOS/UEFI y la optimización de recursos.</p>
+                    </div>
                 </div>
             </div>
 
-            <section class="blog-carousel-wrapper">
-                <h2 class="text-3xl font-bold text-[color:var(--color-text-primary)] text-center mt-12 mb-8" data-i18n="tutorial_blog_articles_title">Más artículos del blog</h2>
-                <div class="blog-carousel">
-                    <a href="modo-turbo.html" class="article-card">
-                        <div class="article-icon">⚡</div>
-                        <h3 class="article-title" data-i18n="tutorial_blog_article1_title">BCDeX 2.3: Modo Turbo</h3>
-                        <p class="article-description" data-i18n="tutorial_blog_article1_description">Conoce qué cambia Modo Turbo y cómo reactivar características.</p>
-                        <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
-                    </a>
-                    <a href="win11-25h2.html" class="article-card">
-                        <div class="article-icon">🧹</div>
-                        <h3 class="article-title" data-i18n="tutorial_blog_article2_title">Optimiza Windows 11 25H2</h3>
-                        <p class="article-description" data-i18n="tutorial_blog_article2_description">Descubre cómo eliminar bloatware desde la instalación.</p>
-                        <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
-                    </a>
-                    <a href="instalacion-particion.html" class="article-card">
-                        <div class="article-icon">🛠️</div>
-                        <h3 class="article-title" data-i18n="tutorial_blog_article3_title">Instalación desde Partición</h3>
-                        <p class="article-description" data-i18n="tutorial_blog_article3_description">Olvídate del USB. Instala Windows directamente desde el disco duro.</p>
-                        <div class="read-more-link" data-i18n="tutorial_read_more">Leer más <svg class="w-4 h-4" data-lucide="arrow-right"></svg></div>
-                    </a>
-                </div>
-            </section>
-
-            <section class="mt-8 pt-8">
-                <h2 class="text-3xl font-bold text-[color:var(--color-text-primary)] text-center mt-12 mb-8" data-i18n="tutorial_suggested_videos_title">Videos Sugeridos</h2>
-                <div class="carousel-wrapper">
-                    <button id="prev-button" class="carousel-button" aria-label="Video anterior" data-i18n="tutorial_prev_video"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-                    <div class="videos-sugeridos" id="suggested-videos-carousel">
-                        <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/SzzkEnZi794" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-                        <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/xdQbyOiJv4w" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-                        <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/HnkAmTerbnA" title="YouTube video player 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-                        <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/zpWdzhGKjf4" title="YouTube video player 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
-                        <div class="video-card"><div class="video-container"><iframe src="https://www.youtube.com/embed/42DdpCikc4E" title="YouTube video player 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+            <!-- Sección: Artículos Recomendados -->
+            <section class="mb-16">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/40 border border-red-500/20 text-red-300 text-xs font-semibold mb-3">
+                        <span>📖</span>
+                        <span>Lecturas Técnicas</span>
                     </div>
-                    <button id="next-button" class="carousel-button" aria-label="Video siguiente" data-i18n="tutorial_next_video"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
+                        data-i18n="tutorial_blog_articles_title">
+                        Más artículos del blog
+                    </h2>
+                </div>
+
+                <div class="blog-cards-grid">
+                    <a href="modo-turbo.html" class="tutorial-article-card group">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/30 text-2xl flex items-center justify-center mb-4 text-red-400 group-hover:scale-110 transition-transform">
+                            ⚡
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="tutorial_blog_article1_title">BCDeX 2.3: Modo Turbo</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 flex-grow mb-4"
+                            data-i18n="tutorial_blog_article1_description">Conoce qué cambia Modo Turbo y cómo reactivar características.</p>
+                        <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1 transition-transform">
+                            <span data-i18n="tutorial_read_more">Leer más</span>
+                            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <a href="win11-25h2.html" class="tutorial-article-card group">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/30 text-2xl flex items-center justify-center mb-4 text-red-400 group-hover:scale-110 transition-transform">
+                            🧹
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="tutorial_blog_article2_title">Optimiza Windows 11 25H2</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 flex-grow mb-4"
+                            data-i18n="tutorial_blog_article2_description">Descubre cómo eliminar bloatware desde la instalación.</p>
+                        <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1 transition-transform">
+                            <span data-i18n="tutorial_read_more">Leer más</span>
+                            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
+
+                    <a href="instalacion-particion.html" class="tutorial-article-card group">
+                        <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/30 text-2xl flex items-center justify-center mb-4 text-red-400 group-hover:scale-110 transition-transform">
+                            🛠️
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors"
+                            data-i18n="tutorial_blog_article3_title">Instalación desde Partición</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 flex-grow mb-4"
+                            data-i18n="tutorial_blog_article3_description">Olvídate del USB. Instala Windows directamente desde el disco duro.</p>
+                        <div class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 group-hover:translate-x-1 transition-transform">
+                            <span data-i18n="tutorial_read_more">Leer más</span>
+                            <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                        </div>
+                    </a>
                 </div>
             </section>
 
-            <div class="text-center mt-16">
-                 <a href="descarga.html" class="btn-primary inline-block text-xl transition transform hover:scale-105" data-i18n="tutorial_start_now_button">¡Empieza a usar BCDeX ahora!</a>
-             </div>
+            <!-- Sección: Videos Sugeridos (Carrusel) -->
+            <section class="mb-16">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-950/40 border border-red-500/20 text-red-300 text-xs font-semibold mb-3">
+                        <span>🎬</span>
+                        <span>Comunidad y Pruebas</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
+                        data-i18n="tutorial_suggested_videos_title">
+                        Videos Sugeridos
+                    </h2>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <button id="prev-button" class="carousel-button" aria-label="Video anterior"
+                        data-i18n="tutorial_prev_video">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+
+                    <div class="videos-sugeridos" id="suggested-videos-carousel">
+                        <div class="video-suggested-card">
+                            <div class="video-card-wrapper p-2 rounded-xl">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/SzzkEnZi794" title="YouTube video player 1"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-suggested-card">
+                            <div class="video-card-wrapper p-2 rounded-xl">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/xdQbyOiJv4w" title="YouTube video player 2"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-suggested-card">
+                            <div class="video-card-wrapper p-2 rounded-xl">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/HnkAmTerbnA" title="YouTube video player 3"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-suggested-card">
+                            <div class="video-card-wrapper p-2 rounded-xl">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/zpWdzhGKjf4" title="YouTube video player 4"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-suggested-card">
+                            <div class="video-card-wrapper p-2 rounded-xl">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/42DdpCikc4E" title="YouTube video player 5"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="next-button" class="carousel-button" aria-label="Video siguiente"
+                        data-i18n="tutorial_next_video">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Banner CTA Final -->
+            <div class="pro-card text-center p-8 sm:p-10 border-red-500/30 bg-gradient-to-b from-[#161e2e] to-[#0f1422] max-w-4xl mx-auto">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">¿Listo para probar BCDeX?</h3>
+                <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6">
+                    Descarga ahora la versión recomendada y simplifica tus instalaciones en minutos sin riesgos.
+                </p>
+                <a href="descarga.html" class="btn-primary px-8 py-3.5 text-base sm:text-lg"
+                    data-i18n="tutorial_start_now_button">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    ¡Empieza a usar BCDeX ahora!
+                </a>
+            </div>
         </div>
     </main>
 
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <p class="footer-text text-lg font-medium " data-i18n="footer_creator">
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
+            </div>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
                 PadeX - Creador de contenido y desarrollador
             </p>
-            
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_privacy">Privacidad</a> 
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150" data-i18n="footer_terms">Términos y Condiciones</a>
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
             </p>
-            
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube">
-                    <img src="img/youtube.png" alt="YouTube" class="footer-icon">
+
+                        <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook">
-                    <img src="img/facebook.png" alt="Facebook" class="footer-icon">
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="mailto:contact@padex.com" title="Gmail">
-                    <img src="img/gmail.png" alt="Gmail" class="footer-icon">
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok">
-                    <img src="img/tiktok.png" alt="TikTok" class="footer-icon">
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram">
-                    <img src="img/instagram.png" alt="Instagram" class="footer-icon">
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
-                <a href="https://x.com/padex" target="_blank" title="X">
-                    <img src="img/x.png" alt="X" class="footer-icon">
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
                 </a>
             </div>
-            
-            <p class="footer-text text-sm mt-4" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
 
     <script src="translation.js"></script>
     <script src="tutorial-script.js"></script>
 
-
 </body>
 
 </html>
+
+
+
+
 
 
 

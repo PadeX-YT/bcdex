@@ -1,37 +1,70 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCDeX - Pestaña ISOs</title>
-    <meta name="description" content="Guía de la pestaña ISOs de BCDeX: cómo funciona el catálogo, cómo abrir descargas oficiales de Windows y qué datos muestra cada entrada.">
+
+    <title>BCDeX - Guía de la Pestaña ISOs</title>
+    <meta name="description"
+        content="Guía completa de la pestaña ISOs de BCDeX: cómo funciona el catálogo oficial de Windows, descarga directa y verificación de hashes.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bcdexapp.com/pestana-isos.html">
+
     <meta property="og:type" content="article">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="BCDeX">
     <meta property="og:title" content="BCDeX - Guía de la pestaña ISOs">
-    <meta property="og:description" content="Cómo funciona la pestaña ISOs de BCDeX, cómo se organiza el catálogo y cómo abrir enlaces oficiales de Microsoft.">
+    <meta property="og:description"
+        content="Cómo funciona la pestaña ISOs de BCDeX y cómo abrir enlaces oficiales de Microsoft.">
     <meta property="og:url" content="https://bcdexapp.com/pestana-isos.html">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BCDeX - Guía de la pestaña ISOs">
-    <meta name="twitter:description" content="Aprende cómo BCDeX muestra ISOs oficiales de Windows desde el panel Logs/ISOs y cómo se organiza el catálogo.">
+    <meta name="twitter:title" content="BCDeX - Pestaña ISOs">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4767336397819252"
+        crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/LittlePadeX.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="estilos.css">
+
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: var(--color-surface); color: var(--color-text-primary); min-height: 100vh; }
-        .iso-page-shell { max-width: 1150px; margin: 0 auto; }
-        .iso-section { background: #fff; border: 1px solid var(--color-border); border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
-        .iso-shot { width: 100%; border-radius: 1rem; border: 1px solid #e5e7eb; box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08); }
-        .iso-code { background: #0f172a; color: #e2e8f0; border-radius: 0.75rem; padding: 1rem; overflow: auto; font-size: 0.95rem; max-height: 520px; white-space: pre; }
-        .iso-list li { margin-bottom: 0.6rem; }
-        .iso-badge { display: inline-flex; align-items: center; gap: .45rem; background: rgba(217,4,41,.08); color: #b91c1c; border: 1px solid rgba(217,4,41,.15); padding: .45rem .8rem; border-radius: 999px; font-weight: 600; }
-        .btn-secondary-iso { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #0f766e 0%, #115e59 100%); color: #f8fafc; padding: 0.8rem 1.25rem; border-radius: 0.75rem; font-weight: 700; box-shadow: 0 12px 26px rgba(15, 118, 110, 0.22); transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
-        .btn-secondary-iso:hover { background: linear-gradient(180deg, #0f8b81 0%, #0f766e 100%); transform: translateY(-2px); box-shadow: 0 16px 30px rgba(15, 118, 110, 0.28); }
+        .iso-card {
+            background: linear-gradient(180deg, #131926 0%, #0e1422 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 768px) {
+            .iso-card {
+                padding: 2.5rem;
+            }
+        }
+
+        .iso-shot {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .iso-code {
+            background: #0B0F17;
+            color: #E2E8F0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            overflow: auto;
+            font-size: 0.85rem;
+            max-height: 480px;
+            font-family: monospace;
+        }
     </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,331 +77,271 @@
     }
     </script>
 </head>
-<body class="min-h-screen">
-    <header class="bg-nav-footer shadow-lg sticky top-0 z-50 h-[var(--header-height)]">
+
+<body class="min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
+
+    <!-- Header & Nav -->
+    <header class="bg-nav-footer sticky top-0 z-50 h-[var(--header-height)]">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
+                <!-- Logo & Version -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX" class="logo-img hidden sm:block mr-2" onerror="this.onerror=null; this.src='img/LittlePadeX.ico'">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
+                        <img src="img/LittlePadeX.ico" alt="Logo BCDeX"
+                            class="w-9 h-9 rounded-lg shadow-md transition-transform group-hover:scale-105"
+                            onerror="this.onerror=null; this.src='img/Logo.webp'">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-2xl font-extrabold tracking-tight text-white">BCDeX</span>
+                            <span
+                                class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30">v3.2</span>
+                        </div>
                     </a>
                 </div>
-                <div class="hidden lg:ml-6 lg:block">
-                    <div class="flex items-center space-x-2">
-                        <a href="index.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Inicio</a>
-                        <a href="tutorial.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Tutorial</a>
-                        <a href="info.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">¿BCDeX?</a>
-                        <a href="blog.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Blog</a>
-                        <a href="donaciones.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Donaciones</a>
-                        <a href="descarga.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Descarga</a>
-                        <a href="contacto.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Contacto</a>
-                        <a href="sobre-el-creador.html" class="nav-text-color nav-link-hover px-3 py-2 text-sm font-medium transition duration-150">Sobre el Creador</a>
-                        <div class="language-container ml-4">
-                            <div class="language-selector" id="language-selector-desktop" style="background-image: url('img/españa.png');"></div>
-                            <div class="language-dropdown" id="language-dropdown-desktop">
-                                <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
-                                <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                                <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
-                            </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+                    <a href="index.html" data-i18n="nav_home" class="nav-link-hover text-sm font-medium">Inicio</a>
+                    <a href="tutorial.html" data-i18n="nav_tutorial"
+                        class="nav-link-hover text-sm font-medium">Tutorial</a>
+                    <a href="info.html" data-i18n="nav_what_is" class="nav-link-hover text-sm font-medium">¿BCDeX?</a>
+                    <a href="blog.html" data-i18n="nav_blog"
+                        class="nav-link-hover active text-sm font-medium" aria-current="page">Blog</a>
+                    <a href="donaciones.html" data-i18n="nav_donations"
+                        class="nav-link-hover text-sm font-medium">Donaciones</a>
+                    <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                        class="nav-link-hover text-sm font-medium">Sobre el Creador</a>
+                    <a href="contacto.html" data-i18n="nav_contact"
+                        class="nav-link-hover text-sm font-medium">Contacto</a>
+
+                    <!-- Botón Descarga en Nav -->
+                    <a href="descarga.html" data-i18n="nav_download"
+                        class="nav-link-hover text-sm font-medium">
+                        Descarga
+                    </a>
+
+                    <!-- Selector de Idioma (Desktop) -->
+                    <div class="language-container ml-3">
+                        <div class="language-selector" id="language-selector-desktop"
+                            style="background-image: url('img/españa.png');" title="Cambiar idioma">
+                        </div>
+                        <div class="language-dropdown" id="language-dropdown-desktop">
+                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png');"
+                                title="Español"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');"
+                                title="English"></div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');" title="Português"></div>
                         </div>
                     </div>
                 </div>
-                <div class="lg:hidden flex items-center">
-                    <div class="language-container mr-4">
-                        <div class="language-selector" id="language-selector-mobile" style="background-image: url('img/españa.png');"></div>
+
+                <!-- Controles Móvil (Idioma + Hamburguesa) -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <div class="language-container">
+                        <div class="language-selector" id="language-selector-mobile"
+                            style="background-image: url('img/españa.png');">
+                        </div>
                         <div class="language-dropdown" id="language-dropdown-mobile">
-                            <div class="language-option" data-lang="es" style="background-image: url('img/españa.png')"></div>
-                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png')"></div>
-                            <div class="language-option" data-lang="pt-br" style="background-image: url('img/brasil.png')"></div>
+                            <div class="language-option" data-lang="es"
+                                style="background-image: url('img/españa.png');"></div>
+                            <div class="language-option" data-lang="en" style="background-image: url('img/usa.png');">
+                            </div>
+                            <div class="language-option" data-lang="pt-br"
+                                style="background-image: url('img/brasil.png');"></div>
                         </div>
                     </div>
-                    <button id="mobile-menu-button" type="button" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[color:var(--color-accent)]" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
-                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        aria-controls="mobile-menu" aria-expanded="false" aria-label="Menú de navegación">
+                        <svg class="block h-6 w-6" id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </nav>
-        <div class="lg:hidden hidden absolute top-[var(--header-height)] left-0 w-full bg-[color:var(--color-nav-footer)] shadow-xl border-t border-gray-700 pb-2" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Inicio</a>
-                <a href="tutorial.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Tutorial</a>
-                <a href="info.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">¿BCDeX?</a>
-                <a href="blog.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Blog</a>
-                <a href="donaciones.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Donaciones</a>
-                <a href="descarga.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Descarga</a>
-                <a href="contacto.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contacto</a>
-                <a href="sobre-el-creador.html" class="nav-text-color hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Sobre el Creador</a>
-            </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div class="lg:hidden hidden bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl px-4 pt-3 pb-6 space-y-2"
+            id="mobile-menu">
+            <a href="index.html" data-i18n="nav_home"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Inicio</a>
+            <a href="tutorial.html" data-i18n="nav_tutorial"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Tutorial</a>
+            <a href="info.html" data-i18n="nav_what_is"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">¿BCDeX?</a>
+            <a href="blog.html" data-i18n="nav_blog"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-white bg-white/5" aria-current="page">Blog</a>
+            <a href="donaciones.html" data-i18n="nav_donations"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Donaciones</a>
+            <a href="sobre-el-creador.html" data-i18n="nav_sobre_el_creador"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Sobre el Creador</a>
+            <a href="contacto.html" data-i18n="nav_contact"
+                class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Contacto</a>
+            <a href="descarga.html" data-i18n="nav_download" class="block px-3 py-2.5 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Descarga</a>
         </div>
     </header>
 
-    <main class="py-12 sm:py-16">
-        <div class="iso-page-shell px-4 sm:px-6 lg:px-8 space-y-8">
+    <!-- Contenido Principal -->
+    <main class="flex-grow py-12 sm:py-16 px-4">
+        <div class="max-w-5xl mx-auto space-y-10">
+
+            <div class="mb-6">
+                <a href="blog.html" class="inline-flex items-center text-xs sm:text-sm font-bold text-red-400 hover:underline gap-1.5">
+                    ← Volver a todos los artículos
+                </a>
+            </div>
+
+            <!-- Hero -->
             <section class="text-center">
-                <span class="iso-badge">ISOs oficiales de Windows en BCDeX</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-[color:var(--color-text-primary)] mt-5">Guía de la pestaña ISOs</h1>
-                <p class="text-lg sm:text-xl text-[color:var(--color-text-secondary)] mt-4 max-w-3xl mx-auto">Esta página explica cómo funciona la pestaña <strong>ISOs</strong> dentro del panel de Logs de BCDeX, cómo se alimenta desde el catálogo y qué información muestra cada entrada antes de abrir la descarga.</p>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/60 border border-red-500/30 text-red-300 text-xs sm:text-sm font-semibold mb-4 shadow-inner">
+                    <span>💿</span>
+                    <span>ISOs oficiales de Windows en BCDeX</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+                    Guía de la pestaña ISOs
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                    Esta página explica cómo funciona la pestaña <strong>ISOs</strong> dentro del panel de Logs de BCDeX, cómo se alimenta desde el catálogo y qué información muestra cada entrada antes de abrir la descarga.
+                </p>
             </section>
-            <section class="iso-section grid lg:grid-cols-2 gap-8 items-center">
+
+            <!-- Sección 1 -->
+            <section class="iso-card grid lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold mb-4">Qué hace la app</h2>
-                    <ol class="iso-list list-decimal pl-5 text-lg text-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2 text-red-400">
+                        <span>⚙️</span>
+                        <span>Qué hace la app</span>
+                    </h2>
+                    <ol class="list-decimal pl-5 space-y-2 text-base text-slate-300">
                         <li>Carga las categorías disponibles desde <code>catalogo.json</code>.</li>
                         <li>Muestra la lista principal de ISOs según la categoría elegida.</li>
                         <li>Al seleccionar una ISO, presenta debajo sus detalles en el mismo orden definido en el catálogo.</li>
-                        <li>Con doble clic sobre una entrada, abre el navegador con la URL de descarga de esa imagen.</li>
+                        <li>Con doble clic sobre una entrada, abre el navegador con la URL oficial de descarga.</li>
                     </ol>
                 </div>
-                <div><img src="img/isos-panel-1.jpg" alt="Vista general de la pestaña ISOs de BCDeX" class="iso-shot"></div>
-            </section>
-            <section class="iso-section grid lg:grid-cols-2 gap-8 items-center">
-                <div><img src="img/isos-panel-2.jpg" alt="Selección de una ISO y visualización de detalles en BCDeX" class="iso-shot"></div>
                 <div>
-                    <h2 class="text-3xl font-bold mb-4">Cómo usar la pestaña</h2>
-                    <ul class="iso-list list-disc pl-5 text-lg text-gray-700">
-                        <li>Elige una categoría como <strong>Windows 11</strong>, <strong>Windows 10</strong> u otras que se añadan en el futuro.</li>
-                        <li>Haz clic una vez sobre una ISO para ver sus datos completos.</li>
-                        <li>BCDeX respeta el orden de los campos tal como están escritos en el catálogo.</li>
-                        <li>Eso permite controlar desde el propio JSON cómo se presenta la información al usuario.</li>
-                    </ul>
+                    <img src="img/isos-panel-1.jpg" alt="Vista general de la pestaña ISOs de BCDeX" class="iso-shot" onerror="this.onerror=null; this.style.display='none';">
                 </div>
             </section>
-            <section class="iso-section grid lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-4">Estado actual de las descargas</h2>
-                    <p class="text-lg text-gray-700 mb-4">En el estado actual del catálogo, los enlaces publicados apuntan a <strong>ISOs oficiales de Microsoft</strong>.</p>
-                    <ul class="iso-list list-disc pl-5 text-lg text-gray-700">
-                        <li>No se usan servidores de descarga externos para esas entradas oficiales.</li>
-                        <li>No se comparten ISOs manipuladas en esas entradas oficiales.</li>
-                        <li>La descarga se abre desde la URL indicada en el propio catálogo.</li>
-                        <li>Si en el futuro se añaden builds modificadas, la fuente debe quedar indicada de forma explícita.</li>
-                    </ul>
-                </div>
-                <div><img src="img/isos-panel-3.jpg" alt="Apertura de la descarga de una ISO desde BCDeX" class="iso-shot"></div>
-            </section>
-            <section class="iso-section">
-                <h2 class="text-3xl font-bold mb-4">Estructura de <code>catalogo.json</code></h2>
-                <p class="text-lg text-gray-700 mb-4">El archivo se organiza por categorías. Cada categoría contiene una lista de ISOs con su información técnica y la URL de descarga.</p>
-                <pre class="iso-code"><code>{
-  &quot;version&quot;: 1,
-  &quot;categorias&quot;: [
-    {
-      &quot;nombre&quot;: &quot;Windows 11&quot;,
-      &quot;isos&quot;: [
-        {
-          &quot;nombre&quot;: &quot;Windows 11 25H2 x64 Multi-Edici&#243;n | Espa&#241;ol Espa&#241;a&quot;,
-          &quot;fuente&quot;: &quot;Microsoft&quot;,
-          &quot;archivo&quot;: &quot;Win11_25H2_Spanish_x64_v2.iso&quot;,
-          &quot;C&#243;digo hash&quot;: &quot;F5495DFCEA4294C7924420AD860F409623575436F85A8D0A66A6BD9A1C3433D6&quot;,
-          &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win11_25H2_Spanish_x64_v2.iso?t=80e87fbb-8626-46f7-bf3c-63e59ad4f8f0&amp;P1=1774988240&amp;P2=601&amp;P3=2&amp;P4=RBKkB%2FkWj2IYMJ6aUM%2B9A2JLcctIPm3lT%2FnA%2BwmvpOH4SpuD3Ldw5kTdvFedhqC08cQclghtA6Gu0BsDI7%2FxCEN00UeZv2EGmBMcEffds2%2BcUsR21fuE8OHajLqVqEJBJfjh0H2ZmwX9PcVLjgrvHTHoYvrsZx5BRlIT7Y0cVCjT64QEAEJpO8ChNPsFjAH%2BoOStKeGPD9c6ilpeSv6xzi0emvb060ZuleP8pB803to1%2BwqsptzWj5RPvnVhNymNQsIIDkW1zV8jeAQkyPybnheu1uXhONjsbDdI7eLx1V7HJ1PCDqlE9xI9QZMjcL9s0Xiw849cztw5qXem9EDGMw%3D%3D&quot;,
-          &quot;idioma&quot;: &quot;Espa&#241;ol Espa&#241;a | es-ES&quot;,
-          &quot;arquitectura&quot;: &quot;x64&quot;,
-          &quot;tama&#241;o&quot;: &quot;7.6 GB&quot;,
-          &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-        },
-        {
-          &quot;nombre&quot;: &quot;Windows 11 25H2 x64 Multi-Edici&#243;n | Espa&#241;ol M&#233;xico&quot;,
-          &quot;fuente&quot;: &quot;Microsoft&quot;,
-          &quot;archivo&quot;: &quot;Win11_25H2_Spanish_Mexico_x64_v2.iso&quot;,
-          &quot;C&#243;digo hash&quot;: &quot;40DEAA9575396C64794B6A9B470F96AD68BB9FD5AAC4298A3DE7A665BA0B1AE7&quot;,
-          &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win11_25H2_Spanish_Mexico_x64_v2.iso?t=ab0e7e79-ea04-45f2-8753-f6f9caab337b&amp;P1=1774991043&amp;P2=601&amp;P3=2&amp;P4=dnd4bD9acfpHJ6dHa3Y%2FNsSPLZ5XtKfc0J3VsOstoLujj12PLhE2vuTYEScJbKJMeB4KbnmrBMlegMrdG7n9OH52z%2BOz5EqUSV8HNXGvPHfHfiWt0PwW14cYBIJibDNvZxzkm0M5tT4qk8IeUTPky9YU6mqIfgfcOGEBjd%2BR8AXsyzq%2Bnufwrv3OKOeQ69uyV0g53KcC47vSdNFxjRm2CuyotlTxS4lvpbLRdUTr6MRggfRTWGHjHPoQn4uRqKOzFnD6V%2BkkD2FtgAiCEIfN0JEVzusMtLBoP6pijv2Puj9RHTrBFS7gILCSnGQQaYa9r%2FuAhUth2CoMaPqdkA9Rhg%3D%3D&quot;,
-          &quot;idioma&quot;: &quot;Espa&#241;ol M&#233;xico | es-MX&quot;,
-          &quot;arquitectura&quot;: &quot;x64&quot;,
-          &quot;tama&#241;o&quot;: &quot;7.6 GB&quot;,
-          &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-        },
-        {
-          &quot;nombre&quot;: &quot;Windows 11 25H2 x64 Multi-Edici&#243;n | Portugu&#233;s Brasil&quot;,
-          &quot;fuente&quot;: &quot;Microsoft&quot;,
-          &quot;archivo&quot;: &quot;Win11_25H2_BrazilianPortuguese_x64_v2.iso&quot;,
-          &quot;C&#243;digo hash&quot;: &quot;50FE4703CF0DF0072E093D1F5D58ED450E4C49D8CA960433BBE6278D5EF10107&quot;,
-          &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win11_25H2_BrazilianPortuguese_x64_v2.iso?t=24e9f29c-e2d2-45f5-bd5c-b734c0579721&amp;P1=1774991366&amp;P2=601&amp;P3=2&amp;P4=YZtunHzS69G%2B5itE2%2F6Yy56ZC8T6cCgt1CjL96chm3Qesn2IUV%2BFc5jCMc7aw5wF%2Fy04YkIypJI6QJQUYfYm80p%2FyGFD5I05ZUzDmw3mEMi3G0y%2BORIOpr6iFTUK90s2uKeC5np%2F7JSlT9V%2FPeHHLCovspRJvKDimTJA%2F6PcpioQ8QoeHn4eYeBcQchpeipkG9%2FesfO5KuR3m8l2MZLfeAqAt%2BXv7vBnV%2Bm%2B4nSCUkjPiaSCvxRhuGq%2BAYs3A7Ju5hAc74SmvCxXQDjM7Jy61g2X8fhrbpvbTx3zkjTMNR6eeVp7tF7rifJ0lwEGdnUdyqIwwsEIy7c2Ui5yvzp6sA%3D%3D&quot;,
-          &quot;idioma&quot;: &quot;Portugu&#233;s Brasil | pt-BR&quot;,
-          &quot;arquitectura&quot;: &quot;x64&quot;,
-          &quot;tama&#241;o&quot;: &quot;7.6 GB&quot;,
-          &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-        },
-        {
-          &quot;nombre&quot;: &quot;Windows 11 25H2 x64 Multi-Edition | English International&quot;,
-          &quot;fuente&quot;: &quot;Microsoft&quot;,
-          &quot;archivo&quot;: &quot;Win11_25H2_EnglishInternational_x64_v2.iso&quot;,
-          &quot;C&#243;digo hash&quot;: &quot;66B7B4B71763ED6F9B2CE29326ED9284544DA6F5283D00329921540C01AAAEEA&quot;,
-          &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win11_25H2_EnglishInternational_x64_v2.iso?t=2fc491cc-25a6-48f2-88b4-1c4742b379fd&amp;P1=1774991793&amp;P2=601&amp;P3=2&amp;P4=bqUNX%2BwJIW8uZM3JaIzDii%2Fgzf%2FzYmZI6ZU4U6PXbaAKc%2BtFbp%2FSS6cMb%2BkyrIHOJBPW6R6bL6Pb5kmo9azXyhy8GyBk54Xjn7QeaOaQDRFOkpFejgu1fzIg6mjO4KdR6XB40wgMwU%2FwgNpLewsD%2BJJiIopB38dGIaZuFk3kaROhveeB5DIEHD2xoRplZ2mmx0S8fWfLmWCReEWta%2BR7sG6C4FF8JNyqObPhAWMpAlji3sueRo6lXve4RcRTg%2BEMVEv9ZKv4oy3kOco%2Bj4PLkTCLunLXeM21hKimg55xYFCn9kvDVly%2BmV%2BnLCy%2FnLu%2FtyssO0Gm9UuMLcbOtbR6ew%3D%3D&quot;,
-          &quot;idioma&quot;: &quot;English International | en-INT&quot;,
-          &quot;arquitectura&quot;: &quot;x64&quot;,
-          &quot;tama&#241;o&quot;: &quot;7.9 GB&quot;,
-          &quot;edici&#243;n&quot;: &quot;Multiedition&quot;
-        }
-      ]
-    }
-  ],
-  &quot;nombre&quot;: &quot;Windows 10&quot;,
-  &quot;isos&quot;: [{
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x86 Multi-Edici&#243;n | Espa&#241;ol Espa&#241;a&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_Spanish_x32v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;DB414636D7EC65B1AEFCC1242D323E839823DB21FD25A2A9C5DCECC3C16C3309&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_Spanish_x32v1.iso?t=622aac4d-b211-46a1-9a2e-c3dafe70008d&amp;P1=1775033576&amp;P2=601&amp;P3=2&amp;P4=cz0J5poyAjY2O4Z2qfivZhjJaseuI7nrCnM8%2bK00gVgZA1umZ2nrmRCBIVK6o33gsd6%2bySptkKBdotmynYrO2tveKNhK3zQInE8r15U9QkMtfzDO0RIUVK4I8zvs2KHcV0h4P6ge0m7hl2pYWAxgTV59ZDYhAmnN5F6VpDlrhXoOMdQK8KypX%2bql0G36edccThKNMNAj0eLcY7gGK2GvgKOrZuE9sxWruFtGyZgjogk7eO9f3LYgHO4syFSht0dmrJaAGse2huZG2e93n4tZG050Pn%2fqK98VDSEyZAKL7lulsDiXNlZ2wOiUuIxtIjpC7ZFrQvP0aMbNltRlFnCOtg%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Espa&#241;ol Espa&#241;a | es-ES&quot;,
-    &quot;arquitectura&quot;: &quot;x86&quot;,
-    &quot;tama&#241;o&quot;: &quot;4.0 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-  {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x64 Multi-Edici&#243;n | Espa&#241;ol Espa&#241;a&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_Spanish_x64v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;0D48C6F236CA9F966ECCD84D9BE01B038516567AABF1C46DCBEE785556B19813&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_Spanish_x64v1.iso?t=622aac4d-b211-46a1-9a2e-c3dafe70008d&amp;P1=1775033576&amp;P2=601&amp;P3=2&amp;P4=RRXBP5awYt%2bD6CWAIcrxob6IpHCu%2b9Io5p7x0WsA74mKr8x2%2fLTb9RV8TUoz9lb6mt36Ja%2fN1%2fH7qVR%2bTXGftNZQ4b0Hp%2bhqXdNrQiWlJBmBGKpfhtAMZoGrNc3qNuY0Da0ydzGJVKqx6O7PuXJYEiXexcC1hka1syEKHW4MXn5%2fsO99Poja3MyL52KM2Yuq4SF7n0O7K7aTugoaCvSt5tpUNdnP3rSlmmpO01c%2b19vcUCQIuY40mw1dMe%2f0zQF9BhBuziqtEcMI8xCe21gB77reHiVbhTBX2x%2f51d5FHiuQ7%2bjT0GXpNY9roXy4gtPPGa9MfS%2fPk%2bbnnQoTc8CY0g%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Espa&#241;ol Espa&#241;a | es-ES&quot;,
-    &quot;arquitectura&quot;: &quot;x64&quot;,
-    &quot;tama&#241;o&quot;: &quot;5.7 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-   {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x86 Multi-Edici&#243;n | Espa&#241;ol M&#233;xico&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_Spanish_Mexico_x32v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;C91F1C1EE9CCD88215CE9AD3EF4303997C78715C5A84C8A4D8C9F67D307A3633&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_Spanish_Mexico_x32v1.iso?t=1b97c315-2b32-4dd1-87f8-7e7121ec83dd&amp;P1=1775035209&amp;P2=601&amp;P3=2&amp;P4=CYtreP79pCtJEt5uCQs%2bJCBFsfZJ4Unr0ZNhKbxSINrcVVWEN65SfwPbbpeFH0xMEaDM%2fPeJvqstnWW1IQcdQ0LuaSQ1nGXIx2Hl1oqzXPREAslufLM2PHg0o6aBwDzhKDKL%2bOnvD39gaug9jnwAKYo%2bKJ%2fvjmnCOxplvRxZAQSBoguv2TfEx%2bJiIGoNZ7RSNSWjBAXMXsKWeZw1HNbUBd%2fSCs91MgsFEthAf0s%2fVHdEUbbamebndJHmNmhSdyBZa6ykBnUOp5zJQv4pWXGxmoJ8tLz1cnaNnfr36VpHWn2EXf1nDWxDtNS3VWAZMlXbUDKU%2fx2kJ6HTk5JSctFAEA%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Espa&#241;ol M&#233;xico | es-MX&quot;,
-    &quot;arquitectura&quot;: &quot;x86&quot;,
-    &quot;tama&#241;o&quot;: &quot;3.8 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-   {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x64 Multi-Edici&#243;n | Espa&#241;ol M&#233;xico&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_Spanish_Mexico_x64v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;BF02C401644A4A9249EE206FAA9FD1691F4EC18BB37A9EA4FFE5C010DC147492&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_Spanish_Mexico_x64v1.iso?t=1b97c315-2b32-4dd1-87f8-7e7121ec83dd&amp;P1=1775035209&amp;P2=601&amp;P3=2&amp;P4=1PWQff9DZUBArLVMcHEp%2bSA%2bynetOp%2f%2bwb46V4HiRzpGqy9tI9GUWZp%2bD1cj7CEGyiG8IUac5xjgKtxqsp6oofp1NzwQc0XIrJc5cFVa3pYGx3%2bLcxabaRd31YoZyk0sPkWLzTxa3LNCrAxHncgPzi04o%2fZ%2fNRJ5rR%2budH4ne7Y27WwwiIcEdD9FlD%2flm7AFd3RPBoQpK5M8kURdyfkdSkwiIx5kDeBnlKUeyOOa61f1LVIKNTBcFSu8pjk2EUtIVvWBMKuWr7c6KctmUN5RB8aZRUG86QTi50vcj2%2f%2bFRwrJ5%2bVg%2f3WQXpGbzEpqAR%2fp6ewARJ8G%2fH9Y1t8mqq0AQ%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Espa&#241;ol M&#233;xico | es-MX&quot;,
-    &quot;arquitectura&quot;: &quot;x64&quot;,
-    &quot;tama&#241;o&quot;: &quot;5.4 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-   {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x86 Multi-Edici&#243;n | English International&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_EnglishInternational_x32v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;38D093AE08BF80302B900BC91A2CE5205C5086DDEEFAB29E8D529D5607B6B4DB&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_EnglishInternational_x32v1.iso?t=41ff5cc9-e7e5-4f11-ac80-a2af5c9a3445&amp;P1=1775035281&amp;P2=601&amp;P3=2&amp;P4=sWSdCowFIm65zhHujb8%2fVxISx6Yt1XNCKG1r6tADCekV%2bMLSrLPK22eOxsVKOgVUzterR6mKXd0salOWMMNZMkNzx92MofRWvlnMnFZYH8N2XXyEODHEf9CeFM5DUYfCPMB%2bqe5r3NENZa2E7bmVAK4qANJFTH6xn259Fx5Prp5YNgLLTrFxSyISWeZdQo7Ed9hzL0Ghm1mg4cW0E%2ftKZ0OUH5IE1kEL7Bn0Q0wtGAAkRGTtvkvmWyULV4pmbhi%2b0oRwYGd7ggsq1cFNGKtVqjyFJ3DgydCILghzMU2KEs4E7cCniNhU%2fT8WUEJ1zKRmLhrWNGhi1ZKkDICjbONwFQ%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;English International | en-INT&quot;,
-    &quot;arquitectura&quot;: &quot;x86&quot;,
-    &quot;tama&#241;o&quot;: &quot;4.0 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-   {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x64 Multi-Edici&#243;n | English International&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_EnglishInternational_x64v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;EDC53C5C5FE6926DEA23FC3E884FBCF78CC2B9E76364BE968F806FC6D42B59D2&quot;,
-    &quot;url&quot;: &quot;&quot;,
-    &quot;idioma&quot;: &quot;English International | en-INT&quot;,
-    &quot;arquitectura&quot;: &quot;x64&quot;,
-    &quot;tama&#241;o&quot;: &quot;5.7 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedition&quot;
-  },
-  {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x86 Multi-Edici&#243;n | Portugu&#233;s Brasil&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_BrazilianPortuguese_x32v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;69E4B7ED9E5D7CEA72C075E63A493C867275608B8F9E9D1FE7D711459B32D1BE&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_BrazilianPortuguese_x32v1.iso?t=b9f6b6fb-3d61-420f-915c-d91b7f000386&amp;P1=1775035785&amp;P2=601&amp;P3=2&amp;P4=UmiKJJ5XQmIIhRuZVidpwna%2f%2fw7Djp0dEOvsIH4hSDN4nI1kTobzTKwHQrn8KNQNl9Rn3pdLZtu3FL2HtsR8nqJ3qsBDKUtRAedCnfLK2GOodbRGVbZz71Z1ekQ0nWoO8on%2bnl10eRwbQ%2f8kHfJJMluRpMxLriSChTGEc2emKugBfX07IMc9IMBR8RUDHP91YMxSH1zuk%2bw%2bYEjRnts%2b%2bVnx%2begppt%2f47CnUWpIivAmr4EEYjFYRYNWLs%2bIofDAASt5rf7fvfAMU%2f2pRi404le5PUUNzDvycZ4vP79qsJo3ekUUOrQAwGK8tKMFk7TSkqBOftgsgGwJK%2b9i4n2AMPA%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Portugu&#233;s Brasil | pt-BR&quot;,
-    &quot;arquitectura&quot;: &quot;x86&quot;,
-    &quot;tama&#241;o&quot;: &quot;3.8 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  },
-  {
-    &quot;nombre&quot;: &quot;Windows 10 22H2 x64 Multi-Edici&#243;n | Portugu&#233;s Brasil&quot;,
-    &quot;fuente&quot;: &quot;Microsoft&quot;,
-    &quot;archivo&quot;: &quot;Win10_22H2_BrazilianPortuguese_x64v1.iso&quot;,
-    &quot;C&#243;digo hash&quot;: &quot;83F83B5A9101F5FA21DE4E925ABC7693478D84CD5FBF02CB019393048B5BDBBB&quot;,
-    &quot;url&quot;: &quot;https://software.download.prss.microsoft.com/dbazure/Win10_22H2_BrazilianPortuguese_x64v1.iso?t=b9f6b6fb-3d61-420f-915c-d91b7f000386&amp;P1=1775035785&amp;P2=601&amp;P3=2&amp;P4=lIWUjMGXOa6sVx7moj8OSp03cy2PPID7H9sWYNH6zpaTyNJKKz15VlUcHuXO%2f7aQohjNOdQoTP%2bNeb07Mw17KeNgXxS7qMSom%2f11W%2fQ6lDUAdnXt%2b9%2fwOCzmMZB2pp2AqTMZBQzbTDkZ0SXbqMwWuT7U51961xqousPXKhNfO7icpharPmNuaDw%2fmfn%2fctVv5t7xhYFuBTN4u%2fo0fu49fi%2fhfqHBQg1D1kD2TGmSY%2fqbSVl%2biRNlkO4QWiB5fw2wS%2bYOPtvlV9Ns1bxYqW3Ms5DfEchc2COCXugRZRcrx2jNE5Ievttbdalq3xtSqAPe9DneTH4pUsV94LN5NzQOUw%3d%3d&quot;,
-    &quot;idioma&quot;: &quot;Portugu&#233;s Brasil | pt-BR&quot;,
-    &quot;arquitectura&quot;: &quot;x64&quot;,
-    &quot;tama&#241;o&quot;: &quot;5.4 GB&quot;,
-    &quot;edici&#243;n&quot;: &quot;Multiedici&#243;n&quot;
-  }
-   
-  ]
 
-}
-</code></pre>
-            </section>
-            <section class="iso-section">
-                <h2 class="text-3xl font-bold mb-4">Campos importantes de cada ISO</h2>
-                <div class="grid md:grid-cols-2 gap-6 text-lg text-gray-700">
-                    <div>
-                        <ul class="iso-list list-disc pl-5">
-                            <li><strong>nombre</strong>: título principal visible en la lista.</li>
-                            <li><strong>fuente</strong>: origen de la ISO, por ejemplo Microsoft.</li>
-                            <li><strong>archivo</strong>: nombre real del fichero ISO.</li>
-                            <li><strong>Código hash</strong>: sirve para verificar integridad.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="iso-list list-disc pl-5">
-                            <li><strong>url</strong>: enlace que BCDeX abre al hacer doble clic.</li>
-                            <li><strong>idioma</strong>: variante regional de la imagen.</li>
-                            <li><strong>arquitectura</strong>: x64, x86 o ARM64.</li>
-                            <li><strong>edición</strong>: Pro, Home, LTSC o Multiedición.</li>
-                        </ul>
-                    </div>
+            <!-- Sección 2 -->
+            <section class="iso-card grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="img/isos-panel-2.jpg" alt="Selección de una ISO y visualización de detalles en BCDeX" class="iso-shot" onerror="this.onerror=null; this.style.display='none';">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2 text-red-400">
+                        <span>📖</span>
+                        <span>Cómo usar la pestaña</span>
+                    </h2>
+                    <ul class="list-disc pl-5 space-y-2 text-base text-slate-300">
+                        <li>Elige una categoría como <strong>Windows 11</strong> o <strong>Windows 10</strong>.</li>
+                        <li>Haz clic una vez sobre una ISO para ver sus datos técnicos completos (hash SHA256, tamaño, idioma).</li>
+                        <li>BCDeX respeta el orden de los campos tal como están escritos en el catálogo.</li>
+                        <li>Con doble clic se abre la descarga directa del servidor seguro.</li>
+                    </ul>
                 </div>
             </section>
-            <section class="iso-section text-center">
-                <h2 class="text-3xl font-bold mb-4">Qué gana el usuario con esta pestaña</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">BCDeX centraliza acceso rápido a imágenes oficiales, muestra detalles técnicos antes de abrir la descarga y deja claro cuándo una entrada es oficial y cuándo podría tratarse de una build modificada. Eso reduce fricción y da más contexto antes de descargar.</p>
-                <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="descarga.html" class="btn-primary inline-block">Volver a descargas</a>
-                    <a href="tutorial.html" class="btn-secondary-iso inline-block">Ver tutoriales</a>
-                </div>
+
+            <!-- Sección 3: Seguridad de las Descargas -->
+            <section class="iso-card">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2 text-emerald-400">
+                    <span>🛡️</span>
+                    <span>Estado actual de las descargas</span>
+                </h2>
+                <p class="text-slate-300 text-base mb-4">
+                    En el estado actual del catálogo, los enlaces publicados apuntan a <strong>ISOs oficiales de Microsoft</strong>.
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-base text-slate-300">
+                    <li>No se usan servidores de descarga externos ni acortadores para estas entradas oficiales.</li>
+                    <li>No se comparten ISOs manipuladas ni modificadas sin previo aviso explícito.</li>
+                    <li>La descarga se abre directamente desde los servidores seguros de Microsoft Azure.</li>
+                </ul>
             </section>
+
+            <!-- Botones finales -->
+            <div class="text-center pt-4">
+                <a href="descarga.html" class="btn-primary px-8 py-3 text-base">
+                    ⬇️ Ir a Descargas de BCDeX
+                </a>
+            </div>
+
         </div>
     </main>
 
-    <footer class="bg-nav-footer mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 custom-footer text-center">
-            <p class="footer-text text-lg font-medium">PadeX - Creador de contenido y desarrollador</p>
-            <p class="footer-pages text-sm space-x-4">
-                <a href="privacidad.html" class="text-red-600 hover:text-red-500 transition duration-150">Privacidad</a>
-                <span class="text-gray-500">|</span>
-                <a href="terminos.html" class="text-red-600 hover:text-red-500 transition duration-150">Términos y Condiciones</a>
-            </p>
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@PadeX" target="_blank" title="YouTube"><img src="img/youtube.png" alt="YouTube" class="footer-icon"></a>
-                <a href="https://www.facebook.com/PadeX" target="_blank" title="Facebook"><img src="img/facebook.png" alt="Facebook" class="footer-icon"></a>
-                <a href="mailto:contact@padex.com" title="Gmail"><img src="img/gmail.png" alt="Gmail" class="footer-icon"></a>
-                <a href="https://www.tiktok.com/@padex" target="_blank" title="TikTok"><img src="img/tiktok.png" alt="TikTok" class="footer-icon"></a>
-                <a href="https://www.instagram.com/@padex" target="_blank" title="Instagram"><img src="img/instagram.png" alt="Instagram" class="footer-icon"></a>
-                <a href="https://x.com/padex" target="_blank" title="X"><img src="img/x.png" alt="X" class="footer-icon"></a>
+    <!-- Footer -->
+    <footer class="bg-nav-footer border-t border-white/10 mt-auto py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="img/LittlePadeX.ico" alt="BCDeX Logo" class="w-7 h-7 rounded"
+                    onerror="this.onerror=null; this.src='img/Logo.webp'">
+                <span class="text-xl font-bold text-white tracking-tight">BCDeX</span>
             </div>
-            <p class="footer-text text-sm mt-4">&copy; 2026 BCDeX. Todos los derechos reservados.</p>
+
+            <p class="footer-text text-base font-medium text-slate-300 mb-2" data-i18n="footer_creator">
+                PadeX - Creador de contenido y desarrollador
+            </p>
+
+            <p class="text-sm space-x-3 mb-6 text-slate-400">
+                <a href="privacidad.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_privacy">Privacidad</a>
+                <span class="text-slate-600">|</span>
+                <a href="terminos.html" class="text-red-400 hover:text-red-300 transition"
+                    data-i18n="footer_terms">Términos y Condiciones</a>
+            </p>
+
+            <div class="footer-links flex items-center justify-center gap-4 mb-6">
+                <a href="https://www.youtube.com/@PadeXchn" target="_blank" rel="noopener" title="YouTube"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/youtube.png" alt="YouTube"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://discord.com/invite/FPmURxDUHY" target="_blank" rel="noopener" title="Discord"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/discord.png" alt="Discord"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.facebook.com/PadeXch/" target="_blank" rel="noopener" title="Facebook"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/facebook.png" alt="Facebook"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="mailto:padexchn@gmail.com" title="Gmail" class="hover:scale-110 transition-transform">
+                    <img src="img/gmail.png" alt="Gmail"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.tiktok.com/@padexch" target="_blank" rel="noopener" title="TikTok"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/tiktok.png" alt="TikTok"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://www.instagram.com/padexchn/" target="_blank" rel="noopener" title="Instagram"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/instagram.png" alt="Instagram"
+                        class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+                <a href="https://x.com/PadeXchn" target="_blank" rel="noopener" title="X"
+                    class="hover:scale-110 transition-transform">
+                    <img src="img/x.png" alt="X" class="w-7 h-7 opacity-80 hover:opacity-100 transition-opacity">
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-500" data-i18n="footer_copyright">&copy; 2026 BCDeX. Todos los derechos
+                reservados.</p>
         </div>
     </footer>
 
     <script src="translation.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        if (mobileMenuButton) {
-          mobileMenuButton.addEventListener('click', () => {
-            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-            mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
-            if (mobileMenu) mobileMenu.classList.toggle('hidden');
-            if (menuIcon) menuIcon.classList.toggle('hidden');
-            if (closeIcon) closeIcon.classList.toggle('hidden');
-          });
-        }
-        lucide.createIcons();
-      });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
