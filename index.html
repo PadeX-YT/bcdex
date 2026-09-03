@@ -316,20 +316,20 @@
 
         .supporters-scroll-list {
             display: grid;
-            grid-template-columns: repeat(6, minmax(0, 1fr));
-            gap: 0.85rem;
-            max-width: 1040px;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            gap: 0.55rem;
+            max-width: 1080px;
             margin: 0 auto;
-            max-height: 440px;
+            max-height: 300px;
             overflow-y: auto;
             overflow-x: hidden;
-            padding: 0.5rem;
+            padding: 0.35rem;
             scrollbar-width: thin;
             scrollbar-color: #D90429 rgba(255, 255, 255, 0.05);
         }
 
         .supporters-scroll-list::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         .supporters-scroll-list::-webkit-scrollbar-track {
@@ -343,12 +343,12 @@
         }
 
         .supporters-scroll-list .supporter-card {
-            min-height: 116px;
-            padding: 0.75rem 0.5rem;
-            border-radius: 0.85rem;
+            min-height: 82px;
+            padding: 0.45rem 0.35rem;
+            border-radius: 0.65rem;
             background: linear-gradient(180deg, #161e2e 0%, #0f1421 100%);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -358,20 +358,20 @@
         }
 
         .supporters-scroll-list .supporter-card:hover {
-            transform: translateY(-3px) scale(1.03);
+            transform: translateY(-2px) scale(1.02);
             border-color: rgba(245, 158, 11, 0.5);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 10px rgba(245, 158, 11, 0.2);
         }
 
         .supporters-scroll-list .supporter-avatar-bg {
-            width: 52px;
-            height: 52px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
-            margin-bottom: 0.5rem;
-            border: 2px solid #F59E0B;
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            margin-bottom: 0.35rem;
+            border: 1.5px solid #F59E0B;
+            box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);
             transition: transform 0.2s;
         }
 
@@ -380,10 +380,10 @@
         }
 
         .supporters-scroll-list .supporter-name {
-            font-size: 0.82rem;
+            font-size: 0.72rem;
             font-weight: 700;
             color: #F1F5F9;
-            line-height: 1.2;
+            line-height: 1.15;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             line-clamp: 2;
@@ -395,27 +395,31 @@
 
         .donaciones-destacado {
             display: inline-block;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #F8FAFC;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.85rem;
             border-radius: 0.5rem;
             background-color: rgba(217, 4, 41, 0.12);
             border: 1px solid rgba(217, 4, 41, 0.25);
         }
 
-        @media (max-width: 1024px) {
-            .supporters-scroll-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        @media (max-width: 1120px) {
+            .supporters-scroll-list { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 960px) {
+            .supporters-scroll-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
         }
 
         @media (max-width: 768px) {
-            .supporters-scroll-list { grid-template-columns: repeat(4, minmax(0, 1fr)); max-height: 380px; }
+            .supporters-scroll-list { grid-template-columns: repeat(4, minmax(0, 1fr)); max-height: 260px; }
         }
 
-        @media (max-width: 640px) {
-            .supporters-scroll-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; max-height: 340px; }
-            .supporters-scroll-list .supporter-avatar-bg { width: 44px; height: 44px; }
-            .supporters-scroll-list .supporter-name { font-size: 0.75rem; }
+        @media (max-width: 480px) {
+            .supporters-scroll-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; max-height: 240px; }
+            .supporters-scroll-list .supporter-avatar-bg { width: 32px; height: 32px; }
+            .supporters-scroll-list .supporter-name { font-size: 0.68rem; }
         }
     </style>
 </head>
