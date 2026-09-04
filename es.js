@@ -7,7 +7,7 @@ const translations_es = {
     'nav_download': 'Descarga',
     'nav_contact': 'Contacto',
     'nav_sobre_el_creador': 'Sobre el Creador',
-    'donations_supporters_title': 'Gracias a los super CRACKS de la Comunidad',
+    'donations_supporters_title': 'Super CRACKS',
     'donations_supporters_p1': 'Agradecemos enormemente a todas las personas que han apoyado el proyecto. Â¡Gracias por hacer BCDeX posible!',
     'contributor_luiscm_name': 'luiscm152005',
     'contributor_luiscm_contribution': 'Por su apoyo continuo.',

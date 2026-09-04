@@ -69,7 +69,7 @@ const translations_pt_br = {
     "footer_privacy": "Privacidade",
     "footer_terms": "Termos e Condições",
     "footer_copyright": "&copy; 2026 BCDeX. Todos os direitos reservados.",
-    "donations_supporters_title": "Obrigado aos Super CRACKS da Comunidade",
+    "donations_supporters_title": "Super CRACKS",
     "donations_cta_combo": "Seu nome e avatar também podem estar aqui. Descubra como",
     "donations_cta_here": "Apoiar o BCDeX",
     "tutorial_page_title": "BCDeX - Tutorial: Guia de Uso",

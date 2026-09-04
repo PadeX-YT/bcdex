@@ -43,7 +43,7 @@ const translations_en = {
     "index_compare_subtitle": "Compare how BCDeX saves you time, headaches, and physical media.",
     "index_security_title": "Security & Trust: Clarification on False Positives",
     "index_security_description": "To configure temporary partitions and create entries in the Windows Boot Configuration (BCD), BCDeX executes native system commands. For this reason, some antivirus heuristics may show preventative false-positive alerts. We guarantee that BCDeX is 100% safe, clean, and only performs documented actions.",
-    "donations_supporters_title": "Thanks to the Community Super CRACKS",
+    "donations_supporters_title": "Super CRACKS",
     "donations_supporters_subtitle": "Awesome people whose continuous support keeps BCDeX alive and evolving.",
     "donations_supporters_placeholder": "Your name could be here!",
     "donations_supporter_1": "->Discover how to support BCDeX<-",
